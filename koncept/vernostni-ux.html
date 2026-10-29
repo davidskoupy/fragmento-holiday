@@ -1,0 +1,215 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Věrnostní program v rozhraní · Fragmento Holiday</title><link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../tokens.css"><style>body{margin:0;background:#F8F5EE;color:#1E1E1E;font:17px/1.65 "DM Sans",system-ui,sans-serif}
+main{max-width:820px;margin:0 auto;padding:16px 16px 96px}
+.rozc{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;box-sizing:border-box;border:1px solid #716433;border-radius:999px;color:inherit;text-decoration:none;font-weight:600;font-size:.9rem}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.2}h1{font-size:clamp(2rem,6vw,2.9rem);margin:32px 0 8px}h2{font-size:1.8rem;margin:48px 0 8px}h3{font-size:1.35rem;margin:32px 0 4px}
+a{color:#716433}code{background:#efe9d9;padding:1px 5px;border-radius:4px;font-size:.88em}pre{background:#efe9d9;padding:12px;border-radius:8px;overflow:auto}
+.tab{overflow-x:auto;margin:16px 0}table{border-collapse:collapse;font-size:.9rem;min-width:100%}th,td{border:1px solid #ddd5c0;padding:8px 10px;text-align:left;vertical-align:top}th{background:#efe9d9}
+hr{border:0;border-top:1px solid #ddd5c0;margin:32px 0}blockquote{margin:16px 0;padding:4px 16px;border-left:3px solid #716433;color:#444}
+@media (prefers-color-scheme:dark){body{background:#16211E;color:#F5F5F5}a{color:#BFBB88}.rozc{border-color:#BFBB88}code,pre,th{background:#243430}th,td{border-color:#34443f}blockquote{color:#ccc;border-color:#BFBB88}hr{border-color:#34443f}}</style></head><body><main><a class="rozc" href="../index.html">← Rozcestník</a><h1>Věrnostní UX Fragmento Holiday</h1>
+<p>Návrh k obrazovkám v <code>ucet/</code>. Ukázková data: „dnes“ je 12. 3. 2028, ceny jsou <code>[X] €</code>, počty bodů jsou příklad výpočtu podle pravidla 100 bodů = 3 €.</p>
+<h2>Princip</h2>
+<p>Program je <strong>členství</strong>, ne slevový e-shop. Host dostane kartu a razítka za pobyty, ne kupóny. Tři věci to drží pohromadě:</p>
+<ol>
+<li><strong>Body mají vždy hodnotu v eurech.</strong> „840 bodů“ stojí vždy vedle „≈ 25,20 €“. Host nemusí počítat a nic nepůsobí jako virtuální měna.</li>
+<li><strong>Barva říká, co je co.</strong> Zlatá je jednání (Rezervovat, Zaplatit, Doplnit údaje). Mosaz je program (karta, razítko, řádek bodů). Zlatá se u programu nikdy nepoužije, takže se body nepletou s tlačítkem.</li>
+<li><strong>Program mlčí, dokud k tomu není důvod.</strong> Neskáče do cesty rezervace, nic nepočítá dolů, nic nevyskakuje.</li>
+</ol>
+<h2>Kde se program ukazuje: jen tři místa</h2>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Místo</th>
+<th>Co se ukáže</th>
+<th>Proč tam</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Detail nemovitosti</strong> (objevování)</td>
+<td>Jeden řádek v Mosazi: „Za tento pobyt získáte [X] bodů (≈ [Y] €).“ Pod rozpisem ceny, ne nad ním.</td>
+<td>Host se rozhoduje o ceně. Řádek mu neubírá, jen říká, co dostane navíc.</td>
+</tr>
+<tr>
+<td><strong>Potvrzení rezervace</strong></td>
+<td>Totéž, plus „Použité body“ jako řádek rozpisu, pokud je host použil.</td>
+<td>Moment jistoty. Tady host chce vědět, co se stalo.</td>
+</tr>
+<tr>
+<td><strong>Účet</strong> (<code>ucet/</code>)</td>
+<td>Zůstatek, historie, expirace, úroveň.</td>
+<td>Místo, kam si host pro program sám přijde.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nikde jinde: ne na úvodní stránce, ne ve výsledcích hledání, ne v košíku, ne v e-mailech kromě potvrzení a upozornění na expiraci.</p>
+<p><strong>Co se výslovně nedělá:</strong> vyskakovací okna o bodech, odznak s počtem bodů v hlavičce, „získejte dvojnásobek“, odpočty, kola štěstí, medaile, animace sypání bodů, srovnání s ostatními hosty.</p>
+<h2>Proč to nepůsobí jako slevový e-shop</h2>
+<ul>
+<li><strong>Žádný tlak.</strong> Nikde „zbývá“, „jen dnes“, „poslední volný“. Expirace se oznamuje <strong>datem</strong> („vyprší 28. 5. 2028“), ne odpočtem.</li>
+<li><strong>Žádná hra.</strong> Úroveň není soutěž, je to pojmenování vztahu: Host, Stálý host, Domácí. Karta a razítko jsou paměť, ne trofej.</li>
+<li><strong>Stálá cena.</strong> Úroveň mění počet bodů (×1, ×1,5, ×2), nikdy cenu pobytu. Stojí to na řádku v textu úrovně.</li>
+<li><strong>Tichý tón.</strong> Body se „připíšou“, ne „vyhrají“. Expirace je věta s datem a hodnotou, ne varování červenou.</li>
+<li><strong>Opuštění je snadné.</strong> Odvolání souhlasu s programem je jedno klepnutí a vysvětluje, co se stane s body. Marketing je zvlášť a nic na něm nezávisí.</li>
+</ul>
+<h2>Pravidla programu (stručně, jak je host vidí)</h2>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Pravidlo</th>
+<th>Hodnota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Získání</td>
+<td>1 bod za 1 € z ceny pobytu (v české verzi za každých 25 Kč)</td>
+</tr>
+<tr>
+<td>Hodnota</td>
+<td>100 bodů = 3 €</td>
+</tr>
+<tr>
+<td>Připsání</td>
+<td>po pobytu, po kontrole; do té doby „čeká na připsání“</td>
+</tr>
+<tr>
+<td>Platnost</td>
+<td>24 měsíců od připsání, nejstarší body se čerpají první</td>
+</tr>
+<tr>
+<td>Upozornění na expiraci</td>
+<td>90 a 30 dní předem, e-mailem, s datem a hodnotou</td>
+</tr>
+<tr>
+<td>Zrušení rezervace</td>
+<td>použité body se vrátí, body za zrušený pobyt se nepřipíšou</td>
+</tr>
+<tr>
+<td>Stornovaná platba</td>
+<td>připsané body se odečtou, v historii je to vidět</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Stavy bodů a jejich značení</h2>
+<p>Každý stav má ikonu, slovo a barvu. Barva sama nic neříká.</p>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Stav</th>
+<th>Štítek</th>
+<th>Poznámka</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Čeká na připsání</td>
+<td>ikona hodin, žlutá</td>
+<td>nejde použít</td>
+</tr>
+<tr>
+<td>Připsáno</td>
+<td>zelená fajfka</td>
+<td></td>
+</tr>
+<tr>
+<td>Použito</td>
+<td>šedá fajfka</td>
+<td>záporné číslo s hodnotou v €</td>
+</tr>
+<tr>
+<td>Expiruje</td>
+<td>Mosaz, ikona času</td>
+<td>s datem</td>
+</tr>
+<tr>
+<td>Expirováno</td>
+<td>šedá, ikona času</td>
+<td>datum, kdy to proběhlo</td>
+</tr>
+<tr>
+<td>Stornováno</td>
+<td>červená, ikona chyby</td>
+<td>řádek původního připsání je přeškrtnutý, ne smazaný</td>
+</tr>
+</tbody>
+</table></div>
+<p>Historie se nemaže ani nepřepisuje. Co se stalo, je vidět, i když to host nechce slyšet.</p>
+<h2>Úrovně a fázování</h2>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Úroveň</th>
+<th>Podmínka</th>
+<th>Násobič</th>
+<th>Fáze</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Host</td>
+<td>1 dokončený pobyt a registrace</td>
+<td>×1</td>
+<td><strong>1, jediná viditelná</strong></td>
+</tr>
+<tr>
+<td>Stálý host</td>
+<td>3 pobyty za 24 měsíců</td>
+<td>×1,5</td>
+<td>2, hotová, vypnutá</td>
+</tr>
+<tr>
+<td>Domácí</td>
+<td>5 a více pobytů za 24 měsíců</td>
+<td>×2</td>
+<td>2, hotová, vypnutá</td>
+</tr>
+</tbody>
+</table></div>
+<p>Fáze 2 se zapíná příznakem <code>.is-phase2</code> / <code>data-phase="2"</code>. Ve fázi 1 se místo ukazatele postupu objeví věta „Další úrovně připravujeme.“ Přepínač fáze je na stránce Úroveň (souhrnná ukázka) a v liště návrhu.</p>
+<p>Výhody Stálého hosta a Domácího (přednostní podpora, dřívější termíny, pozdní check-out) jsou <strong>návrh k odsouhlasení Davidem</strong>. Slibujeme jen to, co provoz doloží.</p>
+<h2>Registrace hostů a doklady: kde program končí</h2>
+<p>Údaje hostů se doplňují v detailu pobytu, ne při rezervaci. Mají vlastní termín („do [datum]“), ukazatel „2 ze 4 hostů hotovo“ a po jednom formuláři na hosta. Program do toho nezasahuje. Dokončená registrace je podmínkou úrovně Host, ale nikdy se tak netváří („Chybí údaje, ať je příjezd bez čekání“, ne „odemkněte body“).</p>
+<h2>Přihlášení bez hesla</h2>
+<p>E-mail → odkaz a šestimístný kód. Odkaz je jednorázový, krátce platný a vázaný na zařízení, kde se žádal. Odpověď je stejná, ať účet existuje, nebo ne, takže nikdo nezjistí, kdo u nás je. Stavy: odesláno, špatný kód, otevřeno jinde, příliš mnoho pokusů, odkaz vypršel. Každý říká, že rezervace a body jsou v pořádku.</p>
+<h2>Co je potřeba doplnit nebo schválit</h2>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Co</th>
+<th>Kdo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ceny pobytů, orientační Kč</td>
+<td>klient</td>
+</tr>
+<tr>
+<td>Platnost odkazu, počet pokusů, lhůty (připsání bodů, uchování dokladů, vrácení peněz)</td>
+<td>klient / provoz</td>
+</tr>
+<tr>
+<td>Texty souhlasů, doby uchování, právní základy</td>
+<td>právník</td>
+</tr>
+<tr>
+<td>Pravidlo vrácení bodů při storno a při smazání účtu</td>
+<td>právník</td>
+</tr>
+<tr>
+<td>Výhody Stálého hosta a Domácího</td>
+<td>David</td>
+</tr>
+<tr>
+<td>Kontakty podpory a správců na místě</td>
+<td>provoz</td>
+</tr>
+</tbody>
+</table></div>
+<p>Všechna neznámá místa jsou v návrhu v hranatých závorkách (<code>[X]</code>, <code>[N]</code>, <code>[datum]</code>) a zvýrazněná, takže se nedají přehlédnout ani omylem vydat.</p>
+<h2>Přístupnost a jazyk</h2>
+<ul>
+<li>WCAG 2.2 AA: kontrast 4,5 : 1, viditelný fokus, cíle 44 px, <code>prefers-reduced-motion</code>, stav vždy ikonou a slovem, <code>role="status"</code> / <code>role="alert"</code> pro změny.</li>
+<li>Texty jsou česky i anglicky, angličtina o 20 až 30 % delší a komponenty ji unesou.</li>
+<li>Slovník: nemovitosti, apartmány, vily. Žádný investiční jazyk (podíl, výnos, investice) a žádný Essox v rezervaci ani na kartách Holiday.</li>
+</ul></main></body></html>

@@ -1,0 +1,569 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Koncepce a zadání · Fragmento Holiday</title><link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../tokens.css"><style>body{margin:0;background:#F8F5EE;color:#1E1E1E;font:17px/1.65 "DM Sans",system-ui,sans-serif}
+main{max-width:820px;margin:0 auto;padding:16px 16px 96px}
+.rozc{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;box-sizing:border-box;border:1px solid #716433;border-radius:999px;color:inherit;text-decoration:none;font-weight:600;font-size:.9rem}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.2}h1{font-size:clamp(2rem,6vw,2.9rem);margin:32px 0 8px}h2{font-size:1.8rem;margin:48px 0 8px}h3{font-size:1.35rem;margin:32px 0 4px}
+a{color:#716433}code{background:#efe9d9;padding:1px 5px;border-radius:4px;font-size:.88em}pre{background:#efe9d9;padding:12px;border-radius:8px;overflow:auto}
+.tab{overflow-x:auto;margin:16px 0}table{border-collapse:collapse;font-size:.9rem;min-width:100%}th,td{border:1px solid #ddd5c0;padding:8px 10px;text-align:left;vertical-align:top}th{background:#efe9d9}
+hr{border:0;border-top:1px solid #ddd5c0;margin:32px 0}blockquote{margin:16px 0;padding:4px 16px;border-left:3px solid #716433;color:#444}
+@media (prefers-color-scheme:dark){body{background:#16211E;color:#F5F5F5}a{color:#BFBB88}.rozc{border-color:#BFBB88}code,pre,th{background:#243430}th,td{border-color:#34443f}blockquote{color:#ccc;border-color:#BFBB88}hr{border-color:#34443f}}</style></head><body><main><a class="rozc" href="../index.html">← Rozcestník</a><h1>Fragmento Holiday: koncepce a zadání</h1>
+<p>Verze 1, 27. 10. 2026. Navazuje na šablonu Fragmento (<code>fragmento-sablona/DESIGN.md</code>, <code>PRODUCT.md</code>, katalog <code>_build/fragmento-nemovitosti.json</code>) a na paměť projektu. Je to podklad pro návrh designu, ne kód. Samostatné zadání pro grafika je v <code>fragmento-holiday-zadani-grafik.md</code>.</p>
+<p>Čísla, která nejsou v podkladech klienta, jsou označená <strong>[doplní klient]</strong>. Hodnoty označené <strong>[návrh]</strong> jsou moje doporučení ke schválení Davidem.</p>
+<hr />
+<h2>0. Kde s briefem nesouhlasím (a co jsem změnil)</h2>
+<ol>
+<li><strong>Bodový model: 1 bod za 1 € (≈ 25 Kč), hodnotu bodu určuje výměnný kurz.</strong> Podle zadání Davida (27. 10.) host získá 1 bod za každé utracené 1 € ceny pobytu, v české verzi za každých 25 Kč. Aby model držel strop (polovina čisté úspory proti OTA, tedy zhruba 6 až 8 % při provizi 15 až 18 % a poplatcích brány), navrhuji <strong>hodnotu 100 bodů = 3 €</strong> a násobiče <strong>×1 / ×1,5 / ×2</strong>, tedy návratnost <strong>3 / 4,5 / 6 %</strong>. Původních 5 / 7 / 10 % strop překračovalo. Kurz 25 Kč za 1 € je pevný pro počítání bodů a zobrazuje se jako orientační <strong>[doplní klient]</strong>. <strong>Schváleno Davidem 27. 10. 2026</strong> (100 bodů = 3 €, násobiče ×1 / ×1,5 / ×2). Pokud čistá úspora po ověření spadne pod 12 %, snížit hodnotu na 100 bodů = 2,5 €.</li>
+<li><strong>Výměna bodů ve fázi 2 je riziko.</strong> Body, které půl roku nejdou použít, jsou pro hosta nic a pro firmu závazek, který v právním pohledu roste. Navrhuji do <strong>fáze 1 dát jednoduché uplatnění bodů při platbě dalšího pobytu</strong>. Backend to stojí málo (odečet z ceny, jedna řádka v účtu). Ve fázi 2 zůstávají další úrovně a širší výměna (bonusy, pobyty zdarma, upgrady).</li>
+<li><strong>Fáze 1 s jednou úrovní vs. „nic se neslibuje, co neexistuje“.</strong> PRODUCT.md má zásadu, že web neukazuje funkce, které nejsou. Grafika proto počítá se všemi úrovněmi hned, ale ve fázi 1 se v rozhraní ukazuje jen aktuální úroveň a dál jen věta „Další úrovně připravujeme“ bez čísel. Komponenty postupu jsou hotové a vypnuté příznakem.</li>
+<li><strong>Hotelová a bookingová estetika je v šabloně výslovně zakázaná</strong> (DESIGN.md, úvod). Holiday je booking, takže část zákazů se musí uvolnit: rezervační tok a kalendář se tváří jako rezervace. Zůstává ale, co dělá Fragmento Fragmentem: bez odpočtů, bez „poslední volný termín“, bez hvězdiček jako hlavního sdělení, cena celá a věcná. Rozlišení: <strong>booking konvence v mechanice, klid v tónu</strong>.</li>
+<li><strong>Dostupnost = rezervace.</strong> Majitelé si své dny rezervují ve stejném systému a rezervovaný den je pro Holiday nedostupný. Kalendář tedy nepotřebuje žádné pravidlo přednosti, stav „dostupné“ je prostě „nikdo nerezervoval“ (rozhodnutí Davida 27. 10.). Pro návrh z toho plyne: kalendář musí počítat s tím, že se dostupnost může změnit i těsně před rezervací, což řeší blokace termínu při platbě (§3.4).</li>
+<li><strong>Web je dnes jen česky</strong> (PRODUCT.md). Angličtina od začátku je nový rozsah: texty bývají o 20 až 30 % delší a všechny komponenty se musí navrhnout na obě délky.</li>
+</ol>
+<hr />
+<h2>1. Hosté a jejich cesty</h2>
+<h3>Persony</h3>
+<p><strong>Jana a Petr, CZ/SK rodina (hlavní segment).</strong> Oba 35 až 45 let, dvě děti, dnes hledají přes Booking a Airbnb, srovnávají ceny a recenze, zajímá je „celý apartmán nebo vila, ne pokoj“. Čtou česky nebo slovensky, platí kartou nebo Apple Pay na telefonu. Obava: skrytý poplatek, nejasné storno, podvod u neznámého webu. Co je přesvědčí: celková cena hned, jasné storno, uvěřitelné recenze, jméno firmy, kterou si můžou dohledat.</p>
+<p><strong>Tom, zahraniční host.</strong> Anglicky mluvící, 30 až 50 let, zvyklý na Airbnb a Booking, na web přijde z vyhledávače nebo odkazu. Nezná Fragmento, nezajímá ho „model podílů“. Chce vidět dostupnost, cenu v EUR, vybavení a rychle zaplatit. Obava: je to vůbec důvěryhodné? Česká firma, kterou nezná.</p>
+<p><strong>Eva, stálý host s úrovní.</strong> Za dva roky byla třikrát. Přihlašuje se, hledá další termín, chce vidět, kolik má bodů a co jí úroveň dává. Chce, aby ji web poznal, ale nenaléhal. Obava: že body propadnou nebo že pravidla změníme.</p>
+<h3>Scénáře</h3>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Scénář</th>
+<th>Začátek</th>
+<th>Cíl</th>
+<th>Kde se ztrácí (hlídat v návrhu)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Najít termín</td>
+<td>Úvodní stránka nebo vyhledávač</td>
+<td>Vybraná nemovitost a termín</td>
+<td>Kalendář bez ceny, filtr bez výsledků</td>
+</tr>
+<tr>
+<td>Rezervovat</td>
+<td>Detail</td>
+<td>Vyplněné údaje, zvolená platba</td>
+<td>Nečekané poplatky, nutný účet, dlouhý formulář</td>
+</tr>
+<tr>
+<td>Zaplatit</td>
+<td>Souhrn</td>
+<td>Zaplaceno, potvrzení</td>
+<td>Selhání platby, 3-D Secure, vypršení blokace</td>
+</tr>
+<tr>
+<td>Sbírat body</td>
+<td>Potvrzení, účet</td>
+<td>Host vidí, kolik a kdy</td>
+<td>Body nejsou vidět, nejasné „kdy se připíšou“</td>
+</tr>
+<tr>
+<td>Vrátit se</td>
+<td>E-mail po pobytu, účet</td>
+<td>Nová rezervace s použitím bodů</td>
+<td>Zapomenutý web, body k expiraci</td>
+</tr>
+</tbody>
+</table></div>
+<p>Hlavní cesta musí jít zvládnout na telefonu jednou rukou: <strong>4 kroky od detailu k zaplacení</strong> (termín a hosté, údaje, platba, potvrzení).</p>
+<hr />
+<h2>2. Architektura informací</h2>
+<h3>Veřejné</h3>
+<ul>
+<li><strong>Domů</strong> (hero, vyhledávač termínu, výběr nemovitostí, jak to funguje, standard, věrnostní program stručně, recenze)</li>
+<li><strong>Hledání a výsledky</strong> (seznam, kalendář, filtry; mapa s cenami odpadla, destinací je málo), pod tím stránky zemí a lokalit</li>
+<li><strong>Detail nemovitosti</strong> (fotky, vybavení, kalendář a cena, hodnocení z Googlu, mapa polohy, pravidla)</li>
+<li><strong>Jak to funguje</strong> (přímá rezervace, co je v ceně, platba, co se děje po rezervaci)</li>
+<li><strong>Věrnostní program</strong> (úrovně, body, pravidla)</li>
+<li><strong>Standard Fragmenta</strong> (co slibujeme u každé nemovitosti, jen doložitelné)</li>
+<li><strong>Storno a podmínky</strong>, <strong>Pomoc a otázky</strong>, <strong>Kontakt</strong></li>
+<li><strong>Fragmento</strong> (odkaz na fragmento.cz, jemný cross-sell na jiné projekty; nikdy v rezervačním toku)</li>
+</ul>
+<h3>Po přihlášení (portál hosta)</h3>
+<ul>
+<li><strong>Moje pobyty</strong> (nadcházející, proběhlé, zrušené) a detail pobytu: příjezd, kontakty, registrace hostů, doklady, změna a storno</li>
+<li><strong>Body a úroveň</strong> (zůstatek, historie, kdy co expiruje, postup)</li>
+<li><strong>Doklady</strong> (potvrzení rezervace, faktury, přehled plateb)</li>
+<li><strong>Profil</strong> (osobní údaje, jazyk, měna, souhlasy a jejich odvolání, smazání účtu)</li>
+<li><strong>Oblíbené</strong></li>
+</ul>
+<h3>Přihlášení</h3>
+<p>Doporučuji <strong>rezervaci bez hesla</strong>: host zadá e-mail, účet vznikne sám a vstup je odkazem z e-mailu nebo jednorázovým kódem. Odpadá registrační zeď před platbou a body se k hostovi přiřadí podle e-mailu. Heslo je volitelné později. Pozor: odkaz v e-mailu je přístup k osobním údajům, proto krátká platnost a vázání na zařízení.</p>
+<hr />
+<h2>3. Klíčové obrazovky (mobile first)</h2>
+<p>Pro každou: účel, obsah, stavy. Rozvržení kreslí grafik, tady je to, co musí obrazovka umět.</p>
+<h3>3.1 Domů</h3>
+<ul>
+<li>Hero s fotkou, jednou větou a <strong>vyhledávačem termínu přímo v hero</strong> (kam / kdy / kolik hostů). Na mobilu se vyhledávač rozbalí na celou obrazovku.</li>
+<li>Výběr nemovitostí (karty), 6 až 8 kusů, <strong>žádná nemovitost dvakrát</strong> (Koh Samui Nova + Luna je totéž místo).</li>
+<li>Pruh důvěry: standard, přímá cena bez provize, storno, recenze.</li>
+<li>Věrnostní program v jednom bloku (3 úrovně, jedna věta).</li>
+<li>Stavy: bez dostupných nemovitostí v zadaném období (návrhy jiných termínů a jiných míst).</li>
+</ul>
+<h3>3.2 Hledání a výsledky</h3>
+<ul>
+<li>Kalendář s cenou za noc u dostupných dní, minimální délka pobytu viditelná předem.</li>
+<li>Filtry: země, počet hostů, délka, vybavení (bazén, moře, parkování, pes), cena. Počet výsledků živě.</li>
+<li>Jen seznam (mapa s cenami odpadla, destinací je málo), karta ukazuje <strong>celkovou cenu za pobyt</strong>, ne jen „od … za noc“.</li>
+<li>Stavy: načítání, bez výsledků (nejbližší volné termíny), příliš krátký pobyt, chyba načtení dostupnosti.</li>
+</ul>
+<h3>3.3 Detail nemovitosti</h3>
+<ul>
+<li>Galerie (swipe), název, místo, parametry (pokoje, koupelny, plocha, hosté).</li>
+<li><strong>Lepivý panel rezervace</strong>: termín, hosté, celková cena, hlavní tlačítko. Na mobilu spodní lišta s cenou a tlačítkem.</li>
+<li>Co je v ceně, vybavení, pravidla domu, storno (podmínky se teprve definují), mapa polohy a okolí, hodnocení z Googlu, standard Fragmenta.</li>
+<li>Logo Essoxu a „podíl 1/8“ <strong>se na Holiday detailu nezobrazují</strong>. Odkaz na koupi podílu smí být jen jemný, mimo panel (viz §7 cross-sell).</li>
+<li>Stavy: termín nedostupný (nabídnout nejbližší), minimální délka nesplněna, cena se přepočítává.</li>
+</ul>
+<h3>3.4 Rezervace a platba (4 kroky)</h3>
+<ol>
+<li>Termín a hosté (potvrzení výběru, souhrn ceny)</li>
+<li>Údaje (jméno, e-mail, telefon, počet hostů; <strong>registrace hostů</strong> se může dokončit později v portálu, aby formulář nebyl dlouhý)</li>
+<li>Platba (karta, Apple Pay, Google Pay; zobrazit celkovou částku v EUR, v české verzi orientačně v Kč)</li>
+<li>Potvrzení</li>
+</ol>
+<p>Pravidla toku:
+- Souhrn ceny viditelný celou dobu. Rozpis: cena pobytu, úklid, poplatky, celkem. <strong>Žádná položka, která se objeví až v kroku 3.</strong>
+- Blokace termínu na dobu platby (<strong>[doplní klient]</strong>, doporučuji 10 až 15 min) s klidným časovačem, ne s alarmem.
+- Uplatnění bodů jako jeden přepínač v kroku 3 („Použít 40 bodů, ušetříte 40 €“).
+- Essox, splátky a investiční jazyk <strong>v tomto toku nejsou</strong>.
+- Stavy: platba selhala (důvod lidsky, zkusit znovu bez ztráty údajů), vypršela blokace (termín stále volný? nabídnout znovu), termín mezitím obsazen, 3-D Secure čeká, chyba sítě, duplicitní klepnutí.</p>
+<h3>3.5 Potvrzení</h3>
+<ul>
+<li>Jasné „rezervace je potvrzená“, souhrn, příjezd a odjezd, číslo rezervace, co se stane dál (časová osa: před příjezdem pošleme pokyny, kdy je třeba doplnit údaje hostů).</li>
+<li><strong>Body za tento pobyt</strong>: kolik a kdy se připíšou, jedna věta.</li>
+<li>Přidat do kalendáře, stáhnout potvrzení.</li>
+<li>Stavy: platba potvrzena, ale e-mail se doručuje.</li>
+</ul>
+<h3>3.6 Účet hosta</h3>
+<ul>
+<li>Přehled: nadcházející pobyt nahoře, pod ním body a úroveň, pak minulé pobyty.</li>
+<li>Detail pobytu: stav, údaje o příjezdu, registrace hostů (co chybí), doklady, změna a storno.</li>
+<li>Body: zůstatek, historie (připsáno, použito, expiruje), nejbližší expirace s datem.</li>
+<li>Doklady a profil: souhlasy po jednotlivých účelech, stažení a smazání dat.</li>
+<li>Stavy: prázdný účet (první návštěva), zrušená rezervace, stornovaná platba, body čekají na připsání.</li>
+</ul>
+<h3>3.7 Stavy a chyby napříč</h3>
+<p>Pro každou obrazovku grafik dodá: načítání (kostra, ne točící se kolečko), prázdný stav, chyba, offline, vypršelá relace. Hlášky lidsky, jako v šabloně („Telefon potřebujeme celý, ať se dovoláme.“).</p>
+<h3>Stavy rezervace (backend)</h3>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Stav</th>
+<th>Význam</th>
+<th>Co vidí host</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>blokovano</code></td>
+<td>termín držíme po dobu platby</td>
+<td>časovač v kroku platby</td>
+</tr>
+<tr>
+<td><code>ceka_na_platbu</code></td>
+<td>platba zahájena (3-D Secure)</td>
+<td>„Dokončete platbu v bance“</td>
+</tr>
+<tr>
+<td><code>potvrzeno</code></td>
+<td>zaplaceno</td>
+<td>potvrzení, doklady</td>
+</tr>
+<tr>
+<td><code>doplnit_udaje</code></td>
+<td>chybí registrace hostů</td>
+<td>úkol v portálu s termínem</td>
+</tr>
+<tr>
+<td><code>pred_prijezdem</code></td>
+<td>pokyny odeslány</td>
+<td>příjezd, kontakty</td>
+</tr>
+<tr>
+<td><code>probiha</code></td>
+<td>host v nemovitosti</td>
+<td>kontakt na podporu</td>
+</tr>
+<tr>
+<td><code>dokonceno</code></td>
+<td>po odjezdu</td>
+<td>body se připíšou, žádost o vlastní hodnocení až po spuštění jeho sběru</td>
+</tr>
+<tr>
+<td><code>zruseno_hostem</code></td>
+<td>storno hostem</td>
+<td>výše vrácené částky podle podmínek</td>
+</tr>
+<tr>
+<td><code>zruseno_nami</code></td>
+<td>storno ze strany Fragmenta</td>
+<td>plná refundace, nabídka alternativy</td>
+</tr>
+<tr>
+<td><code>platba_selhala</code> / <code>vyprselo</code></td>
+<td>neúspěšná platba / vypršela blokace</td>
+<td>zkusit znovu</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Stavy bodů</h3>
+<p><code>ceka</code> (po pobytu, před připsáním) → <code>pripsano</code> → <code>pouzito</code> / <code>expiruje</code> (30 dní předem) → <code>expirovano</code>. Zvlášť <code>stornovano</code>, když se zruší rezervace, za kterou byly body připsány.</p>
+<hr />
+<h2>4. Věrnostní program: koncept a UX</h2>
+<h3>Návrh pravidel [návrh, schvaluje David]</h3>
+<ul>
+<li><strong>1 bod za 1 € ceny pobytu (≈ 25 Kč).</strong> V české verzi se body počítají z částky v EUR přepočtené pevným kurzem 25 Kč. <strong>100 bodů = 3 €</strong> při uplatnění. Ke každému počtu bodů se vždy zobrazí hodnota v eurech (např. „600 bodů ≈ 18 €“), aby číslo nezkreslovalo představu o hodnotě a nepůsobilo jako herní měna.</li>
+<li><strong>Body se počítají z ceny pobytu bez ubytovacího poplatku a daní.</strong> Nevratné části ceny body nedávají. <strong>[právník]</strong></li>
+<li><strong>Úrovně podle počtu dokončených pobytů za posledních 24 měsíců:</strong></li>
+</ul>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Úroveň (CZ / EN)</th>
+<th>Podmínka</th>
+<th>Bodů za 1 € (zhodnocení)</th>
+<th>Nepeněžní výhody</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Host</strong> / Guest</td>
+<td>1 dokončený pobyt a dokončená registrace</td>
+<td>×1 (3 %)</td>
+<td>pokyny k příjezdu předem, účet, uplatnění bodů</td>
+</tr>
+<tr>
+<td><strong>Stálý host</strong> / Regular</td>
+<td>3 dokončené pobyty za posledních 24 měsíců</td>
+<td>×1,5 (4,5 %)</td>
+<td>přednostní podpora, termíny o 7 dní dřív</td>
+</tr>
+<tr>
+<td><strong>Domácí</strong> / At Home</td>
+<td>5 a více dokončených pobytů za posledních 24 měsíců</td>
+<td>×2 (6 %)</td>
+<td>pozdní check-out (dle obsazenosti), termíny o 14 dní dřív, přímý kontakt</td>
+</tr>
+</tbody>
+</table></div>
+<p>„Domácí“ je záměrně doslovný k claimu „Nejedete do hotelu, vracíte se na svoje“. Nepeněžní výhody slibovat jen ty, které provoz zvládne doložit (pozdní check-out jen tam, kde další příjezd neblokuje, jinak se nesmí psát jako jistota).
+- <strong>První pobyt:</strong> body za něj se připíšou po odjezdu sazbou Host (×1). Úroveň Host vzniká dokončeným pobytem a registrací; před ním je host jen registrovaný a v rezervaci vidí „Za tento pobyt získáte [X] bodů“.
+- <strong>Expirace:</strong> body platí 24 měsíců od připsání, nejstarší se čerpají první. Připomenutí 90 a 30 dní předem. Úroveň se drží 24 měsíců od posledního kvalifikačního pobytu. <strong>[právník]</strong>: nevratnost, započtení, postup při zrušení rezervace, zánik programu.
+- Strop a ověření ekonomiky: viz §0 bod 1. Tabulku s modelem (provize, poplatky brány, čistá úspora, náklad bodů) připraví David nebo finance <strong>[doplní klient]</strong>, v návrhu se nepoužívají vymyšlená čísla.</p>
+<h3>Fázování</h3>
+<ul>
+<li><strong>Fáze 1:</strong> účet, body za pobyt, úroveň Host, uplatnění bodů při platbě (viz §0 bod 2), expirace s připomenutím.</li>
+<li><strong>Fáze 2:</strong> Stálý host, Domácí, nepeněžní výhody, širší výměna (upgrady, pobyty zdarma, partnerské bonusy).</li>
+</ul>
+<h3>Jak to nevypadá jako slevový e-shop</h3>
+<ol>
+<li><strong>Žádné kolo štěstí, odznaky za klikání, odpočty ani „máte 3 hodiny“.</strong> Postup se ukazuje, nenaléhá.</li>
+<li><strong>Body se vždy ukazují s hodnotou v eurech</strong>, ne jako herní měna. „Máte 2 700 bodů ≈ 81 €“ a hned vedle tlačítko „Použít“. Žádné animace sypání bodů.</li>
+<li><strong>Postup je pozvánka, ne tlak.</strong> Jedna věta a tenký ukazatel: „Ještě jeden pobyt do úrovně Stálý host.“ Žádný velký progress bar na domovské stránce.</li>
+<li><strong>Od první rezervace je program vidět</strong> na třech místech a nikde navíc: u ceny na detailu („Za tento pobyt získáte 42 bodů“), v potvrzení, v účtu. Neplní se do popupů ani e-mailů víc než jedním mailem po pobytu.</li>
+<li><strong>Úroveň vypadá jako členství v klubu, ne jako status v aplikaci</strong>: razítko nebo klíč (viz směr C), ne medaile ani koruna.</li>
+<li><strong>Cena je pro všechny stejná.</strong> Úroveň nemění cenu pobytu, jen kolik se vrací a jaké služby má host. Tím se vyhnete pocitu, že kdo není přihlášený, platí víc, a obejde se obtíž s paritou (viz §9).</li>
+</ol>
+<hr />
+<h2>5. Důvěra</h2>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Prvek</th>
+<th>Co přesně</th>
+<th>Poznámka pro návrh</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recenze</strong></td>
+<td><strong>Na startu jen z Googlu</strong>, beze změny a s uvedením zdroje (celkové hodnocení a počet). Vlastní hodnocení později: jen od hostů s dokončeným pobytem. Celkové hodnocení, počet, rozpad (čistota, přesnost popisu, příjezd, poloha). Odpověď Fragmenta.</td>
+<td>Vlastní hodnocení před prvními pobyty nejsou, ukazuje se jen Google. U nemovitosti bez Google hodnocení řešit stav „zatím bez hodnocení“, nepsat prázdné hvězdičky. Žádné vymyšlené recenze.</td>
+</tr>
+<tr>
+<td><strong>Storno</strong></td>
+<td>Jedna tabulka na detailu a v kroku platby: do kdy zdarma, kolik se vrací potom.</td>
+<td><strong>[doplní klient, schválí právník]</strong>. Graficky časová osa s datem, ne odstavec.</td>
+</tr>
+<tr>
+<td><strong>Standard Fragmenta</strong></td>
+<td>Seznam toho, co platí u každé nemovitosti (vybavení, úklid, příjezd).</td>
+<td>Jen to, co umíme doložit. U položky bez důkazu se nepíše. Ikony ne jako dekorace, ale s tvrzením.</td>
+</tr>
+<tr>
+<td><strong>Cena bez překvapení</strong></td>
+<td>Celková cena od prvního pohledu, rozpis na kliknutí. Ubytovací poplatek a daně buď v ceně, nebo výslovně „platí se na místě“.</td>
+<td>Rozhodnutí o poplatcích <strong>[právník]</strong>.</td>
+</tr>
+<tr>
+<td><strong>Kdo za tím stojí</strong></td>
+<td>Fragmento, firma, adresa, kontakt, telefon. Od prvního dojmu, ne v patičce.</td>
+<td>Navazuje na šablonu (telefon, jména). Žádné fotky obchodníků.</td>
+</tr>
+<tr>
+<td><strong>Platba</strong></td>
+<td>Platba kartou, Apple Pay, Google Pay přes zavedenou bránu, loga bez nadsazování.</td>
+<td>Neříkat „bezpečné“ bez doložení, ukázat, co se děje s kartou.</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>6. Vizuální směry</h2>
+<p>Tři směry se odlišují hlavně v tom, <strong>co je hlavní nositel nálady</strong>: světlo (A), barva místa (B), klidná věcnost klubu (C). Všechny dědí logo, DM Sans a základ tokenů šablony; liší se tím, jak daleko se od investorské sazby odchýlí.</p>
+<h3>Reference (inspirace, ne kopie)</h3>
+<p>Reference vychází z mé znalosti těchto služeb. <strong>Grafik je před zahájením projde živě a napíše, co z nich přebírá</strong>, protože weby se mění.</p>
+<ul>
+<li><strong>Amazing Places</strong> (kurátorský portál zvláštních pobytů): velká fotografie, málo ovládacích prvků, výrazný hlas značky. Beru: kurátorství a důraz na místo.</li>
+<li><strong>Booking</strong> (úrovně Genius): jasně viditelný program, příjemně mechanický. Beru: čitelnost úrovní a postupu, ne agresivitu slev.</li>
+<li><strong>Mr &amp; Mrs Smith</strong>: klubové členství a jazyk „vybrali jsme pro vás“. Beru: členství jako pozvání, tón.</li>
+<li><strong>Sonder</strong>: jednotný standard napříč různými prostory, jasná očekávání. Beru: jak ukázat „stejná kvalita všude“.</li>
+<li><strong>Plum Guide</strong>: každá nemovitost prošla prověřením a má skóre. Beru: způsob, jak podložit standard a důvěru.</li>
+</ul>
+<h3>Směr A: „Zlatá hodinka“ (evoluce)</h3>
+<p>Teplé světlo, velká fotografie místa, papírový a krémový podklad šablony, Cormorant Garamond smí promlouvat i v claimech hero a v citátech hostů. Barevně nejblíž Fragmentu: borovicová břidlice drží váhu, písková zlatá zůstává pro jednání (rezervovat), přibývá jedna teplejší akcentní barva pro nálady (světlo, slunce) <strong>[návrh k ověření kontrastu: broskvová / terakota]</strong>.
+- <strong>Fotografie:</strong> zlatá hodina, stoly a terasy, stopy po pobytu (ručníky, snídaně), široké záběry místa. Lidé jen zezadu nebo bez tváří. Bez fotek obchodníků.
+- <strong>Tón textů:</strong> klidný, přesný, osobní („Snídaně na terase, moře pod vámi.“).
+- <strong>Výhody:</strong> nejnižší riziko, nejrychlejší, nejvíc se využije existující web, věrný značce.
+- <strong>Rizika:</strong> může vypadat jako „Fragmento s kalendářem“, málo odlišné od investorského webu, málo odlišené od ostatních kurátorských portálů.</p>
+<h3>Směr B: „Pohlednice“ (barva místa)</h3>
+<p>Každé místo nese vlastní tint (moře, jádro, jungle) použitý na kartě, v hlavičce detailu a na razítku v účtu. Větší zaoblení, výraznější nadpisy DM Sans, razítka na úrovně a pobyty (sbírá se „pas“ míst). Cormorant jen v logu.
+- <strong>Fotografie:</strong> sytější, barevnější, zážitkové (voda, jídlo, ruce), kratší výřezy.
+- <strong>Tón textů:</strong> hravější, kratší věty, tykání v účtu <strong>[ověřit s Davidem]</strong>.
+- <strong>Výhody:</strong> nejvíc se odlišuje od investora i od Bookingu, razítka a pas přirozeně nesou věrnostní program a sdílení.
+- <strong>Rizika:</strong> drží nejhůř klid Fragmenta, hrozí „slevový e-shop“ nebo „dětský pas“, deset tintů je zátěž pro kontrast a údržbu. Dražší na návrh i na údržbu.</p>
+<h3>Směr C: „Klíč na stole“ (klidný klub)</h3>
+<p>Hospitality, ne zábava. Víc bílé, jemná mřížka, velké plochy fotografie, minimum barev: borovice, krém a jeden detail. Úroveň je členství: klíč nebo kartička „Domácí“, která vypadá jako skutečný předmět. Cormorant se používá víc (claimy, jména úrovní).
+- <strong>Fotografie:</strong> klidné, architektonické, interiéry a světlo v prostoru, málo lidí.
+- <strong>Tón textů:</strong> zdrženlivý, spíš „dům, který znáte“ než „dovolená“.
+- <strong>Výhody:</strong> věrnostní program působí jako klub, ne sleva; nejsilnější důvěra a prémiovost; blízké claimu „Klíč od svého“.
+- <strong>Rizika:</strong> může působit chladně a draze pro CZ/SK rodiny, konverze na telefonu bývá vyšší u teplejších a energičtějších rozhraní, hrozí vzdálení od rodinného hosta.</p>
+<h3>Rozhodnutí (David, 27. 10.)</h3>
+<h2><strong>Směr A „Zlatá hodinka“ je vybraný.</strong> Z C se přebírá jen jazyk členství u úrovní (karta úrovně, razítko), z B nic. Brandmanuál Fragmento Holiday je v souboru <code>fragmento-holiday-brandmanual.md</code> a vzniká dřív než obrazovky: grafik ho zpřesní a schválí jako první výstup (viz zadání pro grafika).</h2>
+<h2>7. Design systém Holiday nad Fragmentem</h2>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Zdědí se</th>
+<th>Mění se</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Logo, typografie DM Sans + Cormorant Garamond</td>
+<td>Nálada: světlo, teplo, fotky; tmavé břidlicové plochy ustupují</td>
+</tr>
+<tr>
+<td>Tokeny (<code>:root</code> z <code>assets/css/style.css</code>), stupnice mezer a zaoblení, stíny tónované do zelené</td>
+<td>Poměr světlého a tmavého (víc papíru a krému, méně tmavé břidlice)</td>
+</tr>
+<tr>
+<td>Pravidlo <strong>Gold Means Action</strong>: zlatá = jednání. Na Holiday je to „Rezervovat“ a „Zaplatit“.</td>
+<td>Zlatá <strong>není</strong> pro úroveň ani body (ty dostanou vlastní barvu, ať se nepletou)</td>
+</tr>
+<tr>
+<td>Karta nemovitosti (4 : 3, fotka, název, místo), chipy, vstupy, fokus, přístupnost WCAG 2.2 AA</td>
+<td>Karta ukazuje <strong>cenu pobytu a dostupnost</strong>, ne cenu podílu; žádné Essox, žádné „podíl 1/8“</td>
+</tr>
+<tr>
+<td>Pravidlo <strong>One Voice</strong>: Cormorant jen pro hlas (claim, citát, logotyp)</td>
+<td>Smí i v jménech úrovní a v claimu hero (jen ve směrech A a C)</td>
+</tr>
+<tr>
+<td>Pravidlo <strong>Own Scrim</strong>, <strong>Whole Number</strong> (číslo s jednotkou se nelámou)</td>
+<td>Nové komponenty: kalendář, panel rezervace, platba, body a úroveň, časová osa storna</td>
+</tr>
+<tr>
+<td>Kontrast a pohyb (<code>prefers-reduced-motion</code>)</td>
+<td>Pohyb o něco živější (kalendář, přechody kroků), stále střídmý</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Nové komponenty, které grafik navrhne:</strong> vyhledávač termínu, kalendář s cenou, lepivý panel rezervace a spodní lišta, rozpis ceny, krokový tok platby, časová osa storna, karta pobytu, ukazatel postupu úrovně, razítko a karta úrovně, zůstatek bodů s datem expirace, hodnocení a odpověď, stavové hlášky (úspěch, čeká, chyba).</p>
+<hr />
+<h2>8. Obsah a tón</h2>
+<h3>Zásady (CZ i EN)</h3>
+<ol>
+<li><strong>Nemovitosti, apartmány, vily.</strong> Ne „domy“. V angličtině <em>properties, apartments, villas</em>, ne <em>homes</em> jako univerzální slovo.</li>
+<li><strong>Celá cena, jednou věta.</strong> Číslo s jednotkou se nelámou. Každé číslo má zdroj nebo je označené jako ukázka.</li>
+<li><strong>Bez tlaku.</strong> Žádné „poslední volný termín“, „jen dnes“, odpočty, vykřičníky.</li>
+<li><strong>Žádný investiční jazyk v rezervaci.</strong> Slova podíl, výnos, investice a Essox patří na fragmento.cz.</li>
+<li><strong>Tvrdit jen doložené.</strong> „Úklid mezi pobyty“ ano, „5hvězdičkový standard“ ne.</li>
+<li><strong>Osobně, ale ne familiérně.</strong> Vykání v CZ, v EN neutrální <em>you</em>.</li>
+<li><strong>EN není překlad.</strong> Píše se zvlášť podle stejné osnovy, délky se testují v návrhu (+30 %).</li>
+</ol>
+<h3>Příklady (placeholdery v hranatých závorkách doplní klient)</h3>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Místo</th>
+<th>CZ</th>
+<th>EN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hero</td>
+<td>„Pobyt v nemovitostech, které známe do detailu.“</td>
+<td>“Stay in places we know inside out.”</td>
+</tr>
+<tr>
+<td>Podtitul</td>
+<td>„Rezervujte přímo od nás. Cena je celková a žádné příplatky nepřijdou.“</td>
+<td>“Book direct with us. The price you see is the price you pay.”</td>
+</tr>
+<tr>
+<td>CTA hledání</td>
+<td>„Zobrazit volné termíny“</td>
+<td>“See available dates”</td>
+</tr>
+<tr>
+<td>CTA rezervace</td>
+<td>„Rezervovat“ (ne „Rezervovat teď“)</td>
+<td>“Reserve”</td>
+</tr>
+<tr>
+<td>Cena</td>
+<td>„[X] € za pobyt, vše v ceně“</td>
+<td>“[X] € for the stay, all in”</td>
+</tr>
+<tr>
+<td>Body na detailu</td>
+<td>„Za tento pobyt získáte [X] bodů (≈ [Y] €). Použijete je na další pobyt.“</td>
+<td>“You’ll earn [X] points (≈ [Y] €) for this stay, to use on your next one.”</td>
+</tr>
+<tr>
+<td>Postup</td>
+<td>„Ještě jeden pobyt do úrovně Stálý host.“</td>
+<td>“One more stay to reach Regular.”</td>
+</tr>
+<tr>
+<td>Expirace</td>
+<td>„[X] bodů vyprší [datum]. Použijete je při platbě dalšího pobytu.“</td>
+<td>“[X] points expire on [date]. Use them when you pay for your next stay.”</td>
+</tr>
+<tr>
+<td>Storno</td>
+<td>„Do [N] dnů před příjezdem zrušíte zdarma. Později vracíme [X] %.“</td>
+<td>“Cancel free up to [N] days before arrival. After that we refund [X] %.”</td>
+</tr>
+<tr>
+<td>Selhala platba</td>
+<td>„Platba neprošla. Karta nebyla zatížena, termín držíme ještě [X] minut.“</td>
+<td>“The payment didn’t go through. Your card wasn’t charged, and we’re holding the dates for [X] more minutes.”</td>
+</tr>
+<tr>
+<td>Prázdný účet</td>
+<td>„Zatím tu nic není. První pobyt vám tu založí body.“</td>
+<td>“Nothing here yet. Your first stay starts your points.”</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>9. Blokující a otevřené body</h2>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Bod</th>
+<th>Kdo</th>
+<th>Co blokuje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Právo a daně</strong>: storno, ubytovací poplatky a jejich zobrazení, DPH, spotřebitelská pravidla pro online prodej pobytů, pravidla bodů (expirace, nevratnost, započtení, zrušení rezervace, zánik programu)</td>
+<td><strong>právník, před zveřejněním</strong></td>
+<td>texty storna, poplatky, pravidla bodů, podmínky</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>GDPR a souhlasy</strong>: účet hosta, registrace hostů (údaje o cizincích a dětech), věrnostní program, marketingové souhlasy, uchování dokladů</td>
+<td>právník, David</td>
+<td>formuláře účtu, souhlasy, cookies</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Přesná procenta, prahy, názvy úrovní</strong></td>
+<td>David</td>
+<td>věrnostní UX, komponenty úrovní</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Seznam nemovitostí na Holiday</strong> (dostupnost je dána rezervacemi, majitelé blokují své dny rezervací; vyřešeno)</td>
+<td>David, provoz</td>
+<td>výběr nemovitostí, ceny, texty</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Cenová parita</strong>: přímý web nesmí být dražší než OTA. Operativně: kdo hlídá, jak často, co když OTA zlevní</td>
+<td>David, provoz</td>
+<td>cenová logika, texty o ceně</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Doména a název</strong> (zatím „Fragmento Holiday“), lockup loga</td>
+<td>David</td>
+<td>návrh značky, e-maily</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Skutečná provize OTA a poplatek platební brány</strong> (základ pro 3 / 4,5 / 6 %)</td>
+<td>David, finance</td>
+<td>schválení bodů</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Blokace termínu při platbě</strong>: délka, chování při souběhu</td>
+<td>vývoj</td>
+<td>stavy v platbě</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Registrace hostů</strong>: která údaje vyžaduje která země</td>
+<td>provoz</td>
+<td>krok 2 a portál</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Zdroj recenzí</strong>: na startu hodnocení z Googlu, vlastní sběr po prvních pobytech (e-mail po odjezdu, připomínka, případně body, neschváleno), ověřování</td>
+<td>provoz</td>
+<td>detail, hodnocení</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>10. Fázování (design a funkce)</h2>
+<div class="tab"><table>
+<thead>
+<tr>
+<th></th>
+<th>Fáze 1</th>
+<th>Fáze 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Design</strong></td>
+<td>Systém, úvodní stránka, hledání, detail, rezervace, platba, potvrzení, účet (pobyty, doklady, body), stavy a chyby, CZ + EN, e-maily potvrzení a po pobytu</td>
+<td>Úrovně Stálý host a Domácí v účtu, stránka programu rozšířená, razítka a karty úrovní, e-maily o postupu a expiraci</td>
+</tr>
+<tr>
+<td><strong>Funkce</strong></td>
+<td>Vyhledávání a kalendář, rezervace, platba (karta, Apple Pay, Google Pay), potvrzení, účet bez hesla, body (úroveň Host, ×1) a jejich uplatnění, expirace s upozorněním, storno podle podmínek</td>
+<td>Další úrovně, nepeněžní výhody, širší výměna bodů, přednostní termíny</td>
+</tr>
+<tr>
+<td><strong>Hotové, ale vypnuté</strong></td>
+<td>Komponenty úrovní, postupu a razítek jsou v systému, v rozhraní zatím nejsou</td>
+<td>zapnout příznakem</td>
+</tr>
+</tbody>
+</table></div>
+<p>Grafika a koncepce pokrývají obě fáze hned, aby se nic nepřekreslovalo. Do rozhraní fáze 1 se z fáze 2 nic neukazuje.</p>
+<hr />
+<h2>Otevřená otázka</h2>
+<p>Žádná blokující. Dostupnost určují rezervace (majitelé blokují své dny rezervací), takže kalendář jede bez zvláštních pravidel. Zbývají body z §9, hlavně právní schválení a čísla pro věrnostní program.</p></main></body></html>

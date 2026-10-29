@@ -1,0 +1,121 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Zadání pro grafika · Fragmento Holiday</title><link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../tokens.css"><style>body{margin:0;background:#F8F5EE;color:#1E1E1E;font:17px/1.65 "DM Sans",system-ui,sans-serif}
+main{max-width:820px;margin:0 auto;padding:16px 16px 96px}
+.rozc{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;box-sizing:border-box;border:1px solid #716433;border-radius:999px;color:inherit;text-decoration:none;font-weight:600;font-size:.9rem}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.2}h1{font-size:clamp(2rem,6vw,2.9rem);margin:32px 0 8px}h2{font-size:1.8rem;margin:48px 0 8px}h3{font-size:1.35rem;margin:32px 0 4px}
+a{color:#716433}code{background:#efe9d9;padding:1px 5px;border-radius:4px;font-size:.88em}pre{background:#efe9d9;padding:12px;border-radius:8px;overflow:auto}
+.tab{overflow-x:auto;margin:16px 0}table{border-collapse:collapse;font-size:.9rem;min-width:100%}th,td{border:1px solid #ddd5c0;padding:8px 10px;text-align:left;vertical-align:top}th{background:#efe9d9}
+hr{border:0;border-top:1px solid #ddd5c0;margin:32px 0}blockquote{margin:16px 0;padding:4px 16px;border-left:3px solid #716433;color:#444}
+@media (prefers-color-scheme:dark){body{background:#16211E;color:#F5F5F5}a{color:#BFBB88}.rozc{border-color:#BFBB88}code,pre,th{background:#243430}th,td{border-color:#34443f}blockquote{color:#ccc;border-color:#BFBB88}hr{border-color:#34443f}}</style></head><body><main><a class="rozc" href="../index.html">← Rozcestník</a><h1>Fragmento Holiday: zadání pro grafika</h1>
+<p>Verze 1, 27. 10. 2026. Čti spolu s <code>fragmento-holiday-koncepce.md</code> (obsah obrazovek, stavy, věrnostní program, tón) a s <code>fragmento-sablona/DESIGN.md</code> (stávající systém). Tady je jen to, co dodáš, v jakém formátu, kdy a podle čeho to přijmeme.</p>
+<p>Hodnoty <strong>[doplní klient]</strong> neznáme. Nevymýšlej je, použij zástupný text „[X] €“ a označ obrazovku jako ukázku.</p>
+<h2>1. Co navrhuješ</h2>
+<p>Web a portál hosta <strong>Fragmento Holiday</strong>: veřejnost si přímo u nás rezervuje pobyt v nemovitostech Fragmenta. Podznačka sdílí logo, typografii a základ systému s Fragmentem, nálada je cestovatelská (světlo, teplo, fotky), ne investorská. Mobile first, česky a anglicky, ceny v EUR (česká verze orientačně v Kč), platba kartou, Apple Pay, Google Pay.</p>
+<p>Primární cíl je přímá rezervace. Prodej podílů je vedlejší a smí se objevit jen jako jemný odkaz mimo rezervační tok.</p>
+<h2>2. Výstupy a pořadí</h2>
+<h3>Etapa 1: brandmanuál Fragmento Holiday (první, před obrazovkami)</h3>
+<p>Směr je vybraný: <strong>A „Zlatá hodinka“</strong>. Podklad je <code>fragmento-holiday-brandmanual.md</code> (návrh v1). Grafik ho projde, zpřesní a dodá jako hotový manuál (PDF + Figma knihovna stylů):
+1. Logo: lockup „Fragmento Holiday“ ve světlé a tmavé variantě, ochranná zóna, minimální velikost, špatné použití. Logo musí být čitelné na fotce (stín a tmavší přechod nahoře).
+2. Barvy: finální paleta s rolemi a tabulkou kontrastů (4,5 : 1 pro text).
+3. Typografie: stupnice DM Sans + Cormorant Garamond, kde smí hlas.
+4. Fotografie: pravidla, 10 příkladových výřezů, co nepoužít, pravidla pro AI pozadí.
+5. Tón a texty: zásady CZ/EN a příklady.
+6. Věrnostní vizuální jazyk: karta úrovně, razítko, ikona bodů (v systému A, členský jazyk z C).
+7. Ukázkové aplikace: úvodní stránka a detail na mobilu 375 px jako důkaz, že manuál drží.</p>
+<p>Termín: 5 pracovních dnů po zahájení. Schvaluje David. Etapa 2 začíná až po schválení.</p>
+<h3>Etapa 2: vybraný směr, plný rozsah</h3>
+<p><strong>Mobil 375 px, každá obrazovka v každém stavu:</strong>
+- Domů, Hledání a výsledky (seznam, kalendář, filtry; bez mapy s cenami)
+- Detail nemovitosti (galerie, panel rezervace, vybavení, storno, hodnocení z Googlu)
+- Rezervace: 4 kroky (termín a hosté, údaje, platba, potvrzení)
+- Účet: přehled, detail pobytu, body a úroveň, doklady, profil a souhlasy
+- Stránky: Jak to funguje, Věrnostní program, Standard Fragmenta, Storno a podmínky, Pomoc</p>
+<p><strong>Desktop 1440 px:</strong> Domů, Hledání, Detail, Rezervace (krok 2 a 3), Účet (přehled), Potvrzení. <strong>Tablet 768 px:</strong> Hledání a Detail.</p>
+<p><strong>Stavy</strong> (ke každé klíčové obrazovce): načítání (kostra), prázdno, chyba, bez výsledků, nedostupný termín, selhala platba, vypršela blokace, platba čeká na banku, zrušeno, offline.</p>
+<p><strong>Věrnostní komponenty (všechny úrovně, i ty, které fáze 1 nezapne):</strong>
+- zůstatek bodů s nejbližší expirací
+- ukazatel postupu k další úrovni
+- karta úrovně (Host, Stálý host, Domácí), razítko nebo klíč
+- řádek „Za tento pobyt získáte [X] bodů“ v panelu rezervace a v potvrzení
+- uplatnění bodů v kroku platby (přepínač)
+- upozornění na expiraci</p>
+<p><strong>Značka:</strong>
+- Lockup „Fragmento Holiday“ (světlá i tmavá varianta, minimální velikost). Logo musí být vždy čitelné: stín a tmavší přechod nahoře na fotce.
+- Pravidla fotografie (kompozice, světlo, co nepoužít) a 10 příkladových výřezů.
+- Sada ikon vybavení a služeb (cca 30) ve stylu šablony: čárové, bez dekorace.</p>
+<p><strong>E-maily</strong> (šablony): potvrzení rezervace, příprava před příjezdem, po pobytu s body, upozornění na expiraci, storno.</p>
+<p><strong>Handoff:</strong>
+- Figma s komponentami (varianty, auto-layout), pojmenované jako tokeny šablony (<code>--tm-1</code>, <code>--r-control</code> atd.), kde to jde.
+- Export tokenů (JSON) a tabulka rozdílů proti Fragmentu (co zděděno, co nové).
+- Specifikace pohybu (přechody kroků, kalendář), <code>prefers-reduced-motion</code> varianta.
+- Anotace pro vývoj: co je z databáze, co je stav, co je pevný text.</p>
+<h3>Etapa 3: revize a předání</h3>
+<p>Jedno kolo revizí po připomínkách (David, právník u textů storna a bodů), finální předání.</p>
+<h2>3. Termíny</h2>
+<p>Konkrétní data <strong>[doplní klient]</strong>. Doporučené rozdělení od zahájení:</p>
+<div class="tab"><table>
+<thead>
+<tr>
+<th>Kdy</th>
+<th>Co</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Týden 1</td>
+<td>Etapa 1 (brandmanuál), schválení</td>
+</tr>
+<tr>
+<td>Týdny 2 až 4</td>
+<td>Etapa 2 (mobil, stavy, věrnostní komponenty)</td>
+</tr>
+<tr>
+<td>Týden 5</td>
+<td>Desktop a tablet, e-maily, značka</td>
+</tr>
+<tr>
+<td>Týden 6</td>
+<td>Revize, předání</td>
+</tr>
+</tbody>
+</table></div>
+<p>Rozpočet <strong>[doplní klient]</strong>.</p>
+<h2>4. Pravidla, která se nesmí porušit</h2>
+<ul>
+<li>Psát <strong>nemovitosti, apartmány, vily</strong>, ne „domy“.</li>
+<li><strong>Žádné fotky obchodníků</strong> (David, Lenka, Michal). Jména v textu jsou OK.</li>
+<li><strong>Žádná nemovitost dvakrát</strong> v jednom výběru (Koh Samui Nova a Luna je totéž místo).</li>
+<li><strong>AI fotky</strong> jen v pozadí pro náladu, <strong>bez popisku „ilustrační foto (AI)“</strong>, nikdy jako konkrétní nemovitost z katalogu.</li>
+<li><strong>Logo Essoxu a financování podílů v rezervačním toku nejsou.</strong> Na kartě nemovitosti na fragmento.cz smí logo zůstat, na Holiday ne.</li>
+<li><strong>Žádný investiční jazyk</strong> (podíl, výnos, investice) v rezervaci. Nemovitost na Holiday se prezentuje jako místo k pobytu.</li>
+<li><strong>Žádný tlak</strong>: bez odpočtů, „poslední volný“, blikajících štítků.</li>
+<li><strong>Mobilní aplikaci nezmiňovat.</strong> Web je mobile first, aplikace zatím není.</li>
+<li><strong>Ceny a čísla nevymýšlet.</strong> Neznámé je „[X]“ a označené jako ukázka.</li>
+<li><strong>Zlatá = jednání</strong> (Rezervovat, Zaplatit). Ne dekorace, ne úroveň, ne body.</li>
+<li><strong>Cormorant Garamond jen jako hlas</strong> (claim, citát, logotyp, jména úrovní, pokud to vybraný směr povolí). Ne v tlačítkách, číslech a formulářích.</li>
+</ul>
+<h2>5. Kritéria přijetí</h2>
+<p>Návrh je přijatý, když platí všechno:</p>
+<ol>
+<li><strong>Pokrytí:</strong> všechny obrazovky z §2 existují v mobilní verzi, každá s popsanými stavy, a v CZ i EN. EN verze ukazuje delší texty (+30 %) a nic se nerozbije.</li>
+<li><strong>Čtyři kroky:</strong> cesta od detailu k potvrzení nemá víc než 4 kroky a v každém je vidět celková cena.</li>
+<li><strong>Cena bez překvapení:</strong> na žádné obrazovce se neobjeví položka, kterou host dřív neviděl v celkové ceně.</li>
+<li><strong>Přístupnost WCAG 2.2 AA:</strong> kontrast textu 4,5 : 1 (ověřeno čísly v tabulce), viditelný fokus na světlém i tmavém, cíl klepnutí aspoň 44 px pro hlavní ovládání, žádná informace jen barvou.</li>
+<li><strong>Věrnost:</strong> program je vidět od první rezervace na třech místech (detail, potvrzení, účet) a nikde navíc. Nepůsobí jako sleva (žádné kolo štěstí, odznaky, odpočty). Komponenty všech úrovní jsou hotové.</li>
+<li><strong>Dědičnost:</strong> u každého prvku je jasné, jestli je zděděný z Fragmenta, nebo nový. Tabulka rozdílů je součástí předání.</li>
+<li><strong>Pravidla značky:</strong> nic z §4 není porušeno, logo je čitelné na každé fotce.</li>
+<li><strong>Předatelnost:</strong> komponenty jsou v Figmě s variantami, tokeny jsou exportované, vývoj nemusí nic dopočítávat.</li>
+<li><strong>Texty:</strong> používají zásady a příklady z koncepce (§8); nové texty v CZ i EN prochází stejnou kontrolou. Texty storna a bodů jsou označené „ke schválení právníkem“.</li>
+</ol>
+<h2>6. Co ti dodáme</h2>
+<ul>
+<li>Přístup k šabloně Fragmento (<code>DESIGN.md</code>, <code>assets/css/style.css</code>, stránky, katalog).</li>
+<li>Fotografie nemovitostí z katalogu. Které nemovitosti budou na Holiday, bude známo po rozhodnutí klienta, do té doby používej ukázky z katalogu a označ je.</li>
+<li>Podklady k tónu (příklady v koncepci), logo Fragmento.</li>
+<li>Odpovědi na otázky v pracovní dny. Otázky piš po jedné a jen ty, které blokují.</li>
+</ul>
+<h2>7. Co od tebe nechceme</h2>
+<ul>
+<li>Kód. Výstupem je návrh, vývoj postavíme my.</li>
+<li>Vlastní fotografie nebo ilustrace nemovitostí. Pro náladu můžeš navrhnout AI pozadí podle pravidel výše.</li>
+<li>Kopii referencí (Amazing Places, Booking, Mr &amp; Mrs Smith, Sonder, Plum Guide). Slouží jako inspirace; napiš, co z každé přebíráš.</li>
+</ul></main></body></html>
