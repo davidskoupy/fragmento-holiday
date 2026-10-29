@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="První návštěva, zrušená rezervace, stornovaná platba, body čekají na připsání.">
+<title>Prázdné stavy · Fragmento Holiday</title>
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../holiday.css">
+<link rel="stylesheet" href="../doc.css">
+<link rel="stylesheet" href="ucet.css">
+<script src="../holiday.js" defer></script>
+<script src="ucet.js" defer></script>
+</head>
+<body>
+<!-- Lišta návrhu: přepínače pro posouzení, v produktu není -->
+<div class="navrh">
+  <div class="wrap">
+    <nav aria-label="Obrazovky návrhu"><a href="prihlaseni.html">Přihlášení</a><a href="odkaz-vyprsel.html">Odkaz vypršel</a><a href="prehled.html">Přehled</a><a href="pobyt-detail.html">Detail pobytu</a><a href="body.html">Body</a><a href="uroven.html">Úroveň</a><a href="doklady-profil.html">Doklady a profil</a><a href="prazdne-stavy.html" aria-current="page">Prázdné stavy</a><a href="../objevovani/domu.html">Objevování</a></nav>
+    <span class="ukazka">Ukázka · fiktivní data, „dnes“ je 12. 3. 2028</span>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg"><button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Fáze programu"><span class="seg-popis">Fáze</span><span class="seg"><button type="button" data-faze-prepni="1" aria-pressed="true">1</button><button type="button" data-faze-prepni="2" aria-pressed="false">2</button></span></div>
+    </div>
+  </div>
+</div>
+<header class="hl">
+  <div class="wrap">
+    <a class="lockup auto" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page">
+      <img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <nav class="hl-nav" aria-label="Hlavní nabídka" data-en-label="Main menu">
+      <a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a>
+      <a href="#" data-en="How it works">Jak to funguje</a>
+      <a href="#" data-en="Loyalty programme">Věrnostní program</a>
+      <a href="#" data-en="Help">Pomoc</a>
+    </nav>
+    <a class="btn ghost hl-ucet" href="prehled.html" aria-label="Můj účet, Jana" data-en-label="My account, Jana"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ucet"/></svg><span>Jana</span></a>
+    <button type="button" class="ikona-btn hl-menu" data-otevri="menu" aria-label="Nabídka" data-en-label="Menu" aria-haspopup="dialog"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-menu"/></svg></button>
+  </div>
+</header>
+<nav class="ztab" aria-label="Účet" data-en-label="Account"><ul><li><a href="prehled.html" aria-current="page"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-kalendar"/></svg><span data-en="Stays">Pobyty</span></a></li><li><a href="body.html"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-body"/></svg><span data-en="Points and level">Body a úroveň</span></a></li><li><a href="doklady-profil.html"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-dokument"/></svg><span data-en="Documents and profile">Doklady a profil</span></a></li></ul></nav>
+<div class="wrap"><div class="ukazka-pas"><span class="ukazka"><span data-en="Sample">Ukázka</span></span><p class="fine" data-en="Each state sits in a frame with its status code. The photo in the first-visit state is an AI mood background, not a catalogue property. Unknown numbers are [X].">Každý stav je v rámu s kódem stavu. Fotka v první návštěvě je AI pozadí pro náladu, ne nemovitost z katalogu. Neznámá čísla jsou [X].</p></div></div>
+<main id="obsah">
+<div class="ucet-wrap ucet">
+  <header class="ucet-hlava">
+    <h1 data-en="Empty states of the account">Prázdné stavy účtu</h1>
+    <p data-en="What a guest sees when there is nothing yet or nothing any more: a first visit, a cancelled booking, a cancelled payment and points waiting to be added.">Co host vidí, když ještě nebo už nic není: první návštěva, zrušená rezervace, stornovaná platba a body, které čekají na připsání.</p>
+  </header>
+  <div class="ramy">
+    <section class="rama" aria-labelledby="r1"><div class="rama-hlava"><h2 id="r1" data-en="1 · First visit, no stays">1 · První návštěva bez pobytů</h2><code>bez_pobytu</code></div><div class="rama-telo"><div class="prazdno-foto" aria-hidden="true"><img src="img/ai-terasa-rano.webp" alt="" width="1344" height="752" loading="lazy"></div>
+    <div class="prazdno">
+      <h3 data-en="Nothing here yet.">Zatím tu nic není.</h3>
+      <p data-en="Your first stay starts your points.">První pobyt vám tu založí body.</p>
+      <div class="panel ploche" style="width:100%">
+        <p class="radek-body"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-body"/></svg><span data-en="You earn &lt;b&gt;1 point per 1 €&lt;/b&gt;. &lt;b&gt;100 points = 3 €&lt;/b&gt; off your next stay.">Za pobyt získáte <b>1 bod za 1 €</b>. <b>100 bodů = 3 €</b> z ceny dalšího pobytu.</span></p>
+        <p class="fine jen-cs">V české verzi za každých 25 Kč.</p>
+      </div>
+      <p class="fine"><span data-en="Booking needs no password. Your account is created from your email.">Rezervace nepotřebuje heslo. Účet vznikne sám z e-mailu.</span></p>
+      <a class="btn" href="../objevovani/hledani.html"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-hledat"/></svg><span data-en="Find a stay">Najít pobyt</span></a>
+    </div></div></section>
+    <section class="rama" aria-labelledby="r2"><div class="rama-hlava"><h2 id="r2" data-en="2 · Cancelled booking (by the guest)">2 · Zrušená rezervace (hostem)</h2><code>zruseno_hostem</code></div><div class="rama-telo"><div class="prazdno">
+      <span class="stav chyba"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-chyba"/></svg><span data-en="Cancelled">Zrušeno</span></span>
+      <h3 data-en="This booking is cancelled">Rezervace je zrušená</h3>
+      <p><span data-en="You cancelled it on &lt;span class=&quot;klient&quot;&gt;[date]&lt;/span&gt;. We’re refunding &lt;b&gt;[X] €&lt;/b&gt; to your card, according to the cancellation terms.">Zrušili jste ji <span class="klient">[datum]</span>. Vracíme <b>[X] €</b> na kartu, podle podmínek storna.</span></p>
+      <ul class="seznam-bod">
+        <li><span data-en="Your bank usually processes it within &lt;span class=&quot;klient&quot;&gt;[N]&lt;/span&gt; days.">Banka částku obvykle zpracuje do <span class="klient">[N]</span> dní.</span></li>
+        <li><span data-en="We put the 300 points (9.00 €) you used back in your balance. No points are added for this stay. &lt;span class=&quot;klient&quot;&gt;[legal review pending]&lt;/span&gt;">Použitých 300 bodů (9,00 €) jsme vrátili do zůstatku. Body za tento pobyt se nepřipíšou. <span class="klient">[ke schválení právníkem]</span></span></li>
+      </ul>
+      <div class="tlacitka"><a class="btn" href="../objevovani/hledani.html"><span data-en="Find other dates">Najít jiný termín</span></a><a class="btn ghost" href="#" download><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-stahnout"/></svg><span data-en="Cancellation confirmation">Potvrzení o stornu</span></a></div>
+    </div></div></section>
+    <section class="rama" aria-labelledby="r3"><div class="rama-hlava"><h2 id="r3" data-en="3 · Cancelled booking (by us)">3 · Zrušená rezervace (námi)</h2><code>zruseno_nami</code></div><div class="rama-telo"><div class="prazdno">
+      <span class="stav chyba"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-chyba"/></svg><span data-en="Cancelled by us">Zrušeno námi</span></span>
+      <h3 data-en="We had to cancel your stay">Pobyt jsme museli zrušit</h3>
+      <p><span data-en="We’re sorry. We’re refunding &lt;b&gt;the full amount, [X] €&lt;/b&gt;, and any points you used. Reason: &lt;span class=&quot;klient&quot;&gt;[operations to add]&lt;/span&gt;.">Omlouváme se. Vracíme <b>celou částku, [X] €</b>, i použité body. Důvod: <span class="klient">[doplní provoz]</span>.</span></p>
+      <div class="panel ploche" style="width:100%;border:1px dashed var(--linka-pole);box-shadow:none">
+        <h3><span data-en="We can offer an alternative">Nabízíme náhradu</span></h3>
+        <p class="popis"><span data-en="&lt;span class=&quot;klient&quot;&gt;[property]&lt;/span&gt; on the same dates, &lt;span class=&quot;klient&quot;&gt;[dates]&lt;/span&gt;. It’s only an offer; nothing is booked automatically."><span class="klient">[nemovitost]</span> ve stejném termínu, <span class="klient">[termín]</span>. Je to jen nabídka, nic se nerezervuje samo.</span></p>
+        <div class="tlacitka"><a class="btn" href="#"><span data-en="See the offer">Zobrazit nabídku</span></a><a class="btn ghost" href="../objevovani/hledani.html"><span data-en="Search elsewhere">Hledat jinde</span></a></div>
+      </div>
+    </div></div></section>
+    <section class="rama" aria-labelledby="r4"><div class="rama-hlava"><h2 id="r4" data-en="4 · Cancelled payment">4 · Stornovaná platba</h2><code>platba_stornovana</code></div><div class="rama-telo"><div class="prazdno">
+      <span class="stav chyba"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-chyba"/></svg><span data-en="Payment cancelled">Platba stornována</span></span>
+      <h3 data-en="The payment wasn’t completed">Platba nebyla dokončena</h3>
+      <p><span data-en="Your bank cancelled the payment, or it wasn’t completed. Your card wasn’t charged and no booking was made.">Platbu zrušila banka, nebo jste ji nedokončili. Karta nebyla zatížena a rezervace nevznikla.</span></p>
+      <p><span data-en="We’re no longer holding the dates. We’ll check whether they’re still free. We’ve saved your details, so you don’t need to type them again.">Termín už nedržíme. Zkontrolujeme, jestli je stále volný. Vaše údaje máme uložené, nemusíte je psát znovu.</span></p>
+      <div class="tlacitka"><a class="btn gold" href="../objevovani/detail.html"><span data-en="Reserve again">Rezervovat znovu</span></a><a class="btn ghost" href="#"><span data-en="Contact support">Napsat podpoře</span></a></div>
+    </div></div></section>
+    <section class="rama" aria-labelledby="r5"><div class="rama-hlava"><h2 id="r5" data-en="5 · Points waiting to be added">5 · Body čekají na připsání</h2><code>body_ceka</code></div><div class="rama-telo"><div class="prazdno" style="width:100%">
+      <h3 data-en="Your points are on their way">Body zatím čekají</h3>
+      <p><span data-en="After your stay we add them following a check, within &lt;span class=&quot;klient&quot;&gt;[N]&lt;/span&gt; days. Until then you can’t use them.">Po pobytu je připíšeme po kontrole, do <span class="klient">[N]</span> dnů. Do té doby je nejde použít.</span></p>
+      <section class="zustatek" style="width:100%" aria-labelledby="zu-prazdny">
+        <h3 class="zu-hlava" id="zu-prazdny"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-body"/></svg><span data-en="Your points">Vaše body</span></h3>
+        <p class="zu-cislo">0 <span data-en="points">bodů</span></p>
+        <p class="zu-eur">≈ 0,00 €</p>
+        <p class="zu-cekajici"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ceka"/></svg><span data-en="Pending: <b>360&nbsp;points</b> (≈&nbsp;10.80&nbsp;€) for your stay on 4–9 Mar 2028.">Čeká na připsání: <b>360 bodů</b> (≈ 10,80 €) za pobyt 4.–9. 3. 2028.</span></p>
+        <p class="zu-kurz"><span data-en="100&nbsp;points = 3&nbsp;€ · valid for 24&nbsp;months">100 bodů = 3 € · platí 24 měsíců</span></p>
+      </section>
+    </div></div></section>
+    <section class="rama" aria-labelledby="r6"><div class="rama-hlava"><h2 id="r6" data-en="6 · Loading and offline">6 · Načítání a offline</h2><code>nacita / offline</code></div><div class="rama-telo"><div class="kostry" role="status" aria-busy="true"><span class="sr"><span data-en="Loading your account">Načítáme váš účet</span></span>
+      <div class="kostra k1"></div><div class="kostra k2"></div><div class="kostra k3"></div><div class="kostra k4"></div></div><div class="hlaska ceka" role="status"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-offline"/></svg><b><span data-en="You’re offline">Jste offline</span></b><p data-en="Your details load as soon as you’re connected. You haven’t lost anything.">Údaje se načtou, jakmile se připojíte. Nic jste neztratili.</p><div class="akce"><button type="button" class="btn ghost"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-obnovit"/></svg><span data-en="Try again">Zkusit znovu</span></button></div></div></div></section>
+  </div>
+</div>
+</main>
+
+<footer class="pata">
+  <div class="wrap">
+    <div style="display:grid;gap:var(--m-3);align-content:start">
+      <a class="lockup tmavy" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page"><img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span></a>
+      <p data-en="Stays in properties that Fragmento selects and manages.">Pobyty v nemovitostech, které Fragmento vybírá a spravuje.</p>
+    </div>
+    <nav aria-label="Pobyty" data-en-label="Stays"><h2 data-en="Stays">Pobyty</h2><ul><li><a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li><li><a href="#" data-en="How it works">Jak to funguje</a></li><li><a href="#" data-en="The Fragmento standard">Standard Fragmenta</a></li><li><a href="#" data-en="Loyalty programme">Věrnostní program</a></li></ul></nav>
+    <nav aria-label="Pomoc" data-en-label="Help"><h2 data-en="Help">Pomoc</h2><ul><li><a href="#" data-en="Cancellation and terms">Storno a podmínky</a></li><li><a href="#" data-en="Help and questions">Pomoc a otázky</a></li><li><a href="#" data-en="Contact">Kontakt</a></li></ul></nav>
+    <nav aria-label="Fragmento" data-en-label="Fragmento"><h2 data-en="Fragmento">Fragmento</h2><ul><li><a href="https://www.fragmento.cz/" data-en="fragmento.cz">fragmento.cz</a></li><li><a href="#" data-en="About us">O nás</a></li></ul></nav>
+    <div class="pata-jazyk"><nav class="jazyky" aria-label="Jazyk" data-en-label="Language"><a href="#" hreflang="cs" lang="cs" data-jazyk="cs" aria-current="true"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="8" width="24" height="8" fill="#D7141A"/><path d="M0 0l12 8L0 16z" fill="#11457E"/></svg><span>Čeština</span></a><a href="#" hreflang="en" lang="en" data-jazyk="en"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="3"/></svg><span>English</span></a></nav></div>
+    <div class="pata-spodek fine"><span data-en="© 2026 Fragmento · [client to add: company, reg. no., address] · Privacy · Cookies">© 2026 Fragmento · [doplní klient: firma, IČ, sídlo] · Ochrana osobních údajů · Cookies</span></div>
+  </div>
+</footer>
+<dialog id="menu" class="menu-dlg" aria-labelledby="menu-h">
+  <div class="md-hlava"><h2 class="h3" id="menu-h" data-en="Menu">Nabídka</h2><button type="button" class="ikona-btn" data-zavri aria-label="Zavřít nabídku" data-en-label="Close menu"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg></button></div>
+  <nav aria-labelledby="menu-h"><ul>
+      <li><a href="prehled.html" data-en="Stays">Pobyty</a></li>
+      <li><a href="body.html" data-en="Points and level">Body a úroveň</a></li>
+      <li><a href="doklady-profil.html" data-en="Documents and profile">Doklady a profil</a></li>
+      <li><a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li>
+      <li><a href="#" data-en="Help and questions">Pomoc a otázky</a></li>
+      <li><a href="prihlaseni.html" data-en="Sign out">Odhlásit se</a></li>
+  </ul></nav>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Doklady, profil, jazyk a měna, souhlasy po účelech, stažení a smazání dat.">
+<title>Doklady a profil · Fragmento Holiday</title>
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../holiday.css">
+<link rel="stylesheet" href="../doc.css">
+<link rel="stylesheet" href="ucet.css">
+<script src="../holiday.js" defer></script>
+<script src="ucet.js" defer></script>
+</head>
+<body>
+<!-- Lišta návrhu: přepínače pro posouzení, v produktu není -->
+<div class="navrh">
+  <div class="wrap">
+    <nav aria-label="Obrazovky návrhu"><a href="prihlaseni.html">Přihlášení</a><a href="odkaz-vyprsel.html">Odkaz vypršel</a><a href="prehled.html">Přehled</a><a href="pobyt-detail.html">Detail pobytu</a><a href="body.html">Body</a><a href="uroven.html">Úroveň</a><a href="doklady-profil.html" aria-current="page">Doklady a profil</a><a href="prazdne-stavy.html">Prázdné stavy</a><a href="../objevovani/domu.html">Objevování</a></nav>
+    <span class="ukazka">Ukázka · fiktivní data, „dnes“ je 12. 3. 2028</span>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg"><button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Fáze programu"><span class="seg-popis">Fáze</span><span class="seg"><button type="button" data-faze-prepni="1" aria-pressed="true">1</button><button type="button" data-faze-prepni="2" aria-pressed="false">2</button></span></div>
+    </div>
+  </div>
+</div>
+<header class="hl">
+  <div class="wrap">
+    <a class="lockup auto" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page">
+      <img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <nav class="hl-nav" aria-label="Hlavní nabídka" data-en-label="Main menu">
+      <a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a>
+      <a href="#" data-en="How it works">Jak to funguje</a>
+      <a href="#" data-en="Loyalty programme">Věrnostní program</a>
+      <a href="#" data-en="Help">Pomoc</a>
+    </nav>
+    <a class="btn ghost hl-ucet" href="prehled.html" aria-label="Můj účet, Jana" data-en-label="My account, Jana"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ucet"/></svg><span>Jana</span></a>
+    <button type="button" class="ikona-btn hl-menu" data-otevri="menu" aria-label="Nabídka" data-en-label="Menu" aria-haspopup="dialog"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-menu"/></svg></button>
+  </div>
+</header>
+<nav class="ztab" aria-label="Účet" data-en-label="Account"><ul><li><a href="prehled.html"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-kalendar"/></svg><span data-en="Stays">Pobyty</span></a></li><li><a href="body.html"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-body"/></svg><span data-en="Points and level">Body a úroveň</span></a></li><li><a href="doklady-profil.html" aria-current="page"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-dokument"/></svg><span data-en="Documents and profile">Doklady a profil</span></a></li></ul></nav>
+<div class="wrap"><div class="ukazka-pas"><span class="ukazka"><span data-en="Sample">Ukázka</span></span><p class="fine" data-en="Consent texts, retention periods and legal bases await legal review. Account deletion is blocked because of the upcoming stay.">Texty souhlasů, doby uchování a právní základy jsou ke schválení právníkem. Smazání účtu je zablokované kvůli nadcházejícímu pobytu.</p></div></div>
+<main id="obsah">
+<div class="ucet-wrap ucet">
+  <header class="ucet-hlava">
+    <h1 data-en="Documents and profile">Doklady a profil</h1>
+    <nav class="kotva-nav" aria-label="Na této stránce" data-en-label="On this page">
+      <a href="#doklady"><span data-en="Documents">Doklady</span></a><a href="#profil"><span data-en="Profile">Profil</span></a><a href="#jazyk"><span data-en="Language and currency">Jazyk a měna</span></a><a href="#souhlasy"><span data-en="Consents">Souhlasy</span></a><a href="#data"><span data-en="My data">Moje data</span></a>
+    </nav>
+  </header>
+
+  <section class="blok" id="doklady" aria-labelledby="h-dokl">
+    <header><h2 id="h-dokl" data-en="Documents">Doklady</h2><p data-en="Confirmations and payment receipts for all your bookings. We keep them after your stay ends.">Potvrzení a doklady o platbě ke všem rezervacím. Uchováváme je, i když pobyt skončí.</p></header>
+    <div class="dok-skup"><h3><span data-en="Apartina, 3+kk apartment, 18–25 Jul 2028">Apartina, apartmán 3+kk, 18.–25. 7. 2028</span></h3><ul class="dok">
+          <li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-dokument"/></svg><div><b><span data-en="Booking confirmation">Potvrzení rezervace</span></b><span class="meta"><span data-en="PDF">PDF</span></span></div><a class="btn ghost" href="#" download><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-stahnout"/></svg><span data-en="Download">Stáhnout</span></a></li>
+          <li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-dokument"/></svg><div><b><span data-en="Payment receipt">Doklad o platbě</span></b><span class="meta"><span data-en="PDF">PDF</span></span></div><a class="btn ghost" href="#" download><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-stahnout"/></svg><span data-en="Download">Stáhnout</span></a></li>
+        </ul></div>
+    <div class="dok-skup"><h3><span data-en="2+kk apartment in the heart of the Alps, 4–9 Mar 2028">Apartmán 2+kk v srdci Alp, 4.–9. 3. 2028</span></h3><ul class="dok">
+          <li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-dokument"/></svg><div><b><span data-en="Booking confirmation">Potvrzení rezervace</span></b><span class="meta"><span data-en="PDF">PDF</span></span></div><a class="btn ghost" href="#" download><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-stahnout"/></svg><span data-en="Download">Stáhnout</span></a></li>
+          <li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-dokument"/></svg><div><b><span data-en="Payment receipt">Doklad o platbě</span></b><span class="meta"><span data-en="PDF">PDF</span></span></div><a class="btn ghost" href="#" download><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-stahnout"/></svg><span data-en="Download">Stáhnout</span></a></li>
+        </ul></div>
+    <div class="dok-skup"><h3><span data-en="Na Sjezdovce apartment, 18–23 May 2026">Apartmán Na sjezdovce, 18.–23. 5. 2026</span></h3><ul class="dok">
+          <li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-dokument"/></svg><div><b><span data-en="Booking confirmation">Potvrzení rezervace</span></b><span class="meta"><span data-en="PDF">PDF</span></span></div><a class="btn ghost" href="#" download><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-stahnout"/></svg><span data-en="Download">Stáhnout</span></a></li>
+          <li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-dokument"/></svg><div><b><span data-en="Payment receipt">Doklad o platbě</span></b><span class="meta"><span data-en="PDF">PDF</span></span></div><a class="btn ghost" href="#" download><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-stahnout"/></svg><span data-en="Download">Stáhnout</span></a></li>
+        </ul></div>
+    <p class="fine"><span data-en="All payments in one file: &lt;a class=&quot;odkaz&quot; href=&quot;#&quot;&gt;download CSV&lt;/a&gt;">Přehled všech plateb jako jeden soubor: <a class="odkaz" href="#">stáhnout CSV</a></span></p>
+  </section>
+
+  <section class="blok" id="profil" aria-labelledby="h-prof">
+    <header><h2 id="h-prof" data-en="Profile">Profil</h2></header>
+    <form class="panel forma" onsubmit="return false">
+      <div class="mr">
+        <div class="pole"><label for="jmeno"><span data-en="First name">Jméno</span></label><input class="vstup" id="jmeno" value="Jana" autocomplete="given-name"></div>
+        <div class="pole"><label for="prijmeni"><span data-en="Last name">Příjmení</span></label><input class="vstup" id="prijmeni" value="" placeholder="[příjmení]" data-en-placeholder="[last name]" autocomplete="family-name"></div>
+        <div class="pole cele"><label for="mail"><span data-en="Sign-in email">E-mail pro přihlášení</span></label><input class="vstup" id="mail" type="email" value="jana@example.com" autocomplete="email" aria-describedby="mail-n"><span class="napoveda" id="mail-n"><span data-en="You confirm an email change with a link we send to the new address. You have no password and don’t need one.">Změnu e-mailu potvrdíte odkazem, který pošleme na novou adresu. Heslo nemáte, žádné není potřeba.</span></span></div>
+        <div class="pole cele"><label for="tel"><span data-en="Phone">Telefon</span> <span class="nepovinne"><span data-en="(in case of arrival problems)">(pro případ potíží s příjezdem)</span></span></label><input class="vstup" id="tel" type="tel" autocomplete="tel" placeholder="+420 …"></div>
+      </div>
+      <div class="tlacitka"><button type="submit" class="btn"><span data-en="Save profile">Uložit profil</span></button></div>
+    </form>
+  </section>
+
+  <section class="blok" id="jazyk" aria-labelledby="h-jaz">
+    <header><h2 id="h-jaz" data-en="Language and currency">Jazyk a měna</h2></header>
+    <form class="panel forma" onsubmit="return false">
+      <div class="mr">
+        <div class="pole"><label for="jaz"><span data-en="Language of the site and emails">Jazyk webu a e-mailů</span></label><select class="vstup" id="jaz"><option>Čeština</option><option>English</option></select></div>
+        <div class="pole"><label for="men"><span data-en="Show prices in">Zobrazovat ceny</span></label><select class="vstup" id="men" aria-describedby="men-n"><option><span data-en="Euro (€)">Euro (€)</span></option><option><span data-en="Euro and approximate CZK">Euro a orientačně Kč</span></option></select><span class="napoveda" id="men-n"><span data-en="You always pay in euros. CZK is only approximate.">Platíte vždy v eurech. Kč je jen orientační.</span></span></div>
+      </div>
+      <div class="tlacitka"><button type="submit" class="btn"><span data-en="Save">Uložit</span></button></div>
+    </form>
+  </section>
+
+  <section class="blok" id="souhlasy" aria-labelledby="h-souh">
+    <header><h2 id="h-souh" data-en="Consents">Souhlasy</h2><p data-en="Each purpose on its own. Marketing is separate and nothing else depends on it. Withdrawing applies immediately.">Každý účel zvlášť. Marketing je odděleně a nic jiného na něm nezávisí. Odvolání platí hned.</p></header>
+    <ul class="souhlasy">
+<li class="souhlas">
+          <div class="souhlas-hlava"><div><h3><span data-en="Booking and payment">Rezervace a platba</span></h3></div><span class="stav tlum"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zamek"/></svg><span data-en="Required">Nutné</span></span></div>
+          <p data-en="Name, email, phone and payment, so we can arrange your stay and contact you. Without them we can’t take a booking.">Jméno, e-mail, telefon a platba, abychom pobyt zajistili a mohli vás kontaktovat. Bez toho rezervace nejde.</p>
+          <p class="meta" data-en="Legal basis: contract. We keep it for &lt;span class=&quot;klient&quot;&gt;[N]&lt;/span&gt; years &lt;span class=&quot;klient&quot;&gt;[legal]&lt;/span&gt;.">Právní základ: smlouva. Uchováváme <span class="klient">[N]</span> let <span class="klient">[právník]</span>.</p>
+          
+        </li>
+<li class="souhlas">
+          <div class="souhlas-hlava"><div><h3><span data-en="Guest registration and stay notification">Registrace hostů a ohlášení pobytu</span></h3></div><span class="stav tlum"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zamek"/></svg><span data-en="Required">Nutné</span></span></div>
+          <p data-en="Guest details required by the law of the country you stay in. We use them only for the notification and arrival.">Údaje hostů, které vyžaduje zákon země pobytu. Používáme je jen k ohlášení a příjezdu.</p>
+          <p class="meta" data-en="Legal basis: legal obligation. We delete them after &lt;span class=&quot;klient&quot;&gt;[N]&lt;/span&gt; days &lt;span class=&quot;klient&quot;&gt;[legal]&lt;/span&gt;.">Právní základ: zákonná povinnost. Mažeme je po <span class="klient">[N]</span> dnech <span class="klient">[právník]</span>.</p>
+          
+        </li>
+<li class="souhlas">
+          <div class="souhlas-hlava"><div><h3><span data-en="Loyalty programme">Věrnostní program</span></h3></div><label class="prepinac"><span class="sr"><span data-en="Loyalty programme">Věrnostní program</span></span><input type="checkbox" checked></label></div>
+          <p data-en="Counting points and level, and expiry reminders 90 and 30 days ahead. If you withdraw consent you leave the programme and your points lapse &lt;span class=&quot;klient&quot;&gt;[legal review pending]&lt;/span&gt;.">Počítání bodů a úrovně, upozornění na expiraci 90 a 30 dní předem. Když souhlas odvoláte, program opustíte a body zaniknou <span class="klient">[ke schválení právníkem]</span>.</p>
+          <p class="meta" data-en="Given 6 Mar 2026 · you can withdraw any time">Uděleno 6. 3. 2026 · můžete odvolat kdykoli</p>
+          <p class="souhlas-stav" role="status" hidden><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span></span></p>
+        </li>
+<li class="souhlas marketing">
+          <div class="souhlas-hlava"><div><h3><span data-en="News and offers by email">Novinky a nabídky e-mailem</span></h3></div><label class="prepinac"><span class="sr"><span data-en="News and offers by email">Novinky a nabídky e-mailem</span></span><input type="checkbox"></label></div>
+          <p data-en="News about new properties and dates at Holiday. Separate from everything else, off by default, and everything else works without it.">Zprávy o nových nemovitostech a termínech Holiday. Zvlášť od všeho ostatního, výchozí je vypnuto, a bez něj vám všechno ostatní funguje.</p>
+          <p class="meta" data-en="Not given · withdrawing takes one tap">Neuděleno · odvolání je jedno klepnutí</p>
+          <p class="souhlas-stav" role="status" hidden><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span></span></p>
+        </li>
+    </ul>
+    <p class="fine"><span data-en="Consent texts, retention periods and legal bases &lt;span class=&quot;klient&quot;&gt;[legal review pending]&lt;/span&gt;.">Texty souhlasů, doby uchování a právní základy <span class="klient">[ke schválení právníkem]</span>.</span></p>
+  </section>
+
+  <section class="blok" id="data" aria-labelledby="h-data">
+    <header><h2 id="h-data" data-en="My data">Moje data</h2></header>
+    <div class="data-akce">
+      <div class="panel">
+        <h3><span data-en="Download my data">Stáhnout moje data</span></h3>
+        <p class="popis"><span data-en="You get your profile, bookings, guest details, points history and consents as a single file.">Profil, rezervace, údaje hostů, historii bodů a souhlasy dostanete jako jeden soubor.</span></p>
+        <div class="tlacitka"><button type="button" class="btn ghost" data-export><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-stahnout"/></svg><span data-en="Prepare the file">Připravit soubor</span></button></div>
+        <div class="hlaska ok" id="export-stav" role="status" hidden><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><b><span data-en="We’re preparing the file">Soubor připravujeme</span></b><p data-en="We’ll email you a download link within &lt;span class=&quot;klient&quot;&gt;[N]&lt;/span&gt; days at the latest.">Pošleme vám na e-mail odkaz ke stažení, nejpozději do <span class="klient">[N]</span> dnů.</p></div>
+      </div>
+      <div class="panel zona-smazani">
+        <h3><span data-en="Delete my account">Smazat účet</span></h3>
+        <p class="popis"><span data-en="We delete your profile and guest details. The law requires us to keep payment documents, so those stay separately. Points lapse.">Smažeme profil a údaje hostů. Doklady k platbám nám zákon ukládá uchovat, ty zůstanou odděleně. Body zaniknou.</span></p>
+        <div class="tlacitka"><button type="button" class="btn nebezpeci" data-otevri="smazat-dlg"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-smazat"/></svg><span data-en="Delete account">Smazat účet</span></button>
+          <a class="btn ghost" href="prihlaseni.html"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-odhlasit"/></svg><span data-en="Sign out">Odhlásit se</span></a></div>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="pata">
+  <div class="wrap">
+    <div style="display:grid;gap:var(--m-3);align-content:start">
+      <a class="lockup tmavy" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page"><img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span></a>
+      <p data-en="Stays in properties that Fragmento selects and manages.">Pobyty v nemovitostech, které Fragmento vybírá a spravuje.</p>
+    </div>
+    <nav aria-label="Pobyty" data-en-label="Stays"><h2 data-en="Stays">Pobyty</h2><ul><li><a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li><li><a href="#" data-en="How it works">Jak to funguje</a></li><li><a href="#" data-en="The Fragmento standard">Standard Fragmenta</a></li><li><a href="#" data-en="Loyalty programme">Věrnostní program</a></li></ul></nav>
+    <nav aria-label="Pomoc" data-en-label="Help"><h2 data-en="Help">Pomoc</h2><ul><li><a href="#" data-en="Cancellation and terms">Storno a podmínky</a></li><li><a href="#" data-en="Help and questions">Pomoc a otázky</a></li><li><a href="#" data-en="Contact">Kontakt</a></li></ul></nav>
+    <nav aria-label="Fragmento" data-en-label="Fragmento"><h2 data-en="Fragmento">Fragmento</h2><ul><li><a href="https://www.fragmento.cz/" data-en="fragmento.cz">fragmento.cz</a></li><li><a href="#" data-en="About us">O nás</a></li></ul></nav>
+    <div class="pata-jazyk"><nav class="jazyky" aria-label="Jazyk" data-en-label="Language"><a href="#" hreflang="cs" lang="cs" data-jazyk="cs" aria-current="true"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="8" width="24" height="8" fill="#D7141A"/><path d="M0 0l12 8L0 16z" fill="#11457E"/></svg><span>Čeština</span></a><a href="#" hreflang="en" lang="en" data-jazyk="en"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="3"/></svg><span>English</span></a></nav></div>
+    <div class="pata-spodek fine"><span data-en="© 2026 Fragmento · [client to add: company, reg. no., address] · Privacy · Cookies">© 2026 Fragmento · [doplní klient: firma, IČ, sídlo] · Ochrana osobních údajů · Cookies</span></div>
+  </div>
+</footer>
+<dialog id="menu" class="menu-dlg" aria-labelledby="menu-h">
+  <div class="md-hlava"><h2 class="h3" id="menu-h" data-en="Menu">Nabídka</h2><button type="button" class="ikona-btn" data-zavri aria-label="Zavřít nabídku" data-en-label="Close menu"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg></button></div>
+  <nav aria-labelledby="menu-h"><ul>
+      <li><a href="prehled.html" data-en="Stays">Pobyty</a></li>
+      <li><a href="body.html" data-en="Points and level">Body a úroveň</a></li>
+      <li><a href="doklady-profil.html" data-en="Documents and profile">Doklady a profil</a></li>
+      <li><a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li>
+      <li><a href="#" data-en="Help and questions">Pomoc a otázky</a></li>
+      <li><a href="prihlaseni.html" data-en="Sign out">Odhlásit se</a></li>
+  </ul></nav>
+</dialog>
+<dialog id="smazat-dlg" class="modal" aria-labelledby="smazat-h">
+  <div class="modal-telo">
+    <h2 id="smazat-h" data-en="Delete your account?">Smazat účet?</h2>
+    <div class="hlaska ceka" role="status"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ceka"/></svg><b><span data-en="We can’t do this right now">Teď to nejde</span></b><p data-en="You have an upcoming stay (18–25 Jul 2028). You can delete the account after it ends or after you cancel the booking.">Máte nadcházející pobyt (18.–25. 7. 2028). Účet jde smazat po jeho skončení nebo po zrušení rezervace.</p></div>
+    <ul class="seznam-bod">
+      <li><span data-en="You’d lose 840 points (≈ 25.20 €) and 360 pending points.">Zaniknou body: 840 bodů (≈ 25,20 €) a 360 bodů čekajících na připsání.</span></li>
+      <li><span data-en="Payment documents stay on file as the law requires, without your profile.">Doklady k platbám zůstanou uchované podle zákona, bez vašeho profilu.</span></li>
+    </ul>
+    <div class="modal-pata">
+      <button type="button" class="btn" data-zavri><span data-en="Understood">Rozumím</span></button>
+      <button type="button" class="btn nebezpeci" disabled><span data-en="Delete account">Smazat účet</span></button>
+    </div>
+  </div>
+</dialog>
+</body>
+</html>

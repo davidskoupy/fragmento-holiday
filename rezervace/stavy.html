@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add("js")</script>
+<meta name="robots" content="noindex">
+<meta name="description" content="Stavy rezervačního toku Fragmento Holiday: selhání platby, vypršení blokace, obsazený termín, 3-D Secure, chyba sítě, duplicitní klepnutí a klidný odpočet blokace.">
+<title>Stavy rezervace, Fragmento Holiday</title>
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../holiday.css">
+<link rel="stylesheet" href="../doc.css">
+<link rel="stylesheet" href="rezervace.css">
+<script src="../holiday.js" defer></script>
+<script src="rezervace.js" defer></script>
+</head>
+<body>
+<!-- Lišta návrhu: přepínače pro posouzení, v produktu není -->
+<div class="navrh">
+  <div class="wrap">
+    <nav aria-label="Obrazovky návrhu"><a href="krok-1-termin.html">Krok 1</a><a href="krok-2-udaje.html">Krok 2</a><a href="krok-3-platba.html">Krok 3</a><a href="krok-4-potvrzeni.html">Krok 4</a><a href="stavy.html" aria-current="page">Stavy</a><a href="../objevovani/detail.html">Detail</a><a href="../components.html">Komponenty</a></nav>
+    <span class="ukazka">Ukázka · návrh v1</span>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg"><button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Fáze programu"><span class="seg-popis">Fáze</span><span class="seg"><button type="button" data-faze-prepni="1" aria-pressed="true">1</button><button type="button" data-faze-prepni="2" aria-pressed="false">2</button></span></div>
+    </div>
+  </div>
+</div>
+<header class="hl">
+  <div class="wrap">
+    <a class="lockup auto" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page">
+      <img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <a class="odkaz hl-pomoc" href="#"><span data-en="Help">Pomoc</span></a>
+  </div>
+</header>
+<main id="obsah" class="rez">
+<div class="wrap">
+  <div style="display:grid;gap:var(--m-3);padding-top:var(--m-6)">
+    <h1 class="h1r" data-en="Booking states">Stavy rezervace</h1>
+    <p class="perex" data-en="What guests see when something doesn’t go to plan during booking and payment. Messages are human, with no exclamation marks and no pressure. Every message says what happened, whether the card was charged, and what to do next.">Co host vidí, když se při rezervaci a platbě něco nepovede. Hlášky jsou lidské, bez vykřičníků a bez tlaku. Každá říká, co se stalo, jestli byla karta zatížena a co dál.</p>
+    <div class="rez-uvod" style="padding:0"><span class="ukazka"><span data-en="Sample">Ukázka</span></span><p class="fine" data-en="Times and numbers in square brackets to be added by the client. Backend mapping is in stavy-rezervace.md.">Časy a čísla v hranatých závorkách doplní klient. Mapování na backend je v stavy-rezervace.md.</p></div>
+    <nav class="doc-nav" aria-label="Stavy" data-en-label="States" style="display:flex;flex-wrap:wrap;gap:var(--m-2)">
+      <a class="odkaz" href="#selhala" data-en="Payment failed">Platba selhala</a>
+      <a class="odkaz" href="#vyprsela" data-en="Hold expired">Vypršela blokace</a>
+      <a class="odkaz" href="#obsazeno" data-en="Dates taken">Termín obsazen</a>
+      <a class="odkaz" href="#3ds" data-en="3-D Secure">3-D Secure</a>
+      <a class="odkaz" href="#sit" data-en="Network error">Chyba sítě</a>
+      <a class="odkaz" href="#duplicita" data-en="Double tap">Duplicitní klepnutí</a>
+      <a class="odkaz" href="#odpocet" data-en="Hold timer">Odpočet blokace</a>
+      <a class="odkaz" href="#formular" data-en="Form errors">Chyby formuláře</a>
+      <a class="odkaz" href="#email" data-en="Email delayed">E-mail se doručuje</a>
+      <a class="odkaz" href="#prepocet" data-en="Price updating">Přepočet ceny</a>
+    </nav>
+  </div>
+<section class="stav-sekce" id="selhala" aria-labelledby="selhala-h">
+  <header><h2 class="h1r" id="selhala-h" data-en="Payment failed">Platba selhala</h2><p data-en="The card wasn’t charged and we keep holding the dates, so the guest has lost nothing. Their details and dates stay filled in. We give the reason in plain words, not a gateway code.">Karta nebyla zatížena a termín držíme dál, takže host nic neztratil. Údaje a termín zůstávají vyplněné. Důvod říkáme lidsky, ne kódem brány.</p></header>
+  <div class="stav-ramec">
+<div class="stav-dva"><div>
+<div class="hlaska chyba" role="alert"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-chyba"/></svg><b data-en="The payment didn’t go through. Your card wasn’t charged, and we’re holding the dates for [X] more minutes.">Platba neprošla. Karta nebyla zatížena, termín držíme ještě [X] minut.</b><p data-en="Your bank didn’t approve the payment. Try another card or another way to pay. Your details and dates are saved.">Banka platbu neschválila. Zkuste jinou kartu nebo jiný způsob platby. Vaše údaje i termín máme uložené.</p><div class="akce"><button type="button" class="btn gold" ><span data-en="Try again">Zkusit znovu</span></button><button type="button" class="btn ghost" ><span data-en="Change payment method">Změnit způsob platby</span></button></div></div>
+</div><div>
+<h3 data-en="What we say for each reason">Co říkáme podle důvodu</h3>
+<div class="duvody">
+<div><small data-en="Bank declined">Banka zamítla</small><b data-en="Your bank didn’t approve the payment. Try another card or another way to pay.">Banka platbu neschválila. Zkuste jinou kartu nebo jiný způsob platby.</b></div>
+<div><small data-en="Insufficient funds">Nedostatek prostředků</small><b data-en="There isn’t enough available on this card. Try another card or another way to pay.">Na kartě není dost prostředků. Zkuste jinou kartu nebo jiný způsob platby.</b></div>
+<div><small data-en="Wrong card details">Špatný údaj o kartě</small><b data-en="Something in the card details doesn’t match. Check the number, expiry and code.">Některý údaj o kartě nesedí. Zkontrolujte číslo, platnost a kód.</b></div>
+<div><small data-en="Not confirmed at the bank (3-D Secure)">Nepotvrzeno v bance (3-D Secure)</small><b data-en="The payment wasn’t confirmed at your bank. You can try again.">Platbu jste v bance nepotvrdili. Můžete to zkusit znovu.</b></div>
+</div>
+<ul class="dukazy"><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="The primary button stays gold: retrying is paying.">Hlavní tlačítko zůstává zlaté: zkusit znovu znamená zaplatit.</span></li><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="No reason code and no “error 4021” anywhere.">Žádný kód důvodu a žádná „chyba 4021“.</span></li></ul>
+</div></div>
+  </div>
+</section>
+<section class="stav-sekce" id="vyprsela" aria-labelledby="vyprsela-h">
+  <header><h2 class="h1r" id="vyprsela-h" data-en="Hold expired">Vypršela blokace</h2><p data-en="This isn’t an error, just the end of the hold. The first thing the guest needs to know is whether the dates are still free. We show two versions.">Nejde o chybu, ale o konec držení. První věc, kterou host potřebuje vědět, je, jestli je termín pořád volný. Hlášku ukazujeme ve dvou variantách.</p></header>
+  <div class="stav-ramec pas">
+<div class="stav-dva"><div>
+<span class="stav-popis" data-en="Dates still free">Termín je pořád volný</span>
+<div class="hlaska ceka" role="status"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-cas"/></svg><b data-en="We’ve stopped holding the dates. No payment was made and your card wasn’t charged.">Držení termínu skončilo. Platba neproběhla a karta nebyla zatížena.</b><p data-en="The dates 10–17 Jul 2027 are still free. Reserve them again and carry on where you left off.">Termín 10.–17. 7. 2027 je stále volný. Vyberte ho znovu a pokračujte tam, kde jste přestali.</p><div class="akce"><button type="button" class="btn gold" ><span data-en="Reserve again">Rezervovat znovu</span></button><button type="button" class="btn ghost" ><span data-en="Back to the property">Zpět na nemovitost</span></button></div></div>
+</div><div>
+<span class="stav-popis" data-en="Dates taken in the meantime">Termín mezitím někdo obsadil</span>
+<div class="hlaska info" role="alert"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-info"/></svg><b data-en="We’ve stopped holding the dates, and someone has booked them in the meantime.">Držení termínu skončilo a termín mezitím někdo zarezervoval.</b><p data-en="No payment was made and your card wasn’t charged. You’ll find the nearest free dates below. See “Dates taken” for details.">Platba neproběhla a karta nebyla zatížena. Níže najdete nejbližší volné termíny. Podrobnosti viz stav „Termín obsazen“.</p><div class="akce"><button type="button" class="btn ghost" ><span data-en="See free dates">Zobrazit volné termíny</span></button></div></div>
+</div></div>
+  </div>
+</section>
+<section class="stav-sekce" id="obsazeno" aria-labelledby="obsazeno-h">
+  <header><h2 class="h1r" id="obsazeno-h" data-en="Dates taken in the meantime">Termín mezitím obsazen</h2><p data-en="Availability can change right before payment, because owners block their days in the same system. A guest must never learn about a clash after paying: we check before payment and again when it’s submitted.">Dostupnost se může změnit i těsně před platbou, protože majitelé blokují své dny stejným systémem. Host se nesmí dozvědět o konfliktu až po zaplacení: kontrola proběhne před platbou i při jejím odeslání.</p></header>
+  <div class="stav-ramec">
+<div class="hlaska info" role="alert"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-info"/></svg><b data-en="Someone has booked these dates in the meantime. Your payment didn’t go through and your card wasn’t charged.">Tento termín mezitím někdo zarezervoval. Vaše platba neproběhla a karta nebyla zatížena.</b><p data-en="Apartina, 3+kk apartment is free on these dates of the same length (7 nights):">Apartina, apartmán 3+kk má v nejbližší době volné tyto termíny stejné délky (7 nocí):</p></div>
+<div class="chip-termin-rada">
+<a class="chip-termin" href="krok-1-termin.html"><b data-en="[date]–[date]">[datum]–[datum]</b><small>[X]&nbsp;€ <span data-en="total">celkem</span></small></a>
+<a class="chip-termin" href="krok-1-termin.html"><b data-en="[date]–[date]">[datum]–[datum]</b><small>[X]&nbsp;€ <span data-en="total">celkem</span></small></a>
+<a class="chip-termin" href="krok-1-termin.html"><b data-en="[date]–[date]">[datum]–[datum]</b><small>[X]&nbsp;€ <span data-en="total">celkem</span></small></a>
+</div>
+<div class="akce-vice" style="max-width:420px"><button type="button" class="btn ghost" ><span data-en="See other properties">Zobrazit jiné nemovitosti</span></button></div>
+<p class="fine" data-en="Alternatives are the same property on other dates, and each property appears only once. Your details stay saved.">Alternativy jsou stejná nemovitost v jiných termínech a každá nemovitost je v nabídce jen jednou. Vaše údaje zůstávají uložené.</p>
+  </div>
+</section>
+<section class="stav-sekce" id="3ds" aria-labelledby="3ds-h">
+  <header><h2 class="h1r" id="3ds-h" data-en="3-D Secure pending">3-D Secure čeká</h2><p data-en="The payment is waiting for confirmation at the bank and the guest can’t speed it up. No countdown and no call to hurry. The page notices the confirmation and moves on by itself.">Platba čeká na potvrzení v bance a host jí nemůže zrychlit. Nepoužíváme odpočet ani výzvu ke spěchu. Stránka sama pozná potvrzení a přejde dál.</p></header>
+  <div class="stav-ramec pas">
+<div class="stav-dva"><div>
+<div class="hlaska ceka" role="status"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-cas"/></svg><b data-en="We’re waiting for confirmation from your bank.">Čekáme na potvrzení od vaší banky.</b><p data-en="Finish the payment with your bank. You can leave this page open: as soon as the bank confirms, we’ll move on. We’re holding your dates.">Dokončete platbu v bance. Tuto stránku můžete nechat otevřenou: jakmile banka potvrdí, přejdeme dál. Termín pro vás držíme.</p><div class="akce"><button type="button" class="btn gold" aria-busy="true" disabled><span data-en="Confirming payment…">Ověřujeme platbu…</span></button><button type="button" class="btn ghost" ><span data-en="Check payment status">Zkontrolovat stav platby</span></button></div></div>
+<p class="fine" data-en="If the guest leaves for the bank’s page and comes back, they land on this screen, not at the start.">Když host odejde na stránku banky a vrátí se, přistane na této obrazovce, ne na začátku.</p>
+</div><div>
+<div class="hlaska info" role="alert"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-info"/></svg><b data-en="The payment wasn’t confirmed at your bank.">Platbu jste v bance nepotvrdili.</b><p data-en="Your card wasn’t charged. You can try again or choose another way to pay.">Karta nebyla zatížena. Můžete to zkusit znovu nebo zvolit jiný způsob platby.</p><div class="akce"><button type="button" class="btn gold" ><span data-en="Try again">Zkusit znovu</span></button><button type="button" class="btn ghost" ><span data-en="Change payment method">Změnit způsob platby</span></button></div></div>
+</div></div>
+  </div>
+</section>
+<section class="stav-sekce" id="sit" aria-labelledby="sit-h">
+  <header><h2 class="h1r" id="sit-h" data-en="Network error">Chyba sítě</h2><p data-en="We distinguish between the connection dropping before the payment was sent (retrying is safe) and after (we don’t know whether it went through, and the guest must not send it twice).">Rozlišujeme, kdy se spojení přerušilo před odesláním platby (opakovat je bezpečné) a kdy po něm (nevíme, jestli prošla, a host ji nesmí poslat podruhé).</p></header>
+  <div class="stav-ramec">
+<div class="stav-dva"><div>
+<span class="stav-popis" data-en="Before sending">Před odesláním</span>
+<div class="hlaska chyba" role="alert"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-offline"/></svg><b data-en="The connection dropped. Your payment wasn’t sent.">Spojení se přerušilo. Platba se neodeslala.</b><p data-en="We still have your details and dates. As soon as you’re back online, tap Try again.">Vaše údaje i termín máme. Jakmile budete zase online, klepněte na Zkusit znovu.</p><div class="akce"><button type="button" class="btn gold" ><span data-en="Try again">Zkusit znovu</span></button></div></div>
+</div><div>
+<span class="stav-popis" data-en="After sending">Po odeslání</span>
+<div class="hlaska ceka" role="status"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-cas"/></svg><b data-en="The connection dropped during payment. We’re checking whether it went through.">Spojení se přerušilo během platby. Zjišťujeme, jestli prošla.</b><p data-en="Please don’t repeat it, so you don’t pay twice. We’ll check the result and email you at [email].">Nic neopakujte, ať neplatíte dvakrát. Výsledek zkontrolujeme a napíšeme vám na [e-mail].</p><div class="akce"><button type="button" class="btn ghost" ><span data-en="Check payment status">Zkontrolovat stav platby</span></button></div></div>
+</div></div>
+  </div>
+</section>
+<section class="stav-sekce" id="duplicita" aria-labelledby="duplicita-h">
+  <header><h2 class="h1r" id="duplicita-h" data-en="Double tap">Duplicitní klepnutí</h2><p data-en="The first tap sends the payment and the button locks. Further taps are ignored, and the payment carries a unique key so the backend can’t create it twice. Try tapping the button more than once.">První klepnutí odešle platbu a tlačítko se zamkne. Další klepnutí se ignorují, platba má jednoznačný klíč, takže ji backend nevytvoří dvakrát. Vyzkoušejte klepnout na tlačítko vícekrát.</p></header>
+  <div class="stav-ramec pas">
+<div class="stav-dva"><div>
+<span class="stav-popis" data-en="Tap twice">Klepněte vícekrát</span>
+<div><button type="button" class="btn gold wide" data-dup="dup-pozn"><span data-en="Pay [X]&nbsp;€">Zaplatit [X]&nbsp;€</span></button></div>
+<div id="dup-pozn" hidden><div class="hlaska info" role="status"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-info"/></svg><b data-en="We’re already sending your payment. One tap is enough.">Platbu už odesíláme. Stačí jedno klepnutí.</b><p data-en="You don’t need to do anything, we’ll tell you as soon as the payment goes through.">Nemusíte nic opakovat, ozveme se hned, jak platba projde.</p></div></div>
+<button type="button" class="btn ghost" data-dup-znovu style="justify-self:start"><span data-en="Replay">Přehrát znovu</span></button>
+</div><div>
+<span class="stav-popis" data-en="The same booking already exists">Stejná rezervace už existuje</span>
+<div class="hlaska info" role="status"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-info"/></svg><b data-en="You already have this booking.">Tuto rezervaci už máte.</b><p data-en="You’ll find the confirmation from [date] in your account. We didn’t create a second payment and your card wasn’t charged.">Potvrzení z [datum] najdete ve svém účtu. Druhou platbu jsme nevytvořili a karta nebyla zatížena.</p><div class="akce"><a class="btn" href="krok-4-potvrzeni.html"><span data-en="Open the booking">Otevřít rezervaci</span></a></div></div>
+</div></div>
+  </div>
+</section>
+<section class="stav-sekce" id="odpocet" aria-labelledby="odpocet-h">
+  <header><h2 class="h1r" id="odpocet-h" data-en="Hold timer">Odpočet blokace</h2><p data-en="We show the time in minutes, in one calm line. The colour doesn’t change, nothing flashes or beeps, and nothing pops up. A screen reader announces the time only twice, not every second.">Čas ukazujeme v minutách, jedním klidným řádkem. Barva se nemění, nic nebliká, nepípá a nic nevyskakuje. Čtečka obrazovky oznámí čas jen dvakrát, ne každou vteřinu.</p></header>
+  <div class="stav-ramec pas">
+<div class="stav-tri">
+<div><span class="stav-popis" data-en="At the start">Na začátku</span>
+<div class="casovac" role="timer" aria-label="Držení termínu" data-en-label="Holding your dates"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-cas"/></svg><b data-en="We’re holding your dates for another [X] minutes.">Termín pro vás držíme ještě [X] minut.</b><p data-en="No need to rush.">Nemusíte spěchat.</p><div class="drah" aria-hidden="true"><i style="--v:100%"></i></div></div></div>
+<div><span class="stav-popis" data-en="Past halfway">V druhé půlce</span>
+<div class="casovac" role="timer" aria-label="Držení termínu" data-en-label="Holding your dates"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-cas"/></svg><b data-en="We’re holding your dates for another [X] minutes.">Termín držíme ještě [X] minut.</b><p data-en="If you run out of time, nothing is lost.">Pokud to nestihnete, nic se neděje.</p><div class="drah" aria-hidden="true"><i style="--v:45%"></i></div></div></div>
+<div><span class="stav-popis" data-en="At the end">V poslední chvíli</span>
+<div class="casovac" role="timer" aria-label="Držení termínu" data-en-label="Holding your dates"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-cas"/></svg><b data-en="We’re holding your dates for another [X] minutes.">Termín držíme ještě [X] minuty.</b><p data-en="If the time runs out, we’ll offer the dates again if they’re still free.">Kdyby čas vypršel, termín vám nabídneme znovu, pokud bude volný.</p><div class="drah" aria-hidden="true"><i style="--v:15%"></i></div></div></div>
+</div>
+<div class="stav-dva"><div><h3 data-en="What the timer does">Co časovač dělá</h3>
+<ul class="dukazy"><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="Shows whole minutes only, never seconds.">Ukazuje jen celé minuty, nikdy vteřiny.</span></li><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="Always sits in the same place, in the same colour.">Je pořád na stejném místě a ve stejné barvě.</span></li><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="Uses role=timer without a live region. A polite announcement is made only at 5 minutes and at 1 minute.">Má <code>role="timer"</code> bez živé oblasti. Zdvořile se oznámí jen při 5 minutách a při 1 minutě.</span></li><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="Always says what happens next, and that nothing is lost.">Vždy řekne, co bude dál, a že nic nepropadá.</span></li></ul></div>
+<div><h3 data-en="What it never does">Co nikdy nedělá</h3>
+<ul class="nikdy"><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg><span data-en="Turn red or warm up in colour.">Nečervená a nemění barvu na výstražnou.</span></li><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg><span data-en="Count seconds, shake or pulse.">Neodpočítává vteřiny, netřese se a nepulzuje.</span></li><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg><span data-en="Open a dialog or block the page.">Neotevírá okno a neblokuje stránku.</span></li><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg><span data-en="Say “hurry”, “last chance” or “only”.">Nepíše „pospěšte si“, „poslední šance“ ani „už jen“.</span></li></ul></div></div>
+  </div>
+</section>
+<section class="stav-sekce" id="formular" aria-labelledby="formular-h">
+  <header><h2 class="h1r" id="formular-h" data-en="Form errors">Chyby formuláře</h2><p data-en="An error is always a border, an icon and a sentence, never just red. A summary with links to the fields sits at the top and focus moves to it after submitting.">Chyba je vždy okraj, ikona a věta, nikdy jen červená. Nahoře je souhrn s odkazy na pole a fokus se na něj přesune po odeslání.</p></header>
+  <div class="stav-ramec">
+<div class="chyby-souhrn" role="alert" tabindex="-1"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-chyba"/></svg><b data-en="Please fix 2 details">Opravte prosím 2 údaje</b><ul><li><a href="#e-email" data-en="Email: it looks like part of the address is missing">E-mail: chybí část adresy</a></li><li><a href="#e-tel" data-en="Phone: we need the full number">Telefon: potřebujeme celé číslo</a></li></ul></div>
+<div class="stav-dva"><div>
+<div class="pole chyba"><label for="e-email" data-en="Email">E-mail</label><input class="vstup" id="e-email" type="email" value="jana@" aria-invalid="true" aria-describedby="e-email-ch"><p class="hlaska-pole" id="e-email-ch"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-chyba"/></svg><span data-en="The address looks incomplete. For example name@example.com.">Adresa vypadá nedokončená. Například jmeno@example.cz.</span></p></div>
+</div><div>
+<div class="pole chyba"><label for="e-tel" data-en="Phone">Telefon</label><input class="vstup" id="e-tel" type="tel" value="+420 603" aria-invalid="true" aria-describedby="e-tel-ch"><p class="hlaska-pole" id="e-tel-ch"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-chyba"/></svg><span data-en="We need the full number so we can reach you.">Telefon potřebujeme celý, ať se dovoláme.</span></p></div>
+</div></div>
+  </div>
+</section>
+<section class="stav-sekce" id="email" aria-labelledby="email-h">
+  <header><h2 class="h1r" id="email-h" data-en="Confirmed, email on its way">Potvrzeno, e-mail se doručuje</h2><p data-en="The payment is confirmed and the booking stands, only the confirmation email is late. The guest mustn’t be left without a document, so they can download the confirmation right away.">Platba je potvrzená a rezervace platí, jen e-mail s potvrzením se opozdil. Host proto nesmí zůstat bez dokladu: potvrzení si stáhne hned.</p></header>
+  <div class="stav-ramec pas">
+<div class="hlaska ok" role="status"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><b data-en="Your booking is confirmed. The confirmation email is still on its way.">Rezervace je potvrzená. E-mail s potvrzením se ještě doručuje.</b><p data-en="You can download the confirmation right now. If the email hasn’t arrived within [X] minutes, write to us and we’ll send it again.">Potvrzení si můžete stáhnout hned. Pokud e-mail nedorazí do [X] minut, napište nám a pošleme ho znovu.</p><div class="akce"><button type="button" class="btn ghost" ><span data-en="Download confirmation">Stáhnout potvrzení</span></button><button type="button" class="btn ghost" ><span data-en="Send the email again">Poslat e-mail znovu</span></button></div></div>
+  </div>
+</section>
+<section class="stav-sekce" id="prepocet" aria-labelledby="prepocet-h">
+  <header><h2 class="h1r" id="prepocet-h" data-en="Price updating">Cena se přepočítává</h2><p data-en="When the dates or guests change, the summary recalculates for a moment. We show a skeleton in the shape of the breakdown (no spinner) and the next button stays unavailable until it’s done.">Při změně termínu nebo hostů se souhrn chvíli přepočítává. Ukazujeme kostru ve tvaru rozpisu (žádné kolečko) a tlačítko dál je do přepočtu nedostupné.</p></header>
+  <div class="stav-ramec">
+<div class="souhrn-prepocet" style="max-width:420px"><div class="souhrn" style="grid-column:auto;position:static"><div class="sou-telo" style="display:grid;padding-top:var(--m-4)"><span class="sr" role="status" data-en="Updating the price…">Přepočítáváme cenu…</span>
+<dl class="rozpis" aria-hidden="true"><div><dt class="kostra kostra-radek" style="width:42%"></dt><dd class="kostra kostra-radek" style="width:20%"></dd></div><div><dt class="kostra kostra-radek" style="width:30%"></dt><dd class="kostra kostra-radek" style="width:20%"></dd></div><div><dt class="kostra kostra-radek" style="width:46%"></dt><dd class="kostra kostra-radek" style="width:20%"></dd></div><div class="r-celkem"><dt class="kostra kostra-radek" style="width:28%"></dt><dd class="kostra kostra-cena"></dd></div></dl>
+<a class="btn wide" href="#" aria-disabled="true"><span data-en="Continue to your details">Pokračovat k údajům</span></a></div></div></div>
+  </div>
+</section>
+</div>
+</main>
+<footer class="pata-rez">
+  <div class="wrap">
+    <p data-en="Fragmento Holiday · Fragmento [company, address and ID to be added by the client]">Fragmento Holiday · Fragmento [firma, adresa a IČO doplní klient]</p>
+    <nav aria-label="Pomoc" data-en-label="Help"><a href="#" data-en="Cancellation and terms">Storno a podmínky</a><a href="#" data-en="Help">Pomoc</a><a href="#" data-en="Contact">Kontakt</a></nav>
+    <nav class="jazyky" aria-label="Jazyk" data-en-label="Language"><a href="#" hreflang="cs" lang="cs" data-jazyk="cs" aria-current="true"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="8" width="24" height="8" fill="#D7141A"/><path d="M0 0l12 8L0 16z" fill="#11457E"/></svg><span>Čeština</span></a><a href="#" hreflang="en" lang="en" data-jazyk="en"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="3"/></svg><span>English</span></a></nav>
+  </div>
+</footer>
+</body>
+</html>

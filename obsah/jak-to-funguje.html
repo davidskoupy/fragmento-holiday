@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Přímá rezervace v Fragmento Holiday: čtyři kroky, co je v ceně, platba a co se děje po rezervaci.">
+<title>Jak funguje přímá rezervace · Fragmento Holiday</title>
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../holiday.css">
+<link rel="stylesheet" href="../doc.css">
+<link rel="stylesheet" href="../objevovani/objevovani.css">
+<link rel="stylesheet" href="obsah.css">
+<script src="../holiday.js" defer></script>
+<script src="../objevovani/objevovani.js" defer></script>
+</head>
+<body>
+
+<!-- Lišta návrhu: přepínače pro posouzení, v produktu není -->
+<div class="navrh">
+  <div class="wrap">
+    <nav aria-label="Stránky návrhu"><a href="jak-to-funguje.html" aria-current="page">Jak to funguje</a><a href="vernostni-program.html">Věrnostní program</a><a href="standard.html">Standard Fragmenta</a><a href="storno-a-podminky.html">Storno a podmínky</a><a href="pomoc.html">Pomoc a otázky</a><a href="kontakt.html">Kontakt</a><a href="emaily/index.html">E-maily</a><a href="../objevovani/domu.html">Objevování</a><a href="../components.html">Komponenty</a></nav>
+    <span class="ukazka">Ukázka · návrh v1</span>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg"><button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Fáze programu"><span class="seg-popis">Fáze</span><span class="seg"><button type="button" data-faze-prepni="1" aria-pressed="true">1</button><button type="button" data-faze-prepni="2" aria-pressed="false">2</button></span></div>
+    </div>
+  </div>
+</div>
+<div class="foto-hlava str-foto">
+  <img src="../objevovani/img/ai-terasa-rano.webp" alt="" width="1344" height="752" fetchpriority="high">
+  <header class="hl na-foto">
+  <div class="wrap">
+    <a class="lockup tmavy na-fotce" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page">
+      <img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <nav class="hl-nav" aria-label="Hlavní nabídka" data-en-label="Main menu">
+      <a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a>
+      <a href="jak-to-funguje.html" data-en="How it works">Jak to funguje</a>
+      <a href="vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a>
+      <a href="pomoc.html" data-en="Help">Pomoc</a>
+    </nav>
+    <a class="btn light hl-prihlasit" href="#" data-en="Sign in">Přihlásit se</a>
+    <button type="button" class="ikona-btn hl-menu" data-otevri="menu" aria-label="Nabídka" data-en-label="Menu" aria-haspopup="dialog"><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-menu"/></svg></button>
+  </div>
+</header>
+  <div class="wrap str-foto-telo na-foto"><h1 data-en="How booking direct works">Jak funguje přímá rezervace</h1><p class="perex" data-en="You book directly with us, with no middleman. Here is the whole path from picking your dates to checking out, including what you pay and when.">Rezervujete přímo u nás, bez zprostředkovatele. Tady je celá cesta od výběru termínu po odjezd, včetně toho, co se platí a kdy.</p></div>
+</div>
+
+<main id="obsah">
+<nav class="subnav" aria-label="V této části" data-en-label="In this section"><div class="wrap"><ul><li><a href="jak-to-funguje.html" aria-current="page"><span data-en="How it works">Jak to funguje</span></a></li><li><a href="vernostni-program.html"><span data-en="Loyalty programme">Věrnostní program</span></a></li><li><a href="standard.html"><span data-en="The Fragmento standard">Standard Fragmenta</span></a></li><li><a href="storno-a-podminky.html"><span data-en="Cancellation and terms">Storno a podmínky</span></a></li><li><a href="pomoc.html"><span data-en="Help and questions">Pomoc a otázky</span></a></li><li><a href="kontakt.html"><span data-en="Contact">Kontakt</span></a></li></ul></div></nav>
+<div class="wrap"><div class="ukazka-pas"><span class="ukazka"><span data-en="Sample">Ukázka</span></span><p class="fine" data-en="Numbers in square brackets will be added by the client. The breakdown is a sample.">Čísla v hranatých závorkách doplní klient. Rozpis je jen ukázka.</p></div></div><section class="sekce" aria-labelledby="kroky-h">
+  <div class="wrap">
+    <div class="sekce-hlava"><div><h2 class="h2" id="kroky-h" data-en="Four steps from choosing to confirmation">Čtyři kroky od výběru k potvrzení</h2></div></div>
+<ol class="kroky-tok"><li><h3 class="h3" data-en="Dates and guests">Termín a hosté</h3><p data-en="You pick your dates in the calendar and say how many of you are coming. Each free day shows its nightly price, and the shortest stay is visible up front.">Vyberete dny v kalendáři a řeknete, kolik vás pojede. U každého volného dne vidíte cenu za noc a předem i nejkratší možný pobyt.</p></li><li><h3 class="h3" data-en="Your details">Údaje</h3><p data-en="You enter your name, email and phone number. There is no password: your account is created from your email. The other guests’ details can wait until later.">Vyplníte jméno, e-mail a telefon. Heslo nepotřebujete, účet vznikne podle e-mailu. Údaje dalších hostů můžete doplnit později.</p></li><li><h3 class="h3" data-en="Payment">Platba</h3><p data-en="You pay by card, Apple Pay or Google Pay. The total stays on screen the whole time you pay.">Zaplatíte kartou, přes Apple Pay nebo Google Pay. Celková částka je vidět po celou dobu platby.</p></li><li><h3 class="h3" data-en="Confirmation">Potvrzení</h3><p data-en="You see the confirmation straight away and get it by email too. It has your booking number and what happens next.">Potvrzení uvidíte hned a přijde i e-mailem. Najdete v něm číslo rezervace a co bude následovat.</p></li></ol>
+  </div>
+</section><section class="sekce pas" aria-labelledby="cena-h">
+  <div class="wrap">
+    <div class="sekce-hlava"><div><h2 class="h2" id="cena-h" data-en="What the price includes">Co je v ceně</h2></div></div>
+<div class="dva-sloupce"><div class="karta-info">
+      <p class="lab"><span data-en="Sample breakdown">Ukázka rozpisu</span></p>
+      <dl class="rozpis">
+        <div><dt data-en="Stay price (&lt;span class=&quot;klient&quot;&gt;[N]&lt;/span&gt; nights)">Cena pobytu (<span class="klient">[N]</span> nocí)</dt><dd class="num">[X] €</dd></div>
+        <div><dt data-en="Cleaning">Úklid</dt><dd class="num">[X] €</dd></div>
+        <div><dt data-en="Fees">Poplatky</dt><dd class="num">[X] €</dd></div>
+        <div class="r-celkem"><dt data-en="Total">Celkem</dt><dd class="num">[X] €</dd></div>
+        <div class="r-kc"><dt data-en="Roughly in koruna">Orientačně v korunách</dt><dd class="num">[X] Kč</dd></div>
+      </dl>
+      <p class="fine" data-en="Items and amounts are a sample only. You see the real breakdown for each property before you book.">Položky a částky platí jen jako ukázka. Skutečný rozpis uvidíte u každé nemovitosti před rezervací.</p>
+    </div><div class="proza">
+      <p data-en="The price you see for a property is the price of the whole stay. No item appears for the first time at payment.">Cena, kterou vidíte u nemovitosti, je cena celého pobytu. Žádná položka se neobjeví až při platbě.</p>
+      <p data-en="You can open the breakdown at any time. Amenities and stay rules are listed for each property, because they differ.">Rozpis si rozbalíte kdykoli. Vybavení a pravidla pobytu najdete u každé nemovitosti zvlášť, protože se liší.</p>
+      <div class="duvera-sloupec"><div class="hlaska info" role="note"><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-info"/></svg><b data-en="Accommodation fee and taxes">Ubytovací poplatek a daně</b><p data-en="Either they are in the total price, or you pay them on site. Either way you see it in the breakdown before you pay. Our lawyer decides which; see Cancellation and terms.">Buď jsou v celkové ceně, nebo se platí na místě. V obou případech to uvidíte v rozpisu dřív, než zaplatíte. Rozhodne právník, viz Storno a podmínky.</p></div></div>
+    </div></div>
+  </div>
+</section><section class="sekce" aria-labelledby="platba-h">
+  <div class="wrap">
+    <div class="sekce-hlava"><div><h2 class="h2" id="platba-h" data-en="Payment">Platba</h2></div></div>
+<div class="proza"><dl class="fakta-dl"><div><dt data-en="How you pay">Čím platíte</dt><dd><span data-en="By card, Apple Pay or Google Pay.">Kartou, přes Apple Pay nebo Google Pay.</span></dd></div><div><dt data-en="In which currency">V jaké měně</dt><dd><span data-en="In euros. The Czech version also shows a rough amount in koruna; rate &lt;span class=&quot;klient&quot;&gt;[client to add]&lt;/span&gt;.">V eurech. V české verzi vidíte orientačně i částku v korunách, kurz <span class="klient">[doplní klient]</span>.</span></dd></div><div><dt data-en="When you are charged">Kdy se strhne</dt><dd><span data-en="&lt;span class=&quot;klient d&quot;&gt;[client to add: the full amount at booking, or a deposit and a balance]&lt;/span&gt;"><span class="klient d">[doplní klient: celá částka při rezervaci, nebo záloha a doplatek]</span></span></dd></div><div><dt data-en="Holding your dates">Držení termínu</dt><dd><span data-en="While you pay we hold your dates so nobody else books them. That is &lt;span class=&quot;klient&quot;&gt;[N]&lt;/span&gt; minutes.">Po dobu platby termín držíme, aby ho mezitím nikdo neobsadil. Je to <span class="klient">[N]</span> minut.</span></dd></div><div><dt data-en="If your bank asks to confirm">Když banka chce potvrzení</dt><dd><span data-en="You finish the payment with your bank and come back. Keep the page open.">Platbu dokončíte u banky a vrátíte se zpět. Stránku nechte otevřenou.</span></dd></div><div><dt data-en="If the payment fails">Když platba neprojde</dt><dd><span data-en="Your card was not charged. Your details stay filled in and you can try again while we hold the dates.">Karta nebyla zatížena. Údaje zůstanou vyplněné a můžete to zkusit znovu, dokud termín držíme.</span></dd></div><div><dt data-en="Who processes the payment">Kdo platbu zpracuje</dt><dd><span data-en="&lt;span class=&quot;klient d&quot;&gt;[client to add: payment provider]&lt;/span&gt;. What happens with your card details will be added by development."><span class="klient d">[doplní klient: platební brána]</span>. Co se děje s údaji o vaší kartě, doplní vývoj.</span></dd></div></dl></div>
+  </div>
+</section><section class="sekce pas" aria-labelledby="po-h">
+  <div class="wrap">
+    <div class="sekce-hlava"><div><h2 class="h2" id="po-h" data-en="What happens after you book">Co se děje po rezervaci</h2><p class="perex" data-en="Your account is created from your email. You sign in with a link from an email or a one-time code, so there is no password to remember.">Účet vzniká podle e-mailu. Přihlašujete se odkazem z e-mailu nebo jednorázovým kódem, takže si žádné heslo pamatovat nemusíte.</p></div></div>
+<ol class="osa"><li><b class="osa-kdy" data-en="Right away">Hned</b><p data-en="Your confirmation arrives by email. Your documents are in your account.">Potvrzení rezervace přijde e-mailem. Doklady najdete ve svém účtu.</p></li><li><b class="osa-kdy" data-en="By &lt;span class=&quot;klient&quot;&gt;[date]&lt;/span&gt;">Do <span class="klient">[datum]</span></b><p data-en="In your account you add the guests’ details. You see the deadline on the booking, and we remind you.">V účtu doplníte údaje hostů. Termín uvidíte u rezervace a připomeneme ho.</p></li><li><b class="osa-kdy" data-en="&lt;span class=&quot;klient&quot;&gt;[N]&lt;/span&gt; days before arrival"><span class="klient">[N]</span> dní před příjezdem</b><p data-en="We send your arrival instructions: the address, how to get in and who to contact.">Pošleme pokyny k příjezdu: adresu, jak se dostanete dovnitř a koho kontaktovat.</p></li><li><b class="osa-kdy" data-en="During your stay">Během pobytu</b><p data-en="If anything comes up, call the number in your confirmation. It is also in your account.">Kdyby se cokoli stalo, voláte na číslo z potvrzení. Najdete ho i v účtu.</p></li><li><b class="osa-kdy" data-en="After you leave">Po odjezdu</b><p data-en="We add your points for the stay and ask for your review. Your points show in your account with their value in euros.">Připíšeme body za pobyt a požádáme vás o hodnocení. Body vidíte v účtu s hodnotou v eurech.</p></li></ol><p class="dalsi"><a class="odkaz" href="vernostni-program.html" data-en="How points work">Jak body fungují</a></p>
+  </div>
+</section><section class="sekce" aria-labelledby="cta-h"><div class="wrap cta-pruh">
+      <h2 class="h3" id="cta-h" data-en="Ready to choose your dates?">Připraveni vybrat termín?</h2>
+      <a class="btn" href="../objevovani/hledani.html" data-en="See available dates">Zobrazit volné termíny</a>
+    </div></section>
+</main>
+
+<footer class="pata">
+  <div class="wrap">
+    <div style="display:grid;gap:var(--m-3);align-content:start">
+      <a class="lockup tmavy" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page"><img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span></a>
+      <p data-en="Stays in properties that Fragmento selects and manages.">Pobyty v nemovitostech, které Fragmento vybírá a spravuje.</p>
+    </div>
+    <nav aria-label="Pobyty" data-en-label="Stays"><h2 data-en="Stays">Pobyty</h2><ul><li><a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li><li><a href="jak-to-funguje.html" data-en="How it works">Jak to funguje</a></li><li><a href="standard.html" data-en="The Fragmento standard">Standard Fragmenta</a></li><li><a href="vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a></li></ul></nav>
+    <nav aria-label="Pomoc" data-en-label="Help"><h2 data-en="Help">Pomoc</h2><ul><li><a href="storno-a-podminky.html" data-en="Cancellation and terms">Storno a podmínky</a></li><li><a href="pomoc.html" data-en="Help and questions">Pomoc a otázky</a></li><li><a href="kontakt.html" data-en="Contact">Kontakt</a></li></ul></nav>
+    <nav aria-label="Fragmento" data-en-label="Fragmento"><h2 data-en="Fragmento">Fragmento</h2><ul><li><a href="https://www.fragmento.cz/" data-en="fragmento.cz">fragmento.cz</a></li><li><a href="#" data-en="About us">O nás</a></li></ul></nav>
+    <div class="pata-jazyk"><nav class="jazyky" aria-label="Jazyk" data-en-label="Language"><a href="#" hreflang="cs" lang="cs" data-jazyk="cs" aria-current="true"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="8" width="24" height="8" fill="#D7141A"/><path d="M0 0l12 8L0 16z" fill="#11457E"/></svg><span>Čeština</span></a><a href="#" hreflang="en" lang="en" data-jazyk="en"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="3"/></svg><span>English</span></a></nav></div>
+    <div class="pata-spodek fine"><span data-en="© 2026 Fragmento · &lt;span class=&quot;klient d&quot;&gt;[client to add: company, reg. no., address]&lt;/span&gt; · Privacy · Cookies">© 2026 Fragmento · <span class="klient d">[doplní klient: firma, IČ, sídlo]</span> · Ochrana osobních údajů · Cookies</span></div>
+  </div>
+</footer>
+
+<dialog id="menu" class="menu-dlg" aria-labelledby="menu-h">
+  <div class="md-hlava"><h2 class="h3" id="menu-h" data-en="Menu">Nabídka</h2><button type="button" class="ikona-btn" data-zavri aria-label="Zavřít nabídku" data-en-label="Close menu"><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-zavrit"/></svg></button></div>
+  <nav aria-labelledby="menu-h"><ul>
+      <li><a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li>
+      <li><a href="jak-to-funguje.html" data-en="How it works">Jak to funguje</a></li>
+      <li><a href="vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a></li>
+      <li><a href="standard.html" data-en="The Fragmento standard">Standard Fragmenta</a></li>
+      <li><a href="storno-a-podminky.html" data-en="Cancellation and terms">Storno a podmínky</a></li>
+      <li><a href="pomoc.html" data-en="Help and questions">Pomoc a otázky</a></li>
+      <li><a href="kontakt.html" data-en="Contact">Kontakt</a></li>
+      <li><a href="#" data-en="Sign in">Přihlásit se</a></li>
+  </ul></nav>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <!-- Doplňkové ikony rezervace ve stylu sady objevování: čárové, 24 px, tah 1,5 -->
+  <symbol id="i-karta" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.2"/><path d="M3 10h18M6.5 15h3.5"/></symbol>
+  <symbol id="i-penezenka" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3M4 7.5V17a2 2 0 0 0 2 2h13a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1H6.5A2.5 2.5 0 0 1 4 7.5z"/><circle cx="16" cy="13.5" r="1.1"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.2"/><path d="m3.8 7.5 8.2 6 8.2-6"/></symbol>
+  <symbol id="i-stahnout" viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.8 12 15.3l4.5-4.5M4.5 19.5h15"/></symbol>
+  <symbol id="i-kal-plus" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M12 12.6v4.8M9.6 15h4.8"/></symbol>
+  <symbol id="i-portal" viewBox="0 0 24 24"><circle cx="12" cy="8.6" r="3.4"/><path d="M5 19.5a7 7 0 0 1 14 0"/></symbol>
+</svg>

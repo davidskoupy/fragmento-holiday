@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Komponenty Fragmento Holiday</title>
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="holiday.css">
+<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+<!--IKONY:START-->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <!-- Ikona bodů: mince s klíčem (Mosaz). Klíč navazuje na „Klíč od svého“ rodiče. -->
+  <symbol id="i-body" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><circle cx="8.7" cy="12" r="2.4"/><path d="M11.1 12h6.4M15.4 12v2.3M17.5 12v1.6"/></symbol>
+  <symbol id="i-klic" viewBox="0 0 32 32"><circle cx="10" cy="16" r="5.2"/><circle cx="10" cy="16" r="1.6"/><path d="M15.2 16H28M23.6 16v4M28 16v3"/></symbol>
+  <symbol id="i-pokoje" viewBox="0 0 24 24"><path d="M3 18.5V11h18v7.5M3 15.2h18M5.5 11V7.5h5.6V11M12.9 11V7.5h5.6V11"/></symbol>
+  <symbol id="i-koupelna" viewBox="0 0 24 24"><path d="M3.5 12h17v2.2a4.3 4.3 0 0 1-4.3 4.3H7.8a4.3 4.3 0 0 1-4.3-4.3zM6 12V6.4a1.9 1.9 0 0 1 3.5-1M7 18.5l-1 2M17 18.5l1 2"/></symbol>
+  <symbol id="i-plocha" viewBox="0 0 24 24"><path d="M4 16.5 16.5 4 20 7.5 7.5 20zM8.6 11.9l1.6 1.6M11 9.5l1.6 1.6M13.4 7.1 15 8.7"/></symbol>
+  <symbol id="i-terasa" viewBox="0 0 24 24"><path d="M3 20.5h18M5 20.5V12M19 20.5V12M3 12h18M12 12V3.5M7.5 7.8 12 3.5l4.5 4.3"/></symbol>
+  <symbol id="i-kalendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-hoste" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0M15.5 5.6a3 3 0 0 1 0 5.8M17.6 14.3a5 5 0 0 1 2.9 5.2"/></symbol>
+  <symbol id="i-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><path d="m7.9 12.3 2.8 2.8 5.5-5.6"/></symbol>
+  <symbol id="i-ceka" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><path d="M12 7v5.2l3.3 2"/></symbol>
+  <symbol id="i-chyba" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><path d="M12 7.3v5.9M12 16.5v.2"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><path d="M12 10.8v6M12 7.4v.2"/></symbol>
+  <symbol id="i-vlevo" viewBox="0 0 24 24"><path d="m14.5 6-6 6 6 6"/></symbol>
+  <symbol id="i-vpravo" viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6"/></symbol>
+  <symbol id="i-sipka" viewBox="0 0 24 24"><path d="M4.5 12h15M14 6.5l5.5 5.5-5.5 5.5"/></symbol>
+  <symbol id="i-zamek" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.2 10.5V8a3.8 3.8 0 0 1 7.6 0v2.5"/></symbol>
+  <symbol id="f-hr" viewBox="0 0 18 12"><rect width="18" height="4" fill="#D52B1E"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#171796"/></symbol>
+  <symbol id="f-id" viewBox="0 0 18 12"><rect width="18" height="6" fill="#CE1126"/><rect y="6" width="18" height="6" fill="#fff"/></symbol>
+  <symbol id="f-es" viewBox="0 0 18 12"><rect width="18" height="12" fill="#AA151B"/><rect y="3" width="18" height="6" fill="#F1BF00"/></symbol>
+</svg>
+<!--IKONY:END-->
+
+<header class="doc-hlava">
+  <div class="wrap">
+    <a class="lockup auto" href="brandmanual.html" style="--h:32px" aria-label="Fragmento Holiday, brandmanuál">
+      <img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg">
+        <button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Jazyk textů"><span class="seg-popis">Jazyk</span><span class="seg">
+        <button type="button" data-jazyk="cs" aria-pressed="true">CZ</button><button type="button" data-jazyk="en" aria-pressed="false">EN</button></span></div>
+      <div role="group" aria-label="Fáze programu"><span class="seg-popis">Fáze</span><span class="seg">
+        <button type="button" data-faze-prepni="1" aria-pressed="true">1</button><button type="button" data-faze-prepni="2" aria-pressed="false">2</button></span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap doc">
+  <section class="doc-uvod">
+    <p class="lab">Knihovna komponent · brandmanuál 1.0</p>
+    <h1>Komponenty Fragmento Holiday</h1>
+    <p>Živé komponenty základu nad tokeny <code>tokens.css</code>. Přepínači nahoře zkontrolujete tmavý režim, anglické texty (bývají o 20 až 30 % delší) a komponenty fáze 2, které jsou v rozhraní fáze 1 vypnuté.</p>
+    <div class="doc-stav"><span class="ukazka">Ukázka</span><span class="fine">Čísla v hranatých závorkách ([X]) doplní klient. Fotky jsou z katalogu Fragmento.</span></div>
+  </section>
+
+  <nav class="doc-nav" aria-label="Komponenty">
+    <a href="#tlacitka">Tlačítka</a><a href="#chipy">Chipy</a><a href="#pole">Vstupy</a><a href="#karta">Karta nemovitosti</a><a href="#kalendar">Kalendář</a><a href="#panel">Panel rezervace</a><a href="#rozpis">Rozpis ceny</a><a href="#kroky">Kroky</a><a href="#platba">Platba a body</a><a href="#uroven">Karta úrovně</a><a href="#razitko">Razítko</a><a href="#postup">Postup</a><a href="#zustatek">Zůstatek bodů</a><a href="#hlasky">Stavové hlášky</a><a href="#kostra">Kostra načítání</a>
+  </nav>
+
+  <!-- ═══ Tlačítka ═══ -->
+  <section class="doc-sekce" id="tlacitka">
+    <header><h2>Tlačítka</h2>
+      <p>Zděděná z Fragmenta. Zlatá jen pro <b>Rezervovat</b> a <b>Zaplatit</b>, nejvýš jedno zlaté tlačítko na obrazovce. Ostatní jednání je borovicová nebo obrysová. Výška nejméně 44 px.</p></header>
+    <div class="doc-ukazka bila">
+      <button type="button" class="btn gold" data-en="Reserve">Rezervovat</button>
+      <button type="button" class="btn gold" data-en="Pay [X]&nbsp;€">Zaplatit [X]&nbsp;€</button>
+      <button type="button" class="btn" data-en="See available dates">Zobrazit volné termíny</button>
+      <button type="button" class="btn ghost" data-en="Add to calendar">Přidat do kalendáře</button>
+      <button type="button" class="btn" disabled data-en="Choose dates first">Nejdřív vyberte termín</button>
+      <button type="button" class="btn gold" aria-busy="true" data-en="Confirming payment…">Ověřujeme platbu…</button>
+    </div>
+    <div class="doc-ukazka tmava">
+      <button type="button" class="btn light" data-en="See available dates">Zobrazit volné termíny</button>
+      <a class="odkaz" style="color:var(--tm-1)" href="#tlacitka" data-en="How booking works">Jak rezervace funguje</a>
+    </div>
+    <p class="doc-pozn">Hover zlatého tlačítka nechává inkoust na zlatě (<code>--na-zlate</code> na <code>--zlata-hover</code> 4,84 : 1). Šablona tu přepíná na bílou, která má jen 3,51 : 1. Vypnutý stav je barvou (Dim By Color), ne průhledností. Čekání na odpověď nese text, ne točící se kolečko.</p>
+  </section>
+
+  <!-- ═══ Chipy ═══ -->
+  <section class="doc-sekce" id="chipy">
+    <header><h2>Chipy</h2><p>Filtry ve výsledcích. Stav nese <code>aria-pressed</code> a výplň, ne jen barva textu. Chip na fotce je jen štítek, ne ovládání.</p></header>
+    <div class="doc-ukazka bila">
+      <div class="chiprow" role="group" aria-label="Filtry" data-en-label="Filters">
+        <button type="button" class="chip" aria-pressed="true"><svg class="flag" aria-hidden="true"><use href="#f-hr"/></svg><span data-en="Croatia">Chorvatsko</span> <span class="pocet">[N]</span></button>
+        <button type="button" class="chip" aria-pressed="false"><svg class="flag" aria-hidden="true"><use href="#f-es"/></svg><span data-en="Spain">Španělsko</span> <span class="pocet">[N]</span></button>
+        <button type="button" class="chip" aria-pressed="false" data-en="Pool">Bazén</button>
+        <button type="button" class="chip" aria-pressed="false" data-en="By the sea">U moře</button>
+        <button type="button" class="chip" aria-pressed="false" data-en="Dogs welcome">Pes vítán</button>
+        <button type="button" class="chip" aria-pressed="false" data-en="Parking">Parkování</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Vstupy ═══ -->
+  <section class="doc-sekce" id="pole">
+    <header><h2>Vstupy</h2><p>Popisek nad polem, obrys s kontrastem 3 : 1 (<code>--linka-pole</code>), fokus 2 px. Chyba: okraj, ikona a lidská věta, nikdy jen červená. Písmo v poli 16 px, aby telefon stránku nezvětšoval.</p></header>
+    <div class="doc-ukazka bila">
+      <div class="doc-mrizka" style="width:100%">
+        <div class="pole">
+          <label for="p-jmeno" data-en="Full name">Jméno a příjmení</label>
+          <input class="vstup" id="p-jmeno" autocomplete="name" value="Jana Nováková">
+        </div>
+        <div class="pole">
+          <label for="p-email" data-en="Email">E-mail</label>
+          <input class="vstup" id="p-email" type="email" autocomplete="email" placeholder="vy@example.cz" aria-describedby="p-email-n">
+          <p class="napoveda" id="p-email-n" data-en="We’ll send the confirmation and arrival details here.">Sem pošleme potvrzení a pokyny k příjezdu.</p>
+        </div>
+        <div class="pole chyba">
+          <label for="p-tel" data-en="Phone">Telefon</label>
+          <input class="vstup" id="p-tel" type="tel" autocomplete="tel" value="+420 603" aria-invalid="true" aria-describedby="p-tel-ch">
+          <p class="hlaska-pole" id="p-tel-ch"><svg class="ico" aria-hidden="true"><use href="#i-chyba"/></svg><span data-en="We need the full number so we can reach you.">Telefon potřebujeme celý, ať se dovoláme.</span></p>
+        </div>
+        <div class="pole">
+          <label for="p-zeme"><span data-en="Country">Země</span> <span class="nepovinne" data-en="optional">nepovinné</span></label>
+          <select class="vstup" id="p-zeme"><option>Česká republika</option><option>Slovensko</option><option>Deutschland</option></select>
+        </div>
+        <div class="pole">
+          <span class="popisek" id="p-hoste-l" data-en="Guests">Hosté</span>
+          <div class="pocitadlo" data-min="1" data-max="[N]" role="group" aria-labelledby="p-hoste-l">
+            <span><span data-en="Adults">Dospělí</span><br><span class="napoveda" data-en="Age 13+">od 13 let</span></span>
+            <span class="ovl"><button type="button" data-pocet="-1" aria-label="Ubrat" data-en-label="Fewer">−</button><output aria-live="polite">2</output><button type="button" data-pocet="1" aria-label="Přidat" data-en-label="More">+</button></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="doc-pozn">Strop hostů (<code>data-max</code>) doplní katalog, dnes u nemovitostí chybí (<code>osob_max: null</code>).</p>
+  </section>
+
+  <!-- ═══ Karta nemovitosti ═══ -->
+  <section class="doc-sekce" id="karta">
+    <header><h2>Karta nemovitosti Holiday</h2>
+      <p>Fotka 4 : 3, chip se zemí, název, místo, parametry, <b>celková cena pobytu</b> pro zvolený termín a řádek bodů v Mosazi. Bez Essoxu, bez podílu a ceny podílu. Celá karta je jeden cíl (odkaz v názvu).</p></header>
+    <div class="doc-mrizka">
+      <article class="karta-n">
+        <div class="kn-foto"><img src="assets/img/n-apartina-3kk-1.webp" alt="Obývací pokoj apartmánu Apartina s okny na moře" width="1600" height="1067" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="#f-hr"/></svg><span data-en="Croatia">Chorvatsko</span></span></div>
+        <div class="kn-telo">
+          <h3 class="kn-nazev"><a href="#karta" data-en="Apartina, 3+kk apartment">Apartina, apartmán 3+kk</a></h3>
+          <p class="kn-misto">Rtina-Ražanac, Zadar</p>
+          <ul class="kn-param" aria-label="Parametry" data-en-label="Details">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-pokoje"/></svg><span data-en="3&nbsp;rooms">3&nbsp;pokoje</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-koupelna"/></svg><span data-en="2&nbsp;bathrooms">2&nbsp;koupelny</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-plocha"/></svg>84&nbsp;m²</li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-terasa"/></svg><span data-en="terrace 45&nbsp;m²">terasa 45&nbsp;m²</span></li>
+          </ul>
+          <div class="kn-cena">
+            <p class="kn-termin" data-en="[date]–[date] · [N]&nbsp;nights · [N]&nbsp;guests">[datum]–[datum] · [N]&nbsp;nocí · [N]&nbsp;hosté</p>
+            <p class="kn-castka" data-en="<strong>[X]&nbsp;€</strong> for the stay, all in"><strong>[X]&nbsp;€</strong> za pobyt, vše v ceně</p>
+            <p class="fine jen-cs">≈ [X]&nbsp;Kč orientačně</p>
+          </div>
+          <p class="kn-body"><svg class="ico" aria-hidden="true"><use href="#i-body"/></svg><span data-en="You’ll earn <b>[X]&nbsp;points</b> (≈&nbsp;[Y]&nbsp;€) for this stay">Za pobyt získáte <b>[X]&nbsp;bodů</b> (≈&nbsp;[Y]&nbsp;€)</span></p>
+        </div>
+      </article>
+
+      <article class="karta-n">
+        <div class="kn-foto"><img src="assets/img/n-designovy-apartman-3kk-spanelsko-7.webp" alt="Bazén s výhledem na moře u apartmánu v Casares Costa" width="1600" height="900" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="#f-es"/></svg><span data-en="Spain">Španělsko</span></span></div>
+        <div class="kn-telo">
+          <h3 class="kn-nazev"><a href="#karta" data-en="Design 3+kk apartment with a garden">Designový apartmán 3+kk se zahradou</a></h3>
+          <p class="kn-misto">Casares Costa, Costa del Sol</p>
+          <ul class="kn-param" aria-label="Parametry" data-en-label="Details">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-pokoje"/></svg><span data-en="3&nbsp;rooms">3&nbsp;pokoje</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-koupelna"/></svg><span data-en="1&nbsp;bathroom">1&nbsp;koupelna</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-plocha"/></svg>142&nbsp;m²</li>
+          </ul>
+          <div class="kn-cena">
+            <p class="kn-termin" data-en="[date]–[date] · [N]&nbsp;nights · [N]&nbsp;guests">[datum]–[datum] · [N]&nbsp;nocí · [N]&nbsp;hosté</p>
+            <p class="kn-castka" data-en="<strong>[X]&nbsp;€</strong> for the stay, all in"><strong>[X]&nbsp;€</strong> za pobyt, vše v ceně</p>
+            <p class="fine jen-cs">≈ [X]&nbsp;Kč orientačně</p>
+          </div>
+          <p class="kn-body"><svg class="ico" aria-hidden="true"><use href="#i-body"/></svg><span data-en="You’ll earn <b>[X]&nbsp;points</b> (≈&nbsp;[Y]&nbsp;€) for this stay">Za pobyt získáte <b>[X]&nbsp;bodů</b> (≈&nbsp;[Y]&nbsp;€)</span></p>
+        </div>
+      </article>
+
+      <article class="karta-n nacita" aria-busy="true" aria-label="Načítáme nemovitost" data-en-label="Loading property">
+        <div class="kn-foto kostra" style="border-radius:0"></div>
+        <div class="kn-telo">
+          <div class="kostra" style="height:20px;width:78%"></div>
+          <div class="kostra" style="height:14px;width:52%"></div>
+          <div class="kostra" style="height:14px;width:64%"></div>
+          <div class="kn-cena"><div class="kostra" style="height:14px;width:58%"></div><div class="kostra" style="height:24px;width:44%"></div></div>
+          <div class="kostra" style="height:14px;width:70%;margin-top:8px"></div>
+        </div>
+      </article>
+    </div>
+    <p class="doc-pozn">Ve výběru se žádná nemovitost neopakuje (Koh Samui Nova a Luna je jedno místo, Apartina 2+kk a 3+kk taky). Parametr, který katalog nemá, se vynechá. Cena je vždy za celý pobyt, ne „od … za noc“.</p>
+  </section>
+
+  <!-- ═══ Kalendář ═══ -->
+  <section class="doc-sekce" id="kalendar">
+    <header><h2>Kalendář s cenou</h2><p>Cena za noc u každého volného dne, obsazené dny přeškrtnuté a označené pro čtečku. Nejkratší pobyt je vidět předem. Buňka 52 px, na 375 px šířce 47 px. Klepnutím vyberete příjezd a odjezd (rozsah přes obsazený den nejde).</p></header>
+    <div class="doc-ukazka" style="justify-content:center">
+      <div class="kal" style="width:100%">
+        <div class="kal-hlava">
+          <button type="button" class="kal-sipka" data-mesic="-1" aria-label="Předchozí měsíc" data-en-label="Previous month"><svg class="ico" aria-hidden="true"><use href="#i-vlevo"/></svg></button>
+          <h3 data-en="November 2026">Listopad 2026</h3>
+          <button type="button" class="kal-sipka" data-mesic="1" aria-label="Další měsíc" data-en-label="Next month"><svg class="ico" aria-hidden="true"><use href="#i-vpravo"/></svg></button>
+        </div>
+        <div class="kal-mrizka" data-start="12" data-konec="17">
+<!--KAL:START-->
+<span class="kal-den-t" aria-hidden="true" data-en="Mo">Po</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Tu">Út</span>
+<span class="kal-den-t" aria-hidden="true" data-en="We">St</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Th">Čt</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Fr">Pá</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Sa">So</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Su">Ne</span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<button type="button" class="kal-den" data-d="1" aria-pressed="false" aria-label="1. listopadu, [X] € za noc" data-en-label="1 November, [X] € per night"><b>1</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="2" aria-pressed="false" aria-label="2. listopadu, [X] € za noc" data-en-label="2 November, [X] € per night"><b>2</b><small>[X]</small></button>
+<button type="button" class="kal-den is-nedostupny" data-d="3" aria-disabled="true" aria-label="3. listopadu, obsazeno" data-en-label="3 November, booked"><b>3</b><small>&nbsp;</small></button>
+<button type="button" class="kal-den is-nedostupny" data-d="4" aria-disabled="true" aria-label="4. listopadu, obsazeno" data-en-label="4 November, booked"><b>4</b><small>&nbsp;</small></button>
+<button type="button" class="kal-den is-nedostupny" data-d="5" aria-disabled="true" aria-label="5. listopadu, obsazeno" data-en-label="5 November, booked"><b>5</b><small>&nbsp;</small></button>
+<button type="button" class="kal-den is-nedostupny" data-d="6" aria-disabled="true" aria-label="6. listopadu, obsazeno" data-en-label="6 November, booked"><b>6</b><small>&nbsp;</small></button>
+<button type="button" class="kal-den" data-d="7" aria-pressed="false" aria-label="7. listopadu, [X] € za noc" data-en-label="7 November, [X] € per night"><b>7</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="8" aria-pressed="false" aria-label="8. listopadu, [X] € za noc" data-en-label="8 November, [X] € per night"><b>8</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="9" aria-pressed="false" aria-label="9. listopadu, [X] € za noc" data-en-label="9 November, [X] € per night"><b>9</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="10" aria-pressed="false" aria-label="10. listopadu, [X] € za noc" data-en-label="10 November, [X] € per night"><b>10</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="11" aria-pressed="false" aria-label="11. listopadu, [X] € za noc" data-en-label="11 November, [X] € per night"><b>11</b><small>[X]</small></button>
+<button type="button" class="kal-den is-start" data-d="12" aria-pressed="true" aria-label="12. listopadu, [X] € za noc" data-en-label="12 November, [X] € per night"><b>12</b><small>[X]</small></button>
+<button type="button" class="kal-den is-rozsah" data-d="13" aria-pressed="false" aria-label="13. listopadu, [X] € za noc" data-en-label="13 November, [X] € per night"><b>13</b><small>[X]</small></button>
+<button type="button" class="kal-den is-rozsah" data-d="14" aria-pressed="false" aria-label="14. listopadu, [X] € za noc" data-en-label="14 November, [X] € per night"><b>14</b><small>[X]</small></button>
+<button type="button" class="kal-den is-rozsah" data-d="15" aria-pressed="false" aria-label="15. listopadu, [X] € za noc" data-en-label="15 November, [X] € per night"><b>15</b><small>[X]</small></button>
+<button type="button" class="kal-den is-rozsah" data-d="16" aria-pressed="false" aria-label="16. listopadu, [X] € za noc" data-en-label="16 November, [X] € per night"><b>16</b><small>[X]</small></button>
+<button type="button" class="kal-den is-konec" data-d="17" aria-pressed="true" aria-label="17. listopadu, [X] € za noc" data-en-label="17 November, [X] € per night"><b>17</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="18" aria-pressed="false" aria-label="18. listopadu, [X] € za noc" data-en-label="18 November, [X] € per night"><b>18</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="19" aria-pressed="false" aria-label="19. listopadu, [X] € za noc" data-en-label="19 November, [X] € per night"><b>19</b><small>[X]</small></button>
+<button type="button" class="kal-den is-nedostupny" data-d="20" aria-disabled="true" aria-label="20. listopadu, obsazeno" data-en-label="20 November, booked"><b>20</b><small>&nbsp;</small></button>
+<button type="button" class="kal-den is-nedostupny" data-d="21" aria-disabled="true" aria-label="21. listopadu, obsazeno" data-en-label="21 November, booked"><b>21</b><small>&nbsp;</small></button>
+<button type="button" class="kal-den is-nedostupny" data-d="22" aria-disabled="true" aria-label="22. listopadu, obsazeno" data-en-label="22 November, booked"><b>22</b><small>&nbsp;</small></button>
+<button type="button" class="kal-den is-nedostupny" data-d="23" aria-disabled="true" aria-label="23. listopadu, obsazeno" data-en-label="23 November, booked"><b>23</b><small>&nbsp;</small></button>
+<button type="button" class="kal-den" data-d="24" aria-pressed="false" aria-label="24. listopadu, [X] € za noc" data-en-label="24 November, [X] € per night"><b>24</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="25" aria-pressed="false" aria-label="25. listopadu, [X] € za noc" data-en-label="25 November, [X] € per night"><b>25</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="26" aria-pressed="false" aria-label="26. listopadu, [X] € za noc" data-en-label="26 November, [X] € per night"><b>26</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="27" aria-pressed="false" aria-label="27. listopadu, [X] € za noc" data-en-label="27 November, [X] € per night"><b>27</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="28" aria-pressed="false" aria-label="28. listopadu, [X] € za noc" data-en-label="28 November, [X] € per night"><b>28</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="29" aria-pressed="false" aria-label="29. listopadu, [X] € za noc" data-en-label="29 November, [X] € per night"><b>29</b><small>[X]</small></button>
+<button type="button" class="kal-den" data-d="30" aria-pressed="false" aria-label="30. listopadu, [X] € za noc" data-en-label="30 November, [X] € per night"><b>30</b><small>[X]</small></button>
+<!--KAL:END-->
+        </div>
+        <div class="kal-pata">
+          <p aria-live="polite" data-kal-stav data-en="Selected: 5 nights.">Vybráno: 5 nocí.</p>
+          <p data-en="Minimum stay: [N]&nbsp;nights. Prices per night in&nbsp;€.">Nejkratší pobyt: [N]&nbsp;nocí. Ceny za noc v&nbsp;€.</p>
+          <div class="kal-legenda"><span><i class="l-vyber"></i><span data-en="arrival and departure">příjezd a odjezd</span></span><span><i class="l-rozsah"></i><span data-en="your stay">váš pobyt</span></span><span><i class="l-ne"></i><span data-en="booked">obsazeno</span></span></div>
+        </div>
+      </div>
+    </div>
+    <p class="doc-pozn">Ukázka má jeden měsíc, šipky jen přehrají přechod. Obsazené dny jsou tlačítka s <code>aria-disabled</code>, aby je čtečka přečetla. Přechod měsíce trvá <code>--d-3</code> s doběhem <code>--ease</code>, při omezeném pohybu se nehýbe nic.</p>
+  </section>
+
+  <!-- ═══ Panel rezervace ═══ -->
+  <section class="doc-sekce" id="panel">
+    <header><h2>Panel rezervace a spodní lišta</h2><p>Na desktopu lepivý panel vedle obsahu detailu, na mobilu spodní lišta s cenou a tlačítkem. Celková cena je vidět vždy, rozpis na klepnutí.</p></header>
+    <div class="doc-mrizka dva">
+      <aside class="panel-rez" aria-label="Rezervace" data-en-label="Booking">
+        <div class="pr-cena"><strong data-en="[X]&nbsp;€ for the stay">[X]&nbsp;€ za pobyt</strong><span data-en="[N]&nbsp;nights · cleaning and fees included">[N]&nbsp;nocí · úklid a poplatky v ceně</span></div>
+        <div class="pr-pole">
+          <button type="button"><small data-en="Arrival">Příjezd</small><span>[datum]</span></button>
+          <button type="button"><small data-en="Departure">Odjezd</small><span>[datum]</span></button>
+          <button type="button" class="cele"><small data-en="Guests">Hosté</small><span data-en="2 adults, 2 children">2 dospělí, 2 děti</span></button>
+        </div>
+        <button type="button" class="btn gold wide" data-en="Reserve">Rezervovat</button>
+        <p class="pr-pozn" data-en="You pay in step 3 of 4.">Platíte až v kroku 3 ze 4.</p>
+        <p class="radek-body"><svg class="ico" aria-hidden="true"><use href="#i-body"/></svg><span data-en="You’ll earn <b>[X]&nbsp;points</b> (≈&nbsp;[Y]&nbsp;€) for this stay, to use on your next one.">Za tento pobyt získáte <b>[X]&nbsp;bodů</b> (≈&nbsp;[Y]&nbsp;€). Použijete je na další pobyt.</span></p>
+        <details>
+          <summary data-en="Price breakdown">Rozpis ceny</summary>
+          <dl class="rozpis">
+            <div><dt data-en="Stay, [N]&nbsp;nights">Pobyt, [N]&nbsp;nocí</dt><dd>[X]&nbsp;€</dd></div>
+            <div><dt data-en="Cleaning">Úklid</dt><dd>[X]&nbsp;€</dd></div>
+            <div><dt data-en="Service fee">Poplatek za služby</dt><dd>[X]&nbsp;€</dd></div>
+            <div class="r-celkem"><dt data-en="Total">Celkem</dt><dd>[X]&nbsp;€</dd></div>
+          </dl>
+        </details>
+      </aside>
+      <div class="doc-pruh">
+        <h3>Mobil: spodní lišta</h3>
+        <div class="doc-telefon">
+          <div class="obsah"><div class="kostra" style="height:150px;border-radius:var(--r)"></div><div class="kostra" style="height:18px;width:70%"></div></div>
+          <div class="lista-rez">
+            <div class="lr-cena"><strong data-en="[X]&nbsp;€ for the stay">[X]&nbsp;€ za pobyt</strong><span data-en="[date]–[date] · 4&nbsp;guests">[datum]–[datum] · 4&nbsp;hosté</span></div>
+            <button type="button" class="btn gold" data-en="Reserve">Rezervovat</button>
+          </div>
+        </div>
+        <p class="doc-pozn">Lišta je v produktu <code>position: fixed</code> dole, s odsazením <code>env(safe-area-inset-bottom)</code>. Delší anglický text termínu se zkrátí trojtečkou, cena a tlačítko nikdy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Rozpis ceny ═══ -->
+  <section class="doc-sekce" id="rozpis">
+    <header><h2>Rozpis ceny</h2><p>Stejný v panelu, v každém kroku rezervace a v potvrzení. Žádná položka se neobjeví až v kroku 3. Ubytovací poplatek je buď v ceně, nebo výslovně „platí se na místě“ (rozhodne právník).</p></header>
+    <div class="doc-ukazka bila">
+      <dl class="rozpis" style="width:100%;max-width:420px">
+        <div><dt data-en="Stay, [N]&nbsp;nights">Pobyt, [N]&nbsp;nocí</dt><dd>[X]&nbsp;€</dd></div>
+        <div><dt data-en="Cleaning">Úklid</dt><dd>[X]&nbsp;€</dd></div>
+        <div><dt data-en="Service fee">Poplatek za služby</dt><dd>[X]&nbsp;€</dd></div>
+        <div class="r-body"><dt data-en="Points used ([X])">Použité body ([X])</dt><dd>−[Y]&nbsp;€</dd></div>
+        <div class="r-celkem"><dt data-en="Total">Celkem</dt><dd>[X]&nbsp;€</dd></div>
+        <div class="r-kc jen-cs"><dt>orientačně v Kč</dt><dd>≈ [X]&nbsp;Kč</dd></div>
+        <div class="r-misto"><dt data-en="Tourist tax, paid on site">Pobytová taxa, platí se na místě</dt><dd>[X]&nbsp;€</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ═══ Kroky ═══ -->
+  <section class="doc-sekce" id="kroky">
+    <header><h2>Krokový ukazatel</h2><p>Čtyři kroky od detailu k potvrzení. Hotový krok má fajfku (ne jen barvu), aktuální silný obrys a <code>aria-current="step"</code>. Pod 560 px jen kolečka a řádek „Krok 2 ze 4“.</p></header>
+    <div class="doc-ukazka bila sloupec">
+      <nav class="kroky" aria-label="Postup rezervace" data-en-label="Booking steps" style="width:100%;max-width:640px">
+        <ol>
+          <li class="hotovo"><span data-en="Dates and guests">Termín a hosté</span></li>
+          <li aria-current="step"><span data-en="Your details">Údaje</span></li>
+          <li><span data-en="Payment">Platba</span></li>
+          <li><span data-en="Confirmation">Potvrzení</span></li>
+        </ol>
+        <p class="kroky-mobil" data-en="Step 2 of 4: Your details">Krok 2 ze 4: Údaje</p>
+      </nav>
+    </div>
+    <h3>Časová osa storna</h3>
+    <div class="doc-ukazka bila sloupec">
+      <div class="storno" style="width:100%;max-width:640px">
+        <div><b data-en="Free cancellation">Zrušení zdarma</b><span data-en="until [date]">do [datum]</span></div>
+        <div><b data-en="Refund [X]&nbsp;%">Vracíme [X]&nbsp;%</b><span data-en="until [date]">do [datum]</span></div>
+        <div><b data-en="No refund">Bez vrácení</b><span data-en="from [date]">od [datum]</span></div>
+      </div>
+      <p class="fine" data-en="Cancellation terms to be approved by a lawyer.">Podmínky storna ke schválení právníkem.</p>
+    </div>
+  </section>
+
+  <!-- ═══ Platba a body ═══ -->
+  <section class="doc-sekce" id="platba">
+    <header><h2>Platba: uplatnění bodů</h2><p>Jeden přepínač v kroku 3, hodnota vždy v eurech. Odečet se hned propíše do rozpisu a do částky na zlatém tlačítku.</p></header>
+    <div class="doc-ukazka bila sloupec">
+      <div style="width:100%;max-width:420px;display:grid;gap:var(--m-4)">
+        <label class="prepinac"><span><b data-en="Use [X]&nbsp;points">Použít [X]&nbsp;bodů</b><br><span class="napoveda" data-en="You save [Y]&nbsp;€. 100&nbsp;points = 3&nbsp;€.">Ušetříte [Y]&nbsp;€. 100&nbsp;bodů = 3&nbsp;€.</span></span><input type="checkbox" role="switch" checked></label>
+        <button type="button" class="btn gold wide" data-en="Pay [X]&nbsp;€">Zaplatit [X]&nbsp;€</button>
+        <p class="pr-pozn"><svg class="ico" aria-hidden="true" style="width:16px;height:16px;vertical-align:-3px"><use href="#i-zamek"/></svg> <span data-en="Card, Apple Pay or Google Pay through [payment gateway].">Karta, Apple Pay nebo Google Pay přes [platební bránu].</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Karta úrovně ═══ -->
+  <section class="doc-sekce" id="uroven">
+    <header><h2>Karta úrovně</h2><p>Členství, ne status v aplikaci. Krémová karta, jméno úrovně v Cormorantu, Mosaz jako vnitřní linka, klíč a tečky stupně (úroveň se pozná i bez barvy). Zlatá ani „bronz, stříbro, zlato“ se nepoužívají.</p></header>
+    <div class="doc-mrizka">
+      <article class="karta-uroven" aria-label="Úroveň Host" data-en-label="Level Guest">
+        <div class="ku-hlava"><span>Fragmento Holiday</span><span class="ku-stupen" aria-hidden="true"><i class="plny"></i><i></i><i></i></span></div>
+        <p class="ku-jmeno"><span data-en="Guest">Host</span><small data-en="Member since [year]">Členem od [rok]</small></p>
+        <div class="ku-pata"><span data-en="<b>1&nbsp;point</b> for every 1&nbsp;€">Za 1&nbsp;€ <b>1&nbsp;bod</b></span><svg class="ku-klic ico" aria-hidden="true" style="stroke-width:1.4"><use href="#i-klic"/></svg></div>
+      </article>
+      <article class="karta-uroven is-phase2" aria-label="Úroveň Stálý host" data-en-label="Level Regular">
+        <div class="ku-hlava"><span>Fragmento Holiday</span><span class="ku-stupen" aria-hidden="true"><i class="plny"></i><i class="plny"></i><i></i></span></div>
+        <p class="ku-jmeno"><span data-en="Regular">Stálý host</span><small data-en="Since [year] · 3 stays in 24 months">Od [rok] · 3 pobyty za 24 měsíců</small></p>
+        <div class="ku-pata"><span data-en="<b>1.5&nbsp;points</b> for every 1&nbsp;€">Za 1&nbsp;€ <b>1,5&nbsp;bodu</b></span><svg class="ku-klic ico" aria-hidden="true" style="stroke-width:1.4"><use href="#i-klic"/></svg></div>
+      </article>
+      <article class="karta-uroven is-phase2" aria-label="Úroveň Domácí" data-en-label="Level At Home">
+        <div class="ku-hlava"><span>Fragmento Holiday</span><span class="ku-stupen" aria-hidden="true"><i class="plny"></i><i class="plny"></i><i class="plny"></i></span></div>
+        <p class="ku-jmeno"><span data-en="At Home">Domácí</span><small data-en="Since [year] · 5+ stays in 24 months">Od [rok] · 5 a více pobytů za 24 měsíců</small></p>
+        <div class="ku-pata"><span data-en="<b>2&nbsp;points</b> for every 1&nbsp;€">Za 1&nbsp;€ <b>2&nbsp;body</b></span><svg class="ku-klic ico" aria-hidden="true" style="stroke-width:1.4"><use href="#i-klic"/></svg></div>
+      </article>
+    </div>
+    <p class="doc-pozn" data-phase="1-only">Fáze 1: v rozhraní je jen karta Host. Karty Stálý host a Domácí mají třídu <code>.is-phase2</code>; přepínač Fáze 2 nahoře je ukáže.</p>
+  </section>
+
+  <!-- ═══ Razítko ═══ -->
+  <section class="doc-sekce" id="razitko">
+    <header><h2>Razítko pobytu</h2><p>Kulatá značka s místem a měsícem pobytu. Sbírá se v účtu u proběhlých pobytů jako detail, ne jako „pas“. Jen Mosaz, bez výplně, nehýbe se.</p></header>
+    <div class="doc-ukazka bila razitka">
+      <svg class="razitko" viewBox="0 0 128 128" role="img" aria-label="Razítko pobytu: Apartina, Zadar, [měsíc rok]">
+        <defs><path id="rz-kruh-1" d="M64 64 m-47 0 a47 47 0 1 1 94 0 a47 47 0 1 1 -94 0"/></defs>
+        <circle cx="64" cy="64" r="60" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="64" cy="64" r="37" fill="none" stroke="currentColor" stroke-width="1"/>
+        <text font-size="10.5" font-weight="600" letter-spacing="2.4"><textPath href="#rz-kruh-1">APARTINA · ZADAR · CHORVATSKO ·</textPath></text>
+        <use href="#i-klic" x="48" y="36" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <text x="64" y="80" text-anchor="middle" font-size="11" font-weight="600" letter-spacing=".5">[MM/RRRR]</text>
+      </svg>
+      <svg class="razitko" viewBox="0 0 128 128" role="img" aria-label="Razítko pobytu: Plešivec, Krušné hory, [měsíc rok]" style="transform:rotate(4deg)">
+        <defs><path id="rz-kruh-2" d="M64 64 m-47 0 a47 47 0 1 1 94 0 a47 47 0 1 1 -94 0"/></defs>
+        <circle cx="64" cy="64" r="60" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="64" cy="64" r="37" fill="none" stroke="currentColor" stroke-width="1"/>
+        <text font-size="10.5" font-weight="600" letter-spacing="2.2"><textPath href="#rz-kruh-2">PLEŠIVEC · KRUŠNÉ HORY · ČESKO ·</textPath></text>
+        <use href="#i-klic" x="48" y="36" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <text x="64" y="80" text-anchor="middle" font-size="11" font-weight="600" letter-spacing=".5">[MM/RRRR]</text>
+      </svg>
+      <div class="karta-pobytu">
+        <img src="assets/img/n-apartman-na-sjezdovce-plesivec-1.webp" alt="" width="84" height="84" loading="lazy">
+        <div><h4 data-en="On the slopes apartment, Plešivec">Apartmán Na sjezdovce, Plešivec</h4><p data-en="[date]–[date] · completed">[datum]–[datum] · dokončeno</p><p class="radek-body" style="margin-top:4px"><svg class="ico" aria-hidden="true"><use href="#i-body"/></svg><span data-en="<b>[X]&nbsp;points</b> added">Připsáno <b>[X]&nbsp;bodů</b></span></p></div>
+      </div>
+    </div>
+    <p class="doc-pozn">Karta pobytu v účtu má podklad jemné Broskve (<code>--nalada-podklad</code>), text na ní je inkoust a popisky <code>--text-3</code> (4,56 : 1).</p>
+  </section>
+
+  <!-- ═══ Postup ═══ -->
+  <section class="doc-sekce" id="postup">
+    <header><h2>Ukazatel postupu</h2><p>Pozvánka, ne tlak: jedna věta a tenká linka v borovicové. Ve fázi 1 se místo ukazatele píše jen „Další úrovně připravujeme.“</p></header>
+    <div class="doc-ukazka bila sloupec">
+      <p data-phase="1-only" data-en="More levels are on the way.">Další úrovně připravujeme.</p>
+      <div class="postup is-phase2">
+        <p data-en="One more stay to reach Regular.">Ještě jeden pobyt do úrovně Stálý host.</p>
+        <div class="drah" role="progressbar" aria-valuemin="0" aria-valuemax="3" aria-valuenow="2" aria-label="Dokončené pobyty: 2 ze 3" data-en-label="Completed stays: 2 of 3" style="--v:66.6%"><i></i></div>
+        <small data-en="2 of 3 stays in the last 24 months">2 ze 3 pobytů za posledních 24 měsíců</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Zůstatek ═══ -->
+  <section class="doc-sekce" id="zustatek">
+    <header><h2>Zůstatek bodů</h2><p>Číslo v DM Sans 750, pod ním vždy hodnota v eurech a nejbližší expirace s datem. Žádné sypání ani počítání nahoru.</p></header>
+    <div class="doc-mrizka dva">
+      <section class="zustatek" aria-labelledby="zu-n">
+        <h3 class="zu-hlava" id="zu-n"><svg class="ico" aria-hidden="true"><use href="#i-body"/></svg><span data-en="Your points">Vaše body</span></h3>
+        <p class="zu-cislo">[X] <span data-en="points">bodů</span></p>
+        <p class="zu-eur" data-en="≈&nbsp;[Y]&nbsp;€ off your next stay">≈&nbsp;[Y]&nbsp;€ na další pobyt</p>
+        <p class="zu-exp"><svg class="ico" aria-hidden="true"><use href="#i-ceka"/></svg><span data-en="[X]&nbsp;points expire on [date]. Use them when you pay for your next stay.">[X]&nbsp;bodů vyprší [datum]. Použijete je při platbě dalšího pobytu.</span></p>
+        <a class="btn ghost wide" href="#zustatek" data-en="Find your next stay">Najít další pobyt</a>
+        <p class="zu-kurz" data-en="100&nbsp;points = 3&nbsp;€ · points are valid for 24&nbsp;months">100&nbsp;bodů = 3&nbsp;€ · body platí 24&nbsp;měsíců</p>
+      </section>
+      <div class="doc-pruh">
+        <h3>Odznak bodů</h3>
+        <div class="doc-ukazka bila"><span class="odznak-body"><svg class="ico" aria-hidden="true"><use href="#i-body"/></svg><span data-en="[X]&nbsp;points ≈ [Y]&nbsp;€">[X]&nbsp;bodů ≈ [Y]&nbsp;€</span></span>
+          <span class="odznak-body"><svg class="ico" aria-hidden="true"><use href="#i-ceka"/></svg><span data-en="[X]&nbsp;points pending">[X]&nbsp;bodů čeká na připsání</span></span></div>
+        <p class="doc-pozn">Body čekají do odjezdu (<code>ceka</code>), pak se připíšou. Text pravidel bodů je ke schválení právníkem.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Hlášky ═══ -->
+  <section class="doc-sekce" id="hlasky">
+    <header><h2>Stavové hlášky</h2><p>Ikona, tučná věta a co dál. Barva podkladu je jen třetí signál. Úspěch a čekání mají <code>role="status"</code>, chyba <code>role="alert"</code>.</p></header>
+    <div class="doc-ukazka bila sloupec">
+      <div class="hlaska ok" role="status"><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg><b data-en="Your booking is confirmed.">Rezervace je potvrzená.</b><p data-en="We’ve sent the confirmation to [email]. Booking number [code].">Potvrzení jsme poslali na [e-mail]. Číslo rezervace [kód].</p></div>
+      <div class="hlaska ceka" role="status"><svg class="ico" aria-hidden="true"><use href="#i-ceka"/></svg><b data-en="Finish the payment in your bank app.">Dokončete platbu v bance.</b><p data-en="Keep this page open, you’ll see the result here. We’re holding the dates for [X] more minutes.">Stránku nechte otevřenou, výsledek uvidíte tady. Termín držíme ještě [X]&nbsp;minut.</p></div>
+      <div class="hlaska chyba" role="alert"><svg class="ico" aria-hidden="true"><use href="#i-chyba"/></svg><b data-en="The payment didn’t go through.">Platba neprošla.</b><p data-en="Your card wasn’t charged, and we’re holding the dates for [X] more minutes.">Karta nebyla zatížena, termín držíme ještě [X]&nbsp;minut.</p><div class="akce"><button type="button" class="btn gold" data-en="Try again">Zkusit znovu</button><button type="button" class="btn ghost" data-en="Use another card">Jiná karta</button></div></div>
+    </div>
+  </section>
+
+  <!-- ═══ Kostra ═══ -->
+  <section class="doc-sekce" id="kostra">
+    <header><h2>Kostra načítání</h2><p>Tvar obsahu místo točícího se kolečka. Jemný lesk běží jen bez omezeného pohybu. Karta kostry je vidět v sekci Karta nemovitosti, tady řádek výsledků a panel.</p></header>
+    <div class="doc-ukazka bila" role="status" aria-busy="true" aria-label="Načítáme výsledky" data-en-label="Loading results">
+      <div style="display:grid;gap:10px;width:100%;max-width:420px">
+        <div class="kostra" style="height:22px;width:40%"></div>
+        <div class="kostra" style="height:52px"></div>
+        <div class="kostra" style="height:52px"></div>
+        <div class="kostra" style="height:44px;width:60%"></div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="holiday.js"></script>
+</body>
+</html>

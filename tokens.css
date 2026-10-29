@@ -1,0 +1,165 @@
+/* Fragmento Holiday — tokeny (brandmanuál 1.0, schváleno 27. 10. 2026)
+   Základ je :root šablony Fragmento (fragmento-sablona/assets/css/style.css).
+   Zděděné tokeny mají stejné jméno i hodnotu. Nové tokeny Holiday jsou
+   označené „nové“. Každá hodnota tady je popsaná v brandmanual.html,
+   kontrasty jsou změřené v kapitole Barvy (tabulka obou režimů).
+
+   Vrstvy:
+   1. paleta (pevné hexy, stejné v obou režimech)
+   2. stupnice (písmo, mezery, zaoblení, stíny, pohyb)
+   3. role (--bg, --text, --akcent…), které se přepínají v tmavém režimu.
+   Komponenty berou jen role a stupnice, nikdy hex přímo. */
+
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/dm-sans-400.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/dm-sans-600.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:700 750;font-display:swap;src:url(assets/fonts/dm-sans-700.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/cormorant-400.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/cormorant-400-italic.woff2) format("woff2")}
+
+/* ═══════════════ 1. PALETA ═══════════════ */
+:root {
+  /* zděděno ze šablony */
+  --p: #2F4F4F; --p600: #263E3E; --p400: #567373; --p300: #809999; --p200: #A9C1C1;
+  --s: #CDAF75; --s600: #A38452; --s700: #836A40; --s200: #E8D7B7; --s150: #F8F1E4; --s50: #FCFAF2;
+  --n50: #F5F5F5; --n100: #EFEFEF; --n150: #DADADA; --n200: #6B6C7F; --n700: #333333; --n900: #1E1E1E;
+  --ok: #16A34A; --er: #B02020;
+  --plocha: #fff; --na-zlate: #241B08;
+  --jt-podklad: #16211E;
+  --er-na-tmavem: #FFD9D2; --er-linka-na-tmavem: #FFB4A6;
+  --tm-1: #fff; --tm-2: rgba(255,255,255,.88); --tm-3: rgba(255,255,255,.8);
+  --tm-4: rgba(255,255,255,.72); --tm-5: rgba(255,255,255,.64);
+  --tm-linka-1: rgba(255,255,255,.12); --tm-linka-2: rgba(255,255,255,.18);
+  --tm-linka-3: rgba(255,255,255,.26); --tm-linka-4: rgba(255,255,255,.5);
+  --tm-plocha-1: rgba(255,255,255,.06); --tm-plocha-2: rgba(255,255,255,.12);
+  --tm-plocha-3: rgba(255,255,255,.24); --plocha-sklo: rgba(255,255,255,.94);
+  --zavoj: 20 30 28; --zavoj-hluboky: 8 16 14;
+  --p-rgb: 47 79 79;
+
+  /* nové: Broskev (nálada, nikdy text) a Mosaz (věrnostní program) */
+  --broskev: #E9A57A;        /* plocha, světlo na fotce, s inkoustem 8,04 : 1 */
+  --broskev-200: #FBEFE6;    /* jemný podklad karty pobytu */
+  --broskev-tma: #3A2C22;    /* totéž v tmavém režimu */
+  --mosaz: #716433;          /* korekce z #A38452: text i grafika na světlém */
+  --mosaz-200: #F4F1E4;      /* podklad odznaku bodů */
+  --mosaz-svetla: #BFBB88;   /* Mosaz v tmavém režimu */
+  --mosaz-tma: #2A2E24;      /* podklad odznaku bodů v tmavém režimu */
+
+  /* nové: stavy jako text (zelená šablony má na bílé jen 3,30 : 1) */
+  --ok-text: #166534; --ok-podklad: #EEF6F0;
+  --er-podklad: #FBEDEB;
+  --ceka-podklad: #EEF2F1;
+
+  /* nové: tmavý režim (podklad je --jt-podklad šablony) */
+  --tma-pas: #1A2824; --tma-karta: #1F2D29; --tma-karta-2: #26362F;
+  --tma-text: #F2EFE6; --tma-text-2: #D6D9D2; --tma-text-3: #A3ADA8;
+  --tma-linka: #33443F; --tma-linka-pole: #8C8D9C;
+  --tma-akcent-hover: #C9D8D8;
+  --tma-ok: #8FD4A3; --tma-ok-podklad: #1C3226; --tma-er-podklad: #3A2220; --tma-ceka-podklad: #22332F;
+
+  /* nové: obrys pole s kontrastem 3 : 1 (WCAG 1.4.11) */
+  --pole-obrys: #85868F;
+}
+
+/* ═══════════════ 2. STUPNICE ═══════════════ */
+:root {
+  --sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  /* písmo: devět stupňů, zděděno */
+  --t1: 12px; --t2: 13.5px; --t3: 15px; --t4: 17px; --t5: 21px;
+  --t6: clamp(23px, 3.4vw, 28px); --t7: clamp(26px, 4.4vw, 36px);
+  --t8: clamp(32px, 5.5vw, 48px); --t9: clamp(40px, 8vw, 76px);
+  --w-text: 400; --w-med: 600; --w-bold: 750;
+  /* nové: řádkování a prostrkání (hodnoty z DESIGN.md jako tokeny) */
+  --lh-display: 1.03; --lh-nadpis: 1.18; --lh-titulek: 1.25; --lh-hlas: 1.42; --lh-text: 1.62;
+  --tr-display: -.015em; --tr-nadpis: -.025em; --tr-titulek: -.017em; --tr-stitek: .16em; --tr-chip: .07em;
+
+  /* zaoblení, zděděno */
+  --r-xs: 3px; --r-sm: 8px; --r-control: 9px; --r: 12px; --r-lg: 16px; --r-pill: 99px;
+
+  /* mezery: nové jako tokeny, hodnoty ze šablony (4 až 88 px) */
+  --m-1: 4px; --m-2: 8px; --m-3: 12px; --m-4: 16px; --m-5: 20px;
+  --m-6: 24px; --m-7: 32px; --m-8: 40px; --m-9: 64px; --m-10: 88px;
+  --wrap: min(94vw, 1720px); --pad: 20px;
+  --cil: 44px; /* nové: nejmenší cíl klepnutí hlavního ovládání */
+
+  /* stíny, zděděno + spodní lišta */
+  --stin-karta: 0 6px 22px rgba(15,30,28,.08);
+  --stin-karta-hover: 0 14px 34px rgba(15,30,28,.13);
+  --stin-poptavka: 0 16px 42px rgba(38,62,62,.22);
+  --stin-chip: 0 2px 8px rgba(20,30,28,.16);
+  --stin-popover: 0 18px 44px rgba(15,30,28,.18), 0 0 0 1px rgba(15,30,28,.06);
+  --stin-lista: 0 -8px 24px rgba(15,30,28,.10); /* nové: spodní lišta rezervace */
+
+  /* pohyb: doběh ze šablony, délky nové jako tokeny */
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --d-1: .16s; /* chip, barva */
+  --d-2: .18s; /* tlačítko */
+  --d-3: .32s; /* krok rezervace, měsíc kalendáře */
+  --d-4: .7s;  /* jediná chvíle stránky: vyjetí nadpisu hero */
+
+  /* lockup: poměry k výšce loga (viz kapitola Logo) */
+  --lockup-holiday: .345;   /* velikost písma „Holiday“ = 0,345 × výška loga */
+  --lockup-zona: .44;       /* ochranná zóna = výška „F“ = 0,44 × výška loga */
+}
+@media (min-width: 785px) { :root { --pad: 32px; } }
+@media (min-width: 1040px) { :root { --pad: 40px; } }
+@media (prefers-reduced-motion: reduce) { :root { --d-1: 0s; --d-2: 0s; --d-3: 0s; --d-4: 0s; } }
+
+/* ═══════════════ 3. ROLE, světlý režim ═══════════════ */
+:root {
+  color-scheme: light;
+  --bg: var(--s50);  --bg-pas: var(--s150);  --karta: var(--plocha);  --karta-2: var(--n50);
+  --text: var(--n900);  --text-2: var(--n700);  --text-3: var(--n200);
+  --linka: var(--n150);  --linka-jemna: var(--n100);  --linka-zavoj: var(--s200);  --linka-pole: var(--pole-obrys);
+  --akcent: var(--p);  --akcent-hover: var(--p600);  --na-akcentu: var(--tm-1);
+  --zlata: var(--s);  --zlata-hover: var(--s600);  --zlaty-text: var(--s700);
+  --program: var(--mosaz);  --program-podklad: var(--mosaz-200);
+  --nalada: var(--broskev);  --nalada-podklad: var(--broskev-200);  --na-nalade: var(--n900);
+  --ok-t: var(--ok-text);  --ok-bg: var(--ok-podklad);
+  --er-t: var(--er);  --er-bg: var(--er-podklad);
+  --ceka-t: var(--p);  --ceka-bg: var(--ceka-podklad);
+  --fokus: var(--p);
+  --kostra: var(--n100);
+}
+
+/* ═══════════════ 3. ROLE, tmavý režim ═══════════════ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: var(--jt-podklad);  --bg-pas: var(--tma-pas);  --karta: var(--tma-karta);  --karta-2: var(--tma-karta-2);
+    --text: var(--tma-text);  --text-2: var(--tma-text-2);  --text-3: var(--tma-text-3);
+    --linka: var(--tma-linka);  --linka-jemna: var(--tma-karta-2);  --linka-zavoj: var(--tma-linka);  --linka-pole: var(--tma-linka-pole);
+    --akcent: var(--p200);  --akcent-hover: var(--tma-akcent-hover);  --na-akcentu: var(--jt-podklad);
+    --zlaty-text: var(--s200);
+    --program: var(--mosaz-svetla);  --program-podklad: var(--mosaz-tma);
+    --nalada-podklad: var(--broskev-tma);
+    --ok-t: var(--tma-ok);  --ok-bg: var(--tma-ok-podklad);
+    --er-t: var(--er-na-tmavem);  --er-bg: var(--tma-er-podklad);
+    --ceka-t: var(--p200);  --ceka-bg: var(--tma-ceka-podklad);
+    --fokus: var(--s200);
+    --kostra: var(--tma-karta-2);
+    --stin-karta: 0 6px 22px rgba(0,0,0,.28);
+    --stin-karta-hover: 0 14px 34px rgba(0,0,0,.38);
+    --stin-popover: 0 18px 44px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.06);
+    --stin-lista: 0 -8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: var(--jt-podklad);  --bg-pas: var(--tma-pas);  --karta: var(--tma-karta);  --karta-2: var(--tma-karta-2);
+  --text: var(--tma-text);  --text-2: var(--tma-text-2);  --text-3: var(--tma-text-3);
+  --linka: var(--tma-linka);  --linka-jemna: var(--tma-karta-2);  --linka-zavoj: var(--tma-linka);  --linka-pole: var(--tma-linka-pole);
+  --akcent: var(--p200);  --akcent-hover: var(--tma-akcent-hover);  --na-akcentu: var(--jt-podklad);
+  --zlaty-text: var(--s200);
+  --program: var(--mosaz-svetla);  --program-podklad: var(--mosaz-tma);
+  --nalada-podklad: var(--broskev-tma);
+  --ok-t: var(--tma-ok);  --ok-bg: var(--tma-ok-podklad);
+  --er-t: var(--er-na-tmavem);  --er-bg: var(--tma-er-podklad);
+  --ceka-t: var(--p200);  --ceka-bg: var(--tma-ceka-podklad);
+  --fokus: var(--s200);
+  --kostra: var(--tma-karta-2);
+  --stin-karta: 0 6px 22px rgba(0,0,0,.28);
+  --stin-karta-hover: 0 14px 34px rgba(0,0,0,.38);
+  --stin-popover: 0 18px 44px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.06);
+  --stin-lista: 0 -8px 24px rgba(0,0,0,.35);
+}

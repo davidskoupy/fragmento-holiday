@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Šablony e-mailů Fragmento Holiday: potvrzení, příprava, po pobytu, expirace bodů, storno.">
+<title>E-mailové šablony · Fragmento Holiday</title>
+<link rel="icon" href="../../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../tokens.css">
+<link rel="stylesheet" href="../../holiday.css">
+<link rel="stylesheet" href="../../doc.css">
+<link rel="stylesheet" href="../../objevovani/objevovani.css">
+<link rel="stylesheet" href="../obsah.css">
+<script src="../../holiday.js" defer></script>
+<script src="../../objevovani/objevovani.js" defer></script>
+</head>
+<body>
+
+<!-- Lišta návrhu: přepínače pro posouzení, v produktu není -->
+<div class="navrh">
+  <div class="wrap">
+    <nav aria-label="Stránky návrhu"><a href="../jak-to-funguje.html">Jak to funguje</a><a href="../vernostni-program.html">Věrnostní program</a><a href="../standard.html">Standard Fragmenta</a><a href="../storno-a-podminky.html">Storno a podmínky</a><a href="../pomoc.html">Pomoc a otázky</a><a href="../kontakt.html">Kontakt</a><a href="../emaily/index.html" aria-current="page">E-maily</a><a href="../../objevovani/domu.html">Objevování</a><a href="../../components.html">Komponenty</a></nav>
+    <span class="ukazka">Ukázka · návrh v1</span>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg"><button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Fáze programu"><span class="seg-popis">Fáze</span><span class="seg"><button type="button" data-faze-prepni="1" aria-pressed="true">1</button><button type="button" data-faze-prepni="2" aria-pressed="false">2</button></span></div>
+    </div>
+  </div>
+</div>
+<header class="hl">
+  <div class="wrap">
+    <a class="lockup auto" href="../../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page">
+      <img class="lk-svetle" src="../../assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="../../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <nav class="hl-nav" aria-label="Hlavní nabídka" data-en-label="Main menu">
+      <a href="../../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a>
+      <a href="../jak-to-funguje.html" data-en="How it works">Jak to funguje</a>
+      <a href="../vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a>
+      <a href="../pomoc.html" data-en="Help">Pomoc</a>
+    </nav>
+    <a class="btn ghost hl-prihlasit" href="#" data-en="Sign in">Přihlásit se</a>
+    <button type="button" class="ikona-btn hl-menu" data-otevri="menu" aria-label="Nabídka" data-en-label="Menu" aria-haspopup="dialog"><svg class="ico" aria-hidden="true"><use href="../../objevovani/ikony.svg#i-menu"/></svg></button>
+  </div>
+</header>
+<div class="str-hlava"><div class="wrap"><h1 data-en="Email templates">E-mailové šablony</h1><p class="perex" data-en="Five guest emails in Czech and English. The texts and sending conditions are below; database variables are in curly brackets.">Pět e-mailů hosta v češtině i angličtině. Texty a podmínky odeslání jsou níže, proměnné z databáze jsou ve složených závorkách.</p></div></div>
+
+<main id="obsah">
+<nav class="subnav" aria-label="V této části" data-en-label="In this section"><div class="wrap"><ul><li><a href="../jak-to-funguje.html"><span data-en="How it works">Jak to funguje</span></a></li><li><a href="../vernostni-program.html"><span data-en="Loyalty programme">Věrnostní program</span></a></li><li><a href="../standard.html"><span data-en="The Fragmento standard">Standard Fragmenta</span></a></li><li><a href="../storno-a-podminky.html"><span data-en="Cancellation and terms">Storno a podmínky</span></a></li><li><a href="../pomoc.html"><span data-en="Help and questions">Pomoc a otázky</span></a></li><li><a href="../kontakt.html"><span data-en="Contact">Kontakt</span></a></li></ul></div></nav>
+<section class="sekce" aria-labelledby="ta-h"><div class="wrap"><div class="sekce-hlava"><div><h2 class="h2" id="ta-h">Šablony</h2></div></div><div class="tab-wrap"><table class="tab"><caption class="sr">Seznam šablon</caption>
+<thead><tr><th scope="col">Šablona</th><th scope="col">Kdy se odesílá</th><th scope="col">Stav v systému</th><th scope="col">Soubory</th></tr></thead><tbody><tr><th scope="row">Potvrzení rezervace</th><td><span class="mob">Kdy</span>Ihned po zaplacení</td><td><span class="mob">Stav</span>stav potvrzeno</td><td><span class="mob">Soubory</span><a href="potvrzeni-cs.html">CZ</a> · <a href="potvrzeni-en.html">EN</a></td></tr><tr><th scope="row">Příprava před příjezdem</th><td><span class="mob">Kdy</span>[N] dní před příjezdem</td><td><span class="mob">Stav</span>stav pred_prijezdem (blok o hostech jen při doplnit_udaje)</td><td><span class="mob">Soubory</span><a href="priprava-cs.html">CZ</a> · <a href="priprava-en.html">EN</a></td></tr><tr><th scope="row">Po pobytu s body</th><td><span class="mob">Kdy</span>Po odjezdu, když se body připíšou</td><td><span class="mob">Stav</span>stav dokonceno, body pripsano</td><td><span class="mob">Soubory</span><a href="po-pobytu-cs.html">CZ</a> · <a href="po-pobytu-en.html">EN</a></td></tr><tr><th scope="row">Upozornění na expiraci bodů</th><td><span class="mob">Kdy</span>90 a 30 dní před expirací</td><td><span class="mob">Stav</span>body expiruje (dvě upozornění)</td><td><span class="mob">Soubory</span><a href="expirace-cs.html">CZ</a> · <a href="expirace-en.html">EN</a></td></tr><tr><th scope="row">Storno ze strany hosta</th><td><span class="mob">Kdy</span>Po zrušení hostem</td><td><span class="mob">Stav</span>stav zruseno_hostem</td><td><span class="mob">Soubory</span><a href="storno-host-cs.html">CZ</a> · <a href="storno-host-en.html">EN</a></td></tr><tr><th scope="row">Storno ze strany Fragmenta</th><td><span class="mob">Kdy</span>Po zrušení z naší strany</td><td><span class="mob">Stav</span>stav zruseno_nami</td><td><span class="mob">Soubory</span><a href="storno-nami-cs.html">CZ</a> · <a href="storno-nami-en.html">EN</a></td></tr></tbody></table></div></div></section><section class="sekce pas" aria-labelledby="nah-h"><div class="wrap"><div class="sekce-hlava"><div><h2 class="h2" id="nah-h">Náhledy</h2></div></div><article class="nahled"><h3 class="h3">Potvrzení rezervace</h3>
+  <div class="nahled-dvojice">
+    <figure><iframe src="potvrzeni-cs.html" title="Potvrzení rezervace, česky" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">CZ</figcaption></figure>
+    <figure><iframe src="potvrzeni-en.html" title="Booking confirmation, English" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">EN</figcaption></figure>
+  </div></article><article class="nahled"><h3 class="h3">Příprava před příjezdem</h3>
+  <div class="nahled-dvojice">
+    <figure><iframe src="priprava-cs.html" title="Příprava před příjezdem, česky" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">CZ</figcaption></figure>
+    <figure><iframe src="priprava-en.html" title="Before arrival, English" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">EN</figcaption></figure>
+  </div></article><article class="nahled"><h3 class="h3">Po pobytu s body</h3>
+  <div class="nahled-dvojice">
+    <figure><iframe src="po-pobytu-cs.html" title="Po pobytu s body, česky" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">CZ</figcaption></figure>
+    <figure><iframe src="po-pobytu-en.html" title="After the stay, with points, English" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">EN</figcaption></figure>
+  </div></article><article class="nahled"><h3 class="h3">Upozornění na expiraci bodů</h3>
+  <div class="nahled-dvojice">
+    <figure><iframe src="expirace-cs.html" title="Upozornění na expiraci bodů, česky" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">CZ</figcaption></figure>
+    <figure><iframe src="expirace-en.html" title="Points expiry reminder, English" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">EN</figcaption></figure>
+  </div></article><article class="nahled"><h3 class="h3">Storno ze strany hosta</h3>
+  <div class="nahled-dvojice">
+    <figure><iframe src="storno-host-cs.html" title="Storno ze strany hosta, česky" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">CZ</figcaption></figure>
+    <figure><iframe src="storno-host-en.html" title="Cancelled by the guest, English" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">EN</figcaption></figure>
+  </div></article><article class="nahled"><h3 class="h3">Storno ze strany Fragmenta</h3>
+  <div class="nahled-dvojice">
+    <figure><iframe src="storno-nami-cs.html" title="Storno ze strany Fragmenta, česky" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">CZ</figcaption></figure>
+    <figure><iframe src="storno-nami-en.html" title="Cancelled by Fragmento, English" loading="lazy" width="640" height="900"></iframe><figcaption class="fine">EN</figcaption></figure>
+  </div></article></div></section><section class="sekce" aria-labelledby="pr-h"><div class="wrap"><div class="sekce-hlava"><div><h2 class="h2" id="pr-h">Co je z databáze</h2>
+<p class="perex">Všechno ve složených závorkách vyplní systém. Vše ostatní je pevný text.</p></div></div>
+<div class="tab-wrap"><table class="tab tab-prom"><caption class="sr">Proměnné</caption><thead><tr><th scope="col">Proměnná</th><th scope="col">Odkud</th></tr></thead><tbody><tr><th scope='row'><code>{{body}}</code></th><td>body za tento pobyt (nebo body k expiraci)</td></tr><tr><th scope='row'><code>{{body_eur}}</code></th><td>hodnota těchto bodů v EUR (100 bodů = 3 €)</td></tr><tr><th scope='row'><code>{{body_pouzito}}</code></th><td>body použité při platbě</td></tr><tr><th scope='row'><code>{{cas_odjezdu}}</code></th><td>čas odjezdu (podle nemovitosti)</td></tr><tr><th scope='row'><code>{{cas_prijezdu}}</code></th><td>čas příjezdu (podle nemovitosti)</td></tr><tr><th scope='row'><code>{{castka_vraceni}}</code></th><td>vracená částka v EUR</td></tr><tr><th scope='row'><code>{{celkem}}</code></th><td>celkem zaplaceno v EUR</td></tr><tr><th scope='row'><code>{{chybi_hostu}}</code></th><td>počet hostů, jejichž údaje chybí</td></tr><tr><th scope='row'><code>{{cislo}}</code></th><td>číslo rezervace</td></tr><tr><th scope='row'><code>{{datum}}</code></th><td>datum expirace</td></tr><tr><th scope='row'><code>{{datum_exp}}</code></th><td>datum expirace nejstarších bodů</td></tr><tr><th scope='row'><code>{{datum_storno}}</code></th><td>poslední den storna zdarma</td></tr><tr><th scope='row'><code>{{dni}}</code></th><td>počet dní (před příjezdem nebo před expirací)</td></tr><tr><th scope='row'><code>{{dni_pokyny}}</code></th><td>kolik dní před příjezdem pošleme pokyny</td></tr><tr><th scope='row'><code>{{duvod}}</code></th><td>důvod zrušení z naší strany</td></tr><tr><th scope='row'><code>{{jmeno}}</code></th><td>jméno hosta (z účtu)</td></tr><tr><th scope='row'><code>{{nemovitost}}</code></th><td>název nemovitosti (katalog)</td></tr><tr><th scope='row'><code>{{nevratne_procento}}</code></th><td>nevracené procento</td></tr><tr><th scope='row'><code>{{noci}}</code></th><td>počet nocí</td></tr><tr><th scope='row'><code>{{odjezd}}</code></th><td>datum odjezdu</td></tr><tr><th scope='row'><code>{{prijezd}}</code></th><td>datum příjezdu</td></tr><tr><th scope='row'><code>{{procento_storno}}</code></th><td>procento vrácené částky po lhůtě</td></tr><tr><th scope='row'><code>{{termin_registrace}}</code></th><td>termín doplnění údajů hostů</td></tr><tr><th scope='row'><code>{{url_pravidla}}</code></th><td>pravidla pobytu u nemovitosti</td></tr><tr><th scope='row'><code>{{url_storno}}</code></th><td>stránka Storno a podmínky</td></tr><tr><th scope='row'><code>{{zaplaceno}}</code></th><td>zaplacená částka v EUR</td></tr><tr><th scope='row'><code>{{zustatek}}</code></th><td>zůstatek bodů</td></tr><tr><th scope='row'><code>{{zustatek_eur}}</code></th><td>hodnota zůstatku v EUR</td></tr></tbody></table></div></div></section><section class="sekce pas" aria-labelledby="vy-h"><div class="wrap"><div class="sekce-hlava"><div><h2 class="h2" id="vy-h">Pro vývoj</h2></div></div>
+<ul class="vyvoj-seznam">
+<li><b>Stavba.</b> Tabulky, styly inline, šířka 600 px, na mobilu 100 %. Webfont se nenačítá, náhradní písmo je Arial.</li>
+<li><b>Logo.</b> PNG @2x (<code>logo-holiday.png</code>, 284 × 23 px zobrazeno). SVG se v poště nepoužívá.</li>
+<li><b>Tlačítka.</b> Buňka tabulky s odkazem uvnitř, bez obrázků. Barva tlačítka je borovicová, zlatá se v e-mailech nepoužívá.</li>
+<li><b>Podmíněné bloky.</b> V kódu jsou označené komentářem <code>PODMÍNKA</code>. V ukázce jsou vidět všechny.</li>
+<li><b>Tmavý režim.</b> Šablony jsou jen světlé (<code>color-scheme: light</code>). Klienty s vynuceným tmavým režimem je třeba otestovat.</li>
+<li><b>Neověřeno.</b> V reálných klientech (Gmail, Outlook, Apple Mail) šablony nejsou otestované. Ověřují se před spuštěním, například v Litmus nebo Email on Acid.</li>
+<li><b>Předmět a preheader.</b> Jsou v hlavičce každého souboru (<code>&lt;title&gt;</code> a skrytý první řádek).</li>
+</ul></div></section>
+</main>
+
+<footer class="pata">
+  <div class="wrap">
+    <div style="display:grid;gap:var(--m-3);align-content:start">
+      <a class="lockup tmavy" href="../../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page"><img class="lk-svetle" src="../../assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><img class="lk-tmave" src="../../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span></a>
+      <p data-en="Stays in properties that Fragmento selects and manages.">Pobyty v nemovitostech, které Fragmento vybírá a spravuje.</p>
+    </div>
+    <nav aria-label="Pobyty" data-en-label="Stays"><h2 data-en="Stays">Pobyty</h2><ul><li><a href="../../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li><li><a href="../jak-to-funguje.html" data-en="How it works">Jak to funguje</a></li><li><a href="../standard.html" data-en="The Fragmento standard">Standard Fragmenta</a></li><li><a href="../vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a></li></ul></nav>
+    <nav aria-label="Pomoc" data-en-label="Help"><h2 data-en="Help">Pomoc</h2><ul><li><a href="../storno-a-podminky.html" data-en="Cancellation and terms">Storno a podmínky</a></li><li><a href="../pomoc.html" data-en="Help and questions">Pomoc a otázky</a></li><li><a href="../kontakt.html" data-en="Contact">Kontakt</a></li></ul></nav>
+    <nav aria-label="Fragmento" data-en-label="Fragmento"><h2 data-en="Fragmento">Fragmento</h2><ul><li><a href="https://www.fragmento.cz/" data-en="fragmento.cz">fragmento.cz</a></li><li><a href="#" data-en="About us">O nás</a></li></ul></nav>
+    <div class="pata-jazyk"><nav class="jazyky" aria-label="Jazyk" data-en-label="Language"><a href="#" hreflang="cs" lang="cs" data-jazyk="cs" aria-current="true"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="8" width="24" height="8" fill="#D7141A"/><path d="M0 0l12 8L0 16z" fill="#11457E"/></svg><span>Čeština</span></a><a href="#" hreflang="en" lang="en" data-jazyk="en"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="3"/></svg><span>English</span></a></nav></div>
+    <div class="pata-spodek fine"><span data-en="© 2026 Fragmento · &lt;span class=&quot;klient d&quot;&gt;[client to add: company, reg. no., address]&lt;/span&gt; · Privacy · Cookies">© 2026 Fragmento · <span class="klient d">[doplní klient: firma, IČ, sídlo]</span> · Ochrana osobních údajů · Cookies</span></div>
+  </div>
+</footer>
+
+<dialog id="menu" class="menu-dlg" aria-labelledby="menu-h">
+  <div class="md-hlava"><h2 class="h3" id="menu-h" data-en="Menu">Nabídka</h2><button type="button" class="ikona-btn" data-zavri aria-label="Zavřít nabídku" data-en-label="Close menu"><svg class="ico" aria-hidden="true"><use href="../../objevovani/ikony.svg#i-zavrit"/></svg></button></div>
+  <nav aria-labelledby="menu-h"><ul>
+      <li><a href="../../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li>
+      <li><a href="../jak-to-funguje.html" data-en="How it works">Jak to funguje</a></li>
+      <li><a href="../vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a></li>
+      <li><a href="../standard.html" data-en="The Fragmento standard">Standard Fragmenta</a></li>
+      <li><a href="../storno-a-podminky.html" data-en="Cancellation and terms">Storno a podmínky</a></li>
+      <li><a href="../pomoc.html" data-en="Help and questions">Pomoc a otázky</a></li>
+      <li><a href="../kontakt.html" data-en="Contact">Kontakt</a></li>
+      <li><a href="#" data-en="Sign in">Přihlásit se</a></li>
+  </ul></nav>
+</dialog>
+</body>
+</html>

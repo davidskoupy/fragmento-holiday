@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Telefon, e-mail a kontaktní formulář Fragmento Holiday.">
+<title>Kontakt · Fragmento Holiday</title>
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../holiday.css">
+<link rel="stylesheet" href="../doc.css">
+<link rel="stylesheet" href="../objevovani/objevovani.css">
+<link rel="stylesheet" href="obsah.css">
+<script src="../holiday.js" defer></script>
+<script src="../objevovani/objevovani.js" defer></script>
+</head>
+<body>
+
+<!-- Lišta návrhu: přepínače pro posouzení, v produktu není -->
+<div class="navrh">
+  <div class="wrap">
+    <nav aria-label="Stránky návrhu"><a href="jak-to-funguje.html">Jak to funguje</a><a href="vernostni-program.html">Věrnostní program</a><a href="standard.html">Standard Fragmenta</a><a href="storno-a-podminky.html">Storno a podmínky</a><a href="pomoc.html">Pomoc a otázky</a><a href="kontakt.html" aria-current="page">Kontakt</a><a href="emaily/index.html">E-maily</a><a href="../objevovani/domu.html">Objevování</a><a href="../components.html">Komponenty</a></nav>
+    <span class="ukazka">Ukázka · návrh v1</span>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg"><button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Fáze programu"><span class="seg-popis">Fáze</span><span class="seg"><button type="button" data-faze-prepni="1" aria-pressed="true">1</button><button type="button" data-faze-prepni="2" aria-pressed="false">2</button></span></div>
+    </div>
+  </div>
+</div>
+<header class="hl">
+  <div class="wrap">
+    <a class="lockup auto" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page">
+      <img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <nav class="hl-nav" aria-label="Hlavní nabídka" data-en-label="Main menu">
+      <a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a>
+      <a href="jak-to-funguje.html" data-en="How it works">Jak to funguje</a>
+      <a href="vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a>
+      <a href="pomoc.html" data-en="Help">Pomoc</a>
+    </nav>
+    <a class="btn ghost hl-prihlasit" href="#" data-en="Sign in">Přihlásit se</a>
+    <button type="button" class="ikona-btn hl-menu" data-otevri="menu" aria-label="Nabídka" data-en-label="Menu" aria-haspopup="dialog"><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-menu"/></svg></button>
+  </div>
+</header>
+<div class="str-hlava"><div class="wrap"><h1 data-en="Contact">Kontakt</h1><p class="perex" data-en="Call or write to us. We can help with your booking before your stay and during it.">Zavolejte nebo napište. S rezervací vám poradíme před pobytem i během něj.</p></div></div>
+
+<main id="obsah">
+<nav class="subnav" aria-label="V této části" data-en-label="In this section"><div class="wrap"><ul><li><a href="jak-to-funguje.html"><span data-en="How it works">Jak to funguje</span></a></li><li><a href="vernostni-program.html"><span data-en="Loyalty programme">Věrnostní program</span></a></li><li><a href="standard.html"><span data-en="The Fragmento standard">Standard Fragmenta</span></a></li><li><a href="storno-a-podminky.html"><span data-en="Cancellation and terms">Storno a podmínky</span></a></li><li><a href="pomoc.html"><span data-en="Help and questions">Pomoc a otázky</span></a></li><li><a href="kontakt.html" aria-current="page"><span data-en="Contact">Kontakt</span></a></li></ul></div></nav>
+<div class="wrap"><div class="ukazka-pas"><span class="ukazka"><span data-en="Sample">Ukázka</span></span><p class="fine" data-en="The form is a sample and sends nothing. Details in square brackets will be added by the client.">Formulář je ukázka bez odesílání. Údaje v hranatých závorkách doplní klient.</p></div></div><section class="sekce" aria-labelledby="kontakt-h">
+  <div class="wrap">
+    <div class="sekce-hlava"><div><h2 class="h2" id="kontakt-h" data-en="How to reach us">Jak se s námi spojit</h2></div></div>
+<div class="kontakt-mrizka">
+      <article class="karta-info" aria-labelledby="k-tel">
+        <svg class="ico velke" aria-hidden="true"><use href="../objevovani/ikony.svg#i-telefon"/></svg>
+        <h2 class="h3" id="k-tel" data-en="Phone">Telefon</h2>
+        <p class="kontakt-cislo"><a href="tel:+420604827601" class="num">+420 604 827 601</a></p>
+        <p class="fine" data-en="The number is taken from fragmento.cz. &lt;span class=&quot;klient d&quot;&gt;[to check whether it also applies to Holiday]&lt;/span&gt;">Číslo je převzaté z fragmento.cz. <span class="klient d">[ověřit, zda platí i pro Holiday]</span></p>
+        <p data-en="Opening hours: &lt;span class=&quot;klient&quot;&gt;[client to add]&lt;/span&gt;">Provozní doba: <span class="klient">[doplní klient]</span></p>
+        <p data-en="Languages: &lt;span class=&quot;klient&quot;&gt;[client to add]&lt;/span&gt;">Jazyky: <span class="klient">[doplní klient]</span></p>
+      </article>
+      <article class="karta-info" aria-labelledby="k-mail">
+        <svg class="ico velke" aria-hidden="true"><use href="../objevovani/ikony.svg#i-email"/></svg>
+        <h2 class="h3" id="k-mail" data-en="Email">E-mail</h2>
+        <p class="kontakt-cislo"><a href="mailto:info@fragmento.cz">info@fragmento.cz</a></p>
+        <p class="fine" data-en="The address is taken from fragmento.cz. It may change once the Holiday domain is decided. &lt;span class=&quot;klient&quot;&gt;[client to add]&lt;/span&gt;">Adresa je převzatá z fragmento.cz. Až se rozhodne o doméně Holiday, může se změnit. <span class="klient">[doplní klient]</span></p>
+        <p data-en="We reply on working days. &lt;span class=&quot;klient d&quot;&gt;[client to add: reply time]&lt;/span&gt;">Odpovídáme v pracovní dny. <span class="klient d">[doplní klient: lhůta odpovědi]</span></p>
+      </article>
+      <article class="karta-info" aria-labelledby="k-fir">
+        <svg class="ico velke" aria-hidden="true"><use href="../objevovani/ikony.svg#i-standard"/></svg>
+        <h2 class="h3" id="k-fir" data-en="Who is behind this">Kdo za tím stojí</h2>
+        <p class="kontakt-cislo" data-en="Fragmento">Fragmento</p>
+        <p data-en="&lt;span class=&quot;klient d&quot;&gt;[client to add: company, reg. no., address]&lt;/span&gt;"><span class="klient d">[doplní klient: firma, IČ, sídlo]</span></p>
+        <p class="fine" data-en="Stays in properties that Fragmento selects and manages.">Pobyty v nemovitostech, které Fragmento vybírá a spravuje.</p>
+      </article>
+    </div><div style="margin-top:var(--m-6)"><div class="hlaska info" role="note"><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-info"/></svg><b data-en="Are you on a stay and need something?">Jste na pobytu a něco potřebujete?</b><p data-en="Call the number above. The client will add the phone opening hours.">Zavolejte na číslo výše. Provozní dobu telefonu doplní klient.</p></div></div>
+  </div>
+</section><section class="sekce pas" aria-labelledby="form-h">
+  <div class="wrap">
+    <div class="sekce-hlava"><div><h2 class="h2" id="form-h" data-en="Write to us">Napište nám</h2></div></div>
+<div class="proza"><form class="kontakt-form" action="#" novalidate>
+        <div class="pole"><label for="f-jmeno"><span data-en="Full name">Jméno a příjmení</span></label><input id="f-jmeno" class="vstup" autocomplete="name" required></div>
+        <div class="pole"><label for="f-mail"><span data-en="Email">E-mail</span></label><input id="f-mail" class="vstup" type="email" autocomplete="email" inputmode="email" required></div>
+        <div class="pole"><label for="f-rez"><span data-en="Booking number">Číslo rezervace</span> <span class="nepovinne"><span data-en="(optional)">(nepovinné)</span></span></label><input id="f-rez" class="vstup" autocomplete="off"></div>
+        <div class="pole"><label for="f-tema"><span data-en="What it is about">O čem píšete</span></label>
+          <select id="f-tema" class="vstup">
+            <option data-en="Booking">Rezervace</option><option data-en="Payment">Platba</option><option data-en="Points">Body</option><option data-en="Something else">Jiné</option>
+          </select></div>
+        <div class="pole siroke"><label for="f-zprava"><span data-en="Message">Zpráva</span></label><textarea id="f-zprava" class="vstup" rows="5" required></textarea></div>
+        <p class="fine siroke"><span data-en="We use your details only to reply to your message. &lt;span class=&quot;klient d&quot;&gt;[privacy wording to be approved by the lawyer, GDPR]&lt;/span&gt;">Údaje použijeme jen k odpovědi na vaši zprávu. <span class="klient d">[znění ochrany osobních údajů schválí právník, GDPR]</span></span></p>
+        <div class="siroke"><button class="btn" type="button" data-en="Send message">Odeslat zprávu</button></div>
+      </form></div>
+  </div>
+</section>
+</main>
+
+<footer class="pata">
+  <div class="wrap">
+    <div style="display:grid;gap:var(--m-3);align-content:start">
+      <a class="lockup tmavy" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page"><img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span></a>
+      <p data-en="Stays in properties that Fragmento selects and manages.">Pobyty v nemovitostech, které Fragmento vybírá a spravuje.</p>
+    </div>
+    <nav aria-label="Pobyty" data-en-label="Stays"><h2 data-en="Stays">Pobyty</h2><ul><li><a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li><li><a href="jak-to-funguje.html" data-en="How it works">Jak to funguje</a></li><li><a href="standard.html" data-en="The Fragmento standard">Standard Fragmenta</a></li><li><a href="vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a></li></ul></nav>
+    <nav aria-label="Pomoc" data-en-label="Help"><h2 data-en="Help">Pomoc</h2><ul><li><a href="storno-a-podminky.html" data-en="Cancellation and terms">Storno a podmínky</a></li><li><a href="pomoc.html" data-en="Help and questions">Pomoc a otázky</a></li><li><a href="kontakt.html" data-en="Contact">Kontakt</a></li></ul></nav>
+    <nav aria-label="Fragmento" data-en-label="Fragmento"><h2 data-en="Fragmento">Fragmento</h2><ul><li><a href="https://www.fragmento.cz/" data-en="fragmento.cz">fragmento.cz</a></li><li><a href="#" data-en="About us">O nás</a></li></ul></nav>
+    <div class="pata-jazyk"><nav class="jazyky" aria-label="Jazyk" data-en-label="Language"><a href="#" hreflang="cs" lang="cs" data-jazyk="cs" aria-current="true"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="8" width="24" height="8" fill="#D7141A"/><path d="M0 0l12 8L0 16z" fill="#11457E"/></svg><span>Čeština</span></a><a href="#" hreflang="en" lang="en" data-jazyk="en"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="3"/></svg><span>English</span></a></nav></div>
+    <div class="pata-spodek fine"><span data-en="© 2026 Fragmento · &lt;span class=&quot;klient d&quot;&gt;[client to add: company, reg. no., address]&lt;/span&gt; · Privacy · Cookies">© 2026 Fragmento · <span class="klient d">[doplní klient: firma, IČ, sídlo]</span> · Ochrana osobních údajů · Cookies</span></div>
+  </div>
+</footer>
+
+<dialog id="menu" class="menu-dlg" aria-labelledby="menu-h">
+  <div class="md-hlava"><h2 class="h3" id="menu-h" data-en="Menu">Nabídka</h2><button type="button" class="ikona-btn" data-zavri aria-label="Zavřít nabídku" data-en-label="Close menu"><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-zavrit"/></svg></button></div>
+  <nav aria-labelledby="menu-h"><ul>
+      <li><a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li>
+      <li><a href="jak-to-funguje.html" data-en="How it works">Jak to funguje</a></li>
+      <li><a href="vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a></li>
+      <li><a href="standard.html" data-en="The Fragmento standard">Standard Fragmenta</a></li>
+      <li><a href="storno-a-podminky.html" data-en="Cancellation and terms">Storno a podmínky</a></li>
+      <li><a href="pomoc.html" data-en="Help and questions">Pomoc a otázky</a></li>
+      <li><a href="kontakt.html" data-en="Contact">Kontakt</a></li>
+      <li><a href="#" data-en="Sign in">Přihlásit se</a></li>
+  </ul></nav>
+</dialog>
+</body>
+</html>

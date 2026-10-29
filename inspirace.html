@@ -1,0 +1,453 @@
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Holiday Inspirace</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: filtr zdrojů nahoře, uprostřed ukázka detailu nemovitosti s očíslovanými špendlíky, dole etapy nasazení a čemu se vyhneme. */
+:root {
+  --bg: #F8F5EE;
+  --surface: #FFFFFF;
+  --surface-2: #F0EBDF;
+  --ink: #2A2418;
+  --muted: #6E6552;
+  --line: #E2DBC9;
+  --brass: #716433;
+  --brass-soft: #EDE6CF;
+  --peach: #E9A57A;
+  --gold: #F3C77E;
+  --src-booking: #2F5FA8;
+  --src-airbnb: #C2412F;
+  --src-amazing: #2F7A5B;
+  --src-other: #6B5B95;
+  --on-src: #FFFFFF;
+  --ok: #3E7C4F;
+  --font-display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --font-body: "Figtree", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17140E; --surface: #211D14; --surface-2: #2B261A; --ink: #EFEADB; --muted: #AAA088;
+    --line: #3A3426; --brass: #BFBB88; --brass-soft: #2F2B1A;
+    --src-booking: #8FB1E8; --src-airbnb: #F0907F; --src-amazing: #7FCBA6; --src-other: #B7A6E6;
+    --on-src: #14110B; --ok: #8CCB9B; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17140E; --surface: #211D14; --surface-2: #2B261A; --ink: #EFEADB; --muted: #AAA088;
+  --line: #3A3426; --brass: #BFBB88; --brass-soft: #2F2B1A;
+  --src-booking: #8FB1E8; --src-airbnb: #F0907F; --src-amazing: #7FCBA6; --src-other: #B7A6E6;
+  --on-src: #14110B; --ok: #8CCB9B; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; margin: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 40px 120px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.05; max-width: 18ch; }
+h2 { font-size: 24px; margin-bottom: 6px; }
+p { margin: 0; }
+.eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); font-weight: 600; margin-bottom: 14px; }
+.lead { color: var(--muted); max-width: 62ch; margin-top: 14px; font-size: 16px; }
+section { margin-top: 56px; }
+.sub { color: var(--muted); max-width: 64ch; margin-bottom: 18px; }
+
+/* filtr zdrojů */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: inherit; font-weight: 500; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 8px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.chip i { width: 10px; height: 10px; border-radius: 50%; background: var(--c, var(--brass)); display: inline-block; }
+.chip b { font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip[aria-pressed="true"] b { color: inherit; opacity: .7; }
+:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+/* ukázka detailu */
+.mock { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
+.mock-bar { display: flex; align-items: center; gap: 8px; padding: 2px 4px 12px; color: var(--muted); font-size: 12px; }
+.mock-bar .dots { display: flex; gap: 5px; }
+.mock-bar .dots span { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
+.mock-bar .url { background: var(--surface-2); border-radius: 999px; padding: 3px 12px; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mock-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 14px; }
+.mock-main, .mock-side { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.zone { position: relative; border: 1px dashed var(--line); border-radius: 12px; padding: 14px; transition: opacity .2s, border-color .2s; background: var(--surface); }
+.zone.dim { opacity: .3; }
+.zone.sel { border: 1px solid var(--brass); box-shadow: 0 0 0 3px var(--brass-soft); }
+.pins { position: absolute; top: -11px; right: 10px; display: flex; gap: 4px; z-index: 2; }
+.pin { font: inherit; font-size: 12px; font-weight: 600; min-width: 24px; height: 24px; padding: 0 7px; border-radius: 999px; border: 2px solid var(--surface); background: var(--c); color: var(--on-src); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; }
+.pin[aria-pressed="true"] { outline: 2px solid var(--ink); outline-offset: 1px; }
+.pin[hidden] { display: none; }
+.zlabel { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
+
+.searchbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.field { background: var(--surface-2); border-radius: 999px; padding: 7px 14px; font-size: 13px; }
+.field.go { background: var(--brass); color: var(--surface); font-weight: 600; margin-left: auto; }
+.coll { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.coll span { border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px; font-size: 12px; }
+
+.gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 90px 90px; gap: 6px; border-radius: 8px; overflow: hidden; }
+.gallery div:nth-child(1) { grid-row: 1 / 3; background: linear-gradient(160deg, var(--gold), var(--peach) 55%, #B9795A); }
+.gallery div:nth-child(2) { background: linear-gradient(120deg, #F0D9A4, #E9A57A); }
+.gallery div:nth-child(3) { background: linear-gradient(120deg, #9CC3C9, #5E8F9A); }
+.gallery div:nth-child(4) { background: linear-gradient(120deg, #D8B98A, #A88458); }
+.gallery div:nth-child(5) { background: linear-gradient(120deg, #E7C3A3, #C98E6B); }
+.heart { position: absolute; top: 22px; right: 22px; width: 30px; height: 30px; border-radius: 50%; background: var(--surface); display: grid; place-items: center; font-size: 15px; color: var(--src-airbnb); }
+
+.ttl { font-family: var(--font-display); font-size: 21px; font-weight: 700; }
+.meta { color: var(--muted); font-size: 13px; margin-top: 2px; }
+.rate { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-top: 12px; }
+.score { background: var(--ink); color: var(--bg); font-weight: 700; border-radius: 8px 8px 8px 2px; padding: 5px 9px; font-size: 15px; font-variant-numeric: tabular-nums; }
+.sub-scores { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--muted); }
+.sub-scores b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--brass-soft); color: var(--brass); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tags span { background: var(--brass-soft); color: var(--brass); border-radius: 8px; padding: 5px 10px; font-size: 13px; font-weight: 500; }
+.story { font-size: 14px; color: var(--ink); max-width: 60ch; }
+.story em { font-style: normal; color: var(--muted); }
+
+.cal-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.cal-head b { font-family: var(--font-display); }
+.cal-head small { color: var(--muted); font-size: 12px; }
+.cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
+.cal .dow { font-size: 10px; color: var(--muted); text-align: center; text-transform: uppercase; letter-spacing: .06em; }
+.cal .d { border-radius: 6px; padding: 4px 0 3px; text-align: center; background: var(--surface-2); font-size: 11px; line-height: 1.2; }
+.cal .d b { display: block; font-size: 12px; font-weight: 600; }
+.cal .d span { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 10px; }
+.cal .d.cheap { background: color-mix(in srgb, var(--ok) 22%, var(--surface)); }
+.cal .d.busy { background: transparent; color: var(--muted); text-decoration: line-through; opacity: .55; }
+.cal .d.pick { background: var(--brass); color: var(--surface); }
+.cal .d.pick span { color: inherit; }
+.cal .blank { visibility: hidden; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 11px; color: var(--muted); margin-top: 8px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+
+.hostrow { display: flex; gap: 12px; align-items: center; }
+.avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(140deg, var(--gold), var(--peach)); flex: none; }
+.map { height: 120px; border-radius: 8px; position: relative; background: repeating-linear-gradient(90deg, transparent 0 38px, var(--line) 38px 39px), repeating-linear-gradient(0deg, transparent 0 38px, var(--line) 38px 39px), var(--surface-2); }
+.map span { position: absolute; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+.map span.here { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; font-size: 13px; }
+.tips div { background: var(--surface-2); border-radius: 8px; padding: 9px 10px; }
+.tips small { display: block; color: var(--muted); font-size: 11px; }
+
+.price { font-family: var(--font-display); font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.price small { font-family: var(--font-body); font-size: 12px; font-weight: 400; color: var(--muted); }
+.lines { margin-top: 10px; font-size: 13px; display: grid; gap: 4px; }
+.lines div { display: flex; justify-content: space-between; gap: 8px; font-variant-numeric: tabular-nums; }
+.lines div:last-child { border-top: 1px solid var(--line); padding-top: 6px; font-weight: 600; }
+.cta { margin-top: 12px; background: var(--brass); color: var(--surface); text-align: center; border-radius: 10px; padding: 11px; font-weight: 600; }
+.row2 { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.pts { background: var(--brass-soft); }
+.pts .big { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--brass); font-variant-numeric: tabular-nums; }
+.lvls { display: flex; gap: 6px; margin-top: 8px; font-size: 12px; }
+.lvls span { flex: 1; text-align: center; border: 1px solid var(--line); border-radius: 8px; padding: 5px 2px; background: var(--surface); color: var(--muted); }
+.lvls span.on { border-color: var(--brass); color: var(--brass); font-weight: 600; }
+
+/* panel s popisem vybrané funkce */
+.detail { position: sticky; bottom: max(12px, env(safe-area-inset-bottom, 0px)); margin-top: 14px; background: var(--ink); color: var(--bg); border-radius: 14px; padding: 16px 18px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; box-shadow: 0 8px 28px rgba(0,0,0,.22); z-index: 5; }
+.detail .num { grid-row: 1 / 4; width: 36px; height: 36px; border-radius: 50%; background: var(--c); color: var(--on-src); display: grid; place-items: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.detail h3 { font-size: 18px; }
+.detail .from { font-size: 12px; opacity: .75; }
+.detail .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 8px; font-size: 14px; }
+.detail .cols small { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; opacity: .65; margin-bottom: 2px; }
+
+/* etapy */
+.lanes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.lane { background: var(--surface-2); border-radius: 14px; padding: 14px; }
+.lane h3 { font-size: 16px; display: flex; justify-content: space-between; align-items: baseline; }
+.lane h3 small { font-family: var(--font-body); font-weight: 400; color: var(--muted); font-size: 12px; }
+.lane .note { color: var(--muted); font-size: 13px; margin: 4px 0 12px; }
+.cards { display: grid; gap: 8px; }
+.fc { font: inherit; text-align: left; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px 9px 30px; cursor: pointer; display: grid; gap: 1px; position: relative; }
+.fc::before { content: ""; position: absolute; left: 11px; top: 14px; width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+.fc small { color: var(--muted); font-size: 12px; }
+.fc[aria-pressed="true"] { border-color: var(--ink); }
+.fc[hidden] { display: none; }
+
+/* čemu se vyhneme */
+.avoid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.av { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; background: var(--surface); display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 12px; }
+.av .x { grid-row: 1 / 3; width: 28px; height: 28px; border-radius: 50%; background: var(--src-airbnb); color: var(--on-src); display: grid; place-items: center; font-weight: 700; }
+.av b { font-family: var(--font-display); }
+.av span { color: var(--muted); font-size: 14px; }
+
+@media (max-width: 860px) {
+  .mock-grid { grid-template-columns: minmax(0, 1fr); }
+  .lanes, .avoid { grid-template-columns: minmax(0, 1fr); }
+  .tips { grid-template-columns: minmax(0, 1fr); }
+  .detail .cols { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Fragmento Holiday · podklad pro grafika a vývoj</p>
+  <h1>Co si bereme z Bookingu, Airbnb a Amazing Places</h1>
+  <p class="lead">Šestnáct funkcí, které u konkurence fungují, zasazených do detailu nemovitosti a seřazených do tří etap. Špendlík v ukázce a karta v etapách jsou tatáž funkce. Klikni na kterýkoli a dole se otevře popis.</p>
+
+  <section>
+    <h2>Odkud co bereme</h2>
+    <p class="sub">Barva špendlíku říká, kde jsme nápad viděli. Filtr zvýrazní jen funkce od jednoho zdroje.</p>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <section>
+    <h2>Detail nemovitosti po zapracování</h2>
+    <p class="sub">Ukázka s vymyšlenou vilou. Kalendář a cena se přepočítávají z vybraných nocí, body odpovídají schválenému pravidlu 1 bod za 1 € a 100 bodů = 3 €.</p>
+    <div class="mock">
+      <div class="mock-bar"><div class="dots"><span></span><span></span><span></span></div><div class="url">holiday.fragmento.cz/nemovitost/vila-mirabel</div></div>
+
+      <div class="zone" data-zone="search" style="margin-bottom:14px">
+        <div class="zlabel">Hledání</div>
+        <div class="searchbar"><span class="field">Chorvatsko</span><span class="field">14. – 21. 6. ±3 dny</span><span class="field">2 dospělí</span><span class="field go">Hledat</span></div>
+        <div class="coll"><span>Pro dva</span><span>S dětmi</span><span>U moře</span><span>Práce z pláže</span><span>Mimo sezonu</span></div>
+      </div>
+
+      <div class="zone" data-zone="gallery" style="margin-bottom:14px">
+        <div class="gallery"><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="heart">♥</div>
+      </div>
+
+      <div class="mock-grid">
+        <div class="mock-main">
+          <div class="zone" data-zone="title">
+            <div class="ttl">Vila Mirabel</div>
+            <div class="meta">Hvar, Chorvatsko · 4 ložnice · 8 hostů · 60 m od moře</div>
+            <div class="rate"><span class="score">4,7 ★</span><span>126 hodnocení na Googlu</span></div>
+            <div class="sub-scores" style="margin-top:8px"><span>Vlastní ověřená hodnocení přibudou po prvních pobytech</span></div>
+          </div>
+          <div class="zone" data-zone="tags">
+            <div class="zlabel">Čím je výjimečná</div>
+            <div class="tags"><span>Vyhřívaný bazén</span><span>Terasa s výhledem na ostrovy</span><span>Kamenný dům z roku 1890</span><span>Soukromá zátoka</span></div>
+          </div>
+          <div class="zone" data-zone="story">
+            <div class="zlabel">Příběh místa</div>
+            <p class="story">Rodinný dům nad zátokou prošel dvouletou rekonstrukcí, při které zůstaly původní kamenné zdi. <em>Večer se terasa zbarví do zlatova, proto jsme ji vybrali.</em> Do nabídky se dostávají jen nemovitosti, které jsme osobně navštívili.</p>
+          </div>
+          <div class="zone" data-zone="calendar">
+            <div class="cal-head"><b>Červen 2027</b><small>cena za noc v €</small></div>
+            <div class="cal" id="cal"></div>
+            <div class="legend"><span><i style="background:var(--brass)"></i>vybrané noci</span><span><i style="background:color-mix(in srgb, var(--ok) 35%, var(--surface))"></i>nejlevnější dny</span><span><i style="background:var(--line)"></i>obsazeno</span></div>
+          </div>
+          <div class="zone" data-zone="tips">
+            <div class="zlabel">Tipy z okolí</div>
+            <div class="tips"><div>Konoba u přístavu<small>večeře, 6 min pěšky</small></div><div>Zátoka Dubovica<small>koupání, 15 min lodí</small></div><div>Pondělní trh ve Starém Gradu<small>ráno, 10 min autem</small></div></div>
+          </div>
+        </div>
+
+        <div class="mock-side">
+          <div class="zone" data-zone="card">
+            <div class="price" id="priceTop">–</div>
+            <div class="lines" id="lines"></div>
+            <div class="row2"><span class="badge">Storno podle podmínek (k určení)</span><span class="badge">Záloha 30 %, doplatek později</span></div>
+            <div class="cta">Rezervovat</div>
+          </div>
+          <div class="zone pts" data-zone="points">
+            <div class="zlabel">Věrnostní body</div>
+            <div class="big" id="pts">–</div>
+            <div class="meta" id="ptsEur"></div>
+            <div class="lvls"><span class="on">Host ×1</span><span>Stálý host ×1,5</span><span>Domácí ×2</span></div>
+          </div>
+          <div class="zone" data-zone="compare-note" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+    <div class="detail" id="detail" aria-live="polite"></div>
+  </section>
+
+  <section>
+    <h2>Pořadí nasazení</h2>
+    <p class="sub">První etapa je to, co hosta přesvědčí k rezervaci. Druhá zlepšuje hledání a důvěru. Třetí čeká, až bude dost nemovitostí.</p>
+    <div class="lanes" id="lanes"></div>
+  </section>
+
+  <section>
+    <h2>Co nekopírujeme</h2>
+    <p class="sub">U velkých platforem je řada triků, které s poctivou rezervací bez poplatků nejdou dohromady.</p>
+    <div class="avoid">
+      <div class="av"><div class="x">×</div><b>Falešný tlak</b><span>Žádné „právě se dívá 12 lidí“. Ukazujeme jen skutečnou dostupnost z rezervací.</span></div>
+      <div class="av"><div class="x">×</div><b>Poplatky v posledním kroku</b><span>Cena v seznamu je cena, kterou host zaplatí.</span></div>
+      <div class="av"><div class="x">×</div><b>Přeprodání termínu</b><span>Majitelé blokují své dny rezervací, takže se termín nemůže prodat dvakrát.</span></div>
+      <div class="av"><div class="x">×</div><b>Upravovaná hodnocení</b><span>Google hodnocení ukazujeme beze změny. Vlastní hodnocení napíše jen host, který pobyt dokončil.</span></div>
+    </div>
+  </section>
+</div>
+
+<script>
+var SRC = {
+  booking: { label: "Booking", cssVar: "--src-booking" },
+  airbnb:  { label: "Airbnb", cssVar: "--src-airbnb" },
+  amazing: { label: "Amazing Places", cssVar: "--src-amazing" },
+  other:   { label: "Další platformy", cssVar: "--src-other" }
+};
+var PHASES = [
+  { id: "mvp", name: "Etapa 1", note: "Spuštění: bez toho se nerezervuje." },
+  { id: "v2", name: "Etapa 2", note: "Po spuštění: hledání a důvěra." },
+  { id: "later", name: "Etapa 3", note: "Až bude dost nemovitostí." }
+];
+var F = [
+  { id: 1, src: "booking", zone: "card", phase: "mvp", title: "Celková cena předem", from: "Booking",
+    take: "Cena včetně všech poplatků a daní už v seznamu i v kalendáři.",
+    ours: "Rozpis pod cenou, žádný příplatek v posledním kroku. Cena v kartě je cena na faktuře." },
+  { id: 2, src: "booking", zone: "title", phase: "mvp", title: "Hodnocení z Googlu", from: "Booking (skóre u názvu)",
+    take: "Jedno skóre s počtem hodnocení hned pod názvem nemovitosti.",
+    ours: "Na startu nemáme vlastní hodnocení. Skóre a počet recenzí přebíráme z Googlu a odkazujeme na zdroj. Google hodnocení nijak neupravujeme." },
+  { id: 3, src: "booking", zone: "card", phase: "mvp", title: "Jasné storno", from: "Booking",
+    take: "Štítek „bezplatné storno do data“ u každé nabídky.",
+    ours: "Storno podmínky je třeba nejdřív definovat (lhůty, vratky, výjimky). Až budou, zobrazí se shrnutí v seznamu, v detailu, v potvrzení i v e-mailu." },
+  { id: 4, src: "booking", zone: "points", phase: "mvp", title: "Úroveň a výhody u ceny", from: "Booking (Genius)",
+    take: "Věrnostní úroveň se ukáže přímo v rezervaci.",
+    ours: "Host, Stálý host, Domácí. Úroveň určuje násobič bodů ×1 / ×1,5 / ×2. Body se ukážou před zaplacením." },
+  { id: 5, src: "airbnb", zone: "gallery", phase: "mvp", title: "Fotomozaika", from: "Airbnb",
+    take: "Velká mozaika nahoře, po kliknutí galerie podle místností.",
+    ours: "Hlavní fotka v tónu Zlaté hodinky, ostatní řazené po místnostech. Každá fotka má popisek." },
+  { id: 6, src: "airbnb", zone: "calendar", phase: "mvp", title: "Kalendář s cenou za noc", from: "Airbnb",
+    take: "Cena je v každém dni, vidět je minimum nocí a obsazené dny.",
+    ours: "Obsazené dny pocházejí z rezervací, i majitelských. Jeden zdroj pravdy, žádná ruční synchronizace." },
+  { id: 9, src: "airbnb", zone: "gallery", phase: "v2", title: "Oblíbené a sdílené seznamy", from: "Airbnb",
+    take: "Srdíčko a seznamy, které se dají poslat partnerovi.",
+    ours: "Seznam má odkaz bez přihlášení. Při poklesu ceny nebo uvolnění termínu přijde e-mail." },
+  { id: 10, src: "airbnb", zone: "search", phase: "v2", title: "Flexibilní data", from: "Airbnb",
+    take: "Hledání „±3 dny“ nebo „kdykoli v září“.",
+    ours: "Výsledky řazené podle celkové ceny pobytu. Posun o den dolů často ušetří noc zdarma." },
+  { id: 11, src: "amazing", zone: "story", phase: "mvp", title: "Příběh místa", from: "Amazing Places",
+    take: "Krátký redakční text místo výčtu vybavení.",
+    ours: "Do nabídky se dostává jen to, co jsme osobně navštívili. Text píšeme my, ne majitel." },
+  { id: 12, src: "amazing", zone: "tags", phase: "mvp", title: "Štítky „čím je výjimečná“", from: "Amazing Places",
+    take: "Tři až čtyři věci, kvůli kterým se sem jede.",
+    ours: "Pevný slovník štítků, aby šly filtrovat. Vybavení typu Wi-Fi zůstává v běžném seznamu." },
+  { id: 13, src: "amazing", zone: "tips", phase: "v2", title: "Tipy z okolí", from: "Amazing Places",
+    take: "Restaurace, pláže a trhy podle místních.",
+    ours: "Tipy píše správce. Přijdou i v e-mailu týden před příjezdem." },
+  { id: 14, src: "amazing", zone: "search", phase: "v2", title: "Tematické sbírky", from: "Amazing Places",
+    take: "Výběry podle situace: pro dva, s dětmi, u moře.",
+    ours: "Sbírky jsou vstupem z úvodní stránky i z reklam. Sbírka „Mimo sezonu“ vyplní slabé týdny." },
+  { id: 15, src: "other", zone: "calendar", phase: "v2", title: "Zvýrazněné nejlevnější dny", from: "Google Hotels, Kayak",
+    take: "Barevné označení levných termínů v kalendáři.",
+    ours: "Zelené dny se počítají z ceny za noc v daném měsíci. Host rychle uvidí, kam posunout termín." },
+  { id: 16, src: "other", zone: "title", phase: "later", title: "Porovnání 2–3 nemovitostí", from: "Trivago, Vrbo",
+    take: "Tabulka vedle sebe: cena, vzdálenost, vybavení, skóre.",
+    ours: "Dává smysl až při desítkách nabídek v jedné lokalitě. Zatím stačí oblíbené." },
+  { id: 18, src: "booking", zone: "title", phase: "later", title: "Vlastní ověřená hodnocení", from: "Booking",
+    take: "Hodnotit smí jen host s dokončeným pobytem, s podskóre (čistota, poloha, přesnost popisu).",
+    ours: "K promyšlení, jak hodnocení získávat: e-mail po odjezdu, připomínka, případně body za napsání (návrh, neschváleno). Google hodnocení zůstane vedle vlastních." },
+  { id: 17, src: "other", zone: "card", phase: "later", title: "Záloha a doplatek", from: "Vrbo, Booking",
+    take: "Část ceny při rezervaci, zbytek před příjezdem.",
+    ours: "Záloha 30 %, doplatek 30 dní před příjezdem s připomínkou. Čeká na ověření poplatků platební brány." }
+];
+
+F.forEach(function (f, i) { f.id = i + 1; });
+var state = { src: "all", sel: 1 };
+var byId = {}; F.forEach(function (f) { byId[f.id] = f; });
+function cv(f) { return "var(" + SRC[f.src].cssVar + ")"; }
+function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+/* filtr */
+var chipsBox = document.getElementById("chips");
+function buildChips() {
+  chipsBox.textContent = "";
+  var all = [["all", "Vše", F.length, null]].concat(Object.keys(SRC).map(function (k) {
+    return [k, SRC[k].label, F.filter(function (f) { return f.src === k; }).length, SRC[k].cssVar];
+  }));
+  all.forEach(function (c) {
+    var b = el("button", "chip"); b.type = "button";
+    b.setAttribute("aria-pressed", String(state.src === c[0]));
+    if (c[3]) { var i = el("i"); i.style.setProperty("--c", "var(" + c[3] + ")"); b.appendChild(i); }
+    b.appendChild(document.createTextNode(c[1] + " "));
+    b.appendChild(el("b", null, String(c[2])));
+    b.onclick = function () { state.src = c[0]; render(); };
+    chipsBox.appendChild(b);
+  });
+}
+function visible(f) { return state.src === "all" || f.src === state.src; }
+
+/* pins */
+function buildPins() {
+  document.querySelectorAll(".pins").forEach(function (p) { p.remove(); });
+  document.querySelectorAll(".zone").forEach(function (z) {
+    var fs = F.filter(function (f) { return f.zone === z.dataset.zone; });
+    if (!fs.length) return;
+    var box = el("div", "pins");
+    fs.forEach(function (f) {
+      var b = el("button", "pin", String(f.id)); b.type = "button";
+      b.style.setProperty("--c", cv(f));
+      b.title = f.title;
+      b.setAttribute("aria-label", f.title + ", " + f.from);
+      b.setAttribute("aria-pressed", String(state.sel === f.id));
+      b.hidden = !visible(f);
+      b.onclick = function () { state.sel = f.id; render(); };
+      box.appendChild(b);
+    });
+    z.appendChild(box);
+    var shown = fs.some(visible);
+    z.classList.toggle("dim", !shown);
+    z.classList.toggle("sel", fs.some(function (f) { return f.id === state.sel; }));
+  });
+}
+
+/* panel */
+function buildDetail() {
+  var f = byId[state.sel], d = document.getElementById("detail");
+  d.textContent = "";
+  var n = el("div", "num", String(f.id)); n.style.setProperty("--c", cv(f));
+  d.appendChild(n);
+  d.appendChild(el("h3", null, f.title));
+  d.appendChild(el("div", "from", "Inspirace: " + f.from + " · " + PHASES.filter(function (p) { return p.id === f.phase; })[0].name));
+  var cols = el("div", "cols");
+  [["Co dělají jinde", f.take], ["Jak to uděláme u nás", f.ours]].forEach(function (c) {
+    var w = el("div"); w.appendChild(el("small", null, c[0])); w.appendChild(el("span", null, c[1])); cols.appendChild(w);
+  });
+  d.appendChild(cols);
+}
+
+/* etapy */
+function buildLanes() {
+  var box = document.getElementById("lanes"); box.textContent = "";
+  PHASES.forEach(function (p) {
+    var items = F.filter(function (f) { return f.phase === p.id; });
+    var lane = el("div", "lane");
+    var h = el("h3", null, p.name); h.appendChild(el("small", null, items.length + " funkcí")); lane.appendChild(h);
+    lane.appendChild(el("p", "note", p.note));
+    var cards = el("div", "cards");
+    items.forEach(function (f) {
+      var b = el("button", "fc"); b.type = "button";
+      b.style.setProperty("--c", cv(f));
+      b.setAttribute("aria-pressed", String(state.sel === f.id));
+      b.hidden = !visible(f);
+      b.appendChild(el("span", null, f.id + ". " + f.title));
+      b.appendChild(el("small", null, f.from));
+      b.onclick = function () { state.sel = f.id; render(); document.getElementById("detail").scrollIntoView({ block: "nearest", behavior: "smooth" }); };
+      cards.appendChild(b);
+    });
+    lane.appendChild(cards); box.appendChild(lane);
+  });
+}
+
+/* kalendář a cena: 14.–20. 6. 2027, tedy 7 nocí */
+var PICK = [14, 15, 16, 17, 18, 19, 20], BUSY = [4, 5, 6, 28, 29];
+function nightPrice(d, dow) { var p = 95; if (dow === 4 || dow === 5) p += 25; if (d > 20) p += 15; if (d >= 10 && d <= 20) p += 10; return p; }
+function buildCal() {
+  var c = document.getElementById("cal"); c.textContent = "";
+  ["po", "út", "st", "čt", "pá", "so", "ne"].forEach(function (n) { c.appendChild(el("div", "dow", n)); });
+  var first = 1; /* 1. 6. 2027 je úterý, index 1 */
+  for (var i = 0; i < first; i++) c.appendChild(el("div", "d blank"));
+  var total = 0, nights = 0;
+  for (var d = 1; d <= 30; d++) {
+    var dow = (first + d - 1) % 7, price = nightPrice(d, dow);
+    var cell = el("div", "d"); cell.appendChild(el("b", null, String(d)));
+    var isBusy = BUSY.indexOf(d) > -1, isPick = PICK.indexOf(d) > -1;
+    if (isBusy) cell.classList.add("busy"); else cell.appendChild(el("span", null, String(price)));
+    if (isPick) { cell.classList.add("pick"); total += price; nights++; }
+    else if (!isBusy && price <= 105) cell.classList.add("cheap");
+    c.appendChild(cell);
+  }
+  var cleaning = 60, tax = nights * 2, sum = total + cleaning + tax;
+  document.getElementById("priceTop").innerHTML = sum.toLocaleString("cs-CZ") + " € <small>celkem za " + nights + " nocí</small>";
+  var rows = [[nights + " nocí, průměr " + Math.round(total / nights) + " €", total], ["Úklid", cleaning], ["Pobytová taxa", tax], ["Celkem k zaplacení", sum]];
+  var l = document.getElementById("lines"); l.textContent = "";
+  rows.forEach(function (r) { var row = el("div"); row.appendChild(el("span", null, r[0])); row.appendChild(el("span", null, r[1].toLocaleString("cs-CZ") + " €")); l.appendChild(row); });
+  var pts = Math.round(sum), eur = pts * 3 / 100;
+  document.getElementById("pts").textContent = "+" + pts.toLocaleString("cs-CZ") + " bodů";
+  document.getElementById("ptsEur").textContent = "= " + eur.toLocaleString("cs-CZ", { maximumFractionDigits: 1 }) + " € na příští pobyt (úroveň Host). Domácí získá dvojnásobek.";
+}
+
+function render() { buildChips(); buildPins(); buildDetail(); buildLanes(); }
+buildCal(); render();
+</script>

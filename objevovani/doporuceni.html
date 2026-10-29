@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Ukázka obrazovky doporučení: poradce z textu zadání vybral tři volné nemovitosti a ke každé napsal důvod.">
+<title>Fragmento Holiday, doporučení poradce</title>
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../holiday.css">
+<link rel="stylesheet" href="../doc.css">
+<link rel="stylesheet" href="objevovani.css">
+<script src="../holiday.js" defer></script>
+<script src="objevovani.js" defer></script>
+</head>
+<body>
+
+<!-- Lišta návrhu: přepínače pro posouzení, v produktu není -->
+<div class="navrh">
+  <div class="wrap">
+    <nav aria-label="Obrazovky návrhu"><a href="domu.html">Domů</a><a href="doporuceni.html" aria-current="page">Poradce</a><a href="hledani.html">Hledání</a><a href="detail.html">Detail</a><a href="stavy.html">Stavy</a><a href="../components.html">Komponenty</a></nav>
+    <span class="ukazka">Ukázka · návrh v1</span>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg"><button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Fáze programu"><span class="seg-popis">Fáze</span><span class="seg"><button type="button" data-faze-prepni="1" aria-pressed="true">1</button><button type="button" data-faze-prepni="2" aria-pressed="false">2</button></span></div>
+    </div>
+  </div>
+</div>
+<header class="hl">
+  <div class="wrap">
+    <a class="lockup auto " href="domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page">
+      <img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <nav class="hl-nav" aria-label="Hlavní nabídka" data-en-label="Main menu">
+      <a href="hledani.html" data-en="Find a stay">Hledat pobyt</a>
+      <a href="#" data-en="How it works">Jak to funguje</a>
+      <a href="#" data-en="Loyalty programme">Věrnostní program</a>
+      <a href="#" data-en="Help">Pomoc</a>
+    </nav>
+    <a class="btn ghost hl-prihlasit" href="#" data-en="Sign in">Přihlásit se</a>
+    <button type="button" class="ikona-btn hl-menu" data-otevri="menu" aria-label="Nabídka" data-en-label="Menu" aria-haspopup="dialog"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-menu"/></svg></button>
+  </div>
+</header>
+<main id="obsah" class="wrap dop">
+  <div class="ukazka-pas"><span class="ukazka"><span data-en="Sample">Ukázka</span></span><p class="fine" data-en="Clickable sample: the advisor’s answer is fixed and nothing is evaluated. Texts and picks are illustrative.">Klikací ukázka: odpověď poradce je pevná, nic se nevyhodnocuje. Texty a výběr jsou ilustrační.</p></div>
+  <div class="dop-sloupce">
+    <section class="dop-zadani" aria-labelledby="dop-zadani-h">
+      <div class="dop-radek"><h2 class="dop-h" id="dop-zadani-h" data-en="Your request">Vaše zadání</h2><a class="odkaz" href="domu.html" data-en="Edit">Upravit</a></div>
+      <p class="dop-text" data-dotaz>Jedeme ve čtyřech, děti mají 6 a 9 let. V červenci chceme moře a bazén, aby si děti užily.</p>
+      <p class="dop-mini"><span data-en="What we understood">Rozumíme takto</span></p>
+      <div class="dop-chipy"><span class="chip-x"><span data-en="4 guests, children aged 6 and 9">4 hosté, děti 6 a 9 let</span><button type="button" aria-label="Odebrat: 4 hosté, děti 6 a 9 let" data-en-label="Remove: 4 guests, children aged 6 and 9" data-odeber><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg></button></span><span class="chip-x"><span data-en="17–27 Jul 2027, 10 nights">17.–27. 7. 2027, 10 nocí</span><button type="button" aria-label="Odebrat: 17.–27. 7. 2027, 10 nocí" data-en-label="Remove: 17–27 Jul 2027, 10 nights" data-odeber><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg></button></span><span class="chip-x"><span data-en="By the sea">U moře</span><button type="button" aria-label="Odebrat: U moře" data-en-label="Remove: By the sea" data-odeber><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg></button></span><span class="chip-x"><span data-en="Pool">Bazén</span><button type="button" aria-label="Odebrat: Bazén" data-en-label="Remove: Pool" data-odeber><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg></button></span></div>
+      <p class="fine"><span data-en="We worked out the dates from “in July”. ">Termín jsme domysleli z „v červenci“. </span><a class="odkaz" href="hledani.html" data-en="Change dates">Změnit termín</a></p>
+      <div class="poradce-karta" role="region" aria-label="Poradce Fragmenta" data-en-label="Fragmento advisor">
+        <p class="stitek-poradce mala"><span class="tecka" aria-hidden="true"></span><span data-en="Fragmento advisor">Poradce Fragmenta</span></p>
+        <p class="poradce-veta" data-en="For four with children and a week by the sea we picked three properties that are really free on your dates. The first fits best: the sea and a pool are right there.">Pro čtyři s dětmi a týden u moře jsme vybrali tři nemovitosti, které jsou ve vašem termínu opravdu volné. První sedí nejlépe: moře i bazén jsou hned u ní.</p>
+      </div>
+      <div class="dop-upres">
+        <label for="upres"><span data-en="Refine">Upřesnit</span></label>
+        <div class="poradce-pole mala"><textarea id="upres" rows="2" placeholder="Např.: Chceme být blíž pláži."></textarea></div>
+        <div class="napady"><button type="button" class="napad" data-napad-dop="Blíž k pláži"><span data-en="Closer to the beach">Blíž k pláži</span></button><button type="button" class="napad" data-napad-dop="Levněji"><span data-en="Cheaper">Levněji</span></button><button type="button" class="napad" data-napad-dop="Jiný termín"><span data-en="Another date">Jiný termín</span></button><button type="button" class="napad" data-napad-dop="Dál od Evropy"><span data-en="Further from Europe">Dál od Evropy</span></button></div>
+      </div>
+      <p class="poradce-info tmava" data-en="The advisor is artificial intelligence. It only picks from properties and dates we actually have. The booking system always confirms price and availability.">Poradce je umělá inteligence. Vybírá jen z nemovitostí a termínů, které opravdu máme. Cenu a dostupnost vždy potvrdí rezervační systém.</p>
+      <p class="fine"><span data-en="Prefer to search yourself? ">Raději hledat sami? </span><a class="odkaz" href="hledani.html" data-en="Go to the classic search">Přejít na klasické hledání</a></p>
+    </section>
+    <section class="dop-vysl" aria-labelledby="dop-vysl-h" aria-live="polite">
+      <h2 class="dop-h" id="dop-vysl-h" data-en="Three properties free 17–27 Jul 2027">Tři nemovitosti volné 17.–27. 7. 2027</h2>
+      <div class="dop-karty">
+<article class="dop-karta" data-poradi="1">
+  <div class="dop-foto"><img src="img/n-apartina-3kk-8.webp" alt="Terasa apartmánu Apartina s výhledem na moře" width="1600" height="1067"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-hr"/></svg><span data-en="Croatia">Chorvatsko</span></span></div>
+  <div class="dop-telo">
+    <p class="dop-stitek"><span data-en="Best match">Nejlepší shoda</span></p>
+    <h3 class="dop-nazev"><a href="detail.html" data-en="Apartina, 3+kk apartment">Apartina, apartmán 3+kk</a></h3>
+    <p class="kn-misto">Rtina-Ražanac, Zadar · <span data-en="3 rooms">3 pokoje</span> · 84 m²</p>
+    <p class="dop-proc-h"><span data-en="Why this one">Proč sem</span></p>
+    <ul class="dop-proc"><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="Sea and a heated pool in the complex">Moře a vyhřívaný bazén v komplexu</span></li><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="Three bedrooms and two bathrooms for four guests">Tři pokoje a dvě koupelny pro čtyři hosty</span></li><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="A 45 m² terrace with a sea view">Terasa 45 m² s výhledem na moře</span></li></ul>
+    <p class="dop-pozor"><b><span data-en="Worth knowing:">Na co pozor:</span></b> <span data-en="It’s a long drive from Prague, so plan for a day on the road.">Cesta z Prahy je dlouhá, počítejte s jízdou autem.</span></p>
+    <div class="dop-pata">
+      <div class="dop-cena">
+        <p class="kn-termin"><span data-en="17–27 Jul 2027 · 10 nights">17.–27. 7. 2027 · 10 nocí</span> <span class="dop-volno"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="Free for all dates">Volno celý termín</span></span></p>
+        <p class="kn-castka" data-en="&lt;strong&gt;1 640 €&lt;/strong&gt; for the stay, all in"><strong>1 640 €</strong> za pobyt, vše v ceně</p>
+        <p class="kn-body"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-body"/></svg><span data-en="You’ll earn &lt;b&gt;1 640 points&lt;/b&gt; (≈ 49 €) for this stay">Za pobyt získáte <b>1 640 bodů</b> (≈ 49 €)</span></p>
+      </div>
+      <div class="dop-akce">
+        <a class="odkaz" href="detail.html" data-en="Details">Detail</a>
+        <a class="btn gold" href="detail.html" data-en="Book">Rezervovat</a>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="dop-karta" data-poradi="2">
+  <div class="dop-foto"><img src="img/n-designovy-apartman-3kk-spanelsko-7.webp" alt="Bazén s výhledem na moře u apartmánu v Casares Costa" width="1600" height="900" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-es"/></svg><span data-en="Spain">Španělsko</span></span></div>
+  <div class="dop-telo">
+    
+    <h3 class="dop-nazev"><a href="detail.html" data-en="Design 3+kk apartment with a garden">Designový apartmán 3+kk se zahradou</a></h3>
+    <p class="kn-misto">Casares Costa, Costa del Sol · <span data-en="3 rooms">3 pokoje</span> · 142 m²</p>
+    <p class="dop-proc-h"><span data-en="Why this one">Proč sem</span></p>
+    <ul class="dop-proc"><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="A pool with a sea view">Bazén s výhledem na moře</span></li><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="142 m² and a garden, so the kids have room to run">142 m² a zahrada, děti mají kde pobíhat</span></li></ul>
+    <p class="dop-pozor"><b><span data-en="Worth knowing:">Na co pozor:</span></b> <span data-en="Only one bathroom for four guests.">Jen jedna koupelna pro čtyři hosty.</span></p>
+    <div class="dop-pata">
+      <div class="dop-cena">
+        <p class="kn-termin"><span data-en="17–27 Jul 2027 · 10 nights">17.–27. 7. 2027 · 10 nocí</span> <span class="dop-volno"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="Free for all dates">Volno celý termín</span></span></p>
+        <p class="kn-castka" data-en="&lt;strong&gt;1 480 €&lt;/strong&gt; for the stay, all in"><strong>1 480 €</strong> za pobyt, vše v ceně</p>
+        <p class="kn-body"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-body"/></svg><span data-en="You’ll earn &lt;b&gt;1 480 points&lt;/b&gt; (≈ 44 €) for this stay">Za pobyt získáte <b>1 480 bodů</b> (≈ 44 €)</span></p>
+      </div>
+      <div class="dop-akce">
+        <a class="odkaz" href="detail.html" data-en="Details">Detail</a>
+        <a class="btn gold" href="detail.html" data-en="Book">Rezervovat</a>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="dop-karta" data-poradi="3">
+  <div class="dop-foto"><img src="img/n-uluwatu-bali-4kk-5.webp" alt="Bazén vily Eclipse mezi palmami" width="1600" height="1067" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-id"/></svg><span data-en="Bali">Bali</span></span></div>
+  <div class="dop-telo">
+    <p class="dop-stitek"><span data-en="Also worth considering">Také stojí za zvážení</span></p>
+    <h3 class="dop-nazev"><a href="detail.html" data-en="Eclipse Villa, 4+kk">Eclipse vila 4+kk</a></h3>
+    <p class="kn-misto">Pecatu, Uluwatu · <span data-en="4 rooms">4 pokoje</span> · 209 m²</p>
+    <p class="dop-proc-h"><span data-en="Why this one">Proč sem</span></p>
+    <ul class="dop-proc"><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="A pool among palms, a 397 m² garden">Bazén mezi palmami, zahrada 397 m²</span></li><li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="Four bedrooms, room for two families">Čtyři pokoje, místo pro dvě rodiny</span></li></ul>
+    <p class="dop-pozor"><b><span data-en="Worth knowing:">Na co pozor:</span></b> <span data-en="The longest journey of the three. We’re still adding the distance to the sea, so we don’t know it yet.">Nejdelší cesta ze tří. Vzdálenost od moře zatím doplňujeme, nevíme ji.</span></p>
+    <div class="dop-pata">
+      <div class="dop-cena">
+        <p class="kn-termin"><span data-en="17–27 Jul 2027 · 10 nights">17.–27. 7. 2027 · 10 nocí</span> <span class="dop-volno"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="Free for all dates">Volno celý termín</span></span></p>
+        <p class="kn-castka" data-en="&lt;strong&gt;2 350 €&lt;/strong&gt; for the stay, all in"><strong>2 350 €</strong> za pobyt, vše v ceně</p>
+        <p class="kn-body"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-body"/></svg><span data-en="You’ll earn &lt;b&gt;2 350 points&lt;/b&gt; (≈ 70 €) for this stay">Za pobyt získáte <b>2 350 bodů</b> (≈ 70 €)</span></p>
+      </div>
+      <div class="dop-akce">
+        <a class="odkaz" href="detail.html" data-en="Details">Detail</a>
+        <a class="btn gold" href="detail.html" data-en="Book">Rezervovat</a>
+      </div>
+    </div>
+  </div>
+</article>
+      </div>
+      <p class="fine"><span data-en="The price is the total for the whole stay. Points: 1 point per €1 of the stay price, 100 points = €3.">Cena je celková za celý pobyt. Body: 1 bod za 1 € ceny pobytu, 100 bodů = 3 €.</span></p>
+    </section>
+  </div>
+</main>
+
+<footer class="pata">
+  <div class="wrap">
+    <div style="display:grid;gap:var(--m-3);align-content:start">
+      <a class="lockup tmavy" href="domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page"><img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span></a>
+      <p data-en="Stays in properties that Fragmento selects and manages.">Pobyty v nemovitostech, které Fragmento vybírá a spravuje.</p>
+    </div>
+    <nav aria-label="Pobyty" data-en-label="Stays"><h2 data-en="Stays">Pobyty</h2><ul><li><a href="hledani.html" data-en="Find a stay">Hledat pobyt</a></li><li><a href="#" data-en="How it works">Jak to funguje</a></li><li><a href="#" data-en="The Fragmento standard">Standard Fragmenta</a></li><li><a href="#" data-en="Loyalty programme">Věrnostní program</a></li></ul></nav>
+    <nav aria-label="Pomoc" data-en-label="Help"><h2 data-en="Help">Pomoc</h2><ul><li><a href="#" data-en="Cancellation and terms">Storno a podmínky</a></li><li><a href="#" data-en="Help and questions">Pomoc a otázky</a></li><li><a href="#" data-en="Contact">Kontakt</a></li></ul></nav>
+    <nav aria-label="Fragmento" data-en-label="Fragmento"><h2 data-en="Fragmento">Fragmento</h2><ul><li><a href="https://www.fragmento.cz/" data-en="fragmento.cz">fragmento.cz</a></li><li><a href="#" data-en="About us">O nás</a></li></ul></nav>
+    <div class="pata-jazyk"><nav class="jazyky" aria-label="Jazyk" data-en-label="Language"><a href="#" hreflang="cs" lang="cs" data-jazyk="cs" aria-current="true"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="8" width="24" height="8" fill="#D7141A"/><path d="M0 0l12 8L0 16z" fill="#11457E"/></svg><span>Čeština</span></a><a href="#" hreflang="en" lang="en" data-jazyk="en"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="3"/></svg><span>English</span></a></nav></div>
+    <div class="pata-spodek fine"><span data-en="© 2026 Fragmento · [client to add: company, reg. no., address] · Privacy · Cookies">© 2026 Fragmento · [doplní klient: firma, IČ, sídlo] · Ochrana osobních údajů · Cookies</span></div>
+  </div>
+</footer>
+
+<dialog id="menu" class="menu-dlg" aria-labelledby="menu-h">
+  <div class="md-hlava"><h2 class="h3" id="menu-h" data-en="Menu">Nabídka</h2><button type="button" class="ikona-btn" data-zavri aria-label="Zavřít nabídku" data-en-label="Close menu"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg></button></div>
+  <nav aria-labelledby="menu-h"><ul>
+      <li><a href="hledani.html" data-en="Find a stay">Hledat pobyt</a></li>
+      <li><a href="#" data-en="How it works">Jak to funguje</a></li>
+      <li><a href="#" data-en="Loyalty programme">Věrnostní program</a></li>
+      <li><a href="#" data-en="The Fragmento standard">Standard Fragmenta</a></li>
+      <li><a href="#" data-en="Cancellation and terms">Storno a podmínky</a></li>
+      <li><a href="#" data-en="Help and questions">Pomoc a otázky</a></li>
+      <li><a href="#" data-en="Sign in">Přihlásit se</a></li>
+  </ul></nav>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Brandmanuál Fragmento Holiday</title>
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="holiday.css">
+<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+<!--IKONY:START-->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <!-- Ikona bodů: mince s klíčem (Mosaz). Klíč navazuje na „Klíč od svého“ rodiče. -->
+  <symbol id="i-body" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><circle cx="8.7" cy="12" r="2.4"/><path d="M11.1 12h6.4M15.4 12v2.3M17.5 12v1.6"/></symbol>
+  <symbol id="i-klic" viewBox="0 0 32 32"><circle cx="10" cy="16" r="5.2"/><circle cx="10" cy="16" r="1.6"/><path d="M15.2 16H28M23.6 16v4M28 16v3"/></symbol>
+  <symbol id="i-pokoje" viewBox="0 0 24 24"><path d="M3 18.5V11h18v7.5M3 15.2h18M5.5 11V7.5h5.6V11M12.9 11V7.5h5.6V11"/></symbol>
+  <symbol id="i-koupelna" viewBox="0 0 24 24"><path d="M3.5 12h17v2.2a4.3 4.3 0 0 1-4.3 4.3H7.8a4.3 4.3 0 0 1-4.3-4.3zM6 12V6.4a1.9 1.9 0 0 1 3.5-1M7 18.5l-1 2M17 18.5l1 2"/></symbol>
+  <symbol id="i-plocha" viewBox="0 0 24 24"><path d="M4 16.5 16.5 4 20 7.5 7.5 20zM8.6 11.9l1.6 1.6M11 9.5l1.6 1.6M13.4 7.1 15 8.7"/></symbol>
+  <symbol id="i-terasa" viewBox="0 0 24 24"><path d="M3 20.5h18M5 20.5V12M19 20.5V12M3 12h18M12 12V3.5M7.5 7.8 12 3.5l4.5 4.3"/></symbol>
+  <symbol id="i-kalendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-hoste" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0M15.5 5.6a3 3 0 0 1 0 5.8M17.6 14.3a5 5 0 0 1 2.9 5.2"/></symbol>
+  <symbol id="i-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><path d="m7.9 12.3 2.8 2.8 5.5-5.6"/></symbol>
+  <symbol id="i-ceka" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><path d="M12 7v5.2l3.3 2"/></symbol>
+  <symbol id="i-chyba" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><path d="M12 7.3v5.9M12 16.5v.2"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><path d="M12 10.8v6M12 7.4v.2"/></symbol>
+  <symbol id="i-vlevo" viewBox="0 0 24 24"><path d="m14.5 6-6 6 6 6"/></symbol>
+  <symbol id="i-vpravo" viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6"/></symbol>
+  <symbol id="i-sipka" viewBox="0 0 24 24"><path d="M4.5 12h15M14 6.5l5.5 5.5-5.5 5.5"/></symbol>
+  <symbol id="i-zamek" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.2 10.5V8a3.8 3.8 0 0 1 7.6 0v2.5"/></symbol>
+  <symbol id="f-hr" viewBox="0 0 18 12"><rect width="18" height="4" fill="#D52B1E"/><rect y="4" width="18" height="4" fill="#fff"/><rect y="8" width="18" height="4" fill="#171796"/></symbol>
+  <symbol id="f-id" viewBox="0 0 18 12"><rect width="18" height="6" fill="#CE1126"/><rect y="6" width="18" height="6" fill="#fff"/></symbol>
+  <symbol id="f-es" viewBox="0 0 18 12"><rect width="18" height="12" fill="#AA151B"/><rect y="3" width="18" height="6" fill="#F1BF00"/></symbol>
+</svg>
+<!--IKONY:END-->
+
+<header class="doc-hlava">
+  <div class="wrap">
+    <a class="lockup auto" href="#podstata" style="--h:32px" aria-label="Fragmento Holiday, na začátek">
+      <img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg">
+        <button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Jazyk ukázek"><span class="seg-popis">Ukázky</span><span class="seg">
+        <button type="button" data-jazyk="cs" aria-pressed="true">CZ</button><button type="button" data-jazyk="en" aria-pressed="false">EN</button></span></div>
+      <a class="btn ghost" href="components.html">Knihovna komponent</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap doc-rozlozeni">
+  <nav class="doc-nav" aria-label="Kapitoly">
+    <a href="#podstata">1. Podstata</a><a href="#logo">2. Logo</a><a href="#barvy">3. Barvy</a><a href="#kontrast">Kontrasty</a><a href="#typografie">4. Typografie</a><a href="#fotografie">5. Fotografie</a><a href="#ton">6. Tón a texty</a><a href="#vernost">7. Věrnostní jazyk</a><a href="#komponenty">8. Komponenty</a><a href="#pohyb">9. Pohyb</a><a href="#pristupnost">10. Přístupnost</a><a href="#tokeny">Seznam tokenů</a><a href="#zmeny">Změny a schválení</a>
+  </nav>
+
+<main class="doc">
+  <section class="doc-uvod">
+    <p class="lab">Brandmanuál · verze 1.0 · 27. 10. 2026</p>
+    <h1>Fragmento Holiday</h1>
+    <p>Pobytová podznačka Fragmenta, směr A „Zlatá hodinka“. Sdílí logo, písma a základ tokenů rodiče a mění náladu: teplé světlo, klid, celá cena bez překvapení. Všechny hodnoty na stránce jsou z <code>tokens.css</code>, kontrasty jsou změřené skriptem, ne odhadnuté.</p>
+    <div class="doc-stav"><span class="fine"><b>Schváleno</b> Davidem Skoupým 27. 10. 2026. Čísla v [hranatých závorkách] doplní klient.</span></div>
+  </section>
+
+  <!-- 1 Podstata -->
+  <section class="doc-sekce" id="podstata">
+    <header><h2>1. Podstata značky</h2></header>
+    <div class="doc-mrizka dva">
+      <div class="doc-text">
+        <p><b>Role.</b> Fragmento je rodič, Holiday je pobytová část pro hosty. Mluví k hostovi, ne k majiteli.</p>
+        <p><b>Nosná myšlenka.</b> Místa, která známe do detailu. Host nejede do neznáma, jede do nemovitosti, kterou má Fragmento za sebou celou: výběr, vybavení, úklid, příjezd.</p>
+        <p><b>Osobnost.</b> Teplá, klidná, věcná, pozorná. Ne prodejní, ne hravá, ne luxusní na efekt.</p>
+        <p><b>Čím se Holiday nestane:</b> slevovým e-shopem, hotelovým řetězcem, investičním webem ani sociální sítí o cestování.</p>
+      </div>
+      <div class="foto-hlava" style="min-height:280px;display:grid;align-content:space-between;padding:var(--m-5)">
+        <img src="assets/img/ai-terasa-rano.webp" alt="" width="1344" height="752">
+        <span class="lockup tmavy na-fotce" style="--h:34px"><img class="lk-tmave" src="assets/brand/logo-fragmento-light.svg" alt="Fragmento" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo">Holiday</span></span>
+        <div class="scrim" style="margin:0 calc(-1 * var(--m-5)) calc(-1 * var(--m-5))">
+          <p class="hlas" style="color:var(--tm-1)" data-en="Stay in places we know inside out.">Pobyt v nemovitostech, které známe do detailu.</p>
+        </div>
+      </div>
+    </div>
+    <p class="doc-pozn">Fotka v pozadí je AI nálada (hero bez konkrétní nemovitosti), proto nemá popisek a nikde se nevydává za nabídku.</p>
+  </section>
+
+  <!-- 2 Logo -->
+  <section class="doc-sekce" id="logo">
+    <header><h2>2. Logo</h2>
+      <p>Logo Fragmento ze šablony beze změny (<code>logo-fragmento.svg</code>, na tmavém <code>logo-fragmento-light.svg</code>). Vedle něj slovo HOLIDAY v DM Sans 600, verzálky, prostrkání 0,16em, oddělené svislou linkou 1 px. Cormorant se v lockupu nepoužívá.</p></header>
+
+    <h3>Varianty</h3>
+    <div class="doc-mrizka dva">
+      <figure class="doc-pruh"><div class="logo-plocha"><span class="lockup" style="--h:clamp(30px, 9vw, 56px)"><img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="Fragmento" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo">Holiday</span></span></div><figcaption class="doc-popis"><b>Vodorovná, světlá</b>Základní varianta. Hlavička webu, e-mail, dokumenty.</figcaption></figure>
+      <figure class="doc-pruh"><div class="logo-plocha tmava"><span class="lockup tmavy" style="--h:clamp(30px, 9vw, 56px)"><img class="lk-tmave" src="assets/brand/logo-fragmento-light.svg" alt="Fragmento" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo">Holiday</span></span></div><figcaption class="doc-popis"><b>Vodorovná, tmavá</b>Na borovicové břidlici a v tmavém režimu. Slovo HOLIDAY v <code>--tm-1</code>.</figcaption></figure>
+      <figure class="doc-pruh"><div class="logo-plocha krem"><span class="lockup svisly" style="--h:clamp(30px, 9vw, 56px)"><img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="Fragmento" width="261" height="54"><span class="lk-slovo">Holiday</span></span></div><figcaption class="doc-popis"><b>Svislá</b>HOLIDAY pod slovní značkou, zarovnané na písmeno F. Úzké plochy, razítka, profilové obrázky.</figcaption></figure>
+      <figure class="doc-pruh"><div class="logo-plocha tmava"><span class="lockup svisly tmavy" style="--h:clamp(30px, 9vw, 56px)"><img class="lk-tmave" src="assets/brand/logo-fragmento-light.svg" alt="Fragmento" width="261" height="54"><span class="lk-slovo">Holiday</span></span></div><figcaption class="doc-popis"><b>Svislá, tmavá</b>Stejná pravidla na tmavém podkladu.</figcaption></figure>
+    </div>
+
+    <h3>Poměr, ochranná zóna, minimální velikost</h3>
+    <div class="doc-mrizka dva">
+      <div class="logo-plocha" style="min-height:220px"><span class="lockup zona" style="--h:clamp(30px, 8vw, 46px)"><img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="Fragmento" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo">Holiday</span></span></div>
+      <div class="doc-text">
+        <p>Všechny míry se odvozují od výšky loga <b>H</b> (výška souboru SVG, viewBox 261 × 54):</p>
+        <ul>
+          <li>HOLIDAY: velikost písma <b>0,345 H</b>, tj. asi 55 % výšky písmene F, aby podznačka nepřekřičela rodiče (token <code>--lockup-holiday</code>).</li>
+          <li>Linka: 1 px, výška 0,44 H (výška F), mezera 0,22 H před a 0,33 H za. SVG má vpravo vlastní vzduch, proto je mezera vlevo menší.</li>
+          <li>Ochranná zóna: <b>výška písmene F = 0,44 H</b> ze všech stran (čárkovaný rámeček, token <code>--lockup-zona</code>).</li>
+          <li>Logo mark obsahuje pískovou zlatou. Je to součást loga, pravidlo „zlatá jen pro jednání“ se na ni nevztahuje.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="doc-ukazka bila min-radek">
+      <figure><span class="lockup auto" style="--h:32px"><img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="Fragmento" width="261" height="54"><img class="lk-tmave" src="assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo">Holiday</span></span><figcaption><b>Web: min. H = 32 px</b><br>HOLIDAY má 11 px, pod tím už není čitelné.</figcaption></figure>
+      <figure><span class="lockup auto" style="--h:40px"><img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="Fragmento" width="261" height="54"><img class="lk-tmave" src="assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo">Holiday</span></span><figcaption><b>E-mail: min. H = 40 px</b><br>Jako PNG ve dvojnásobném rozlišení, klienti pošty neumí webová písma.</figcaption></figure>
+      <figure><span class="lockup svisly auto" style="--h:40px"><img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="Fragmento" width="261" height="54"><img class="lk-tmave" src="assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-slovo">Holiday</span></span><figcaption><b>Svislá: min. H = 40 px</b><br>Pod touto velikostí jen samotné logo nebo favicona.</figcaption></figure>
+    </div>
+
+    <h3>Logo na fotce</h3>
+    <div class="doc-mrizka dva">
+      <div class="foto-hlava logo-plocha fotka"><img src="assets/img/n-designovy-apartman-3kk-spanelsko-7.webp" alt="" width="1600" height="900"><span class="lockup tmavy na-fotce" style="--h:36px"><img class="lk-tmave" src="assets/brand/logo-fragmento-light.svg" alt="Fragmento" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo">Holiday</span></span></div>
+      <div class="doc-text">
+        <p><b>Logo je vždy čitelné.</b> Na fotce vždy světlá varianta, stín (<code>.lockup.na-fotce</code>) a tmavší přechod v horních 46 % fotky (<code>.foto-hlava</code>, krytí 0,62). Platí i na tmavé fotce, aby se logo nechovalo jinak podle snímku.</p>
+        <p>Text na fotce nese vlastní podklad (<code>.scrim</code>), nikdy nespoléhá na to, že je fotka tmavá.</p>
+      </div>
+    </div>
+
+    <h3>Nepoužívat</h3>
+    <div class="zneuziti">
+      <figure><div class="logo-plocha"><span class="lockup" style="--h:26px;transform:scaleX(1.35)"><img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><span class="lk-linka"></span><span class="lk-slovo">Holiday</span></span></div><figcaption><svg class="ico" aria-hidden="true"><use href="#i-chyba"/></svg>Natahovat ani deformovat.</figcaption></figure>
+      <figure><div class="logo-plocha"><span class="lockup" style="--h:26px;filter:hue-rotate(160deg) saturate(2)"><img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><span class="lk-linka"></span><span class="lk-slovo">Holiday</span></span></div><figcaption><svg class="ico" aria-hidden="true"><use href="#i-chyba"/></svg>Přebarvovat.</figcaption></figure>
+      <figure><div class="logo-plocha"><span class="lockup" style="--h:26px;transform:rotate(-9deg)"><img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><span class="lk-linka"></span><span class="lk-slovo">Holiday</span></span></div><figcaption><svg class="ico" aria-hidden="true"><use href="#i-chyba"/></svg>Otáčet.</figcaption></figure>
+      <figure><div class="logo-plocha"><span class="lockup" style="--h:26px"><img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><span class="lk-linka"></span><span class="lk-slovo" style="font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:calc(var(--h) * .5)">Holiday</span></span></div><figcaption><svg class="ico" aria-hidden="true"><use href="#i-chyba"/></svg>Psát Holiday jiným písmem.</figcaption></figure>
+      <figure><div class="logo-plocha" style="position:relative;overflow:hidden"><img src="assets/img/n-designovy-apartman-3kk-spanelsko-7.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0"><span class="lockup tmavy" style="--h:26px;position:relative"><img class="lk-tmave" src="assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-linka"></span><span class="lk-slovo">Holiday</span></span></div><figcaption><svg class="ico" aria-hidden="true"><use href="#i-chyba"/></svg>Dávat na světlou oblohu bez stínu a přechodu.</figcaption></figure>
+      <figure><div class="logo-plocha"><span class="lockup" style="--h:26px;padding:10px;border:2px solid var(--p);border-radius:var(--r-sm)"><img class="lk-svetle" src="assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><span class="lk-linka"></span><span class="lk-slovo">Holiday</span></span></div><figcaption><svg class="ico" aria-hidden="true"><use href="#i-chyba"/></svg>Zavírat do rámečku nebo vedle loga Essoxu a partnerů.</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 3 Barvy -->
+  <section class="doc-sekce" id="barvy">
+    <header><h2>3. Barvy</h2>
+      <p>Zděděno z Fragmenta, platí <b>Gold Means Action</b>: zlatá je jen Rezervovat a Zaplatit. Nově přibývá Broskev pro náladu a Mosaz pro věrnostní program. Vzorky ukazují aktuální režim, přepínač nahoře přepne na tmavý.</p></header>
+    <h3>Základ</h3>
+    <div class="vzorky">
+      <div class="vzorek-b"><i style="background:var(--bg)"></i><div><b>Papírový krém</b><code>--bg</code>Pozadí stránek</div></div>
+      <div class="vzorek-b"><i style="background:var(--bg-pas)"></i><div><b>Krémový pás</b><code>--bg-pas</code>Střídavé sekce, filtry</div></div>
+      <div class="vzorek-b"><i style="background:var(--karta)"></i><div><b>Karta</b><code>--karta</code>Karty, formuláře, panel</div></div>
+      <div class="vzorek-b"><i style="background:var(--akcent)"></i><div><b>Borovicová břidlice</b><code>--akcent</code>Tlačítka, aktivní chipy, odkazy</div></div>
+      <div class="vzorek-b"><i style="background:var(--p)"></i><div><b>Tmavá plocha</b><code>--p</code>Patička, tmavé pásy</div></div>
+      <div class="vzorek-b"><i style="background:var(--text)"></i><div><b>Inkoust</b><code>--text</code>Nadpisy a text</div></div>
+      <div class="vzorek-b"><i style="background:var(--text-3)"></i><div><b>Tlumený text</b><code>--text-3</code>Popisky, nápověda</div></div>
+      <div class="vzorek-b"><i style="background:var(--linka-pole)"></i><div><b>Obrys pole</b><code>--linka-pole</code>Okraj vstupů (3 : 1)</div></div>
+    </div>
+    <h3>Jednání, nálada, program</h3>
+    <div class="vzorky">
+      <div class="vzorek-b"><i style="background:var(--zlata)"></i><div><b>Písková zlatá</b><code>--zlata</code>Jen Rezervovat a Zaplatit</div></div>
+      <div class="vzorek-b"><i style="background:var(--zlaty-text)"></i><div><b>Zlatý inkoust</b><code>--zlaty-text</code>Krátké štítky na světlém</div></div>
+      <div class="vzorek-b"><i style="background:var(--nalada)"></i><div><b>Broskev</b><code>--nalada</code>Nálada, plochy, nikdy text</div></div>
+      <div class="vzorek-b"><i style="background:var(--nalada-podklad)"></i><div><b>Broskev jemná</b><code>--nalada-podklad</code>Podklad karty pobytu</div></div>
+      <div class="vzorek-b"><i style="background:var(--program)"></i><div><b>Mosaz</b><code>--program</code>Body, úroveň, razítko</div></div>
+      <div class="vzorek-b"><i style="background:var(--program-podklad)"></i><div><b>Mosaz jemná</b><code>--program-podklad</code>Odznak bodů</div></div>
+      <div class="vzorek-b"><i style="background:var(--ok-t)"></i><div><b>Úspěch</b><code>--ok-t</code>Potvrzení (text i ikona)</div></div>
+      <div class="vzorek-b"><i style="background:var(--er-t)"></i><div><b>Chyba</b><code>--er-t</code>Chyby (text i ikona)</div></div>
+    </div>
+    <div class="doc-text">
+      <p><b>Pravidla</b></p>
+      <ul>
+        <li>Zlatá nikdy neoznačuje úroveň ani body. Na to je Mosaz. Úrovně se nejmenují „bronz, stříbro, zlato“.</li>
+        <li>Broskev je jen pozadí a nálada, nikdy text ani ikona. Na Broskvi se píše inkoustem.</li>
+        <li>Ztlumený stav dělá barva, ne průhlednost (Dim By Color).</li>
+        <li>Stav (úspěch, čekání, chyba) se nikdy nesděluje jen barvou: vždy ikona a věta.</li>
+      </ul>
+    </div>
+
+    <h3 id="kontrast">Tabulka kontrastů</h3>
+    <p class="doc-pozn">Změřeno skriptem <code>_nastroje/kontrast.py</code> z hodnot v <code>tokens.css</code> (WCAG 2.2, relativní jas). Text potřebuje 4,5 : 1, obrysy a ikony 3 : 1. Skript tabulku vkládá sem a skončí chybou, když některá dvojice neprojde.</p>
+<!--KONTRAST:START-->
+<div class="doc-tab-obal" tabindex="0" role="region" aria-label="Tabulka kontrastů"><table class="kontrast"><thead><tr><th scope="col">Spojení</th><th scope="col">Min.</th><th scope="col">Světlý režim</th><th scope="col">Tmavý režim</th></tr></thead><tbody>
+<tr><th scope="row">Text na podkladu stránky<small>--text na --bg</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FCFAF2;color:#1E1E1E">Aa</span><span class="num">15,95&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#1E1E1E / #FCFAF2</small></td><td><span class="vzorek" aria-hidden="true" style="background:#16211E;color:#F2EFE6">Aa</span><span class="num">14,38&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#F2EFE6 / #16211E</small></td></tr>
+<tr><th scope="row">Text na krémovém pásu<small>--text na --bg-pas</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#F8F1E4;color:#1E1E1E">Aa</span><span class="num">14,84&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#1E1E1E / #F8F1E4</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1A2824;color:#F2EFE6">Aa</span><span class="num">13,30&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#F2EFE6 / #1A2824</small></td></tr>
+<tr><th scope="row">Text na kartě<small>--text na --karta</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;color:#1E1E1E">Aa</span><span class="num">16,67&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#1E1E1E / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;color:#F2EFE6">Aa</span><span class="num">12,46&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#F2EFE6 / #1F2D29</small></td></tr>
+<tr><th scope="row">Delší text na kartě<small>--text-2 na --karta</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;color:#333333">Aa</span><span class="num">12,63&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#333333 / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;color:#D6D9D2">Aa</span><span class="num">10,04&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#D6D9D2 / #1F2D29</small></td></tr>
+<tr><th scope="row">Delší text na pásu<small>--text-2 na --bg-pas</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#F8F1E4;color:#333333">Aa</span><span class="num">11,25&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#333333 / #F8F1E4</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1A2824;color:#D6D9D2">Aa</span><span class="num">10,72&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#D6D9D2 / #1A2824</small></td></tr>
+<tr><th scope="row">Popisek na podkladu<small>--text-3 na --bg</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FCFAF2;color:#6B6C7F">Aa</span><span class="num">4,93&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#6B6C7F / #FCFAF2</small></td><td><span class="vzorek" aria-hidden="true" style="background:#16211E;color:#A3ADA8">Aa</span><span class="num">7,16&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#A3ADA8 / #16211E</small></td></tr>
+<tr><th scope="row">Popisek na pásu<small>--text-3 na --bg-pas</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#F8F1E4;color:#6B6C7F">Aa</span><span class="num">4,59&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#6B6C7F / #F8F1E4</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1A2824;color:#A3ADA8">Aa</span><span class="num">6,63&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#A3ADA8 / #1A2824</small></td></tr>
+<tr><th scope="row">Popisek na kartě<small>--text-3 na --karta</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;color:#6B6C7F">Aa</span><span class="num">5,15&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#6B6C7F / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;color:#A3ADA8">Aa</span><span class="num">6,21&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#A3ADA8 / #1F2D29</small></td></tr>
+<tr><th scope="row">Odkaz / akcent na podkladu<small>--akcent na --bg</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FCFAF2;color:#2F4F4F">Aa</span><span class="num">8,54&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#2F4F4F / #FCFAF2</small></td><td><span class="vzorek" aria-hidden="true" style="background:#16211E;color:#A9C1C1">Aa</span><span class="num">8,73&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#A9C1C1 / #16211E</small></td></tr>
+<tr><th scope="row">Odkaz / akcent na kartě<small>--akcent na --karta</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;color:#2F4F4F">Aa</span><span class="num">8,93&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#2F4F4F / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;color:#A9C1C1">Aa</span><span class="num">7,56&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#A9C1C1 / #1F2D29</small></td></tr>
+<tr><th scope="row">Odkaz / akcent na pásu<small>--akcent na --bg-pas</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#F8F1E4;color:#2F4F4F">Aa</span><span class="num">7,95&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#2F4F4F / #F8F1E4</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1A2824;color:#A9C1C1">Aa</span><span class="num">8,07&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#A9C1C1 / #1A2824</small></td></tr>
+<tr><th scope="row">Zlatý štítek na podkladu<small>--zlaty-text na --bg</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FCFAF2;color:#836A40">Aa</span><span class="num">4,90&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#836A40 / #FCFAF2</small></td><td><span class="vzorek" aria-hidden="true" style="background:#16211E;color:#E8D7B7">Aa</span><span class="num">11,68&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#E8D7B7 / #16211E</small></td></tr>
+<tr><th scope="row">Zlatý štítek na pásu<small>--zlaty-text na --bg-pas</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#F8F1E4;color:#836A40">Aa</span><span class="num">4,56&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#836A40 / #F8F1E4</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1A2824;color:#E8D7B7">Aa</span><span class="num">10,81&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#E8D7B7 / #1A2824</small></td></tr>
+<tr><th scope="row">Zlatý štítek na kartě<small>--zlaty-text na --karta</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;color:#836A40">Aa</span><span class="num">5,12&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#836A40 / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;color:#E8D7B7">Aa</span><span class="num">10,12&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#E8D7B7 / #1F2D29</small></td></tr>
+<tr><th scope="row">Mosaz (body, úroveň) na kartě<small>--program na --karta</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;color:#716433">Aa</span><span class="num">5,88&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#716433 / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;color:#BFBB88">Aa</span><span class="num">7,29&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#BFBB88 / #1F2D29</small></td></tr>
+<tr><th scope="row">Mosaz na podkladu<small>--program na --bg</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FCFAF2;color:#716433">Aa</span><span class="num">5,62&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#716433 / #FCFAF2</small></td><td><span class="vzorek" aria-hidden="true" style="background:#16211E;color:#BFBB88">Aa</span><span class="num">8,41&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#BFBB88 / #16211E</small></td></tr>
+<tr><th scope="row">Mosaz na pásu<small>--program na --bg-pas</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#F8F1E4;color:#716433">Aa</span><span class="num">5,23&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#716433 / #F8F1E4</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1A2824;color:#BFBB88">Aa</span><span class="num">7,78&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#BFBB88 / #1A2824</small></td></tr>
+<tr><th scope="row">Mosaz na podkladu odznaku<small>--program na --program-podklad</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#F4F1E4;color:#716433">Aa</span><span class="num">5,19&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#716433 / #F4F1E4</small></td><td><span class="vzorek" aria-hidden="true" style="background:#2A2E24;color:#BFBB88">Aa</span><span class="num">7,05&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#BFBB88 / #2A2E24</small></td></tr>
+<tr><th scope="row">Text na podkladu odznaku<small>--text na --program-podklad</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#F4F1E4;color:#1E1E1E">Aa</span><span class="num">14,73&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#1E1E1E / #F4F1E4</small></td><td><span class="vzorek" aria-hidden="true" style="background:#2A2E24;color:#F2EFE6">Aa</span><span class="num">12,06&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#F2EFE6 / #2A2E24</small></td></tr>
+<tr><th scope="row">Mosaz na broskvovém podkladu<small>--program na --nalada-podklad</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FBEFE6;color:#716433">Aa</span><span class="num">5,20&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#716433 / #FBEFE6</small></td><td><span class="vzorek" aria-hidden="true" style="background:#3A2C22;color:#BFBB88">Aa</span><span class="num">6,83&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#BFBB88 / #3A2C22</small></td></tr>
+<tr><th scope="row">Text na broskvovém podkladu<small>--text na --nalada-podklad</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FBEFE6;color:#1E1E1E">Aa</span><span class="num">14,76&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#1E1E1E / #FBEFE6</small></td><td><span class="vzorek" aria-hidden="true" style="background:#3A2C22;color:#F2EFE6">Aa</span><span class="num">11,68&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#F2EFE6 / #3A2C22</small></td></tr>
+<tr><th scope="row">Popisek na broskvovém podkladu<small>--text-3 na --nalada-podklad</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FBEFE6;color:#6B6C7F">Aa</span><span class="num">4,56&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#6B6C7F / #FBEFE6</small></td><td><span class="vzorek" aria-hidden="true" style="background:#3A2C22;color:#A3ADA8">Aa</span><span class="num">5,82&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#A3ADA8 / #3A2C22</small></td></tr>
+<tr><th scope="row">Akcent na broskvovém podkladu<small>--akcent na --nalada-podklad</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FBEFE6;color:#2F4F4F">Aa</span><span class="num">7,90&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#2F4F4F / #FBEFE6</small></td><td><span class="vzorek" aria-hidden="true" style="background:#3A2C22;color:#A9C1C1">Aa</span><span class="num">7,09&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#A9C1C1 / #3A2C22</small></td></tr>
+<tr><th scope="row">Inkoust na Broskvi (plocha)<small>--na-nalade na --nalada</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#E9A57A;color:#1E1E1E">Aa</span><span class="num">8,04&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#1E1E1E / #E9A57A</small></td><td><span class="vzorek" aria-hidden="true" style="background:#E9A57A;color:#1E1E1E">Aa</span><span class="num">8,04&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#1E1E1E / #E9A57A</small></td></tr>
+<tr><th scope="row">Tlačítko hlavní<small>--na-akcentu na --akcent</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#2F4F4F;color:#FFFFFF">Aa</span><span class="num">8,93&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#FFFFFF / #2F4F4F</small></td><td><span class="vzorek" aria-hidden="true" style="background:#A9C1C1;color:#16211E">Aa</span><span class="num">8,73&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#16211E / #A9C1C1</small></td></tr>
+<tr><th scope="row">Tlačítko hlavní, hover<small>--na-akcentu na --akcent-hover</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#263E3E;color:#FFFFFF">Aa</span><span class="num">11,41&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#FFFFFF / #263E3E</small></td><td><span class="vzorek" aria-hidden="true" style="background:#C9D8D8;color:#16211E">Aa</span><span class="num">11,25&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#16211E / #C9D8D8</small></td></tr>
+<tr><th scope="row">Tlačítko zlaté (Rezervovat, Zaplatit)<small>--na-zlate na --zlata</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#CDAF75;color:#241B08">Aa</span><span class="num">8,08&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#241B08 / #CDAF75</small></td><td><span class="vzorek" aria-hidden="true" style="background:#CDAF75;color:#241B08">Aa</span><span class="num">8,08&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#241B08 / #CDAF75</small></td></tr>
+<tr><th scope="row">Tlačítko zlaté, hover<small>--na-zlate na --zlata-hover</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#A38452;color:#241B08">Aa</span><span class="num">4,84&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#241B08 / #A38452</small></td><td><span class="vzorek" aria-hidden="true" style="background:#A38452;color:#241B08">Aa</span><span class="num">4,84&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#241B08 / #A38452</small></td></tr>
+<tr><th scope="row">Chip zapnutý<small>--na-akcentu na --akcent</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#2F4F4F;color:#FFFFFF">Aa</span><span class="num">8,93&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#FFFFFF / #2F4F4F</small></td><td><span class="vzorek" aria-hidden="true" style="background:#A9C1C1;color:#16211E">Aa</span><span class="num">8,73&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#16211E / #A9C1C1</small></td></tr>
+<tr><th scope="row">Úspěch: text na podkladu hlášky<small>--ok-t na --ok-bg</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#EEF6F0;color:#166534">Aa</span><span class="num">6,48&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#166534 / #EEF6F0</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1C3226;color:#8FD4A3">Aa</span><span class="num">7,90&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#8FD4A3 / #1C3226</small></td></tr>
+<tr><th scope="row">Úspěch: text na kartě<small>--ok-t na --karta</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;color:#166534">Aa</span><span class="num">7,13&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#166534 / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;color:#8FD4A3">Aa</span><span class="num">8,27&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#8FD4A3 / #1F2D29</small></td></tr>
+<tr><th scope="row">Čeká: text na podkladu hlášky<small>--ceka-t na --ceka-bg</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#EEF2F1;color:#2F4F4F">Aa</span><span class="num">7,91&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#2F4F4F / #EEF2F1</small></td><td><span class="vzorek" aria-hidden="true" style="background:#22332F;color:#A9C1C1">Aa</span><span class="num">7,00&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#A9C1C1 / #22332F</small></td></tr>
+<tr><th scope="row">Chyba: text na podkladu hlášky<small>--er-t na --er-bg</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FBEDEB;color:#B02020">Aa</span><span class="num">5,99&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#B02020 / #FBEDEB</small></td><td><span class="vzorek" aria-hidden="true" style="background:#3A2220;color:#FFD9D2">Aa</span><span class="num">11,27&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#FFD9D2 / #3A2220</small></td></tr>
+<tr><th scope="row">Chyba: hláška pod polem na kartě<small>--er-t na --karta</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;color:#B02020">Aa</span><span class="num">6,83&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#B02020 / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;color:#FFD9D2">Aa</span><span class="num">10,99&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#FFD9D2 / #1F2D29</small></td></tr>
+<tr><th scope="row">Text v hlášce na podkladu úspěchu<small>--text na --ok-bg</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#EEF6F0;color:#1E1E1E">Aa</span><span class="num">15,14&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#1E1E1E / #EEF6F0</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1C3226;color:#F2EFE6">Aa</span><span class="num">11,91&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#F2EFE6 / #1C3226</small></td></tr>
+<tr><th scope="row">Text v hlášce na podkladu chyby<small>--text na --er-bg</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#FBEDEB;color:#1E1E1E">Aa</span><span class="num">14,62&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#1E1E1E / #FBEDEB</small></td><td><span class="vzorek" aria-hidden="true" style="background:#3A2220;color:#F2EFE6">Aa</span><span class="num">12,78&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#F2EFE6 / #3A2220</small></td></tr>
+<tr><th scope="row">Text v hlášce na podkladu čeká<small>--text na --ceka-bg</small></th><td class="num">4,50</td><td><span class="vzorek" aria-hidden="true" style="background:#EEF2F1;color:#1E1E1E">Aa</span><span class="num">14,77&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#1E1E1E / #EEF2F1</small></td><td><span class="vzorek" aria-hidden="true" style="background:#22332F;color:#F2EFE6">Aa</span><span class="num">11,54&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#F2EFE6 / #22332F</small></td></tr>
+<tr><th scope="row">Obrys pole na kartě<small>--linka-pole na --karta</small></th><td class="num">3,00</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;box-shadow:inset 0 0 0 2px #85868F"></span><span class="num">3,62&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#85868F / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;box-shadow:inset 0 0 0 2px #8C8D9C"></span><span class="num">4,37&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#8C8D9C / #1F2D29</small></td></tr>
+<tr><th scope="row">Obrys pole na podkladu<small>--linka-pole na --bg</small></th><td class="num">3,00</td><td><span class="vzorek" aria-hidden="true" style="background:#FCFAF2;box-shadow:inset 0 0 0 2px #85868F"></span><span class="num">3,46&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#85868F / #FCFAF2</small></td><td><span class="vzorek" aria-hidden="true" style="background:#16211E;box-shadow:inset 0 0 0 2px #8C8D9C"></span><span class="num">5,04&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#8C8D9C / #16211E</small></td></tr>
+<tr><th scope="row">Fokus na podkladu<small>--fokus na --bg</small></th><td class="num">3,00</td><td><span class="vzorek" aria-hidden="true" style="background:#FCFAF2;box-shadow:inset 0 0 0 2px #2F4F4F"></span><span class="num">8,54&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#2F4F4F / #FCFAF2</small></td><td><span class="vzorek" aria-hidden="true" style="background:#16211E;box-shadow:inset 0 0 0 2px #E8D7B7"></span><span class="num">11,68&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#E8D7B7 / #16211E</small></td></tr>
+<tr><th scope="row">Fokus na kartě<small>--fokus na --karta</small></th><td class="num">3,00</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;box-shadow:inset 0 0 0 2px #2F4F4F"></span><span class="num">8,93&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#2F4F4F / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;box-shadow:inset 0 0 0 2px #E8D7B7"></span><span class="num">10,12&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#E8D7B7 / #1F2D29</small></td></tr>
+<tr><th scope="row">Ikona bodů (Mosaz) na kartě<small>--program na --karta</small></th><td class="num">3,00</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;box-shadow:inset 0 0 0 2px #716433"></span><span class="num">5,88&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#716433 / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;box-shadow:inset 0 0 0 2px #BFBB88"></span><span class="num">7,29&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#BFBB88 / #1F2D29</small></td></tr>
+<tr><th scope="row">Chyba: obrys pole na kartě<small>--er-t na --karta</small></th><td class="num">3,00</td><td><span class="vzorek" aria-hidden="true" style="background:#FFFFFF;box-shadow:inset 0 0 0 2px #B02020"></span><span class="num">6,83&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#B02020 / #FFFFFF</small></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29;box-shadow:inset 0 0 0 2px #FFD9D2"></span><span class="num">10,99&nbsp;:&nbsp;1</span> <span class="pas">✓</span><small>#FFD9D2 / #1F2D29</small></td></tr>
+</tbody></table></div>
+<p class="fine">Text na fotografii (oba režimy stejně): závoj <code>--zavoj</code> s krytím .88 nad bílou, nejhorší možnou fotkou: <code>--tm-1</code> 11,89&nbsp;:&nbsp;1, <code>--tm-2</code> 9,60&nbsp;:&nbsp;1, <code>--tm-3</code> 8,24&nbsp;:&nbsp;1, <code>--tm-4</code> 7,06&nbsp;:&nbsp;1, <code>--tm-5</code> 5,93&nbsp;:&nbsp;1.</p>
+<!--KONTRAST:END-->
+  </section>
+
+  <!-- 4 Typografie -->
+  <section class="doc-sekce" id="typografie">
+    <header><h2>4. Typografie</h2>
+      <p>DM Sans nese rozhraní, Cormorant Garamond je jen hlas: claim v hero, citát hosta, jméno úrovně. Nikdy v tlačítku, čísle ani formuláři. Stupnice má devět stupňů, nic mezi nimi.</p></header>
+    <div>
+      <div class="pismo-radek"><small>t9 · Cormorant 400 · hlas v hero · <code>clamp(40px, 8vw, 76px)</code></small><p style="font-family:var(--serif);font-size:var(--t9);line-height:var(--lh-display);letter-spacing:var(--tr-display)" data-en="Places we know inside out">Místa, která známe do detailu</p></div>
+      <div class="pismo-radek"><small>t8 · DM Sans 750 · nadpis stránky · <code>clamp(32px, 5.5vw, 48px)</code></small><p style="font-size:var(--t8);font-weight:var(--w-bold);line-height:var(--lh-nadpis);letter-spacing:var(--tr-nadpis)" data-en="Stays by the sea">Pobyty u moře</p></div>
+      <div class="pismo-radek"><small>t7 · DM Sans 750 · nadpis sekce</small><p style="font-size:var(--t7);font-weight:var(--w-bold);line-height:var(--lh-nadpis);letter-spacing:var(--tr-nadpis)" data-en="What’s included in the price">Co je v ceně</p></div>
+      <div class="pismo-radek"><small>t6 · DM Sans 600 · nadpis karty, kroku</small><p style="font-size:var(--t6);font-weight:var(--w-med);line-height:var(--lh-titulek)" data-en="Your details">Vaše údaje</p></div>
+      <div class="pismo-radek"><small>t5 · DM Sans 600 · název nemovitosti · kurzíva Cormorant pro citát</small><p style="font-size:var(--t5);font-weight:var(--w-med);line-height:var(--lh-titulek)" data-en="Apartina, 3+kk apartment">Apartina, apartmán 3+kk</p></div>
+      <div class="pismo-radek"><small>t4 · DM Sans 400 · úvodní odstavec</small><p style="font-size:var(--t4);line-height:var(--lh-text);max-width:62ch" data-en="Book direct with us. The price you see is the price you pay.">Rezervujte přímo od nás. Cena je celková a žádné příplatky nepřijdou.</p></div>
+      <div class="pismo-radek"><small>t3 · DM Sans 400, 15 px / 1,62 · běžný text</small><p style="font-size:var(--t3);line-height:var(--lh-text);max-width:68ch" data-en="We clean between every stay and check the property before you arrive. Arrival details come by email three days ahead.">Mezi pobyty uklízíme a před vaším příjezdem nemovitost zkontrolujeme. Pokyny k příjezdu pošleme e-mailem tři dny předem.</p></div>
+      <div class="pismo-radek"><small>t2 · DM Sans 400 · popisky, rozpis ceny</small><p style="font-size:var(--t2)" data-en="Cleaning and fees included">Úklid a poplatky v ceně</p></div>
+      <div class="pismo-radek"><small>t1 · DM Sans 750, verzálky, 0,16em · štítek (ne nad každou sekcí)</small><p class="lab" data-en="Croatia · Zadar">Chorvatsko · Zadar</p></div>
+      <div class="pismo-radek"><small>Číslo · DM Sans 750, <code>tabular-nums</code>, nezalomitelná mezera před jednotkou</small><p class="num" style="font-size:var(--t7);font-weight:var(--w-bold)">[X]&nbsp;€ · [X]&nbsp;bodů</p></div>
+    </div>
+  </section>
+
+  <!-- 5 Fotografie -->
+  <section class="doc-sekce" id="fotografie">
+    <header><h2>5. Fotografie</h2>
+      <p>Zlatá hodina, teplé světlo, široké záběry místa a stopy po pobytu. Skutečné fotky z katalogu u konkrétních nabídek, žádné fotky obchodníků, lidé jen zezadu nebo v siluetě. Deset výřezů níže je z deseti různých nemovitostí, žádná se neopakuje.</p></header>
+    <div class="vyrezy">
+      <figure class="vyrez"><div class="ram" style="aspect-ratio:16/9"><img src="assets/img/n-uluwatu-bali-4kk-5.webp" alt="Bazén u vily Eclipse v Uluwatu za denního světla" loading="lazy" style="object-position:50% 55%"></div><figcaption><b>1 · Hero detailu 16 : 9, Eclipse vila, Bali</b>Bazén a terasa v jednom záběru, horizont v horní třetině. Pozor na snímek 3 a 4 ze stejné série: v televizi je plakát, nepoužívat.<small>object-position 50 % 55 %</small></figcaption></figure>
+      <figure class="vyrez"><div class="ram" style="aspect-ratio:4/3"><img src="assets/img/n-apartina-3kk-7.webp" alt="Terasa apartmánu Apartina s výhledem na moře" loading="lazy" style="object-position:50% 60%"></div><figcaption><b>2 · Karta 4 : 3, Apartina 3+kk, Zadar</b>Terasa s mořem, typický první snímek karty. Výřez drží zábradlí dole, aby bylo vidět, co host dostane.<small>object-position 50 % 60 %</small></figcaption></figure>
+      <figure class="vyrez"><div class="ram" style="aspect-ratio:21/9"><img src="assets/img/n-designovy-apartman-3kk-spanelsko-7.webp" alt="Bazén s přelivem a moře u apartmánu v Casares Costa" loading="lazy" style="object-position:50% 45%"></div><figcaption><b>3 · Široký pás 21 : 9, Casares Costa</b>Přeliv bazénu a moře. Obloha je světlá, logo sem jen s přechodem a stínem (viz Logo na fotce).<small>object-position 50 % 45 %</small></figcaption></figure>
+      <figure class="vyrez"><div class="ram" style="aspect-ratio:3/4"><img src="assets/img/n-boutique-vila-luna-4kk-v-tropicke-zahrade-1.webp" alt="Teplý obývací pokoj vily Luna na Koh Samui" loading="lazy" style="object-position:40% 50%"></div><figcaption><b>4 · Mobilní hero 3 : 4, vila Luna, Koh Samui</b>Teplý interiér, střed záběru vlevo od osy. Vila Nova je stejné místo, do jednoho výběru jen jedna z nich.<small>object-position 40 % 50 %</small></figcaption></figure>
+      <figure class="vyrez"><div class="ram" style="aspect-ratio:16/9"><img src="assets/img/n-lintaon-hills-filipiny-1.webp" alt="Terasa s palmou v Lintaon Hills při západu slunce" loading="lazy" style="object-position:50% 50%"></div><figcaption><b>5 · Zlatá hodina 16 : 9, Lintaon Hills, Leyte</b>Nejblíž náladě značky. Nemovitost je ve stavu „Připravujeme“, na kartě tedy bez ceny a bez tlačítka Rezervovat.<small>object-position 50 % 50 %</small></figcaption></figure>
+      <figure class="vyrez"><div class="ram" style="aspect-ratio:1/1"><img src="assets/img/n-apartman-2kk-v-srdci-alp-4.webp" alt="Prostřený jídelní stůl v apartmánu v Alpách" loading="lazy" style="object-position:50% 60%"></div><figcaption><b>6 · Detail 1 : 1, apartmán v Alpách, Ponte di Legno</b>Stopa po pobytu: prostřený stůl. Hodí se do e-mailu s pokyny k příjezdu.<small>object-position 50 % 60 %</small></figcaption></figure>
+      <figure class="vyrez"><div class="ram" style="aspect-ratio:1/1"><img src="assets/img/n-apartman-na-sjezdovce-plesivec-1.webp" alt="Obývací pokoj apartmánu Na sjezdovce na Plešivci" loading="lazy" style="object-position:45% 50%"></div><figcaption><b>7 · Miniatura 1 : 1, Na sjezdovce, Plešivec</b>Karta pobytu v účtu (84 px). V malém výřezu jen jeden jasný motiv, tady sedačka a okno.<small>object-position 45 % 50 %</small></figcaption></figure>
+      <figure class="vyrez"><div class="ram" style="aspect-ratio:4/3"><img src="assets/img/n-vila-dokola-korenec-4.webp" alt="Vila Dokola v Kořenci zvenku" loading="lazy" style="object-position:50% 55%"></div><figcaption><b>8 · Karta 4 : 3, vila Dokola, Kořenec</b>Exteriér v celku, střecha nesmí být useknutá. Česká nemovitost do výběru „blízko domova“.<small>object-position 50 % 55 %</small></figcaption></figure>
+      <figure class="vyrez"><div class="ram" style="aspect-ratio:4/5"><img src="assets/img/n-yamal-apartman-oman-6.webp" alt="Ložnice se závěsy v apartmánu Yamal v Maskatu" loading="lazy" style="object-position:55% 50%"></div><figcaption><b>9 · Příspěvek 4 : 5, Yamal, Maskat</b>Ložnice se závěsy, klid. Formát pro Meta, logo dole vlevo s ochrannou zónou.<small>object-position 55 % 50 %</small></figcaption></figure>
+      <figure class="vyrez"><div class="ram" style="aspect-ratio:16/10"><img src="assets/img/n-moderni-vila-3kk-kostarika-8.webp" alt="Stůl na terase vily v Puerto Viejo" loading="lazy" style="object-position:50% 55%"></div><figcaption><b>10 · Galerie 16 : 10, vila v Puerto Viejo, Kostarika</b>Terasa se stolem, snídaňová nálada. Jestli je vila v pobytové nabídce, potvrdí klient (v katalogu je podíl prodaný).<small>object-position 50 % 55 %</small></figcaption></figure>
+    </div>
+    <div class="doc-mrizka dva">
+      <div class="doc-text"><p><b>Ano</b></p><ul><li>skutečné fotky nemovitosti u konkrétní nabídky</li><li>lidé jen zezadu nebo v siluetě</li><li>záběry, které odpovídají popisu (co host uvidí, to dostane)</li></ul></div>
+      <div class="doc-text"><p><b>Ne</b></p><ul><li>fotky obchodníků (David, Lenka, Michal)</li><li>stock „šťastné páry“, vodoznaky, rámečky, filtry měnící barvu moře</li><li>tmavé, přeexponované a přesycené záběry</li><li>AI fotka jako konkrétní nemovitost nebo s popiskem „ilustrační foto (AI)“. AI jen v pozadí pro náladu.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- 6 Tón -->
+  <section class="doc-sekce" id="ton">
+    <header><h2>6. Tón a texty</h2>
+      <p>Osobně, ne familiérně: vykání v CZ, neutrální <i>you</i> v EN. Angličtina se píše zvlášť podle stejné osnovy, ne překladem, a je o 20 až 30 % delší, proto se každá komponenta testuje i v EN.</p></header>
+    <div class="doc-text"><ul>
+      <li><b>Nemovitosti, apartmány, vily.</b> Nikdy „domy“. V EN <i>properties, apartments, villas</i>.</li>
+      <li><b>Celá cena jednou větou.</b> Číslo s jednotkou se neláme. Neznámé číslo je [X] a obrazovka je ukázka.</li>
+      <li><b>Bez tlaku.</b> Žádné odpočty, „poslední volný“, „jen dnes“, vykřičníky.</li>
+      <li><b>Bez investičního jazyka v rezervaci.</b> Podíl, výnos, investice a Essox patří na fragmento.cz.</li>
+      <li><b>Tvrdit jen doložené.</b> „Úklid mezi pobyty“ ano, „pětihvězdičkový standard“ ne.</li>
+      <li><b>Mobilní aplikace se nezmiňuje.</b></li>
+    </ul></div>
+    <div class="doc-tab-obal" tabindex="0" role="region" aria-label="Tabulka"><table>
+      <thead><tr><th>Místo</th><th>CZ</th><th>EN</th></tr></thead>
+      <tbody>
+        <tr><th>Hero</th><td>Pobyt v nemovitostech, které známe do detailu.</td><td>Stay in places we know inside out.</td></tr>
+        <tr><th>Podtitul</th><td>Rezervujte přímo od nás. Cena je celková a žádné příplatky nepřijdou.</td><td>Book direct with us. The price you see is the price you pay.</td></tr>
+        <tr><th>Hledání</th><td>Zobrazit volné termíny</td><td>See available dates</td></tr>
+        <tr><th>Rezervace</th><td>Rezervovat <small>ne „Rezervovat teď“</small></td><td>Reserve</td></tr>
+        <tr><th>Cena</th><td>[X]&nbsp;€ za pobyt, vše v ceně</td><td>[X]&nbsp;€ for the stay, all in</td></tr>
+        <tr><th>Body na detailu</th><td>Za tento pobyt získáte [X]&nbsp;bodů (≈&nbsp;[Y]&nbsp;€). Použijete je na další pobyt.</td><td>You’ll earn [X]&nbsp;points (≈&nbsp;[Y]&nbsp;€) for this stay, to use on your next one.</td></tr>
+        <tr><th>Postup</th><td>Ještě jeden pobyt do úrovně Stálý host.</td><td>One more stay to reach Regular.</td></tr>
+        <tr><th>Expirace</th><td>[X]&nbsp;bodů vyprší [datum]. Použijete je při platbě dalšího pobytu.</td><td>[X]&nbsp;points expire on [date]. Use them when you pay for your next stay.</td></tr>
+        <tr><th>Storno</th><td>Do [N] dnů před příjezdem zrušíte zdarma. Později vracíme [X]&nbsp;%.</td><td>Cancel free up to [N] days before arrival. After that we refund [X]&nbsp;%.</td></tr>
+        <tr><th>Selhala platba</th><td>Platba neprošla. Karta nebyla zatížena, termín držíme ještě [X] minut.</td><td>The payment didn’t go through. Your card wasn’t charged, and we’re holding the dates for [X] more minutes.</td></tr>
+        <tr><th>Prázdný účet</th><td>Zatím tu nic není. První pobyt vám tu založí body.</td><td>Nothing here yet. Your first stay starts your points.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="doc-tab-obal" tabindex="0" role="region" aria-label="Tabulka"><table>
+      <thead><tr><th>Místo psaní</th><th>Nepsat</th><th>Psát</th></tr></thead>
+      <tbody>
+        <tr><th>Karta</th><td>Luxusní dům u moře</td><td>Apartmán 3+kk s terasou u moře</td></tr>
+        <tr><th>Termín</th><td>Poslední volný termín!</td><td>Volné termíny v listopadu</td></tr>
+        <tr><th>Body</th><td>Získejte zlatý status</td><td>Za pobyt získáte [X]&nbsp;bodů (≈&nbsp;[Y]&nbsp;€)</td></tr>
+        <tr><th>Rezervace</th><td>Výnos z pobytu, podíl 1/8</td><td><small>nic, patří na fragmento.cz</small></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 7 Věrnost -->
+  <section class="doc-sekce" id="vernost">
+    <header><h2>7. Věrnostní vizuální jazyk</h2>
+      <p>Členství, ne slevy. Body: 1 bod za 1 € útraty, 100 bodů = 3 €, hodnota v eurech je u bodů vždy. Úrovně Host (1 dokončený pobyt a registrace, ×1), Stálý host (3 pobyty za 24 měsíců, ×1,5), Domácí (5 a více, ×2). Ve fázi 1 se ukazuje jen Host, ostatní komponenty jsou hotové a vypnuté (<code>.is-phase2</code>, <code>data-phase="2"</code>). Tady jsou vidět všechny.</p></header>
+    <div class="ukaz-fazi-2 doc-pruh" style="gap:var(--m-8)">
+      <div class="doc-mrizka">
+        <figure class="doc-pruh"><div class="doc-ukazka bila" style="justify-content:center;align-items:center;gap:var(--m-6)">
+          <svg class="ico" aria-hidden="true" style="width:64px;height:64px;color:var(--program);stroke-width:1.2"><use href="#i-body"/></svg>
+          <svg class="ico" aria-hidden="true" style="width:32px;height:32px;color:var(--program)"><use href="#i-body"/></svg>
+          <svg class="ico" aria-hidden="true" style="color:var(--program)"><use href="#i-body"/></svg></div>
+          <figcaption class="doc-popis"><b>Ikona bodů</b>Mince s klíčem (navazuje na „Klíč od svého“ rodiče). Obrys 1,5 px v Mosazi, bez třpytu a bez animace sypání. Velikosti 18, 32 a 64 px.</figcaption></figure>
+        <figure class="doc-pruh"><div class="doc-ukazka bila razitka" style="justify-content:center">
+          <svg class="razitko" viewBox="0 0 128 128" role="img" aria-label="Razítko pobytu: Apartina, Zadar">
+            <defs><path id="bm-kruh" d="M64 64 m-47 0 a47 47 0 1 1 94 0 a47 47 0 1 1 -94 0"/></defs>
+            <circle cx="64" cy="64" r="60" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="64" cy="64" r="37" fill="none" stroke="currentColor" stroke-width="1"/>
+            <text font-size="10.5" font-weight="600" letter-spacing="2.4"><textPath href="#bm-kruh">APARTINA · ZADAR · CHORVATSKO ·</textPath></text>
+            <use href="#i-klic" x="48" y="36" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <text x="64" y="80" text-anchor="middle" font-size="11" font-weight="600" letter-spacing=".5">[MM/RRRR]</text>
+          </svg></div>
+          <figcaption class="doc-popis"><b>Razítko pobytu</b>Místo, země a měsíc pobytu. Sbírá se v účtu u proběhlých pobytů jako detail, ne jako „pas“. Jen Mosaz, bez výplně, pootočené o −6°.</figcaption></figure>
+      </div>
+      <div class="doc-mrizka">
+        <article class="karta-uroven" aria-label="Úroveň Host">
+          <div class="ku-hlava"><span>Fragmento Holiday</span><span class="ku-stupen" aria-hidden="true"><i class="plny"></i><i></i><i></i></span></div>
+          <p class="ku-jmeno"><span data-en="Guest">Host</span><small data-en="Member since [year]">Členem od [rok]</small></p>
+          <div class="ku-pata"><span data-en="<b>1&nbsp;point</b> for every 1&nbsp;€">Za 1&nbsp;€ <b>1&nbsp;bod</b></span><svg class="ku-klic ico" aria-hidden="true" style="stroke-width:1.4"><use href="#i-klic"/></svg></div>
+        </article>
+        <article class="karta-uroven" data-phase="2" aria-label="Úroveň Stálý host">
+          <div class="ku-hlava"><span>Fragmento Holiday</span><span class="ku-stupen" aria-hidden="true"><i class="plny"></i><i class="plny"></i><i></i></span></div>
+          <p class="ku-jmeno"><span data-en="Regular">Stálý host</span><small data-en="3 stays in 24 months">3 pobyty za 24 měsíců</small></p>
+          <div class="ku-pata"><span data-en="<b>1.5&nbsp;points</b> for every 1&nbsp;€">Za 1&nbsp;€ <b>1,5&nbsp;bodu</b></span><svg class="ku-klic ico" aria-hidden="true" style="stroke-width:1.4"><use href="#i-klic"/></svg></div>
+        </article>
+        <article class="karta-uroven" data-phase="2" aria-label="Úroveň Domácí">
+          <div class="ku-hlava"><span>Fragmento Holiday</span><span class="ku-stupen" aria-hidden="true"><i class="plny"></i><i class="plny"></i><i class="plny"></i></span></div>
+          <p class="ku-jmeno"><span data-en="At Home">Domácí</span><small data-en="5+ stays in 24 months">5 a více pobytů za 24 měsíců</small></p>
+          <div class="ku-pata"><span data-en="<b>2&nbsp;points</b> for every 1&nbsp;€">Za 1&nbsp;€ <b>2&nbsp;body</b></span><svg class="ku-klic ico" aria-hidden="true" style="stroke-width:1.4"><use href="#i-klic"/></svg></div>
+        </article>
+      </div>
+      <p class="doc-pozn">Karta úrovně má poměr platební karty (1,586), krémový podklad, vnitřní linku v Mosazi a tečky stupně, takže se úroveň pozná i bez barvy. Jméno úrovně je jediné místo v produktu, kde Cormorant stojí mimo hero.</p>
+      <div class="doc-mrizka dva">
+        <div class="doc-pruh"><h3>Ukazatel postupu <span class="fine">(fáze 2)</span></h3>
+          <div class="doc-ukazka bila sloupec"><div class="postup" data-phase="2">
+            <p data-en="One more stay to reach Regular.">Ještě jeden pobyt do úrovně Stálý host.</p>
+            <div class="drah" role="progressbar" aria-valuemin="0" aria-valuemax="3" aria-valuenow="2" aria-label="Dokončené pobyty: 2 ze 3" style="--v:66.6%"><i></i></div>
+            <small data-en="2 of 3 stays in the last 24 months">2 ze 3 pobytů za posledních 24 měsíců</small>
+          </div></div>
+          <p class="doc-pozn">Ve fázi 1 místo něj jen věta „Další úrovně připravujeme.“</p></div>
+        <section class="zustatek" aria-labelledby="bm-zu">
+          <h3 class="zu-hlava" id="bm-zu"><svg class="ico" aria-hidden="true"><use href="#i-body"/></svg><span data-en="Your points">Vaše body</span></h3>
+          <p class="zu-cislo">[X] <span data-en="points">bodů</span></p>
+          <p class="zu-eur" data-en="≈&nbsp;[Y]&nbsp;€ off your next stay">≈&nbsp;[Y]&nbsp;€ na další pobyt</p>
+          <p class="zu-exp"><svg class="ico" aria-hidden="true"><use href="#i-ceka"/></svg><span data-en="[X]&nbsp;points expire on [date].">[X]&nbsp;bodů vyprší [datum].</span></p>
+          <p class="zu-kurz">100&nbsp;bodů = 3&nbsp;€</p>
+        </section>
+      </div>
+    </div>
+    <div class="doc-text"><p><b>Zakázáno:</b> kolo štěstí, odznaky za klikání, medaile, koruny, ohně, odpočty, počítání čísla nahoru, konfety, stupnice „bronz, stříbro, zlato“.</p></div>
+  </section>
+
+  <!-- 8 Komponenty -->
+  <section class="doc-sekce" id="komponenty">
+    <header><h2>8. Komponenty základu</h2>
+      <p>Tlačítka, chipy, vstupy a fokus jsou zděděné z Fragmenta, zaoblení 9 až 16 px. Celá živá knihovna se všemi stavy je v <a class="odkaz" href="components.html">components.html</a>.</p></header>
+    <div class="doc-mrizka dva">
+      <div class="doc-pruh">
+        <div class="doc-ukazka bila">
+          <button type="button" class="btn gold" data-en="Reserve">Rezervovat</button>
+          <button type="button" class="btn" data-en="See available dates">Zobrazit volné termíny</button>
+          <button type="button" class="btn ghost" data-en="Price breakdown">Rozpis ceny</button>
+        </div>
+        <div class="doc-ukazka bila"><div class="chiprow">
+          <button type="button" class="chip" aria-pressed="true" data-en="By the sea">U moře</button><button type="button" class="chip" aria-pressed="false" data-en="Mountains">Hory</button><button type="button" class="chip" aria-pressed="false" data-en="Pool">Bazén</button></div></div>
+        <div class="doc-ukazka bila sloupec">
+          <div class="pole" style="width:100%"><label for="bm-email">E-mail</label><input class="vstup" id="bm-email" type="email" autocomplete="email" placeholder="vy@example.cz"></div>
+          <div class="pole chyba" style="width:100%"><label for="bm-tel" data-en="Phone">Telefon</label><input class="vstup" id="bm-tel" type="tel" value="+420 603" aria-invalid="true" aria-describedby="bm-tel-ch"><p class="hlaska-pole" id="bm-tel-ch"><svg class="ico" aria-hidden="true"><use href="#i-chyba"/></svg><span data-en="We need the full number so we can reach you.">Telefon potřebujeme celý, ať se dovoláme.</span></p></div>
+        </div>
+      </div>
+      <article class="karta-n">
+        <div class="kn-foto"><img src="assets/img/n-apartina-3kk-7.webp" alt="Terasa apartmánu Apartina s výhledem na moře" width="1600" height="1067" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="#f-hr"/></svg><span data-en="Croatia">Chorvatsko</span></span></div>
+        <div class="kn-telo">
+          <h3 class="kn-nazev"><a href="components.html#karta" data-en="Apartina, 3+kk apartment">Apartina, apartmán 3+kk</a></h3>
+          <p class="kn-misto">Rtina-Ražanac, Zadar</p>
+          <ul class="kn-param" aria-label="Parametry">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-pokoje"/></svg><span data-en="3&nbsp;rooms">3&nbsp;pokoje</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-plocha"/></svg>84&nbsp;m²</li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-terasa"/></svg><span data-en="terrace 45&nbsp;m²">terasa 45&nbsp;m²</span></li>
+          </ul>
+          <div class="kn-cena">
+            <p class="kn-termin" data-en="[date]–[date] · [N]&nbsp;nights">[datum]–[datum] · [N]&nbsp;nocí</p>
+            <p class="kn-castka" data-en="<strong>[X]&nbsp;€</strong> for the stay, all in"><strong>[X]&nbsp;€</strong> za pobyt, vše v ceně</p>
+          </div>
+          <p class="kn-body"><svg class="ico" aria-hidden="true"><use href="#i-body"/></svg><span data-en="You’ll earn <b>[X]&nbsp;points</b> (≈&nbsp;[Y]&nbsp;€) for this stay">Za pobyt získáte <b>[X]&nbsp;bodů</b> (≈&nbsp;[Y]&nbsp;€)</span></p>
+        </div>
+      </article>
+    </div>
+    <h3>Zaoblení, mezery, stíny</h3>
+    <div class="doc-tab-obal" tabindex="0" role="region" aria-label="Tabulka"><table>
+      <thead><tr><th>Token</th><th>Hodnota</th><th>Použití</th></tr></thead>
+      <tbody>
+        <tr><th><code>--r-xs</code> / <code>--r-sm</code></th><td>3 / 8 px</td><td>štítek Ukázka, miniatury, dny kalendáře</td></tr>
+        <tr><th><code>--r-control</code></th><td>9 px</td><td>tlačítka, vstupy, přepínače</td></tr>
+        <tr><th><code>--r</code> / <code>--r-lg</code></th><td>12 / 16 px</td><td>karty, panel / plochy fotek, ukázky</td></tr>
+        <tr><th><code>--r-pill</code></th><td>99 px</td><td>chipy, odznak bodů</td></tr>
+        <tr><th><code>--m-1</code> až <code>--m-10</code></th><td>4, 8, 12, 16, 20, 24, 32, 40, 64, 88 px</td><td>mezery; nic mezi stupni</td></tr>
+        <tr><th><code>--cil</code></th><td>44 px</td><td>nejmenší cíl klepnutí</td></tr>
+        <tr><th><code>--stin-karta</code>, <code>-hover</code>, <code>-popover</code>, <code>-lista</code></th><td>měkké zelené stíny, v tmavém černé</td><td>karta, karta pod myší, kalendář, spodní lišta</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 9 Pohyb -->
+  <section class="doc-sekce" id="pohyb">
+    <header><h2>9. Pohyb</h2>
+      <p>Střídmý. Jedna orchestrovaná chvíle na stránce (vyjetí nadpisu v hero), jinak jen přechody kroků, měsíců kalendáře a stavů ovládání. Při <code>prefers-reduced-motion</code> mají všechny délky hodnotu 0 a lesk kostry stojí. Žádné konfety ani animace bodů.</p></header>
+    <div class="doc-mrizka dva">
+      <div class="doc-tab-obal" tabindex="0" role="region" aria-label="Tabulka"><table>
+        <thead><tr><th>Token</th><th>Délka</th><th>Kde</th></tr></thead>
+        <tbody>
+          <tr><th><code>--d-1</code></th><td>160 ms</td><td>chip, změna barvy</td></tr>
+          <tr><th><code>--d-2</code></th><td>180 ms</td><td>tlačítko, karta pod myší</td></tr>
+          <tr><th><code>--d-3</code></th><td>320 ms</td><td>krok rezervace, měsíc kalendáře</td></tr>
+          <tr><th><code>--d-4</code></th><td>700 ms</td><td>vyjetí nadpisu hero, jednou</td></tr>
+          <tr><th><code>--ease</code></th><td colspan="2"><code>cubic-bezier(.16, 1, .3, 1)</code>, rychlý start, dlouhý doběh</td></tr>
+        </tbody>
+      </table></div>
+      <div class="foto-hlava" style="min-height:220px;display:grid;align-content:end;padding:var(--m-5)">
+        <img src="assets/img/ai-plaz-vecer.webp" alt="" width="1344" height="752">
+        <div class="scrim" style="margin:0 calc(-1 * var(--m-5)) calc(-1 * var(--m-5))">
+          <h3 style="font-family:var(--serif);font-weight:400;font-size:var(--t8);line-height:var(--lh-display);color:var(--tm-1)" id="ukazka-vyjezd"><span class="vyjezd"><span data-en="Places we know">Místa, která známe</span></span><span class="vyjezd"><span data-en="inside out">do detailu</span></span></h3>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn ghost" onclick="var h=document.getElementById('ukazka-vyjezd');h.querySelectorAll('.vyjezd>span').forEach(function(s){s.style.animation='none';void s.offsetWidth;s.style.animation=''})">Přehrát vyjetí znovu</button>
+  </section>
+
+  <!-- 10 Přístupnost -->
+  <section class="doc-sekce" id="pristupnost">
+    <header><h2>10. Přístupnost</h2></header>
+    <div class="doc-text"><ul>
+      <li>WCAG 2.2 AA. Text 4,5 : 1, obrysy polí a ikony 3 : 1, v obou režimech (tabulka v kapitole Barvy).</li>
+      <li>Fokus: obrys 2 px <code>--fokus</code> s odsazením 2 px, viditelný na světlém i tmavém.</li>
+      <li>Cíl klepnutí aspoň 44 × 44 px (<code>--cil</code>), den kalendáře 47 px i na 375 px.</li>
+      <li>Informace nikdy jen barvou: obsazený den je přeškrtnutý, hotový krok má fajfku, úroveň tečky.</li>
+      <li>Písmo ve vstupech 16 px, aby telefon stránku nezvětšoval.</li>
+      <li>Stavové hlášky: <code>role="status"</code>, chyba <code>role="alert"</code>.</li>
+    </ul></div>
+  </section>
+
+  <!-- Seznam tokenů -->
+  <section class="doc-sekce" id="tokeny">
+    <header><h2>Úplný seznam tokenů</h2>
+      <p>Každá hodnota z <code>tokens.css</code>. Tabulky generuje <code>_nastroje/export_tokeny.py</code> spolu s <code>tokens.json</code>, takže se s tokeny nerozejdou. Mimo tento seznam se v produktu žádná barva, velikost ani délka nepoužívá.</p></header>
+<!--TOKENY:START-->
+<h3>Paleta</h3>
+<div class="doc-tab-obal" tabindex="0" role="region" aria-label="Paleta"><table class="kontrast"><thead><tr><th>Token</th><th>Hodnota</th></tr></thead><tbody><tr><th><code>--p</code></th><td><span class="vzorek" aria-hidden="true" style="background:#2F4F4F"></span><code>#2F4F4F</code></td></tr><tr><th><code>--p600</code></th><td><span class="vzorek" aria-hidden="true" style="background:#263E3E"></span><code>#263E3E</code></td></tr><tr><th><code>--p400</code></th><td><span class="vzorek" aria-hidden="true" style="background:#567373"></span><code>#567373</code></td></tr><tr><th><code>--p300</code></th><td><span class="vzorek" aria-hidden="true" style="background:#809999"></span><code>#809999</code></td></tr><tr><th><code>--p200</code></th><td><span class="vzorek" aria-hidden="true" style="background:#A9C1C1"></span><code>#A9C1C1</code></td></tr><tr><th><code>--s</code></th><td><span class="vzorek" aria-hidden="true" style="background:#CDAF75"></span><code>#CDAF75</code></td></tr><tr><th><code>--s600</code></th><td><span class="vzorek" aria-hidden="true" style="background:#A38452"></span><code>#A38452</code></td></tr><tr><th><code>--s700</code></th><td><span class="vzorek" aria-hidden="true" style="background:#836A40"></span><code>#836A40</code></td></tr><tr><th><code>--s200</code></th><td><span class="vzorek" aria-hidden="true" style="background:#E8D7B7"></span><code>#E8D7B7</code></td></tr><tr><th><code>--s150</code></th><td><span class="vzorek" aria-hidden="true" style="background:#F8F1E4"></span><code>#F8F1E4</code></td></tr><tr><th><code>--s50</code></th><td><span class="vzorek" aria-hidden="true" style="background:#FCFAF2"></span><code>#FCFAF2</code></td></tr><tr><th><code>--n50</code></th><td><span class="vzorek" aria-hidden="true" style="background:#F5F5F5"></span><code>#F5F5F5</code></td></tr><tr><th><code>--n100</code></th><td><span class="vzorek" aria-hidden="true" style="background:#EFEFEF"></span><code>#EFEFEF</code></td></tr><tr><th><code>--n150</code></th><td><span class="vzorek" aria-hidden="true" style="background:#DADADA"></span><code>#DADADA</code></td></tr><tr><th><code>--n200</code></th><td><span class="vzorek" aria-hidden="true" style="background:#6B6C7F"></span><code>#6B6C7F</code></td></tr><tr><th><code>--n700</code></th><td><span class="vzorek" aria-hidden="true" style="background:#333333"></span><code>#333333</code></td></tr><tr><th><code>--n900</code></th><td><span class="vzorek" aria-hidden="true" style="background:#1E1E1E"></span><code>#1E1E1E</code></td></tr><tr><th><code>--ok</code></th><td><span class="vzorek" aria-hidden="true" style="background:#16A34A"></span><code>#16A34A</code></td></tr><tr><th><code>--er</code></th><td><span class="vzorek" aria-hidden="true" style="background:#B02020"></span><code>#B02020</code></td></tr><tr><th><code>--plocha</code></th><td><span class="vzorek" aria-hidden="true" style="background:#fff"></span><code>#fff</code></td></tr><tr><th><code>--na-zlate</code></th><td><span class="vzorek" aria-hidden="true" style="background:#241B08"></span><code>#241B08</code></td></tr><tr><th><code>--jt-podklad</code></th><td><span class="vzorek" aria-hidden="true" style="background:#16211E"></span><code>#16211E</code></td></tr><tr><th><code>--er-na-tmavem</code></th><td><span class="vzorek" aria-hidden="true" style="background:#FFD9D2"></span><code>#FFD9D2</code></td></tr><tr><th><code>--er-linka-na-tmavem</code></th><td><span class="vzorek" aria-hidden="true" style="background:#FFB4A6"></span><code>#FFB4A6</code></td></tr><tr><th><code>--tm-1</code></th><td><span class="vzorek" aria-hidden="true" style="background:#fff"></span><code>#fff</code></td></tr><tr><th><code>--tm-2</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.88)"></span><code>rgba(255,255,255,.88)</code></td></tr><tr><th><code>--tm-3</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.8)"></span><code>rgba(255,255,255,.8)</code></td></tr><tr><th><code>--tm-4</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.72)"></span><code>rgba(255,255,255,.72)</code></td></tr><tr><th><code>--tm-5</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.64)"></span><code>rgba(255,255,255,.64)</code></td></tr><tr><th><code>--tm-linka-1</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.12)"></span><code>rgba(255,255,255,.12)</code></td></tr><tr><th><code>--tm-linka-2</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.18)"></span><code>rgba(255,255,255,.18)</code></td></tr><tr><th><code>--tm-linka-3</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.26)"></span><code>rgba(255,255,255,.26)</code></td></tr><tr><th><code>--tm-linka-4</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.5)"></span><code>rgba(255,255,255,.5)</code></td></tr><tr><th><code>--tm-plocha-1</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.06)"></span><code>rgba(255,255,255,.06)</code></td></tr><tr><th><code>--tm-plocha-2</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.12)"></span><code>rgba(255,255,255,.12)</code></td></tr><tr><th><code>--tm-plocha-3</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.24)"></span><code>rgba(255,255,255,.24)</code></td></tr><tr><th><code>--plocha-sklo</code></th><td><span class="vzorek" aria-hidden="true" style="background:rgba(255,255,255,.94)"></span><code>rgba(255,255,255,.94)</code></td></tr><tr><th><code>--zavoj</code></th><td><code>20 30 28</code></td></tr><tr><th><code>--zavoj-hluboky</code></th><td><code>8 16 14</code></td></tr><tr><th><code>--p-rgb</code></th><td><code>47 79 79</code></td></tr><tr><th><code>--broskev</code></th><td><span class="vzorek" aria-hidden="true" style="background:#E9A57A"></span><code>#E9A57A</code></td></tr><tr><th><code>--broskev-200</code></th><td><span class="vzorek" aria-hidden="true" style="background:#FBEFE6"></span><code>#FBEFE6</code></td></tr><tr><th><code>--broskev-tma</code></th><td><span class="vzorek" aria-hidden="true" style="background:#3A2C22"></span><code>#3A2C22</code></td></tr><tr><th><code>--mosaz</code></th><td><span class="vzorek" aria-hidden="true" style="background:#716433"></span><code>#716433</code></td></tr><tr><th><code>--mosaz-200</code></th><td><span class="vzorek" aria-hidden="true" style="background:#F4F1E4"></span><code>#F4F1E4</code></td></tr><tr><th><code>--mosaz-svetla</code></th><td><span class="vzorek" aria-hidden="true" style="background:#BFBB88"></span><code>#BFBB88</code></td></tr><tr><th><code>--mosaz-tma</code></th><td><span class="vzorek" aria-hidden="true" style="background:#2A2E24"></span><code>#2A2E24</code></td></tr><tr><th><code>--ok-text</code></th><td><span class="vzorek" aria-hidden="true" style="background:#166534"></span><code>#166534</code></td></tr><tr><th><code>--ok-podklad</code></th><td><span class="vzorek" aria-hidden="true" style="background:#EEF6F0"></span><code>#EEF6F0</code></td></tr><tr><th><code>--er-podklad</code></th><td><span class="vzorek" aria-hidden="true" style="background:#FBEDEB"></span><code>#FBEDEB</code></td></tr><tr><th><code>--ceka-podklad</code></th><td><span class="vzorek" aria-hidden="true" style="background:#EEF2F1"></span><code>#EEF2F1</code></td></tr><tr><th><code>--tma-pas</code></th><td><span class="vzorek" aria-hidden="true" style="background:#1A2824"></span><code>#1A2824</code></td></tr><tr><th><code>--tma-karta</code></th><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29"></span><code>#1F2D29</code></td></tr><tr><th><code>--tma-karta-2</code></th><td><span class="vzorek" aria-hidden="true" style="background:#26362F"></span><code>#26362F</code></td></tr><tr><th><code>--tma-text</code></th><td><span class="vzorek" aria-hidden="true" style="background:#F2EFE6"></span><code>#F2EFE6</code></td></tr><tr><th><code>--tma-text-2</code></th><td><span class="vzorek" aria-hidden="true" style="background:#D6D9D2"></span><code>#D6D9D2</code></td></tr><tr><th><code>--tma-text-3</code></th><td><span class="vzorek" aria-hidden="true" style="background:#A3ADA8"></span><code>#A3ADA8</code></td></tr><tr><th><code>--tma-linka</code></th><td><span class="vzorek" aria-hidden="true" style="background:#33443F"></span><code>#33443F</code></td></tr><tr><th><code>--tma-linka-pole</code></th><td><span class="vzorek" aria-hidden="true" style="background:#8C8D9C"></span><code>#8C8D9C</code></td></tr><tr><th><code>--tma-akcent-hover</code></th><td><span class="vzorek" aria-hidden="true" style="background:#C9D8D8"></span><code>#C9D8D8</code></td></tr><tr><th><code>--tma-ok</code></th><td><span class="vzorek" aria-hidden="true" style="background:#8FD4A3"></span><code>#8FD4A3</code></td></tr><tr><th><code>--tma-ok-podklad</code></th><td><span class="vzorek" aria-hidden="true" style="background:#1C3226"></span><code>#1C3226</code></td></tr><tr><th><code>--tma-er-podklad</code></th><td><span class="vzorek" aria-hidden="true" style="background:#3A2220"></span><code>#3A2220</code></td></tr><tr><th><code>--tma-ceka-podklad</code></th><td><span class="vzorek" aria-hidden="true" style="background:#22332F"></span><code>#22332F</code></td></tr><tr><th><code>--pole-obrys</code></th><td><span class="vzorek" aria-hidden="true" style="background:#85868F"></span><code>#85868F</code></td></tr></tbody></table></div>
+<h3>Stupnice: pismo</h3>
+<div class="doc-tab-obal" tabindex="0" role="region" aria-label="Stupnice: pismo"><table class="kontrast"><thead><tr><th>Token</th><th>Hodnota</th></tr></thead><tbody><tr><th><code>--sans</code></th><td><code>&quot;DM Sans&quot;, ui-sans-serif, system-ui, sans-serif</code></td></tr><tr><th><code>--serif</code></th><td><code>&quot;Cormorant Garamond&quot;, Georgia, serif</code></td></tr><tr><th><code>--t1</code></th><td><code>12px</code></td></tr><tr><th><code>--t2</code></th><td><code>13.5px</code></td></tr><tr><th><code>--t3</code></th><td><code>15px</code></td></tr><tr><th><code>--t4</code></th><td><code>17px</code></td></tr><tr><th><code>--t5</code></th><td><code>21px</code></td></tr><tr><th><code>--t6</code></th><td><code>clamp(23px, 3.4vw, 28px)</code></td></tr><tr><th><code>--t7</code></th><td><code>clamp(26px, 4.4vw, 36px)</code></td></tr><tr><th><code>--t8</code></th><td><code>clamp(32px, 5.5vw, 48px)</code></td></tr><tr><th><code>--t9</code></th><td><code>clamp(40px, 8vw, 76px)</code></td></tr><tr><th><code>--w-text</code></th><td><code>400</code></td></tr><tr><th><code>--w-med</code></th><td><code>600</code></td></tr><tr><th><code>--w-bold</code></th><td><code>750</code></td></tr><tr><th><code>--lh-display</code></th><td><code>1.03</code></td></tr><tr><th><code>--lh-nadpis</code></th><td><code>1.18</code></td></tr><tr><th><code>--lh-titulek</code></th><td><code>1.25</code></td></tr><tr><th><code>--lh-hlas</code></th><td><code>1.42</code></td></tr><tr><th><code>--lh-text</code></th><td><code>1.62</code></td></tr><tr><th><code>--tr-display</code></th><td><code>-.015em</code></td></tr><tr><th><code>--tr-nadpis</code></th><td><code>-.025em</code></td></tr><tr><th><code>--tr-titulek</code></th><td><code>-.017em</code></td></tr><tr><th><code>--tr-stitek</code></th><td><code>.16em</code></td></tr><tr><th><code>--tr-chip</code></th><td><code>.07em</code></td></tr></tbody></table></div>
+<h3>Stupnice: zaobleni</h3>
+<div class="doc-tab-obal" tabindex="0" role="region" aria-label="Stupnice: zaobleni"><table class="kontrast"><thead><tr><th>Token</th><th>Hodnota</th></tr></thead><tbody><tr><th><code>--r-xs</code></th><td><code>3px</code></td></tr><tr><th><code>--r-sm</code></th><td><code>8px</code></td></tr><tr><th><code>--r-control</code></th><td><code>9px</code></td></tr><tr><th><code>--r</code></th><td><code>12px</code></td></tr><tr><th><code>--r-lg</code></th><td><code>16px</code></td></tr><tr><th><code>--r-pill</code></th><td><code>99px</code></td></tr></tbody></table></div>
+<h3>Stupnice: mezery</h3>
+<div class="doc-tab-obal" tabindex="0" role="region" aria-label="Stupnice: mezery"><table class="kontrast"><thead><tr><th>Token</th><th>Hodnota</th></tr></thead><tbody><tr><th><code>--m-1</code></th><td><code>4px</code></td></tr><tr><th><code>--m-2</code></th><td><code>8px</code></td></tr><tr><th><code>--m-3</code></th><td><code>12px</code></td></tr><tr><th><code>--m-4</code></th><td><code>16px</code></td></tr><tr><th><code>--m-5</code></th><td><code>20px</code></td></tr><tr><th><code>--m-6</code></th><td><code>24px</code></td></tr><tr><th><code>--m-7</code></th><td><code>32px</code></td></tr><tr><th><code>--m-8</code></th><td><code>40px</code></td></tr><tr><th><code>--m-9</code></th><td><code>64px</code></td></tr><tr><th><code>--m-10</code></th><td><code>88px</code></td></tr><tr><th><code>--wrap</code></th><td><code>min(94vw, 1720px)</code></td></tr><tr><th><code>--pad</code></th><td><code>20px</code></td></tr><tr><th><code>--cil</code></th><td><code>44px</code></td></tr></tbody></table></div>
+<h3>Stupnice: stiny</h3>
+<div class="doc-tab-obal" tabindex="0" role="region" aria-label="Stupnice: stiny"><table class="kontrast"><thead><tr><th>Token</th><th>Hodnota</th></tr></thead><tbody><tr><th><code>--stin-karta</code></th><td><code>0 6px 22px rgba(15,30,28,.08)</code></td></tr><tr><th><code>--stin-karta-hover</code></th><td><code>0 14px 34px rgba(15,30,28,.13)</code></td></tr><tr><th><code>--stin-poptavka</code></th><td><code>0 16px 42px rgba(38,62,62,.22)</code></td></tr><tr><th><code>--stin-chip</code></th><td><code>0 2px 8px rgba(20,30,28,.16)</code></td></tr><tr><th><code>--stin-popover</code></th><td><code>0 18px 44px rgba(15,30,28,.18), 0 0 0 1px rgba(15,30,28,.06)</code></td></tr><tr><th><code>--stin-lista</code></th><td><code>0 -8px 24px rgba(15,30,28,.10)</code></td></tr></tbody></table></div>
+<h3>Stupnice: pohyb</h3>
+<div class="doc-tab-obal" tabindex="0" role="region" aria-label="Stupnice: pohyb"><table class="kontrast"><thead><tr><th>Token</th><th>Hodnota</th></tr></thead><tbody><tr><th><code>--ease</code></th><td><code>cubic-bezier(.16, 1, .3, 1)</code></td></tr><tr><th><code>--d-1</code></th><td><code>.16s</code></td></tr><tr><th><code>--d-2</code></th><td><code>.18s</code></td></tr><tr><th><code>--d-3</code></th><td><code>.32s</code></td></tr><tr><th><code>--d-4</code></th><td><code>.7s</code></td></tr></tbody></table></div>
+<h3>Stupnice: lockup</h3>
+<div class="doc-tab-obal" tabindex="0" role="region" aria-label="Stupnice: lockup"><table class="kontrast"><thead><tr><th>Token</th><th>Hodnota</th></tr></thead><tbody><tr><th><code>--lockup-holiday</code></th><td><code>.345</code></td></tr><tr><th><code>--lockup-zona</code></th><td><code>.44</code></td></tr></tbody></table></div>
+<h3>Role: světlý a tmavý režim</h3>
+<div class="doc-tab-obal" tabindex="0" role="region" aria-label="Role: světlý a tmavý režim"><table class="kontrast"><thead><tr><th>Role</th><th>Světlý</th><th>Tmavý</th></tr></thead><tbody><tr><th><code>--bg</code></th><td><span class="vzorek" aria-hidden="true" style="background:#FCFAF2"></span><code>var(--s50)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#16211E"></span><code>var(--jt-podklad)</code></td></tr><tr><th><code>--bg-pas</code></th><td><span class="vzorek" aria-hidden="true" style="background:#F8F1E4"></span><code>var(--s150)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#1A2824"></span><code>var(--tma-pas)</code></td></tr><tr><th><code>--karta</code></th><td><span class="vzorek" aria-hidden="true" style="background:#fff"></span><code>var(--plocha)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#1F2D29"></span><code>var(--tma-karta)</code></td></tr><tr><th><code>--karta-2</code></th><td><span class="vzorek" aria-hidden="true" style="background:#F5F5F5"></span><code>var(--n50)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#26362F"></span><code>var(--tma-karta-2)</code></td></tr><tr><th><code>--text</code></th><td><span class="vzorek" aria-hidden="true" style="background:#1E1E1E"></span><code>var(--n900)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#F2EFE6"></span><code>var(--tma-text)</code></td></tr><tr><th><code>--text-2</code></th><td><span class="vzorek" aria-hidden="true" style="background:#333333"></span><code>var(--n700)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#D6D9D2"></span><code>var(--tma-text-2)</code></td></tr><tr><th><code>--text-3</code></th><td><span class="vzorek" aria-hidden="true" style="background:#6B6C7F"></span><code>var(--n200)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#A3ADA8"></span><code>var(--tma-text-3)</code></td></tr><tr><th><code>--linka</code></th><td><span class="vzorek" aria-hidden="true" style="background:#DADADA"></span><code>var(--n150)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#33443F"></span><code>var(--tma-linka)</code></td></tr><tr><th><code>--linka-jemna</code></th><td><span class="vzorek" aria-hidden="true" style="background:#EFEFEF"></span><code>var(--n100)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#26362F"></span><code>var(--tma-karta-2)</code></td></tr><tr><th><code>--linka-zavoj</code></th><td><span class="vzorek" aria-hidden="true" style="background:#E8D7B7"></span><code>var(--s200)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#33443F"></span><code>var(--tma-linka)</code></td></tr><tr><th><code>--linka-pole</code></th><td><span class="vzorek" aria-hidden="true" style="background:#85868F"></span><code>var(--pole-obrys)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#8C8D9C"></span><code>var(--tma-linka-pole)</code></td></tr><tr><th><code>--akcent</code></th><td><span class="vzorek" aria-hidden="true" style="background:#2F4F4F"></span><code>var(--p)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#A9C1C1"></span><code>var(--p200)</code></td></tr><tr><th><code>--akcent-hover</code></th><td><span class="vzorek" aria-hidden="true" style="background:#263E3E"></span><code>var(--p600)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#C9D8D8"></span><code>var(--tma-akcent-hover)</code></td></tr><tr><th><code>--na-akcentu</code></th><td><span class="vzorek" aria-hidden="true" style="background:#fff"></span><code>var(--tm-1)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#16211E"></span><code>var(--jt-podklad)</code></td></tr><tr><th><code>--zlata</code></th><td><span class="vzorek" aria-hidden="true" style="background:#CDAF75"></span><code>var(--s)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#CDAF75"></span><code>var(--s)</code></td></tr><tr><th><code>--zlata-hover</code></th><td><span class="vzorek" aria-hidden="true" style="background:#A38452"></span><code>var(--s600)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#A38452"></span><code>var(--s600)</code></td></tr><tr><th><code>--zlaty-text</code></th><td><span class="vzorek" aria-hidden="true" style="background:#836A40"></span><code>var(--s700)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#E8D7B7"></span><code>var(--s200)</code></td></tr><tr><th><code>--program</code></th><td><span class="vzorek" aria-hidden="true" style="background:#716433"></span><code>var(--mosaz)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#BFBB88"></span><code>var(--mosaz-svetla)</code></td></tr><tr><th><code>--program-podklad</code></th><td><span class="vzorek" aria-hidden="true" style="background:#F4F1E4"></span><code>var(--mosaz-200)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#2A2E24"></span><code>var(--mosaz-tma)</code></td></tr><tr><th><code>--nalada</code></th><td><span class="vzorek" aria-hidden="true" style="background:#E9A57A"></span><code>var(--broskev)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#E9A57A"></span><code>var(--broskev)</code></td></tr><tr><th><code>--nalada-podklad</code></th><td><span class="vzorek" aria-hidden="true" style="background:#FBEFE6"></span><code>var(--broskev-200)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#3A2C22"></span><code>var(--broskev-tma)</code></td></tr><tr><th><code>--na-nalade</code></th><td><span class="vzorek" aria-hidden="true" style="background:#1E1E1E"></span><code>var(--n900)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#1E1E1E"></span><code>var(--n900)</code></td></tr><tr><th><code>--ok-t</code></th><td><span class="vzorek" aria-hidden="true" style="background:#166534"></span><code>var(--ok-text)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#8FD4A3"></span><code>var(--tma-ok)</code></td></tr><tr><th><code>--ok-bg</code></th><td><span class="vzorek" aria-hidden="true" style="background:#EEF6F0"></span><code>var(--ok-podklad)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#1C3226"></span><code>var(--tma-ok-podklad)</code></td></tr><tr><th><code>--er-t</code></th><td><span class="vzorek" aria-hidden="true" style="background:#B02020"></span><code>var(--er)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#FFD9D2"></span><code>var(--er-na-tmavem)</code></td></tr><tr><th><code>--er-bg</code></th><td><span class="vzorek" aria-hidden="true" style="background:#FBEDEB"></span><code>var(--er-podklad)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#3A2220"></span><code>var(--tma-er-podklad)</code></td></tr><tr><th><code>--ceka-t</code></th><td><span class="vzorek" aria-hidden="true" style="background:#2F4F4F"></span><code>var(--p)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#A9C1C1"></span><code>var(--p200)</code></td></tr><tr><th><code>--ceka-bg</code></th><td><span class="vzorek" aria-hidden="true" style="background:#EEF2F1"></span><code>var(--ceka-podklad)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#22332F"></span><code>var(--tma-ceka-podklad)</code></td></tr><tr><th><code>--fokus</code></th><td><span class="vzorek" aria-hidden="true" style="background:#2F4F4F"></span><code>var(--p)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#E8D7B7"></span><code>var(--s200)</code></td></tr><tr><th><code>--kostra</code></th><td><span class="vzorek" aria-hidden="true" style="background:#EFEFEF"></span><code>var(--n100)</code></td><td><span class="vzorek" aria-hidden="true" style="background:#26362F"></span><code>var(--tma-karta-2)</code></td></tr></tbody></table></div>
+<!--TOKENY:END-->
+  </section>
+
+  <!-- Změny -->
+  <section class="doc-sekce" id="zmeny">
+    <header><h2>Změny proti návrhu v1 a schválení</h2>
+      <p>Co se změnilo proti <code>fragmento-holiday-brandmanual.md</code> a proč. Podrobně v <code>rozdily-proti-fragmentu.md</code>.</p></header>
+    <div class="doc-tab-obal" tabindex="0" role="region" aria-label="Tabulka"><table>
+      <thead><tr><th>Co</th><th>Návrh v1</th><th>Teď</th><th>Proč</th></tr></thead>
+      <tbody>
+        <tr><th>Mosaz</th><td><code>#A38452</code></td><td><code>#716433</code>, v tmavém <code>#BFBB88</code></td><td>Původní hex je přesně hover zlatého tlačítka (splývá s „jednáním“) a na krému má jen 3,13 : 1. Olivová mosaz má 4,78 až 5,88 : 1 a od zlaté se zřetelně liší.</td></tr>
+        <tr><th>Broskev</th><td><code>#E9A57A</code></td><td>beze změny, k ní jemná <code>#FBEFE6</code></td><td>Jako plocha funguje, jako text by neprošla nikdy (2,0 : 1). Zůstává jen nálada a podklad, na podkladu prochází i tlumený text (4,56 : 1).</td></tr>
+        <tr><th>Hover zlatého tlačítka</th><td>bílý text na <code>#A38452</code></td><td>inkoust na zlatě</td><td>Bílá má 3,51 : 1, inkoust 4,84 : 1.</td></tr>
+        <tr><th>Zelená jako text</th><td><code>#16A34A</code></td><td><code>#166534</code> pro text</td><td>Původní má na bílé 3,30 : 1. Světlá zelená zůstává pro ikony.</td></tr>
+        <tr><th>Obrys vstupů</th><td><code>#DADADA</code> ze šablony</td><td><code>#85868F</code></td><td>Původní má asi 1,4 : 1, WCAG 1.4.11 chce 3 : 1.</td></tr>
+        <tr><th>Tmavý režim</th><td>jen podklad a text</td><td>úplná sada rolí</td><td>Karty, linky, stavy, Mosaz a fokus mají vlastní hodnoty, všechny změřené.</td></tr>
+        <tr><th>Lockup</th><td>„doplní grafik“</td><td>HOLIDAY 0,345 H, linka, zóna 0,44 H, min. 32 / 40 px</td><td>Odvozeno z geometrie SVG, ať je lockup stejný všude.</td></tr>
+        <tr><th>Mezery a pohyb</th><td>slovně</td><td>tokeny <code>--m-*</code>, <code>--d-*</code></td><td>Ostatní session staví na stejných číslech.</td></tr>
+        <tr><th>Stavové hlášky</th><td>(neřešeno)</td><td>celý obrys 1 px</td><td>Proužek vlevo je opotřebovaný vzor. Stav nese ikona a věta.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="hlaska ok" role="status"><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg><b>Schváleno, verze 1.0</b><p>David Skoupý schválil 27. 10. 2026 Mosaz <code>#716433</code> (tmavý režim <code>#BFBB88</code>), lockup (HOLIDAY 0,345 H, zóna 0,44 H, minimum 32 px na webu a 40 px v e-mailu) a sadu tmavého režimu. Další změny tokenů jdou přes novou verzi brandmanuálu.</p></div>
+  </section>
+</main>
+</div>
+<script src="holiday.js"></script>
+</body>
+</html>

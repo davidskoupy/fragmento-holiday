@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Návrh úvodní stránky Fragmento Holiday: vyhledávač termínu, výběr nemovitostí, důvěra a věrnostní program.">
+<title>Fragmento Holiday, domů</title>
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../holiday.css">
+<link rel="stylesheet" href="../doc.css">
+<link rel="stylesheet" href="objevovani.css">
+<script src="../holiday.js" defer></script>
+<script src="objevovani.js" defer></script>
+</head>
+<body>
+
+<!-- Lišta návrhu: přepínače pro posouzení, v produktu není -->
+<div class="navrh">
+  <div class="wrap">
+    <nav aria-label="Obrazovky návrhu"><a href="domu.html" aria-current="page">Domů</a><a href="doporuceni.html">Poradce</a><a href="hledani.html">Hledání</a><a href="detail.html">Detail</a><a href="stavy.html">Stavy</a><a href="../components.html">Komponenty</a></nav>
+    <span class="ukazka">Ukázka · návrh v1</span>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg"><button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Fáze programu"><span class="seg-popis">Fáze</span><span class="seg"><button type="button" data-faze-prepni="1" aria-pressed="true">1</button><button type="button" data-faze-prepni="2" aria-pressed="false">2</button></span></div>
+    </div>
+  </div>
+</div>
+<div class="foto-hlava hero">
+  <img src="img/ai-terasa-rano.webp" alt="" width="1344" height="752" fetchpriority="high">
+  <header class="hl na-foto">
+  <div class="wrap">
+    <a class="lockup tmavy na-fotce " href="domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page">
+      <img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <nav class="hl-nav" aria-label="Hlavní nabídka" data-en-label="Main menu">
+      <a href="hledani.html" data-en="Find a stay">Hledat pobyt</a>
+      <a href="#" data-en="How it works">Jak to funguje</a>
+      <a href="#" data-en="Loyalty programme">Věrnostní program</a>
+      <a href="#" data-en="Help">Pomoc</a>
+    </nav>
+    <a class="btn light hl-prihlasit" href="#" data-en="Sign in">Přihlásit se</a>
+    <button type="button" class="ikona-btn hl-menu" data-otevri="menu" aria-label="Nabídka" data-en-label="Menu" aria-haspopup="dialog"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-menu"/></svg></button>
+  </div>
+</header>
+  <div class="wrap hero-telo na-foto">
+    <p class="stitek-poradce"><span class="tecka" aria-hidden="true"></span><span data-en="Direct with Fragmento, no commission">Přímo u Fragmenta, bez provize</span></p>
+    <h1 class="vyjezd poradce-h1" data-en="Where and when will you travel?">Kam a kdy pojedete?</h1>
+    <p class="podtitul" data-en="Pick your dates, or describe your holiday. The price is always the total, with no extra charges.">Vyberte termín, nebo nám popište dovolenou. Cena je vždy celková, žádné příplatky nepřijdou.</p>
+    <div class="poradce">
+      <div id="panel-presne" class="poradce-panel" role="tabpanel" aria-labelledby="tab-presne">
+    <div class="hledac" role="search" aria-label="Hledat pobyt" data-en-label="Find a stay">
+      <button type="button" class="hledac-mobil" data-otevri="hledat" aria-haspopup="dialog"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-hledat"/></svg><span><b data-en="Choose place and dates">Vybrat místo a termín</b><small data-en="Place · dates · guests">Místo · termín · hosté</small></span></button>
+      <div class="hledac-pole">
+        <button type="button" data-otevri="hledat" aria-haspopup="dialog"><small data-en="Where">Kam</small><span data-en="Anywhere">Kdekoli</span></button>
+        <button type="button" data-otevri="hledat" aria-haspopup="dialog"><small data-en="When">Kdy</small><span data-en="Add dates">Přidat termín</span></button>
+        <button type="button" data-otevri="hledat" aria-haspopup="dialog"><small data-en="Guests">Hosté</small><span data-en="2 adults">2 dospělí</span></button>
+      </div>
+      <a class="btn" href="hledani.html" data-en="&lt;svg class=&quot;ico&quot; aria-hidden=&quot;true&quot;&gt;&lt;use href=&quot;ikony.svg#i-hledat&quot;/&gt;&lt;/svg&gt;See available dates"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-hledat"/></svg>Zobrazit volné termíny</a>
+    </div>
+      </div>
+      <p class="poradce-nebo" data-en="or describe your holiday and we’ll advise">nebo nám popište dovolenou a poradíme</p>
+      <div id="panel-poradit" class="poradce-panel" role="tabpanel" aria-labelledby="tab-poradit">
+        <div class="poradce-pole">
+          <label class="sr" for="dotaz"><span data-en="Describe your holiday">Popište svou dovolenou</span></label>
+          <textarea id="dotaz" rows="2" placeholder="Např.: Jedeme ve čtyřech, děti mají 6 a 9 let. V červenci chceme moře a bazén."></textarea>
+          <div class="poradce-pata">
+            <p class="fine" data-en="Say who’s coming, when, and what you like or don’t. You don’t need exact dates.">Napište třeba kdo jede, kdy, co máte rádi a co ne. Termín nemusíte znát přesně.</p>
+            <a class="btn gold" href="doporuceni.html" data-poradit data-en="Advise&lt;svg class=&quot;ico&quot; aria-hidden=&quot;true&quot;&gt;&lt;use href=&quot;ikony.svg#i-sipka&quot;/&gt;&lt;/svg&gt;">Poradit<svg class="ico" aria-hidden="true"><use href="ikony.svg#i-sipka"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="napady" aria-label="Nápady na zadání" data-en-label="Ideas">
+      <button type="button" class="napad" data-napad="Jedeme ve čtyřech, děti mají 6 a 9 let. V červenci chceme moře a bazén."><span data-en="With kids by the sea">S dětmi k moři</span></button>
+      <button type="button" class="napad" data-napad="Jedeme ve dvou, chceme klid a hory, na prodloužený víkend."><span data-en="Two of us, quiet and mountains">Ve dvou, klid a hory</span></button>
+      <button type="button" class="napad" data-napad="Je nás šest, v únoru chceme sníh a lyžování."><span data-en="Winter, snow, six people">Zima, sníh, šest lidí</span></button>
+      <button type="button" class="napad" data-napad="V lednu chceme teplo a delší pobyt, ve dvou."><span data-en="Warm in January, a longer stay">Teplo v lednu, delší pobyt</span></button>
+    </div>
+    <p class="poradce-info" data-en="The advisor is artificial intelligence. It only picks from properties and dates we actually have. The booking system always confirms price and availability.">Poradce je umělá inteligence. Vybírá jen z nemovitostí a termínů, které opravdu máme. Cenu a dostupnost vždy potvrdí rezervační systém.</p>
+  </div>
+</div>
+
+<main id="obsah">
+  <section class="sekce" aria-labelledby="vyber-h">
+    <div class="wrap">
+      <div class="sekce-hlava">
+        <div><h2 class="h2" id="vyber-h" data-en="Selected properties">Vybrané nemovitosti</h2>
+          <p class="perex" data-en="Apartments and villas managed by Fragmento. We know each one, from the kitchen to check-in.">Apartmány a vily, které Fragmento spravuje. Každou známe od kuchyně po příjezd.</p></div>
+        <a class="odkaz" href="hledani.html" data-en="All properties">Všechny nemovitosti</a>
+      </div>
+      <div class="ukazka-pas"><span class="ukazka"><span data-en="Sample">Ukázka</span></span><p class="fine" data-en="Prices, dates and points to be added by the client. Photos are from the Fragmento catalogue, each place only once.">Ceny, termíny a body doplní klient. Fotky jsou z katalogu Fragmento, každé místo jen jednou.</p></div>
+      <div class="vyber" role="list">
+<article class="karta-n" data-zeme="hr" data-vyb="bazen more parkovani wellness">
+  <div class="kn-foto"><img src="img/n-apartina-3kk-8.webp" alt="Terasa apartmánu Apartina s výhledem na moře" width="1600" height="1067" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-hr"/></svg><span data-en="Croatia">Chorvatsko</span></span></div>
+  <div class="kn-telo">
+    <h3 class="kn-nazev"><a href="detail.html" data-en="Apartina, 3+kk apartment">Apartina, apartmán 3+kk</a></h3>
+    <p class="kn-misto">Rtina-Ražanac, Zadar</p>
+    <ul class="kn-param" aria-label="Parametry" data-en-label="Details">
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-pokoje"/></svg><span data-en="3 rooms">3 pokoje</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-koupelna"/></svg><span data-en="2 bathrooms">2 koupelny</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-plocha"/></svg>84 m²</li>
+    </ul>
+    <div class="kn-cena">
+      <div class="kn-radek">
+        <div>
+          <p class="kn-castka" data-en="&lt;strong&gt;[X] €&lt;/strong&gt;&lt;small&gt;for the stay, all in&lt;/small&gt;"><strong>[X] €</strong><small>za pobyt, vše v ceně</small></p>
+          <p class="fine jen-cs">≈ [X] Kč orientačně</p>
+        </div>
+        <span class="kn-bodpill" data-en="+[X] points">+[X] bodů</span>
+      </div>
+      <p class="kn-termin" data-en="Next free week: [date]–[date]">Nejbližší volný týden: [datum]–[datum]</p>
+    </div>
+  </div>
+</article>
+<article class="karta-n" data-zeme="it" data-vyb="hory wellness">
+  <div class="kn-foto"><img src="img/n-apartman-2kk-v-srdci-alp-1.webp" alt="Obývací pokoj se dřevem a krbem v alpském apartmánu" width="810" height="1080" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-it"/></svg><span data-en="Italy">Itálie</span></span></div>
+  <div class="kn-telo">
+    <h3 class="kn-nazev"><a href="detail.html" data-en="2+kk apartment in the heart of the Alps">Apartmán 2+kk v srdci Alp</a></h3>
+    <p class="kn-misto">Ponte di Legno, Passo del Tonale</p>
+    <ul class="kn-param" aria-label="Parametry" data-en-label="Details">
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-pokoje"/></svg><span data-en="2 rooms">2 pokoje</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-koupelna"/></svg><span data-en="1 bathroom">1 koupelna</span></li>
+    </ul>
+    <div class="kn-cena">
+      <div class="kn-radek">
+        <div>
+          <p class="kn-castka" data-en="&lt;strong&gt;[X] €&lt;/strong&gt;&lt;small&gt;for the stay, all in&lt;/small&gt;"><strong>[X] €</strong><small>za pobyt, vše v ceně</small></p>
+          <p class="fine jen-cs">≈ [X] Kč orientačně</p>
+        </div>
+        <span class="kn-bodpill" data-en="+[X] points">+[X] bodů</span>
+      </div>
+      <p class="kn-termin" data-en="Next free week: [date]–[date]">Nejbližší volný týden: [datum]–[datum]</p>
+    </div>
+  </div>
+</article>
+<article class="karta-n" data-zeme="cz" data-vyb="hory parkovani">
+  <div class="kn-foto"><img src="img/n-apartman-na-sjezdovce-plesivec-1.webp" alt="Obývací prostor apartmánu Na sjezdovce" width="1600" height="959" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-cz"/></svg><span data-en="Czechia">Česko</span></span></div>
+  <div class="kn-telo">
+    <h3 class="kn-nazev"><a href="detail.html" data-en="Na Sjezdovce apartment">Apartmán Na sjezdovce</a></h3>
+    <p class="kn-misto">Abertamy, Krušné hory</p>
+    <ul class="kn-param" aria-label="Parametry" data-en-label="Details">
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-pokoje"/></svg><span data-en="3 rooms">3 pokoje</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-koupelna"/></svg><span data-en="2 bathrooms">2 koupelny</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-plocha"/></svg>118 m²</li>
+    </ul>
+    <div class="kn-cena">
+      <div class="kn-radek">
+        <div>
+          <p class="kn-castka" data-en="&lt;strong&gt;[X] €&lt;/strong&gt;&lt;small&gt;for the stay, all in&lt;/small&gt;"><strong>[X] €</strong><small>za pobyt, vše v ceně</small></p>
+          <p class="fine jen-cs">≈ [X] Kč orientačně</p>
+        </div>
+        <span class="kn-bodpill" data-en="+[X] points">+[X] bodů</span>
+      </div>
+      <p class="kn-termin" data-en="Next free week: [date]–[date]">Nejbližší volný týden: [datum]–[datum]</p>
+    </div>
+  </div>
+</article>
+<article class="karta-n" data-zeme="th" data-vyb="more wellness">
+  <div class="kn-foto"><img src="img/n-boutique-vila-luna-4kk-v-tropicke-zahrade-1.webp" alt="Otevřený obývací prostor vily Luna s výhledem do zahrady" width="1600" height="1000" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-th"/></svg><span data-en="Thailand">Thajsko</span></span></div>
+  <div class="kn-telo">
+    <h3 class="kn-nazev"><a href="detail.html" data-en="Boutique Villa Luna, 4+kk">Boutique vila Luna 4+kk</a></h3>
+    <p class="kn-misto">Mae Nam, Koh Samui</p>
+    <ul class="kn-param" aria-label="Parametry" data-en-label="Details">
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-pokoje"/></svg><span data-en="4 rooms">4 pokoje</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-koupelna"/></svg><span data-en="2 bathrooms">2 koupelny</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-plocha"/></svg>133 m²</li>
+    </ul>
+    <div class="kn-cena">
+      <div class="kn-radek">
+        <div>
+          <p class="kn-castka" data-en="&lt;strong&gt;[X] €&lt;/strong&gt;&lt;small&gt;for the stay, all in&lt;/small&gt;"><strong>[X] €</strong><small>za pobyt, vše v ceně</small></p>
+          <p class="fine jen-cs">≈ [X] Kč orientačně</p>
+        </div>
+        <span class="kn-bodpill" data-en="+[X] points">+[X] bodů</span>
+      </div>
+      <p class="kn-termin" data-en="Next free week: [date]–[date]">Nejbližší volný týden: [datum]–[datum]</p>
+    </div>
+  </div>
+</article>
+<article class="karta-n" data-zeme="es" data-vyb="more parkovani wellness">
+  <div class="kn-foto"><img src="img/n-designovy-apartman-3kk-spanelsko-7.webp" alt="Bazén s výhledem na moře u apartmánu v Casares Costa" width="1600" height="900" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-es"/></svg><span data-en="Spain">Španělsko</span></span></div>
+  <div class="kn-telo">
+    <h3 class="kn-nazev"><a href="detail.html" data-en="Design 3+kk apartment with a garden">Designový apartmán 3+kk se zahradou</a></h3>
+    <p class="kn-misto">Casares Costa, Costa del Sol</p>
+    <ul class="kn-param" aria-label="Parametry" data-en-label="Details">
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-pokoje"/></svg><span data-en="3 rooms">3 pokoje</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-koupelna"/></svg><span data-en="1 bathroom">1 koupelna</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-plocha"/></svg>142 m²</li>
+    </ul>
+    <div class="kn-cena">
+      <div class="kn-radek">
+        <div>
+          <p class="kn-castka" data-en="&lt;strong&gt;[X] €&lt;/strong&gt;&lt;small&gt;for the stay, all in&lt;/small&gt;"><strong>[X] €</strong><small>za pobyt, vše v ceně</small></p>
+          <p class="fine jen-cs">≈ [X] Kč orientačně</p>
+        </div>
+        <span class="kn-bodpill" data-en="+[X] points">+[X] bodů</span>
+      </div>
+      <p class="kn-termin" data-en="Next free week: [date]–[date]">Nejbližší volný týden: [datum]–[datum]</p>
+    </div>
+  </div>
+</article>
+<article class="karta-n" data-zeme="cr" data-vyb="more">
+  <div class="kn-foto"><img src="img/n-moderni-vila-3kk-kostarika-8.webp" alt="Krytá terasa vily s jídelním stolem a tropickými rostlinami" width="1260" height="920" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-cr"/></svg><span data-en="Costa Rica">Kostarika</span></span></div>
+  <div class="kn-telo">
+    <h3 class="kn-nazev"><a href="detail.html" data-en="Modern 3+kk villa with a rainforest view">Moderní vila 3+kk s výhledem do pralesa</a></h3>
+    <p class="kn-misto">Hone Creek, Puerto Viejo</p>
+    <ul class="kn-param" aria-label="Parametry" data-en-label="Details">
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-pokoje"/></svg><span data-en="3 rooms">3 pokoje</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-koupelna"/></svg><span data-en="1 bathroom">1 koupelna</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-plocha"/></svg>120 m²</li>
+    </ul>
+    <div class="kn-cena">
+      <div class="kn-radek">
+        <div>
+          <p class="kn-castka" data-en="&lt;strong&gt;[X] €&lt;/strong&gt;&lt;small&gt;for the stay, all in&lt;/small&gt;"><strong>[X] €</strong><small>za pobyt, vše v ceně</small></p>
+          <p class="fine jen-cs">≈ [X] Kč orientačně</p>
+        </div>
+        <span class="kn-bodpill" data-en="+[X] points">+[X] bodů</span>
+      </div>
+      <p class="kn-termin" data-en="Next free week: [date]–[date]">Nejbližší volný týden: [datum]–[datum]</p>
+    </div>
+  </div>
+</article>
+<article class="karta-n" data-zeme="id" data-vyb="bazen more wellness">
+  <div class="kn-foto"><img src="img/n-uluwatu-bali-4kk-5.webp" alt="Bazén vily Eclipse mezi palmami" width="1600" height="1067" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-id"/></svg><span data-en="Bali">Bali</span></span></div>
+  <div class="kn-telo">
+    <h3 class="kn-nazev"><a href="detail.html" data-en="Eclipse Villa, 4+kk">Eclipse vila 4+kk</a></h3>
+    <p class="kn-misto">Pecatu, Uluwatu</p>
+    <ul class="kn-param" aria-label="Parametry" data-en-label="Details">
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-pokoje"/></svg><span data-en="4 rooms">4 pokoje</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-koupelna"/></svg><span data-en="2 bathrooms">2 koupelny</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-plocha"/></svg>209 m²</li>
+    </ul>
+    <div class="kn-cena">
+      <div class="kn-radek">
+        <div>
+          <p class="kn-castka" data-en="&lt;strong&gt;[X] €&lt;/strong&gt;&lt;small&gt;for the stay, all in&lt;/small&gt;"><strong>[X] €</strong><small>za pobyt, vše v ceně</small></p>
+          <p class="fine jen-cs">≈ [X] Kč orientačně</p>
+        </div>
+        <span class="kn-bodpill" data-en="+[X] points">+[X] bodů</span>
+      </div>
+      <p class="kn-termin" data-en="Next free week: [date]–[date]">Nejbližší volný týden: [datum]–[datum]</p>
+    </div>
+  </div>
+</article>
+<article class="karta-n" data-zeme="om" data-vyb="more parkovani wellness">
+  <div class="kn-foto"><img src="img/n-yamal-apartman-oman-6.webp" alt="Světlá ložnice apartmánu v resortu Yamal" width="1280" height="826" loading="lazy"><span class="chip foto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-om"/></svg><span data-en="Oman">Omán</span></span></div>
+  <div class="kn-telo">
+    <h3 class="kn-nazev"><a href="detail.html" data-en="2+kk apartment in the Yamal resort">Apartmán 2+kk v resortu Yamal</a></h3>
+    <p class="kn-misto">Al Seeb, Maskat</p>
+    <ul class="kn-param" aria-label="Parametry" data-en-label="Details">
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-pokoje"/></svg><span data-en="2 rooms">2 pokoje</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-koupelna"/></svg><span data-en="1 bathroom">1 koupelna</span></li>
+<li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-plocha"/></svg>71 m²</li>
+    </ul>
+    <div class="kn-cena">
+      <div class="kn-radek">
+        <div>
+          <p class="kn-castka" data-en="&lt;strong&gt;[X] €&lt;/strong&gt;&lt;small&gt;for the stay, all in&lt;/small&gt;"><strong>[X] €</strong><small>za pobyt, vše v ceně</small></p>
+          <p class="fine jen-cs">≈ [X] Kč orientačně</p>
+        </div>
+        <span class="kn-bodpill" data-en="+[X] points">+[X] bodů</span>
+      </div>
+      <p class="kn-termin" data-en="Next free week: [date]–[date]">Nejbližší volný týden: [datum]–[datum]</p>
+    </div>
+  </div>
+</article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekce pas" aria-labelledby="duvera-h">
+    <div class="wrap">
+      <div class="sekce-hlava"><div><h2 class="h2" id="duvera-h" data-en="Why book directly with us">Proč rezervovat přímo u nás</h2></div></div>
+      <div class="duvera">
+        <div class="duv-lead"><h3 data-en="No commission.">Cena bez provize.</h3><p data-en="You book directly with us, with no middleman. The total price of the stay is shown from the start.">Rezervujete přímo u nás, bez zprostředkovatele. Celková cena pobytu je vidět od prvního pohledu.</p><a class="odkaz" href="#" data-en="What’s included">Co je v ceně</a></div>
+        <ul>
+<li><b data-en="The Fragmento standard">Standard Fragmenta</b><p data-en="The same list applies to every property: cleaning between stays, arrival instructions in advance and a contact during your stay.">U každé nemovitosti platí stejný seznam: úklid mezi pobyty, pokyny k příjezdu předem a kontakt během pobytu.</p><a class="odkaz" href="#" data-en="What exactly applies">Co přesně platí</a></li>
+<li><b data-en="Clear cancellation terms">Storno předem jasné</b><p data-en="You see the cancellation terms for each property before you pay, as a timeline with dates.">Podmínky zrušení vidíte u každé nemovitosti ještě před platbou, jako časovou osu s daty.</p><a class="odkaz" href="#" data-en="Cancellation and terms">Storno a podmínky</a></li>
+<li><b data-en="Reviews from Google">Hodnocení z Googlu</b><p data-en="For each property we show its Google reviews as they are. Reviews from our own guests will follow after the first stays.">U nemovitostí ukazujeme hodnocení z Googlu tak, jak jsou. Vlastní hodnocení hostů přibudou po prvních pobytech.</p><a class="odkaz" href="#" data-en="Where reviews come from">Odkud hodnocení máme</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekce" aria-labelledby="vernost-h">
+    <div class="wrap">
+      <div class="vernost">
+        <div class="vernost-text">
+          <p class="lab" data-en="Loyalty programme">Věrnostní program</p>
+          <h2 class="h2" id="vernost-h" data-en="Points for every stay">Body za každý pobyt</h2>
+          <p class="perex" data-en="You earn 1 point for every 1 € of the stay price. Use your points when you pay for your next stay.">Za každé 1 € ceny pobytu získáte 1 bod (v korunách za každých 25 Kč). Body použijete při platbě dalšího pobytu.</p>
+          <ul class="vernost-fakta">
+            <li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-body"/></svg><span data-en="&lt;b&gt;100 points = 3 €.&lt;/b&gt; Your balance always shows the value in euros too."><b>100 bodů = 3 €.</b> U zůstatku vždy uvidíte i hodnotu v eurech.</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-cas"/></svg><span data-en="Points are valid for 24 months from when they’re added.">Body platí 24 měsíců od připsání.</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-klic"/></svg><span data-en="You reach &lt;b&gt;Guest&lt;/b&gt; level with your first completed stay and registration.">Úroveň <b>Host</b> získáte prvním dokončeným pobytem a registrací.</span></li>
+          </ul>
+          <p class="fine" data-phase="1-only" data-en="More levels are on the way.">Další úrovně připravujeme.</p>
+          <ul class="urovne" data-phase="2" aria-label="Úrovně" data-en-label="Levels">
+            <li><span class="u-jmeno" data-en="Guest">Host</span><span class="u-podminka" data-en="1 completed stay and registration">1 dokončený pobyt a registrace</span><span class="u-nasobic">×1</span></li>
+            <li><span class="u-jmeno" data-en="Regular">Stálý host</span><span class="u-podminka" data-en="3 stays in 24 months">3 pobyty za 24 měsíců</span><span class="u-nasobic">×1,5</span></li>
+            <li><span class="u-jmeno" data-en="At Home">Domácí</span><span class="u-podminka" data-en="5 or more stays in 24 months">5 a více pobytů za 24 měsíců</span><span class="u-nasobic">×2</span></li>
+          </ul>
+          <a class="odkaz" href="#" data-en="How the programme works">Jak program funguje</a>
+        </div>
+        <div class="karta-uroven" aria-label="Karta úrovně Host" data-en-label="Guest level card">
+          <div class="ku-hlava"><span>Fragmento Holiday</span><svg class="ku-klic ico" aria-hidden="true" style="stroke-width:1.4"><use href="ikony.svg#i-klic"/></svg></div>
+          <p class="ku-jmeno"><span data-en="Guest">Host</span><small data-en="level from your first stay">úroveň od prvního pobytu</small></p>
+          <div class="ku-pata"><span data-en="&lt;b&gt;1 point&lt;/b&gt; per 1 €"><b>1 bod</b> za 1 €</span><span class="ku-stupen is-phase2" aria-label="Úroveň 1 ze 3" data-en-label="Level 1 of 3"><i class="plny"></i><i></i><i></i></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekce pas" aria-labelledby="fragmento-h">
+    <div class="wrap fragmento-blok">
+      <div style="display:grid;gap:var(--m-4);align-content:start">
+        <img class="logo-fragmento" src="../assets/brand/logo-fragmento.svg" alt="Fragmento" width="155" height="32" style="height:32px;width:auto">
+        <h2 class="h2" id="fragmento-h" data-en="Fragmento is behind Holiday">Za Holiday stojí Fragmento</h2>
+        <p data-en="Fragmento Holiday is the stays side of Fragmento. Fragmento selects, furnishes and manages the properties you stay in. If you’d like a place like this for good, you’ll find more projects at fragmento.cz.">Fragmento Holiday je pobytová část Fragmenta. Nemovitosti, ve kterých u nás bydlíte, Fragmento vybírá, vybavuje a spravuje. Kdo by chtěl podobné místo mít natrvalo, najde další projekty na fragmento.cz.</p>
+        <a class="odkaz odkaz-ven" href="https://www.fragmento.cz/"><span data-en="More projects at fragmento.cz">Další projekty na fragmento.cz</span><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-vonkajsi"/></svg></a>
+      </div>
+      <div class="kontakt">
+        <h3 class="h3" data-en="Who’s behind it">Kdo za tím stojí</h3>
+        <p><b>Fragmento</b> <span class="klient" data-en="[client to add: legal name, reg. no.]">[doplní klient: právní název, IČ]</span></p>
+        <p><span data-en="Address">Sídlo</span>: <span class="klient" data-en="[client to add]">[doplní klient]</span></p>
+        <p><span data-en="Phone">Telefon</span>: <span class="klient" data-en="[client to add]">[doplní klient]</span></p>
+        <p><span data-en="Email">E-mail</span>: <span class="klient" data-en="[client to add]">[doplní klient]</span></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pata">
+  <div class="wrap">
+    <div style="display:grid;gap:var(--m-3);align-content:start">
+      <a class="lockup tmavy" href="domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page"><img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span></a>
+      <p data-en="Stays in properties that Fragmento selects and manages.">Pobyty v nemovitostech, které Fragmento vybírá a spravuje.</p>
+    </div>
+    <nav aria-label="Pobyty" data-en-label="Stays"><h2 data-en="Stays">Pobyty</h2><ul><li><a href="hledani.html" data-en="Find a stay">Hledat pobyt</a></li><li><a href="#" data-en="How it works">Jak to funguje</a></li><li><a href="#" data-en="The Fragmento standard">Standard Fragmenta</a></li><li><a href="#" data-en="Loyalty programme">Věrnostní program</a></li></ul></nav>
+    <nav aria-label="Pomoc" data-en-label="Help"><h2 data-en="Help">Pomoc</h2><ul><li><a href="#" data-en="Cancellation and terms">Storno a podmínky</a></li><li><a href="#" data-en="Help and questions">Pomoc a otázky</a></li><li><a href="#" data-en="Contact">Kontakt</a></li></ul></nav>
+    <nav aria-label="Fragmento" data-en-label="Fragmento"><h2 data-en="Fragmento">Fragmento</h2><ul><li><a href="https://www.fragmento.cz/" data-en="fragmento.cz">fragmento.cz</a></li><li><a href="#" data-en="About us">O nás</a></li></ul></nav>
+    <div class="pata-jazyk"><nav class="jazyky" aria-label="Jazyk" data-en-label="Language"><a href="#" hreflang="cs" lang="cs" data-jazyk="cs" aria-current="true"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="8" width="24" height="8" fill="#D7141A"/><path d="M0 0l12 8L0 16z" fill="#11457E"/></svg><span>Čeština</span></a><a href="#" hreflang="en" lang="en" data-jazyk="en"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="3"/></svg><span>English</span></a></nav></div>
+    <div class="pata-spodek fine"><span data-en="© 2026 Fragmento · [client to add: company, reg. no., address] · Privacy · Cookies">© 2026 Fragmento · [doplní klient: firma, IČ, sídlo] · Ochrana osobních údajů · Cookies</span></div>
+  </div>
+</footer>
+
+<dialog id="menu" class="menu-dlg" aria-labelledby="menu-h">
+  <div class="md-hlava"><h2 class="h3" id="menu-h" data-en="Menu">Nabídka</h2><button type="button" class="ikona-btn" data-zavri aria-label="Zavřít nabídku" data-en-label="Close menu"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg></button></div>
+  <nav aria-labelledby="menu-h"><ul>
+      <li><a href="hledani.html" data-en="Find a stay">Hledat pobyt</a></li>
+      <li><a href="#" data-en="How it works">Jak to funguje</a></li>
+      <li><a href="#" data-en="Loyalty programme">Věrnostní program</a></li>
+      <li><a href="#" data-en="The Fragmento standard">Standard Fragmenta</a></li>
+      <li><a href="#" data-en="Cancellation and terms">Storno a podmínky</a></li>
+      <li><a href="#" data-en="Help and questions">Pomoc a otázky</a></li>
+      <li><a href="#" data-en="Sign in">Přihlásit se</a></li>
+  </ul></nav>
+</dialog>
+<!-- Vyhledávač termínu: na mobilu celá obrazovka, od 768 px okno uprostřed -->
+<dialog id="hledat" class="dlg" aria-labelledby="hledat-h">
+  <div class="dlg-hlava"><h2 id="hledat-h" data-en="Where, when and who’s coming">Kam, kdy a kolik vás pojede</h2><button type="button" class="ikona-btn" data-zavri aria-label="Zavřít" data-en-label="Close"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zavrit"/></svg></button></div>
+  <div class="dlg-telo">
+    <section class="dlg-krok" aria-labelledby="k-kam">
+      <h3 id="k-kam" data-en="Where">Kam</h3>
+      <div class="chiprow" role="group" aria-labelledby="k-kam"><button type="button" class="chip" aria-pressed="true"><span data-en="Anywhere">Kdekoli</span></button><button type="button" class="chip" aria-pressed="false"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-hr"/></svg><span data-en="Croatia">Chorvatsko</span></button><button type="button" class="chip" aria-pressed="false"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-it"/></svg><span data-en="Italy">Itálie</span></button><button type="button" class="chip" aria-pressed="false"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-cz"/></svg><span data-en="Czechia">Česko</span></button><button type="button" class="chip" aria-pressed="false"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-th"/></svg><span data-en="Thailand">Thajsko</span></button><button type="button" class="chip" aria-pressed="false"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-es"/></svg><span data-en="Spain">Španělsko</span></button><button type="button" class="chip" aria-pressed="false"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-cr"/></svg><span data-en="Costa Rica">Kostarika</span></button><button type="button" class="chip" aria-pressed="false"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-id"/></svg><span data-en="Bali">Bali</span></button><button type="button" class="chip" aria-pressed="false"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-om"/></svg><span data-en="Oman">Omán</span></button></div>
+    </section>
+    <section class="dlg-krok" aria-labelledby="k-kdy">
+      <h3 id="k-kdy" data-en="When">Kdy</h3>
+      <div class="dlg-kal-dva">
+<div class="kal " data-start="10" data-konec="17">
+  <div class="kal-hlava">
+    <button type="button" class="kal-sipka" data-mesic="-1" aria-label="Předchozí měsíc" data-en-label="Previous month" disabled><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-vlevo"/></svg></button>
+    <h3 data-en="July 2027">Červenec 2027</h3>
+    <button type="button" class="kal-sipka" data-mesic="1" aria-label="Další měsíc" data-en-label="Next month"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-vpravo"/></svg></button>
+  </div>
+  <div class="kal-mrizka">
+<span class="kal-den-t" aria-hidden="true" data-en="Mo">Po</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Tu">Út</span>
+<span class="kal-den-t" aria-hidden="true" data-en="We">St</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Th">Čt</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Fr">Pá</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Sa">So</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Su">Ne</span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<button type="button" class="kal-den" data-d="1" aria-pressed="false" aria-label="1. července" data-en-label="1 July"><b>1</b></button>
+<button type="button" class="kal-den" data-d="2" aria-pressed="false" aria-label="2. července" data-en-label="2 July"><b>2</b></button>
+<button type="button" class="kal-den" data-d="3" aria-pressed="false" aria-label="3. července" data-en-label="3 July"><b>3</b></button>
+<button type="button" class="kal-den" data-d="4" aria-pressed="false" aria-label="4. července" data-en-label="4 July"><b>4</b></button>
+<button type="button" class="kal-den" data-d="5" aria-pressed="false" aria-label="5. července" data-en-label="5 July"><b>5</b></button>
+<button type="button" class="kal-den" data-d="6" aria-pressed="false" aria-label="6. července" data-en-label="6 July"><b>6</b></button>
+<button type="button" class="kal-den" data-d="7" aria-pressed="false" aria-label="7. července" data-en-label="7 July"><b>7</b></button>
+<button type="button" class="kal-den" data-d="8" aria-pressed="false" aria-label="8. července" data-en-label="8 July"><b>8</b></button>
+<button type="button" class="kal-den" data-d="9" aria-pressed="false" aria-label="9. července" data-en-label="9 July"><b>9</b></button>
+<button type="button" class="kal-den is-start" data-d="10" aria-pressed="true" aria-label="10. července" data-en-label="10 July"><b>10</b></button>
+<button type="button" class="kal-den is-rozsah" data-d="11" aria-pressed="false" aria-label="11. července" data-en-label="11 July"><b>11</b></button>
+<button type="button" class="kal-den is-rozsah" data-d="12" aria-pressed="false" aria-label="12. července" data-en-label="12 July"><b>12</b></button>
+<button type="button" class="kal-den is-rozsah" data-d="13" aria-pressed="false" aria-label="13. července" data-en-label="13 July"><b>13</b></button>
+<button type="button" class="kal-den is-rozsah" data-d="14" aria-pressed="false" aria-label="14. července" data-en-label="14 July"><b>14</b></button>
+<button type="button" class="kal-den is-rozsah" data-d="15" aria-pressed="false" aria-label="15. července" data-en-label="15 July"><b>15</b></button>
+<button type="button" class="kal-den is-rozsah" data-d="16" aria-pressed="false" aria-label="16. července" data-en-label="16 July"><b>16</b></button>
+<button type="button" class="kal-den is-konec" data-d="17" aria-pressed="true" aria-label="17. července" data-en-label="17 July"><b>17</b></button>
+<button type="button" class="kal-den" data-d="18" aria-pressed="false" aria-label="18. července" data-en-label="18 July"><b>18</b></button>
+<button type="button" class="kal-den" data-d="19" aria-pressed="false" aria-label="19. července" data-en-label="19 July"><b>19</b></button>
+<button type="button" class="kal-den" data-d="20" aria-pressed="false" aria-label="20. července" data-en-label="20 July"><b>20</b></button>
+<button type="button" class="kal-den" data-d="21" aria-pressed="false" aria-label="21. července" data-en-label="21 July"><b>21</b></button>
+<button type="button" class="kal-den" data-d="22" aria-pressed="false" aria-label="22. července" data-en-label="22 July"><b>22</b></button>
+<button type="button" class="kal-den" data-d="23" aria-pressed="false" aria-label="23. července" data-en-label="23 July"><b>23</b></button>
+<button type="button" class="kal-den" data-d="24" aria-pressed="false" aria-label="24. července" data-en-label="24 July"><b>24</b></button>
+<button type="button" class="kal-den" data-d="25" aria-pressed="false" aria-label="25. července" data-en-label="25 July"><b>25</b></button>
+<button type="button" class="kal-den" data-d="26" aria-pressed="false" aria-label="26. července" data-en-label="26 July"><b>26</b></button>
+<button type="button" class="kal-den" data-d="27" aria-pressed="false" aria-label="27. července" data-en-label="27 July"><b>27</b></button>
+<button type="button" class="kal-den" data-d="28" aria-pressed="false" aria-label="28. července" data-en-label="28 July"><b>28</b></button>
+<button type="button" class="kal-den" data-d="29" aria-pressed="false" aria-label="29. července" data-en-label="29 July"><b>29</b></button>
+<button type="button" class="kal-den" data-d="30" aria-pressed="false" aria-label="30. července" data-en-label="30 July"><b>30</b></button>
+<button type="button" class="kal-den" data-d="31" aria-pressed="false" aria-label="31. července" data-en-label="31 July"><b>31</b></button>
+  </div>
+  <div class="kal-pata">
+  <div class="kal-legenda" aria-hidden="true"><span><i class="l-vyber"></i><span data-en="selected">vybráno</span></span><span><i class="l-rozsah"></i><span data-en="stay">pobyt</span></span><span><i class="l-ne"></i><span data-en="booked">obsazeno</span></span></div>
+  <p data-kal-stav aria-live="polite" data-en="Selected: 7 nights.">Vybráno: 7 nocí.</p>
+</div>
+</div>
+<div class="kal druhy">
+  <div class="kal-hlava">
+    <button type="button" class="kal-sipka" data-mesic="-1" aria-label="Předchozí měsíc" data-en-label="Previous month"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-vlevo"/></svg></button>
+    <h3 data-en="August 2027">Srpen 2027</h3>
+    <button type="button" class="kal-sipka" data-mesic="1" aria-label="Další měsíc" data-en-label="Next month"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-vpravo"/></svg></button>
+  </div>
+  <div class="kal-mrizka">
+<span class="kal-den-t" aria-hidden="true" data-en="Mo">Po</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Tu">Út</span>
+<span class="kal-den-t" aria-hidden="true" data-en="We">St</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Th">Čt</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Fr">Pá</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Sa">So</span>
+<span class="kal-den-t" aria-hidden="true" data-en="Su">Ne</span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<span class="kal-den prazdny" aria-hidden="true"></span>
+<button type="button" class="kal-den" data-d="1" aria-pressed="false" aria-label="1. srpna" data-en-label="1 August"><b>1</b></button>
+<button type="button" class="kal-den" data-d="2" aria-pressed="false" aria-label="2. srpna" data-en-label="2 August"><b>2</b></button>
+<button type="button" class="kal-den" data-d="3" aria-pressed="false" aria-label="3. srpna" data-en-label="3 August"><b>3</b></button>
+<button type="button" class="kal-den" data-d="4" aria-pressed="false" aria-label="4. srpna" data-en-label="4 August"><b>4</b></button>
+<button type="button" class="kal-den" data-d="5" aria-pressed="false" aria-label="5. srpna" data-en-label="5 August"><b>5</b></button>
+<button type="button" class="kal-den" data-d="6" aria-pressed="false" aria-label="6. srpna" data-en-label="6 August"><b>6</b></button>
+<button type="button" class="kal-den" data-d="7" aria-pressed="false" aria-label="7. srpna" data-en-label="7 August"><b>7</b></button>
+<button type="button" class="kal-den" data-d="8" aria-pressed="false" aria-label="8. srpna" data-en-label="8 August"><b>8</b></button>
+<button type="button" class="kal-den" data-d="9" aria-pressed="false" aria-label="9. srpna" data-en-label="9 August"><b>9</b></button>
+<button type="button" class="kal-den" data-d="10" aria-pressed="false" aria-label="10. srpna" data-en-label="10 August"><b>10</b></button>
+<button type="button" class="kal-den" data-d="11" aria-pressed="false" aria-label="11. srpna" data-en-label="11 August"><b>11</b></button>
+<button type="button" class="kal-den" data-d="12" aria-pressed="false" aria-label="12. srpna" data-en-label="12 August"><b>12</b></button>
+<button type="button" class="kal-den" data-d="13" aria-pressed="false" aria-label="13. srpna" data-en-label="13 August"><b>13</b></button>
+<button type="button" class="kal-den" data-d="14" aria-pressed="false" aria-label="14. srpna" data-en-label="14 August"><b>14</b></button>
+<button type="button" class="kal-den" data-d="15" aria-pressed="false" aria-label="15. srpna" data-en-label="15 August"><b>15</b></button>
+<button type="button" class="kal-den" data-d="16" aria-pressed="false" aria-label="16. srpna" data-en-label="16 August"><b>16</b></button>
+<button type="button" class="kal-den" data-d="17" aria-pressed="false" aria-label="17. srpna" data-en-label="17 August"><b>17</b></button>
+<button type="button" class="kal-den" data-d="18" aria-pressed="false" aria-label="18. srpna" data-en-label="18 August"><b>18</b></button>
+<button type="button" class="kal-den" data-d="19" aria-pressed="false" aria-label="19. srpna" data-en-label="19 August"><b>19</b></button>
+<button type="button" class="kal-den" data-d="20" aria-pressed="false" aria-label="20. srpna" data-en-label="20 August"><b>20</b></button>
+<button type="button" class="kal-den" data-d="21" aria-pressed="false" aria-label="21. srpna" data-en-label="21 August"><b>21</b></button>
+<button type="button" class="kal-den" data-d="22" aria-pressed="false" aria-label="22. srpna" data-en-label="22 August"><b>22</b></button>
+<button type="button" class="kal-den" data-d="23" aria-pressed="false" aria-label="23. srpna" data-en-label="23 August"><b>23</b></button>
+<button type="button" class="kal-den" data-d="24" aria-pressed="false" aria-label="24. srpna" data-en-label="24 August"><b>24</b></button>
+<button type="button" class="kal-den" data-d="25" aria-pressed="false" aria-label="25. srpna" data-en-label="25 August"><b>25</b></button>
+<button type="button" class="kal-den" data-d="26" aria-pressed="false" aria-label="26. srpna" data-en-label="26 August"><b>26</b></button>
+<button type="button" class="kal-den" data-d="27" aria-pressed="false" aria-label="27. srpna" data-en-label="27 August"><b>27</b></button>
+<button type="button" class="kal-den" data-d="28" aria-pressed="false" aria-label="28. srpna" data-en-label="28 August"><b>28</b></button>
+<button type="button" class="kal-den" data-d="29" aria-pressed="false" aria-label="29. srpna" data-en-label="29 August"><b>29</b></button>
+<button type="button" class="kal-den" data-d="30" aria-pressed="false" aria-label="30. srpna" data-en-label="30 August"><b>30</b></button>
+<button type="button" class="kal-den" data-d="31" aria-pressed="false" aria-label="31. srpna" data-en-label="31 August"><b>31</b></button>
+  </div>
+  
+</div>
+      </div>
+      <div class="pruzne" role="group" aria-label="Pružnost termínu" data-en-label="Date flexibility">
+        <button type="button" class="chip" aria-pressed="true"><span data-en="Exact dates">Přesně tyto dny</span></button>
+        <button type="button" class="chip" aria-pressed="false"><span data-en="± 3 days">± 3 dny</span></button>
+        <button type="button" class="chip" aria-pressed="false"><span data-en="± 7 days">± 7 dní</span></button>
+      </div>
+      <p class="fine" data-en="You’ll see nightly prices in each property’s calendar.">Ceny za noc uvidíte v kalendáři u každé nemovitosti.</p>
+    </section>
+    <section class="dlg-krok" aria-labelledby="k-hoste">
+      <h3 id="k-hoste" data-en="Guests">Hosté</h3>
+      <div>
+<div class="pocitadlo" data-min="1" data-max="16" role="group" aria-labelledby="p-dosp">
+  <div class="pocitadlo-popis"><b id="p-dosp" data-en="Adults">Dospělí</b></div>
+  <div class="ovl"><button type="button" data-pocet="-1" aria-label="Ubrat dospělého" data-en-label="Remove an adult">−</button><output aria-live="polite" value="2">2</output><button type="button" data-pocet="1" aria-label="Přidat dospělého" data-en-label="Add an adult">+</button></div>
+</div>
+<div class="pocitadlo" data-min="0" data-max="10" role="group" aria-labelledby="p-deti">
+  <div class="pocitadlo-popis"><b id="p-deti" data-en="Children">Děti</b><small data-en="under [N]">do [N] let</small></div>
+  <div class="ovl"><button type="button" data-pocet="-1" aria-label="Ubrat dítě" data-en-label="Remove a child">−</button><output aria-live="polite" value="2">2</output><button type="button" data-pocet="1" aria-label="Přidat dítě" data-en-label="Add a child">+</button></div>
+</div>
+      </div>
+    </section>
+  </div>
+  <div class="dlg-pata">
+    <button class="odkaz" type="button" data-en="Clear">Vymazat</button>
+    <a class="btn" href="hledani.html" data-en="See available dates">Zobrazit volné termíny</a>
+  </div>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add("js")</script>
+<meta name="robots" content="noindex">
+<meta name="description" content="Krok 4 ze 4 rezervace Fragmento Holiday: potvrzení rezervace, co se stane dál, body za pobyt, přidání do kalendáře a stažení potvrzení.">
+<title>Potvrzení, rezervace, Fragmento Holiday</title>
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../holiday.css">
+<link rel="stylesheet" href="../doc.css">
+<link rel="stylesheet" href="rezervace.css">
+<script src="../holiday.js" defer></script>
+<script src="rezervace.js" defer></script>
+</head>
+<body>
+<!-- Lišta návrhu: přepínače pro posouzení, v produktu není -->
+<div class="navrh">
+  <div class="wrap">
+    <nav aria-label="Obrazovky návrhu"><a href="krok-1-termin.html">Krok 1</a><a href="krok-2-udaje.html">Krok 2</a><a href="krok-3-platba.html">Krok 3</a><a href="krok-4-potvrzeni.html" aria-current="page">Krok 4</a><a href="stavy.html">Stavy</a><a href="../objevovani/detail.html">Detail</a><a href="../components.html">Komponenty</a></nav>
+    <span class="ukazka">Ukázka · návrh v1</span>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg"><button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Fáze programu"><span class="seg-popis">Fáze</span><span class="seg"><button type="button" data-faze-prepni="1" aria-pressed="true">1</button><button type="button" data-faze-prepni="2" aria-pressed="false">2</button></span></div>
+    </div>
+  </div>
+</div>
+<header class="hl">
+  <div class="wrap">
+    <a class="lockup auto" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page">
+      <img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <a class="odkaz hl-pomoc" href="#"><span data-en="Help">Pomoc</span></a>
+  </div>
+</header>
+<main id="obsah" class="rez">
+<div class="wrap">
+  <div class="rez-uvod"><span class="ukazka"><span data-en="Sample">Ukázka</span></span><p class="fine" data-en="Numbers marked [X], the booking number and dates are filled in by the system.">Čísla [X], číslo rezervace a data doplní systém.</p></div>
+  <nav class="kroky" aria-label="Postup rezervace" data-en-label="Booking steps">
+    <ol><li class="hotovo"><span data-en="Dates and guests">Termín a hosté</span></li><li class="hotovo"><span data-en="Your details">Údaje</span></li><li class="hotovo"><span data-en="Payment">Platba</span></li><li aria-current="step"><span data-en="Confirmation">Potvrzení</span></li></ol>
+    <p class="kroky-mobil" data-en="Step 4 of 4: Confirmation">Krok 4 ze 4: Potvrzení</p>
+  </nav>
+  <div class="rez-mrizka">
+    <div class="hlavni">
+      <header class="potvrzeni-hlava">
+        <svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg>
+        <h1 class="h1r" tabindex="-1" data-en="Your booking is confirmed">Rezervace je potvrzená</h1>
+        <p class="perex" data-en="Thank you. We’ve sent the confirmation to [email].">Děkujeme. Potvrzení jsme poslali na [e-mail].</p>
+      </header>
+      <p class="cislo-rez"><span data-en="Booking number">Číslo rezervace</span> <strong>FH-[číslo]</strong></p>
+      <section class="rez-blok" aria-labelledby="f-h">
+        <h2 class="sr" id="f-h" data-en="Your stay">Váš pobyt</h2>
+        <div class="fakta">
+          <div><small data-en="Arrival">Příjezd</small><b class="num" data-en="Sat 10 Jul 2027">So 10. 7. 2027</b><span class="napoveda" data-en="from [time]">od [čas]</span></div>
+          <div><small data-en="Departure">Odjezd</small><b class="num" data-en="Sat 17 Jul 2027">So 17. 7. 2027</b><span class="napoveda" data-en="until [time]">do [čas]</span></div>
+          <div class="cele"><small data-en="Guests">Hosté</small><b data-en="2 adults, 2 children">2 dospělí, 2 děti</b></div>
+        </div>
+      </section>
+      <section class="rez-blok" aria-labelledby="d-h">
+        <header><h2 class="h2r" id="d-h" data-en="What happens next">Co se stane dál</h2></header>
+        <ol class="casova-osa">
+          <li class="hotovo"><span class="co-bod" aria-hidden="true"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><path d="m6.5 12.5 3.6 3.6 7.4-7.6"/></svg></span><span class="kdy" data-en="Done">Hotovo</span><b data-en="Paid and confirmed">Zaplaceno a potvrzeno</b><span class="pop" data-en="Your confirmation and receipt are in your email and in your account.">Potvrzení a doklad máte v e-mailu i ve svém účtu.</span></li>
+          <li class="ted"><span class="co-bod" aria-hidden="true"></span><span class="kdy" data-en="Now">Teď</span><b data-en="Add the other guests’ details">Doplňte údaje ostatních hostů</b><span class="pop" data-en="In your account, by [date]. It takes a few minutes.">Ve svém účtu, nejpozději do [datum]. Zabere to pár minut.</span><a class="btn osa-akce" href="../ucet/pobyt-detail.html" data-en="Add guest details">Doplnit údaje hostů</a></li>
+          <li class=""><span class="co-bod" aria-hidden="true"></span><span class="kdy" data-en="[X] days before arrival">[X] dní před příjezdem</span><b data-en="We’ll send arrival instructions">Pošleme pokyny k příjezdu</b><span class="pop" data-en="How to get in, how to reach us and tips for the area.">Jak se dostat dovnitř, kontakt na nás a tipy na místo.</span></li>
+          <li class=""><span class="co-bod" aria-hidden="true"></span><span class="kdy" data-en="Sat 10 Jul 2027">So 10. 7. 2027</span><b data-en="Arrival">Příjezd</b><span class="pop" data-en="From [time]. If you’re running late, let us know.">Od [čas]. Kdybyste se zdrželi, napište nám.</span></li>
+          <li class=""><span class="co-bod" aria-hidden="true"></span><span class="kdy" data-en="After departure">Po odjezdu</span><b data-en="We’ll credit your points and ask how it went">Připíšeme body a zeptáme se na pobyt</b><span class="pop" data-en="One email, no nagging.">Jeden e-mail, žádné naléhání.</span></li>
+        </ol>
+      </section>
+      <section class="zustatek is-phase2" aria-labelledby="bo-h">
+        <h2 class="sr" id="bo-h" data-en="Points for this stay">Body za tento pobyt</h2>
+        <div class="postup is-phase2"><p data-en="Two more stays to reach Regular.">Ještě dva pobyty do úrovně Stálý host.</p><div class="drah" aria-hidden="true"><i style="--v:33%"></i></div><small data-en="1 of 3 stays in 24 months">1 ze 3 pobytů za 24 měsíců</small></div>
+      </section>
+      <p class="ucet-poznamka"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-zamek"/></svg><span data-en="We’ve created your account from [email]. You sign in with a link we email you, no password needed.">Z [e-mail] jsme vám založili účet. Přihlásíte se odkazem, který vám pošleme, heslo nepotřebujete.</span></p>
+      <div class="akce-vice">
+        <a class="btn" href="../ucet/prehled.html" data-en="Go to your account">Přejít do účtu</a>
+        <a class="btn ghost" href="#" download><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-kalendar"/></svg><span data-en="Add to calendar">Přidat do kalendáře</span></a>
+        <a class="btn ghost" href="#" download><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-dolu"/></svg><span data-en="Download confirmation">Stáhnout potvrzení</span></a>
+      </div>
+    </div>
+    <aside class="souhrn otevreno" aria-labelledby="sou-h">
+      <div class="sou-top">
+        <img src="../objevovani/img/n-apartina-3kk-8.webp" alt="" width="1600" height="1067">
+        <div>
+          <h2 class="sou-nazev" id="sou-h" data-en="Apartina, 3+kk apartment">Apartina, apartmán 3+kk</h2>
+          <p class="sou-misto"><svg class="flag" aria-hidden="true"><use href="ikony.svg#f-hr"/></svg><span data-en="Rtina-Ražanac, Croatia">Rtina-Ražanac, Chorvatsko</span></p>
+          <p><span class="num" data-prijezd data-en="Sat&nbsp;10&nbsp;Jul&nbsp;2027">So&nbsp;10.&nbsp;7.&nbsp;2027</span> – <span class="num" data-odjezd data-en="Sat&nbsp;17&nbsp;Jul&nbsp;2027">So&nbsp;17.&nbsp;7.&nbsp;2027</span></p>
+          <p><span data-noci data-en="7 nights">7 nocí</span> · <span data-hoste-text data-en="2 adults, 2 children">2 dospělí, 2 děti</span></p>
+        </div>
+        <button type="button" class="sou-rozbal" aria-expanded="true" aria-controls="sou-telo"><span data-en="Price breakdown">Rozpis ceny</span><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-dolu"/></svg></button>
+      </div>
+      <div class="sou-telo" id="sou-telo">
+      <p class="sou-zaplaceno"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-ok"/></svg><span data-en="Paid by card">Zaplaceno kartou</span></p>
+      <dl class="rozpis">
+        <div><dt data-noci-pobyt data-en="Stay, 7 nights">Pobyt, 7 nocí</dt><dd class="num">[X]&nbsp;€</dd></div>
+        <div><dt data-en="Cleaning">Úklid</dt><dd class="num">[X]&nbsp;€</dd></div>
+        <div><dt data-en="Service fee">Poplatek za služby</dt><dd class="num">[X]&nbsp;€</dd></div>
+        <div class="r-body jen-body"><dt data-en="Points used (200)">Použité body (200)</dt><dd class="num">−6&nbsp;€</dd></div>
+        <div class="r-misto"><dt data-en="Tourist tax">Ubytovací poplatek</dt><dd data-en="[included / on site]">[v ceně / na místě]</dd></div>
+        <div class="r-celkem"><dt data-en="Total">Celkem</dt><dd class="num"><span class="bez-body">[X]&nbsp;€</span><span class="jen-body">[X − 6]&nbsp;€</span></dd></div>
+        <div class="r-kc jen-cs"><dt>orientačně v korunách</dt><dd class="num">≈ [X]&nbsp;Kč</dd></div>
+      </dl>
+        <p class="radek-body"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-body"/></svg><span data-en="You’ll earn &lt;b&gt;[X] points&lt;/b&gt; (≈ [Y]&nbsp;€) for this stay. We credit them after departure.">Za tento pobyt získáte <b>[X] bodů</b> (≈ [Y]&nbsp;€). Připíšeme je po odjezdu.</span></p>
+        <p class="sou-storno"><svg class="ico" aria-hidden="true"><use href="ikony.svg#i-storno"/></svg><span data-en="Cancel free until [date]. &lt;a href=&quot;#&quot;&gt;Cancellation terms&lt;/a&gt;">Zrušíte zdarma do [datum]. <a href="#">Podmínky storna</a></span></p>
+      </div>
+    </aside>
+  </div>
+</div>
+</main>
+<footer class="pata-rez">
+  <div class="wrap">
+    <p data-en="Fragmento Holiday · Fragmento [company, address and ID to be added by the client]">Fragmento Holiday · Fragmento [firma, adresa a IČO doplní klient]</p>
+    <nav aria-label="Pomoc" data-en-label="Help"><a href="#" data-en="Cancellation and terms">Storno a podmínky</a><a href="#" data-en="Help">Pomoc</a><a href="#" data-en="Contact">Kontakt</a></nav>
+    <nav class="jazyky" aria-label="Jazyk" data-en-label="Language"><a href="#" hreflang="cs" lang="cs" data-jazyk="cs" aria-current="true"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="8" width="24" height="8" fill="#D7141A"/><path d="M0 0l12 8L0 16z" fill="#11457E"/></svg><span>Čeština</span></a><a href="#" hreflang="en" lang="en" data-jazyk="en"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="3"/></svg><span>English</span></a></nav>
+  </div>
+</footer>
+</body>
+</html>

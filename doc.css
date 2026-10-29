@@ -1,0 +1,106 @@
+/* Rozvržení dokumentačních stránek (brandmanuál, knihovna komponent).
+   Není součástí produktu, jen nosí ukázky. Bere tokeny z tokens.css. */
+.doc-hlava { position: sticky; top: 0; z-index: 20; background: var(--karta); border-bottom: 1px solid var(--linka-jemna); }
+.doc-hlava .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--m-3) var(--m-6); padding-block: 10px; }
+.doc-ovl { display: flex; flex-wrap: wrap; gap: var(--m-2) var(--m-4); align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--linka-pole); border-radius: var(--r-control); overflow: hidden; }
+.seg button { min-height: var(--cil); min-width: var(--cil); padding: 0 12px; font-size: var(--t2); font-weight: var(--w-med); color: var(--text-2); }
+.seg button + button { border-left: 1px solid var(--linka-pole); }
+.seg button[aria-pressed="true"] { background: var(--akcent); color: var(--na-akcentu); }
+.seg button:focus-visible { outline-offset: -3px; }
+.seg-popis { font-size: var(--t1); color: var(--text-3); margin-right: 6px; }
+.doc-ovl > div { display: inline-flex; align-items: center; }
+
+.doc { padding-block: var(--m-8) var(--m-10); display: grid; gap: var(--m-10); }
+.doc-uvod { display: grid; gap: var(--m-4); max-width: 760px; }
+.doc-uvod h1 { font-size: var(--t8); font-weight: var(--w-bold); letter-spacing: var(--tr-nadpis); line-height: var(--lh-nadpis); text-wrap: balance; }
+.doc-uvod p { font-size: var(--t4); color: var(--text-2); max-width: 62ch; }
+.doc-stav { display: flex; flex-wrap: wrap; gap: var(--m-2); }
+.doc-sekce { display: grid; gap: var(--m-6); scroll-margin-top: 90px; min-width: 0; }
+.doc-sekce > header { display: grid; gap: var(--m-2); max-width: 760px; }
+.doc-sekce h2 { font-size: var(--t7); font-weight: var(--w-bold); letter-spacing: var(--tr-nadpis); line-height: var(--lh-nadpis); text-wrap: balance; }
+.doc-sekce h3 { font-size: var(--t5); font-weight: var(--w-med); letter-spacing: var(--tr-titulek); line-height: var(--lh-titulek); }
+.doc-sekce h4 { font-size: var(--t3); font-weight: var(--w-med); }
+.doc-sekce > header p, .doc-text { color: var(--text-2); max-width: 68ch; }
+.doc-text { display: grid; gap: var(--m-3); }
+.doc-text ul { display: grid; gap: 6px; }
+.doc-text li { padding-left: 18px; position: relative; }
+.doc-text li::before { content: ""; position: absolute; left: 2px; top: .7em; width: 6px; height: 1px; background: var(--text-3); }
+.doc-ukazka { background: var(--bg-pas); border-radius: var(--r-lg); padding: var(--m-6) var(--m-4); display: flex; flex-wrap: wrap; gap: var(--m-4); align-items: flex-start; min-width: 0; }
+.doc-ukazka.bila { background: var(--karta); box-shadow: inset 0 0 0 1px var(--linka-jemna); }
+.doc-ukazka.sloupec { flex-direction: column; }
+.doc-ukazka.tmava { background: var(--p); color: var(--tm-1); }
+.doc-mrizka { display: grid; gap: var(--m-6); grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); align-items: start; }
+.doc-mrizka.dva { grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); }
+.doc-pozn { font-size: var(--t2); color: var(--text-3); max-width: 68ch; }
+.doc-pozn code, .doc-text code, .doc code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .88em; background: var(--karta-2); color: var(--text); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.doc-popis { display: grid; gap: 4px; font-size: var(--t2); color: var(--text-3); }
+.doc-popis b { color: var(--text); font-weight: var(--w-med); font-size: var(--t3); }
+.doc-pruh { display: grid; gap: var(--m-3); min-width: 0; }
+.doc-telefon { width: 100%; max-width: 390px; border-radius: 22px; border: 1px solid var(--linka); background: var(--bg); overflow: hidden; display: grid; }
+.doc-telefon .obsah { padding: var(--m-4); display: grid; gap: var(--m-3); min-height: 150px; align-content: start; }
+.doc-faze { border: 1px dashed var(--linka-pole); border-radius: var(--r-lg); padding: var(--m-5) var(--m-4); display: grid; gap: var(--m-4); }
+.doc-faze > p:first-child { font-size: var(--t2); color: var(--text-2); }
+
+/* Navigace kapitol */
+.doc-nav { display: flex; gap: 4px; overflow-x: auto; padding-bottom: 4px; margin-inline: calc(-1 * var(--pad)); padding-inline: var(--pad); scrollbar-width: thin; }
+.doc-nav a { flex: 0 0 auto; min-height: var(--cil); display: inline-flex; align-items: center; padding: 0 12px; border-radius: var(--r-pill); font-size: var(--t2); color: var(--text-2); text-decoration: none; background: var(--karta); border: 1px solid var(--linka); white-space: nowrap; }
+.doc-nav a:hover { border-color: var(--p300); }
+
+/* Tabulky */
+.doc-tab-obal { overflow-x: auto; max-width: 100%; border-radius: var(--r); box-shadow: inset 0 0 0 1px var(--linka-jemna); background: var(--karta); }
+.doc table { border-collapse: collapse; width: 100%; font-size: var(--t2); }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--linka-jemna); }
+.doc thead th { font-size: var(--t1); letter-spacing: var(--tr-chip); text-transform: uppercase; color: var(--text-3); font-weight: var(--w-bold); background: var(--karta); }
+.doc tbody th { font-weight: var(--w-med); color: var(--text); }
+.doc th small, .doc td small { display: block; font-size: var(--t1); color: var(--text-3); font-weight: var(--w-text); margin-top: 2px; }
+.kontrast td { white-space: nowrap; }
+.kontrast .vzorek { display: inline-grid; place-items: center; width: 34px; height: 26px; border-radius: 5px; font-weight: var(--w-bold); margin-right: 8px; vertical-align: middle; box-shadow: inset 0 0 0 1px rgb(127 127 127 / .25); }
+.kontrast .pas { color: var(--ok-t); font-weight: var(--w-bold); }
+.kontrast .pad { color: var(--er-t); font-weight: var(--w-bold); }
+
+@media (min-width: 1040px) {
+  .doc-ukazka { padding: var(--m-7); }
+  .doc-ukazka.sirokotelo { display: grid; grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1280px) {
+  .doc-rozlozeni { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: var(--m-9); }
+  .doc-rozlozeni .doc-nav { position: sticky; top: 90px; align-self: start; flex-direction: column; overflow: visible; margin: 0; padding: var(--m-8) 0 0; }
+  .doc-rozlozeni .doc-nav a { border: 0; background: none; border-radius: var(--r-sm); padding: 0 10px; }
+  .doc-rozlozeni .doc-nav a:hover { background: var(--karta); }
+}
+
+/* Brandmanuál: vzorky barev, písma, výřezy fotek, logo */
+.vzorky { display: grid; gap: var(--m-3); grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); }
+.vzorek-b { border-radius: var(--r); overflow: hidden; background: var(--karta); box-shadow: inset 0 0 0 1px var(--linka-jemna); display: grid; }
+.vzorek-b > i { display: block; height: 72px; box-shadow: inset 0 -1px 0 var(--linka-jemna); }
+.vzorek-b > div { padding: 10px 12px 12px; display: grid; gap: 2px; font-size: var(--t2); color: var(--text-3); }
+.vzorek-b b { color: var(--text); font-weight: var(--w-med); font-size: var(--t3); }
+.vzorek-b code { justify-self: start; }
+.pismo-radek { display: grid; gap: 4px; padding-block: var(--m-4); border-bottom: 1px solid var(--linka-jemna); min-width: 0; }
+.pismo-radek > small { font-size: var(--t1); color: var(--text-3); }
+.pismo-radek > p { overflow-wrap: anywhere; }
+.vyrezy { display: grid; gap: var(--m-6); grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.vyrez { display: grid; gap: var(--m-3); align-content: start; }
+.vyrez .ram { position: relative; overflow: hidden; border-radius: var(--r); background: var(--karta-2); }
+.vyrez .ram img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vyrez figcaption { display: grid; gap: 4px; font-size: var(--t2); color: var(--text-2); }
+.vyrez figcaption b { color: var(--text); font-weight: var(--w-med); }
+.vyrez figcaption small { font-size: var(--t1); color: var(--text-3); }
+/* Plochy pro logo mají pevné barvy palety: světlé logo se ukazuje na světlém i v tmavém režimu */
+.logo-plocha { border-radius: var(--r-lg); padding: var(--m-8) var(--m-6); display: grid; place-items: center; min-height: 180px; background: var(--plocha); box-shadow: inset 0 0 0 1px var(--linka-jemna); }
+.logo-plocha.krem { background: var(--s150); }
+.logo-plocha.tmava { background: var(--p); }
+.logo-plocha.fotka { position: relative; overflow: hidden; place-items: start; padding: var(--m-5); min-height: 240px; }
+.zona { outline: 1px dashed var(--p300); outline-offset: calc(var(--h) * var(--lockup-zona)); }
+.min-radek { display: flex; flex-wrap: wrap; gap: var(--m-6) var(--m-8); align-items: end; }
+.min-radek figure { display: grid; gap: var(--m-2); justify-items: start; }
+.min-radek figcaption, .zneuziti figcaption { font-size: var(--t2); color: var(--text-2); }
+.zneuziti { display: grid; gap: var(--m-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
+.zneuziti figure { display: grid; gap: var(--m-2); }
+.zneuziti .logo-plocha { min-height: 120px; padding: var(--m-5); overflow: hidden; }
+.zneuziti figcaption { display: flex; gap: 6px; align-items: flex-start; }
+.zneuziti figcaption .ico { color: var(--er-t); width: 16px; height: 16px; margin-top: 2px; }
+
+@media (max-width: 479px) { .doc-ukazka:has(> .kal) { padding: 0; background: none; box-shadow: none; } }
+@media (max-width: 767px) { .doc-hlava { position: static; } }

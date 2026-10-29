@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Jak fungují body a úrovně ve věrnostním programu Fragmento Holiday: 1 bod za 1 €, 100 bodů = 3 €.">
+<title>Věrnostní program · Fragmento Holiday</title>
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../holiday.css">
+<link rel="stylesheet" href="../doc.css">
+<link rel="stylesheet" href="../objevovani/objevovani.css">
+<link rel="stylesheet" href="obsah.css">
+<script src="../holiday.js" defer></script>
+<script src="../objevovani/objevovani.js" defer></script>
+</head>
+<body>
+
+<!-- Lišta návrhu: přepínače pro posouzení, v produktu není -->
+<div class="navrh">
+  <div class="wrap">
+    <nav aria-label="Stránky návrhu"><a href="jak-to-funguje.html">Jak to funguje</a><a href="vernostni-program.html" aria-current="page">Věrnostní program</a><a href="standard.html">Standard Fragmenta</a><a href="storno-a-podminky.html">Storno a podmínky</a><a href="pomoc.html">Pomoc a otázky</a><a href="kontakt.html">Kontakt</a><a href="emaily/index.html">E-maily</a><a href="../objevovani/domu.html">Objevování</a><a href="../components.html">Komponenty</a></nav>
+    <span class="ukazka">Ukázka · návrh v1</span>
+    <div class="doc-ovl">
+      <div role="group" aria-label="Režim"><span class="seg-popis">Režim</span><span class="seg"><button type="button" data-rezim="light" aria-pressed="false">Světlý</button><button type="button" data-rezim="dark" aria-pressed="false">Tmavý</button><button type="button" data-rezim="auto" aria-pressed="true">Systém</button></span></div>
+      <div role="group" aria-label="Fáze programu"><span class="seg-popis">Fáze</span><span class="seg"><button type="button" data-faze-prepni="1" aria-pressed="true">1</button><button type="button" data-faze-prepni="2" aria-pressed="false">2</button></span></div>
+    </div>
+  </div>
+</div>
+<div class="foto-hlava str-foto">
+  <img src="../objevovani/img/ai-plaz-vecer.webp" alt="" width="1344" height="752" fetchpriority="high">
+  <header class="hl na-foto">
+  <div class="wrap">
+    <a class="lockup tmavy na-fotce" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page">
+      <img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54">
+      <img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54">
+      <span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span>
+    </a>
+    <nav class="hl-nav" aria-label="Hlavní nabídka" data-en-label="Main menu">
+      <a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a>
+      <a href="jak-to-funguje.html" data-en="How it works">Jak to funguje</a>
+      <a href="vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a>
+      <a href="pomoc.html" data-en="Help">Pomoc</a>
+    </nav>
+    <a class="btn light hl-prihlasit" href="#" data-en="Sign in">Přihlásit se</a>
+    <button type="button" class="ikona-btn hl-menu" data-otevri="menu" aria-label="Nabídka" data-en-label="Menu" aria-haspopup="dialog"><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-menu"/></svg></button>
+  </div>
+</header>
+  <div class="wrap str-foto-telo na-foto"><h1 data-en="Loyalty programme">Věrnostní program</h1><p class="perex" data-en="You earn points for every completed stay and take them off the price when you pay for your next one. The price of a stay is the same for everyone.">Za každý dokončený pobyt dostanete body a při platbě dalšího pobytu je odečtete z ceny. Cena pobytu je pro všechny stejná.</p></div>
+</div>
+
+<main id="obsah">
+<nav class="subnav" aria-label="V této části" data-en-label="In this section"><div class="wrap"><ul><li><a href="jak-to-funguje.html"><span data-en="How it works">Jak to funguje</span></a></li><li><a href="vernostni-program.html" aria-current="page"><span data-en="Loyalty programme">Věrnostní program</span></a></li><li><a href="standard.html"><span data-en="The Fragmento standard">Standard Fragmenta</span></a></li><li><a href="storno-a-podminky.html"><span data-en="Cancellation and terms">Storno a podmínky</span></a></li><li><a href="pomoc.html"><span data-en="Help and questions">Pomoc a otázky</span></a></li><li><a href="kontakt.html"><span data-en="Contact">Kontakt</span></a></li></ul></div></nav>
+<div class="wrap"><div class="ukazka-pas"><span class="ukazka"><span data-en="Sample">Ukázka</span></span><p class="fine" data-en="Numbers in square brackets will be added by the client. The balance and progress are samples.">Čísla v hranatých závorkách doplní klient. Zůstatek a postup jsou jen ukázky.</p></div></div><section class="sekce" aria-labelledby="body-h">
+  <div class="wrap">
+    <div class="sekce-hlava"><div><h2 class="h2" id="body-h" data-en="How points work">Jak body fungují</h2></div></div>
+<div class="dva-sloupce"><ul class="vernost-fakta"><li><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-body"/></svg><span data-en="You earn &lt;b&gt;1 point&lt;/b&gt; for every 1 € of the stay price. &lt;span class=&quot;klient d&quot;&gt;[rate to be added by the client]&lt;/span&gt;">Za každé 1 € ceny pobytu dostanete <b>1 bod</b>. V české verzi to je za každých 25 Kč <span class="klient d">[kurz doplní klient]</span>.</span></li><li><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-cena"/></svg><span data-en="&lt;b&gt;100 points = 3 €.&lt;/b&gt; Your balance always shows the value in euros too, for example 600 points ≈ 18 €."><b>100 bodů = 3 €.</b> U zůstatku vždy vidíte i hodnotu v eurech, například 600 bodů ≈ 18 €.</span></li><li><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-info"/></svg><span data-en="Points are worked out from the stay price without accommodation fees and taxes. Non-refundable parts of the price earn no points.">Body se počítají z ceny pobytu bez ubytovacího poplatku a daní. Nevratné části ceny body nedávají.</span></li><li><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-cas"/></svg><span data-en="Points are added after you leave. Until then they show in your account as pending.">Body se připíšou po odjezdu. Do té doby je v účtu vidíte jako čekající.</span></li><li><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-klic"/></svg><span data-en="You use them with one switch when you pay for your next stay. You see the saving straight away, for example 600 points = 18 €.">Při platbě dalšího pobytu je použijete jedním přepínačem. Hned uvidíte, kolik ušetříte, například 600 bodů = 18 €.</span></li></ul><section class="zustatek" aria-labelledby="zu-n">
+        <h3 class="zu-hlava" id="zu-n"><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-body"/></svg><span data-en="Your points">Vaše body</span></h3>
+        <p class="zu-cislo">2 700 <span data-en="points">bodů</span></p>
+        <p class="zu-eur"><span data-en="≈ 81 € off your next stay">≈ 81 € na další pobyt</span></p>
+        <p class="zu-exp"><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-ceka"/></svg><span data-en="&lt;span class=&quot;klient&quot;&gt;[X]&lt;/span&gt; points expire on &lt;span class=&quot;klient&quot;&gt;[date]&lt;/span&gt;. Use them when you pay for your next stay."><span class="klient">[X]</span> bodů vyprší <span class="klient">[datum]</span>. Použijete je při platbě dalšího pobytu.</span></p>
+        <p class="zu-kurz"><span data-en="100 points = 3 € · points are valid for 24 months · sample balance">100 bodů = 3 € · body platí 24 měsíců · ukázka zůstatku</span></p>
+      </section></div>
+  </div>
+</section><section class="sekce pas" aria-labelledby="urovne-h">
+  <div class="wrap">
+    <div class="sekce-hlava"><div><h2 class="h2" id="urovne-h" data-en="Levels">Úrovně</h2><p class="perex" data-en="You reach a level with a completed stay and registration. Completed stays in the last 24 months count.">Úroveň získáte dokončeným pobytem a registrací. Počítají se dokončené pobyty za posledních 24 měsíců.</p></div></div>
+<div class="urovne-blok">
+      <div class="karty-urovni"><article class="karta-uroven" aria-label="Karta úrovně Host" data-en-label="Guest level card">
+          <div class="ku-hlava"><span>Fragmento Holiday</span><svg class="ku-klic ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-klic"/></svg></div>
+          <p class="ku-jmeno"><span data-en="Guest">Host</span><small><span data-en="level from your first stay">úroveň od prvního pobytu</span></small></p>
+          <div class="ku-pata"><span data-en="&lt;b&gt;1 point&lt;/b&gt; per 1 €"><b>1 bod</b> za 1 €</span><span class="ku-stupen is-phase2" aria-hidden="true"><i class="plny"></i><i></i><i></i></span></div>
+        </article><article class="karta-uroven is-phase2" aria-label="Karta úrovně Stálý host" data-en-label="Regular level card">
+          <div class="ku-hlava"><span>Fragmento Holiday</span><span class="ku-stupen" aria-hidden="true"><i class="plny"></i><i class="plny"></i><i></i></span></div>
+          <p class="ku-jmeno"><span data-en="Regular">Stálý host</span><small><span data-en="3 stays in 24 months">3 pobyty za 24 měsíců</span></small></p>
+          <div class="ku-pata"><span data-en="&lt;b&gt;1.5 points&lt;/b&gt; per 1 €"><b>1,5 bodu</b> za 1 €</span><svg class="ku-klic ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-klic"/></svg></div>
+        </article><article class="karta-uroven is-phase2" aria-label="Karta úrovně Domácí" data-en-label="At Home level card">
+          <div class="ku-hlava"><span>Fragmento Holiday</span><span class="ku-stupen" aria-hidden="true"><i class="plny"></i><i class="plny"></i><i class="plny"></i></span></div>
+          <p class="ku-jmeno"><span data-en="At Home">Domácí</span><small><span data-en="5 or more stays in 24 months">5 a více pobytů za 24 měsíců</span></small></p>
+          <div class="ku-pata"><span data-en="&lt;b&gt;2 points&lt;/b&gt; per 1 €"><b>2 body</b> za 1 €</span><svg class="ku-klic ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-klic"/></svg></div>
+        </article></div>
+      <p class="fine" data-phase="1-only"><span data-en="More levels are on the way.">Další úrovně připravujeme.</span></p>
+      <div class="postup is-phase2" style="--v:66%">
+          <p data-en="One more stay to reach Regular.">Ještě jeden pobyt do úrovně Stálý host.</p>
+          <div class="drah" role="img" aria-label="Postup: 2 ze 3 pobytů" data-en-label="Progress: 2 of 3 stays"><i></i></div>
+          <small data-en="Sample progress. In the live version the number comes from your stays.">Ukázka postupu. Číslo v ostré verzi vychází z vašich pobytů.</small>
+        </div>
+      <div class="tab-wrap"><table class="tab tab-urovne"><caption class="sr"><span data-en="Programme levels">Úrovně programu</span></caption><thead><tr><th scope="col"><span data-en="Level">Úroveň</span></th><th scope="col"><span data-en="Requirement">Podmínka</span></th><th scope="col"><span data-en="Points per 1 €">Body za 1 €</span></th><th scope="col"><span data-en="What else">Co navíc</span></th></tr></thead><tbody><tr><th scope="row"><span class="jmeno-urovne"><span data-en="Guest">Host</span></span></th><td><span class="mob"><span data-en="Requirement">Podmínka</span></span><span data-en="1 completed stay and finished registration">1 dokončený pobyt a dokončená registrace</span></td><td><span class="mob"><span data-en="Points per 1 €">Body za 1 €</span></span><span data-en="×1">×1</span></td><td><span class="mob"><span data-en="What else">Co navíc</span></span><span data-en="Arrival instructions in advance, an account, and points you can use when you pay.">Pokyny k příjezdu předem, účet, uplatnění bodů při platbě.</span></td></tr><tr class="is-phase2"><th scope="row"><span class="jmeno-urovne"><span data-en="Regular">Stálý host</span></span></th><td><span class="mob"><span data-en="Requirement">Podmínka</span></span><span data-en="3 completed stays in the last 24 months">3 dokončené pobyty za posledních 24 měsíců</span></td><td><span class="mob"><span data-en="Points per 1 €">Body za 1 €</span></span><span data-en="×1.5">×1,5</span></td><td><span class="mob"><span data-en="What else">Co navíc</span></span><span data-en="Priority support and dates 7 days earlier, if operations can back this up. &lt;span class=&quot;klient d&quot;&gt;[operations to add]&lt;/span&gt;">Přednostní podpora a termíny o 7 dní dřív, pokud to provoz zvládne doložit. <span class="klient">[doplní provoz]</span></span></td></tr><tr class="is-phase2"><th scope="row"><span class="jmeno-urovne"><span data-en="At Home">Domácí</span></span></th><td><span class="mob"><span data-en="Requirement">Podmínka</span></span><span data-en="5 or more completed stays in the last 24 months">5 a více dokončených pobytů za posledních 24 měsíců</span></td><td><span class="mob"><span data-en="Points per 1 €">Body za 1 €</span></span><span data-en="×2">×2</span></td><td><span class="mob"><span data-en="What else">Co navíc</span></span><span data-en="Late check-out depending on occupancy, dates 14 days earlier, a direct contact. &lt;span class=&quot;klient d&quot;&gt;[operations to add]&lt;/span&gt;">Pozdní odjezd podle obsazenosti, termíny o 14 dní dřív, přímý kontakt. <span class="klient">[doplní provoz]</span></span></td></tr></tbody></table></div>
+      <p class="fine"><span data-en="Your level does not change the price of a stay, only how many points you earn and which services you have. Points per stay are multiplied by your level: 1 € = 1 point × multiplier.">Úroveň nemění cenu pobytu, jen kolik bodů dostanete a jaké služby máte. Počet bodů za pobyt násobí úroveň: 1 € = 1 bod × násobič.</span></p>
+    </div>
+  </div>
+</section><section class="sekce" aria-labelledby="pravidla-h">
+  <div class="wrap">
+    <div class="sekce-hlava"><div><h2 class="h2" id="pravidla-h" data-en="The rules in plain words">Pravidla srozumitelně</h2><p class="perex" data-en="The rules below are a draft. Each rule marked this way goes through our lawyer before publication.">Pravidla níže jsou návrh. Každé pravidlo s označením prochází před zveřejněním právníkem.</p></div></div>
+<ul class="pravidla"><li><h3 class="h3" data-en="How long points last">Platnost bodů</h3><p data-en="Points are valid for 24 months from when they are added. The oldest are used first. We remind you twice before they expire, 90 and 30 days ahead.">Body platí 24 měsíců od připsání. Čerpají se od nejstarších. Před koncem platnosti vás upozorníme dvakrát, 90 a 30 dní předem.</p><p class="stitek-p"><span class="pravnik" data-en="Pending legal approval">Ke schválení právníkem</span></p></li><li><h3 class="h3" data-en="How long a level lasts">Platnost úrovně</h3><p data-en="A level lasts 24 months from the last stay that counted towards it.">Úroveň se drží 24 měsíců od posledního pobytu, který se do ní počítal.</p><p class="stitek-p"><span class="pravnik" data-en="Pending legal approval">Ke schválení právníkem</span></p></li><li><h3 class="h3" data-en="Points are not cash">Body nejsou peníze</h3><p data-en="Points are not paid out in cash. You can only use them when you pay for your next stay. &lt;span class=&quot;klient d&quot;&gt;[proposed wording, for the lawyer to decide]&lt;/span&gt;">Body se nevyplácejí v penězích. Uplatníte je jen při platbě dalšího pobytu. <span class="klient d">[návrh znění, rozhodne právník]</span></p><p class="stitek-p"><span class="pravnik" data-en="Pending legal approval">Ke schválení právníkem</span></p></li><li><h3 class="h3" data-en="If you cancel a stay">Když pobyt zrušíte</h3><p data-en="Points you earned for a cancelled stay are cancelled. Points you used on that stay: &lt;span class=&quot;klient d&quot;&gt;[the lawyer decides whether and how they are returned]&lt;/span&gt;.">Body, které jste za zrušený pobyt dostali, zrušíme. Body, které jste na tento pobyt použili: <span class="klient d">[rozhodne právník, zda se vrátí a jak]</span>.</p><p class="stitek-p"><span class="pravnik" data-en="Pending legal approval">Ke schválení právníkem</span></p></li><li><h3 class="h3" data-en="Changes to the programme and its end">Změna a konec programu</h3><p data-en="&lt;span class=&quot;klient d&quot;&gt;[The lawyer will add: how the rules may change, how we will tell you, and what happens to points if the programme ends.]&lt;/span&gt;"><span class="klient d">[Doplní právník: jak se mohou pravidla měnit, jak o tom budeme informovat a co se stane s body, kdyby program skončil.]</span></p><p class="stitek-p"><span class="pravnik" data-en="Pending legal approval">Ke schválení právníkem</span></p></li><li><h3 class="h3" data-en="Account and consents">Účet a souhlasy</h3><p data-en="You join the programme by creating an account. You set email consents separately and can withdraw them at any time. &lt;span class=&quot;klient d&quot;&gt;[consent wording to be approved by the lawyer, GDPR]&lt;/span&gt;">Do programu vstoupíte založením účtu. Souhlasy s e-maily nastavujete zvlášť a kdykoli je odvoláte. <span class="klient d">[znění souhlasů schválí právník, GDPR]</span></p><p class="stitek-p"><span class="pravnik" data-en="Pending legal approval">Ke schválení právníkem</span></p></li></ul>
+  </div>
+</section><section class="sekce pas" aria-labelledby="cta-h"><div class="wrap cta-pruh">
+      <h2 class="h3" id="cta-h" data-en="More questions about points?">Další otázky k bodům?</h2>
+      <a class="btn ghost" href="pomoc.html" data-en="Help and questions">Pomoc a otázky</a>
+    </div></section>
+</main>
+
+<footer class="pata">
+  <div class="wrap">
+    <div style="display:grid;gap:var(--m-3);align-content:start">
+      <a class="lockup tmavy" href="../objevovani/domu.html" aria-label="Fragmento Holiday, úvodní stránka" data-en-label="Fragmento Holiday, home page"><img class="lk-svetle" src="../assets/brand/logo-fragmento.svg" alt="" width="261" height="54"><img class="lk-tmave" src="../assets/brand/logo-fragmento-light.svg" alt="" width="261" height="54"><span class="lk-linka" aria-hidden="true"></span><span class="lk-slovo" aria-hidden="true">Holiday</span></a>
+      <p data-en="Stays in properties that Fragmento selects and manages.">Pobyty v nemovitostech, které Fragmento vybírá a spravuje.</p>
+    </div>
+    <nav aria-label="Pobyty" data-en-label="Stays"><h2 data-en="Stays">Pobyty</h2><ul><li><a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li><li><a href="jak-to-funguje.html" data-en="How it works">Jak to funguje</a></li><li><a href="standard.html" data-en="The Fragmento standard">Standard Fragmenta</a></li><li><a href="vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a></li></ul></nav>
+    <nav aria-label="Pomoc" data-en-label="Help"><h2 data-en="Help">Pomoc</h2><ul><li><a href="storno-a-podminky.html" data-en="Cancellation and terms">Storno a podmínky</a></li><li><a href="pomoc.html" data-en="Help and questions">Pomoc a otázky</a></li><li><a href="kontakt.html" data-en="Contact">Kontakt</a></li></ul></nav>
+    <nav aria-label="Fragmento" data-en-label="Fragmento"><h2 data-en="Fragmento">Fragmento</h2><ul><li><a href="https://www.fragmento.cz/" data-en="fragmento.cz">fragmento.cz</a></li><li><a href="#" data-en="About us">O nás</a></li></ul></nav>
+    <div class="pata-jazyk"><nav class="jazyky" aria-label="Jazyk" data-en-label="Language"><a href="#" hreflang="cs" lang="cs" data-jazyk="cs" aria-current="true"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="8" width="24" height="8" fill="#D7141A"/><path d="M0 0l12 8L0 16z" fill="#11457E"/></svg><span>Čeština</span></a><a href="#" hreflang="en" lang="en" data-jazyk="en"><svg class="vlajka" viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#012169"/><path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.2"/><path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5"/><path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="3"/></svg><span>English</span></a></nav></div>
+    <div class="pata-spodek fine"><span data-en="© 2026 Fragmento · &lt;span class=&quot;klient d&quot;&gt;[client to add: company, reg. no., address]&lt;/span&gt; · Privacy · Cookies">© 2026 Fragmento · <span class="klient d">[doplní klient: firma, IČ, sídlo]</span> · Ochrana osobních údajů · Cookies</span></div>
+  </div>
+</footer>
+
+<dialog id="menu" class="menu-dlg" aria-labelledby="menu-h">
+  <div class="md-hlava"><h2 class="h3" id="menu-h" data-en="Menu">Nabídka</h2><button type="button" class="ikona-btn" data-zavri aria-label="Zavřít nabídku" data-en-label="Close menu"><svg class="ico" aria-hidden="true"><use href="../objevovani/ikony.svg#i-zavrit"/></svg></button></div>
+  <nav aria-labelledby="menu-h"><ul>
+      <li><a href="../objevovani/hledani.html" data-en="Find a stay">Hledat pobyt</a></li>
+      <li><a href="jak-to-funguje.html" data-en="How it works">Jak to funguje</a></li>
+      <li><a href="vernostni-program.html" data-en="Loyalty programme">Věrnostní program</a></li>
+      <li><a href="standard.html" data-en="The Fragmento standard">Standard Fragmenta</a></li>
+      <li><a href="storno-a-podminky.html" data-en="Cancellation and terms">Storno a podmínky</a></li>
+      <li><a href="pomoc.html" data-en="Help and questions">Pomoc a otázky</a></li>
+      <li><a href="kontakt.html" data-en="Contact">Kontakt</a></li>
+      <li><a href="#" data-en="Sign in">Přihlásit se</a></li>
+  </ul></nav>
+</dialog>
+</body>
+</html>
